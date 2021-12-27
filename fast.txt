@@ -1,0 +1,91 @@
+'inventory.status' doesn't exist
+
+status
+
+`unit_status`
+-------------------------
+
+ Unknown column 'st.Status_ID' in 'on clause'
+`u`.`Status_ID`,
+`ID`
+
+-------------------------
+
+Unknown column 'u.ID' in 'field list'
+
+ `u`.`ID`,
+`Status_ID`
+
+/////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////
+//////////////////////////////////
+SELECT `u`.`Unit_ID`,
+ `u`.`Unit_No`,
+ `u`.`Build_No`,
+ `u`.`Project_ID`,
+ `P`.`ProName`,
+ `u`.`floor_id`,
+ `f`.`Floor_Name`,
+ `u`.`Raw_ID`,
+ `r`.`R_Type`,
+ `u`.`Pos_ID`,
+ `up`.`Pos_Name`,
+ `u`.`Unit_Area`,
+ `u`.`Basic_Meter_Price`,
+ `bp`.`Basic_Meter_Price`,
+ `u`.`Unit_Basic_Price`,
+ `u`.`Roof_Area`,
+ `u`.`Garden_Area`,
+ `u`.`Open_terrace_Area`,
+ `u`.`Usufruct_type`,
+ `u`.`usufruct_meter_price`,
+ `usup`.`Usufruct_Meter_Price`,
+ `Usufruct_Price`,
+ `Net_Area`,
+ `Load_Ratio`,
+ `u`.`Status_ID`,
+ `st`.`status_Name`,
+ `st`.`colour`,
+ `u`.`added_by`,
+ `u`.`Creation_Date`,
+ `u`.`last_update_on`,
+ `u`.`maintenance_pct`,
+ `u`.`finishing_level`,
+ `fi`.`Level`,
+ `u`.`Rooms_Desc`,
+ `Ro`.`Rooms_Count`,
+ `ro`.`Rooms_Description`,
+ `u`.`has_activity`,
+ `u`.`activity_id`
+ From Units u 
+ LEFT JOIN projects p
+ on u.Project_ID = p.ProID
+ LEFT JOIN floor f
+ on u.floor_id = f.Floor_Id
+ LEFT JOIN raw_type r
+ on u.Raw_ID = r.R_ID
+ left join unit_position up
+ on u.Pos_ID = up.Pos_ID
+ left join basic_prices bp
+ on u.Basic_Meter_Price = bp.Basic_ID
+ LEFT JOIN usufruct_prices usup
+ on u.usufruct_meter_price = usup.UsuID
+ LEFT JOIN status st
+ on u.Status_ID = st.Status_ID
+ LEFT JOIN finishing_level fi
+ on u.finishing_level = fi.ID
+ LEFT JOIN rooms ro
+ on u.Rooms_Desc = ro.ID
