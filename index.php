@@ -305,23 +305,20 @@ if (isset($module)) {
                                 <li>
                                     <a class="has-arrow" href="#" aria-expanded="false">Inventory Configuration</a>
                                     <ul aria-expanded="false" class="collapse">
-                                        <li><a href="index?module=Inventory.Conf&tableName=unit_status&objecthome=true">Status conf</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=approval_status&objecthome=true">Approval Status</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=basic_prices&objecthome=true">Basic Prices</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=broker_type&objecthome=true">Broker Type</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=floor&objecthome=true">Floor Conf</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=raw_type&objecthome=true">Raw Type</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=unit_position&objecthome=true">Units Position</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=usufruct_prices&objecthome=true">Usufruct Prices</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=finishing_level&objecthome=true">Finishing Level</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=garage&objecthome=true">Grage</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=payment_type&objecthome=true">Payment Type</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=requested&objecthome=true">Requested</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=sale_type&objecthome=true">Sale Type</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=session_timeout&objecthome=true">Session Time Out</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=usufruct_type&objecthome=true">Usufruct Type</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=rooms&objecthome=true">Rooms Conf</a></li>
-                                        <li><a href="index?module=Inventory.Conf&tableName=activity_status&objecthome=true">Activity Status</a></li>
+<?php
+$sql_get_conf_table= "SELECT * FROM `lkp_tables` ";
+$get_conf_tabl= $database->query($sql_get_conf_table);
+
+$$get_conf_table_Count = $get_conf_tabl->num_rows;
+
+   // output data of each row
+   while($row = $get_conf_tabl->fetch_assoc()) {
+     echo " <li><a href='index?module=Inventory.Conf&tableName=".$row["Table Name"]."&objecthome=true'>".ucwords($row["Table Name"])."</a></li>";
+   }
+
+
+?>
+                                s
                                     </ul>
                                 </li>
                             </ul>
