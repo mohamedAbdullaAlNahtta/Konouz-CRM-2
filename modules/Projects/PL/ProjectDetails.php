@@ -9,16 +9,16 @@ $sql= "SELECT `projects`.`ID`, `projects`.`Name`, `projects`.`Insertion date`, `
 $Projects= $database->query($sql);
     // output data of each row
     while($row = $Projects->fetch_assoc()) {
-        $ProID = $row["ProID"];
-        $ProName = $row["ProName"];
-        $Insertion_date = $row["Insertion_date"];
-        $Added_By = $row["Added_By"];
-        $DevName = $row["DevName"];
-        $maintenance_pct = $row["maintenance_pct"]*100;
+        $ProID = $row["ID"];
+        $ProName = $row["Name"];
+        $Insertion_date = $row["Insertion date"];
+        $Added_By = $row["Added By"];
+        $DevName = $row["DEVNAME"];
+        $maintenance_pct = $row["Maintenance Pct"]*100;
         $maintenance_pct= $maintenance_pct."%";
         $location = $row["location"];
-        $updated_on = $row["updated_on"];
-        $location_OnMap = $row["location_OnMap"]; 
+        $updated_on = $row["Updated On"];
+        $location_OnMap = $row["Location On Map"]; 
       }
 /////////////////////////////////////////////////////////////
 // End of ------getting Project  details
