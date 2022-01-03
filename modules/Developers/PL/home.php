@@ -16,19 +16,19 @@ if (isset($_GET['deleteDeveloperId'])) {
 ///////////////////////////////////////////////////////////////
 /// start of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
- $sql= "SELECT `DevID`, `DevName`, `Rep`, `Mobile1`, `Insertion_date`, `Added_By`, `Mobile2` FROM `developers` ORDER BY `DevID` DESC";
+ $sql= "SELECT `ID`, `Name`, `Rep`, `Mobile1`, `Insertion Date`, `Added By`, `Mobile2` FROM `developers` ORDER BY `ID` DESC";
  $developers_all= $database->query($sql);
 
  $developerCount = $developers_all->num_rows;
 
     // output data of each row
     while($row = $developers_all->fetch_assoc()) {
-      $DevID[] = $row["DevID"];
-      $DevName[] = $row["DevName"];
+      $DevID[] = $row["ID"];
+      $DevName[] = $row["Name"];
       $Rep[] = $row["Rep"];
       $Mobile1[] = $row["Mobile1"];
-      $Insertion_date[] = $row["Insertion_date"];
-      $Added_By[] = $row["Added_By"];
+      $Insertion_date[] = $row["Insertion Date"];
+      $Added_By[] = $row["Added By"];
       $Mobile2[] = $row["Mobile2"];
     }
 

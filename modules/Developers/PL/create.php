@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     $mobile1 = $database->escape_string($mobile1);
     $mobile2 = $database->escape_string($mobile2);
 
-    $sql= "INSERT INTO `developers` (`DevID`, `DevName`, `Rep`, `Mobile1`, `Insertion_date`, `Added_By`, `Mobile2`) VALUES (NULL, '".$DeveloperName."', '".$DeveloperRepresentative."', '".$mobile1."', current_timestamp(), '', '".$mobile2."')";
+    $sql= "INSERT INTO `developers` (`ID`, `Name`, `Rep`, `Mobile1`, `Insertion Date`, `Added By`, `Mobile2`) VALUES (NULL, '".$DeveloperName."', '".$DeveloperRepresentative."', '".$mobile1."', current_timestamp(), '', '".$mobile2."')";
     $developer_dml= $database->query($sql); 
 
 } 
