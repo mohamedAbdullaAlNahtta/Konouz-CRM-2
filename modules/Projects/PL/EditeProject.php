@@ -3,14 +3,14 @@
 /////////////////////////////////////////////////////////////
 // Start of ------getting all developers names and ids 
 /////////////////////////////////////////////////////////////
-$sql_get_dev= "SELECT `DevID`, `DevName` FROM `developers`";
+$sql_get_dev= "SELECT `ID`, `Name` FROM `developers`";
 $developers_all_get= $database->query($sql_get_dev);
 
 $developerNameCount = $developers_all_get->num_rows;
    // output data of each row
    while($row = $developers_all_get->fetch_assoc()) {
-     $DevID[] = $row["DevID"];
-     $DevName[] = $row["DevName"];
+     $DevID[] = $row["ID"];
+     $DevName[] = $row["Name"];
    }
  $developer_name= array("DevID"=>$DevID, "DevName"=>$DevName );
 
@@ -24,20 +24,20 @@ $developerNameCount = $developers_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 $EditeProjectId= $_GET["EditeProjectId"];
 
-$sql= "SELECT `projects`.`ProID`, `projects`.`ProName`, `projects`.`Insertion_date`, `projects`.`Added_By`, `developers`.`DevName`, `projects`.`maintenance_pct`, `projects`.`location_OnMap`, `projects`.`location`, `projects`.`location_OnMap`, `projects`.`updated_on` FROM `projects`, `developers` WHERE `projects`.`DevID` = `developers`.`DevID`and `projects`.`ProID`='".$EditeProjectId."'";
+$sql= "SELECT `projects`.`ID`, `projects`.`Name`, `projects`.`Insertion date`, `projects`.`Added By`, `developers`.`Name` as `DEVNAME`, `projects`.`Maintenance Pct`, `projects`.`location`, `projects`.`Location On Map`, `projects`.`Updated On`, `projects`.`DevID` FROM `projects`, `developers` WHERE `projects`.`DevID` = `developers`.`ID` and `projects`.`ID`='".$EditeProjectId."'";
 $Projects= $database->query($sql);
     // output data of each row
     while($row = $Projects->fetch_assoc()) {
-        $ProID = $row["ProID"];
-        $ProName = $row["ProName"];
-        $Insertion_date = $row["Insertion_date"];
-        $Added_By = $row["Added_By"];
-        $DevName = $row["DevName"];
-        $maintenance_pct = $row["maintenance_pct"]*100;
+        $ProID = $row["ID"];
+        $ProName = $row["Name"];
+        $Insertion_date = $row["Insertion date"];
+        $Added_By = $row["Added By"];
+        $DevName = $row["DEVNAME"];
+        $maintenance_pct = $row["Maintenance Pct"]*100;
         $maintenance_pct= $maintenance_pct."%";
         $location = $row["location"];
-        $updated_on = $row["updated_on"];
-        $location_OnMap = $row["location_OnMap"]; 
+        $updated_on = $row["Updated On"];
+        $location_OnMap = $row["Location On Map"]; 
       }
 /////////////////////////////////////////////////////////////
 // End of ------getting Project  details
@@ -65,15 +65,15 @@ if (isset($_POST['submit'])) {
     //php Creating a dynamic  query with PHP and MySQL
     // $setcolumn = array();
     // if ($ProjectName != "") 
-    // $setcolumn[] = "`ProName`='{$ProjectName}' ";
+    // $setcolumn[] = "`Name`='{$ProjectName}' ";
     // if ($DeveloperName != "") 
     // $setcolumn[] = "`DevID`='{$DeveloperName}' ";
     // if ($MaintenancePercentage != "") 
-    // $setcolumn[] = "`maintenance_pct`='{$MaintenancePercentage}' ";
+    // $setcolumn[] = "`maintenance pct`='{$MaintenancePercentage}' ";
     // if ($Location_in != "") 
     // $setcolumn[] = "`location`='{$Location_in}' ";
     // if ($location_OnMap_in != "") 
-    // $setcolumn[] = "`location_OnMap`='{$location_OnMap}' ";
+    // $setcolumn[] = "`location On Map`='{$location_OnMap}' ";
     
     // if ($setcolumn == null) {
     //     $setcolumn = "";
