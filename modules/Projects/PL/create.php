@@ -3,14 +3,14 @@
 /////////////////////////////////////////////////////////////
 // Start of ------getting all developers names and ids 
 /////////////////////////////////////////////////////////////
-$sql_get_dev= "SELECT `DevID`, `DevName` FROM `developers`";
+$sql_get_dev= "SELECT `ID`, `Name` FROM `developers`";
 $developers_all_get= $database->query($sql_get_dev);
 
 $developerNameCount = $developers_all_get->num_rows;
    // output data of each row
    while($row = $developers_all_get->fetch_assoc()) {
-     $DevID[] = $row["DevID"];
-     $DevName[] = $row["DevName"];
+     $DevID[] = $row["ID"];
+     $DevName[] = $row["Name"];
    }
  $developer_name= array("DevID"=>$DevID, "DevName"=>$DevName );
 
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
     $Location = $database->escape_string($Location);
     $location_OnMap = $database->escape_string($location_OnMap);
 
-    $sql_pro_create= "INSERT INTO `projects` (`ProID`, `ProName`, `Insertion_date`, `Added_By`, `DevID`, `maintenance_pct`, `location`, `location_OnMap`, `updated_on`) VALUES (NULL, '".$ProjectName."', current_timestamp(), '', '".$DeveloperName."', '".$MaintenancePercentage."', '".$Location."', '".$location_OnMap."', current_timestamp())";
+    $sql_pro_create= "INSERT INTO `projects` (`ID`, `Name`, `Insertion date`, `Added By`, `DevID`, `Maintenance Pct`, `Location`, `Location On Map`, `Updated On`) VALUES (NULL, '".$ProjectName."', current_timestamp(), '', '".$DeveloperName."', '".$MaintenancePercentage."', '".$Location."', '".$location_OnMap."', current_timestamp())";
     $project_dml= $database->query($sql_pro_create); 
 } 
 

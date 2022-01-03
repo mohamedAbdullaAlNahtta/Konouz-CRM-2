@@ -5,7 +5,7 @@
 if (isset($_GET['deleteDeveloperId'])) {
 
     $deleteDeveloperId = $_GET['deleteDeveloperId'];
-    $sql_delete_dev= "DELETE  FROM `developers` WHERE `DevID`='".$deleteDeveloperId."'";
+    $sql_delete_dev= "DELETE  FROM `developers` WHERE `ID`='".$deleteDeveloperId."'";
     $developer_delete= $database->query($sql_delete_dev); 
 
 } 

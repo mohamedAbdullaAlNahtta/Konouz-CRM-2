@@ -7,7 +7,7 @@ if (isset($_GET['deleteProjectId'])) {
 
     $deleteProjectId = $_GET['deleteProjectId'];
 
-    $sql_delete_pro= "DELETE  FROM `projects` WHERE `ProID`='".$deleteProjectId."'";
+    $sql_delete_pro= "DELETE  FROM `projects` WHERE `ID`='".$deleteProjectId."'";
     $project_delete= $database->query($sql_delete_pro); 
 } 
 /////////////////////////////////////////////////////////////
@@ -18,20 +18,20 @@ if (isset($_GET['deleteProjectId'])) {
 // Start of ------> Get All Projects 
 /////////////////////////////////////////////////////////////
 
- $sql= "SELECT `projects`.`ProID`, `projects`.`ProName`, `projects`.`Insertion_date`, `projects`.`Added_By`, `developers`.`DevName`, `projects`.`maintenance_pct`, `projects`.`location`, `projects`.`location_OnMap`, `projects`.`updated_on`, `projects`.`DevID` FROM `projects`, `developers` WHERE `projects`.`DevID` = `developers`.`DevID` ORDER BY `projects`.`ProID` DESC;";
+ $sql= "SELECT `projects`.`ID`, `projects`.`Name`, `projects`.`Insertion date`, `projects`.`Added By`, `developers`.`Name` as `DEVNAME`, `projects`.`Maintenance Pct`, `projects`.`location`, `projects`.`Location On Map`, `projects`.`Updated On`, `projects`.`DevID` FROM `projects`, `developers` WHERE `projects`.`DevID` = `developers`.`ID` ORDER BY `projects`.`ID` DESC;";
  $Projects_all= $database->query($sql);
 
  $ProjectCount = $Projects_all->num_rows;
     // output data of each row
     while($row = $Projects_all->fetch_assoc()) {
-      $ProID[] = $row["ProID"];
-      $ProName[] = $row["ProName"];
-      $Insertion_date[] = $row["Insertion_date"];
-      $Added_By[] = $row["Added_By"];
-      $DevName[] = $row["DevName"];
-      $maintenance_pct[] = $row["maintenance_pct"] * 100;
+      $ProID[] = $row["ID"];
+      $ProName[] = $row["Name"];
+      $Insertion_date[] = $row["Insertion date"];
+      $Added_By[] = $row["Added By"];
+      $DevName[] = $row["DEVNAME"];
+      $maintenance_pct[] = $row["Maintenance Pct"] * 100;
       $location[] = $row["location"];
-      $updated_on[] = $row["updated_on"];
+      $updated_on[] = $row["Updated On"];
       $DevID[] = $row["DevID"];
     }
   $Projects= array("ProID"=>$ProID, "ProName"=>$ProName, "Insertion_date"=>$Insertion_date,

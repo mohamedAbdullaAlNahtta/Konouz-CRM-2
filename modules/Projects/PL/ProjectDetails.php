@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////
 $ProjectId= $_GET["ProjectId"];
 
-$sql= "SELECT `projects`.`ProID`, `projects`.`ProName`, `projects`.`Insertion_date`, `projects`.`Added_By`, `developers`.`DevName`, `projects`.`maintenance_pct`, `projects`.`location_OnMap`, `projects`.`location`, `projects`.`location_OnMap`, `projects`.`updated_on` FROM `projects`, `developers` WHERE `projects`.`DevID` = `developers`.`DevID`and `projects`.`ProID`='".$ProjectId."'";
+$sql= "SELECT `projects`.`ID`, `projects`.`Name`, `projects`.`Insertion date`, `projects`.`Added By`, `developers`.`Name` as `DEVNAME`, `projects`.`Maintenance Pct`, `projects`.`location`, `projects`.`Location On Map`, `projects`.`Updated On`, `projects`.`DevID` FROM `projects`, `developers` WHERE `projects`.`DevID` = `developers`.`ID` and `projects`.`ID`='".$ProjectId."'";
 $Projects= $database->query($sql);
     // output data of each row
     while($row = $Projects->fetch_assoc()) {
