@@ -76,14 +76,14 @@ $rowNameCount = $row_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all  Position  names and ids 
 /////////////////////////////////////////////////////////////
-$sql_get_unit_position= "SELECT `Pos_ID`, `Pos_Name` FROM `unit_position`";
+$sql_get_unit_position= "SELECT `ID`, `Name` FROM `unit position`";
 $unit_position_all_get= $database->query($sql_get_unit_position);
 
 $unitPositionNameCount = $unit_position_all_get->num_rows;
    // output data of each row
    while($row = $unit_position_all_get->fetch_assoc()) {
-     $Pos_ID[] = $row["Pos_ID"];
-     $Pos_Name[] = $row["Pos_Name"];
+     $Pos_ID[] = $row["ID"];
+     $Pos_Name[] = $row["Name"];
    }
  $unitPosition= array("Pos_ID"=>$Pos_ID, "Pos_Name"=>$Pos_Name );
 
@@ -94,15 +94,15 @@ $unitPositionNameCount = $unit_position_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all  Rooms  dis 
 /////////////////////////////////////////////////////////////
-$sql_get_rooms= "SELECT `ID`, `Rooms_Count`, `Rooms_Description` FROM `rooms`";
+$sql_get_rooms= "SELECT `ID`, `Count`, `Description` FROM `rooms`";
 $rooms_all_get= $database->query($sql_get_rooms);
 
 $roomsNameCount = $rooms_all_get->num_rows;
    // output data of each row
    while($row = $rooms_all_get->fetch_assoc()) {
      $ID[] = $row["ID"];
-     $Rooms_Count[] = $row["Rooms_Count"];
-     $Rooms_Description[] = $row["Rooms_Description"];
+     $Rooms_Count[] = $row["Count"];
+     $Rooms_Description[] = $row["Description"];
    }
  $rooms= array("ID"=>$ID, "Rooms_Count"=>$Rooms_Count, "Rooms_Description"=>$Rooms_Description );
 
@@ -113,7 +113,7 @@ $roomsNameCount = $rooms_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all  finshing level  
 /////////////////////////////////////////////////////////////
-$sql_get_finishing_level= "SELECT `ID`, `Level` FROM `finishing_level`";
+$sql_get_finishing_level= "SELECT `ID`, `Level` FROM `finishing level`";
 $finishing_level_all_get= $database->query($sql_get_finishing_level);
 
 $finishingLevelNameCount = $finishing_level_all_get->num_rows;
@@ -131,13 +131,13 @@ $finishingLevelNameCount = $finishing_level_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all   Usufruct Type 
 /////////////////////////////////////////////////////////////
-$sql_get_usufruct_type= "SELECT `Usu_type` FROM `usufruct_type`";
+$sql_get_usufruct_type= "SELECT `type` FROM `usufruct type`";
 $usufruct_type_all_get= $database->query($sql_get_usufruct_type);
 
 $usufructtypeNameCount = $usufruct_type_all_get->num_rows;
    // output data of each row
    while($row = $usufruct_type_all_get->fetch_assoc()) {
-     $Usu_type[] = $row["Usu_type"];
+     $Usu_type[] = $row["type"];
    }
  $usufruct_type= array("Usu_type"=>$Usu_type);
 
@@ -148,14 +148,14 @@ $usufructtypeNameCount = $usufruct_type_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all   usufruct_prices
 /////////////////////////////////////////////////////////////
-$sql_get_usufruct_prices= "SELECT `UsuID`, `Usufruct_Meter_Price` FROM `usufruct_prices`";
+$sql_get_usufruct_prices= "SELECT `ID`, `Usufruct Meter Price` FROM `usufruct prices`";
 $usufruct_prices_all_get= $database->query($sql_get_usufruct_prices);
 
 $usufructpricesNameCount = $usufruct_prices_all_get->num_rows;
    // output data of each row
    while($row = $usufruct_prices_all_get->fetch_assoc()) {
-     $UsuID[] = $row["UsuID"];
-     $Usufruct_Meter_Price[] = $row["Usufruct_Meter_Price"];
+     $UsuID[] = $row["ID"];
+     $Usufruct_Meter_Price[] = $row["Usufruct Meter Price"];
    }
  $usufruct_prices= array("UsuID"=>$UsuID, "Usufruct_Meter_Price"=>$Usufruct_Meter_Price );
 
@@ -166,14 +166,14 @@ $usufructpricesNameCount = $usufruct_prices_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all   usufruct_prices
 /////////////////////////////////////////////////////////////
-$sql_get_basic_prices= "SELECT `Basic_ID`, `Basic_Meter_Price` FROM `basic_prices`";
+$sql_get_basic_prices= "SELECT `ID`, `Basic Meter Price` FROM `basic prices`";
 $basic_prices_all_get= $database->query($sql_get_basic_prices);
 
 $basicpricesNameCount = $basic_prices_all_get->num_rows;
    // output data of each row
    while($row = $basic_prices_all_get->fetch_assoc()) {
-     $Basic_ID[] = $row["Basic_ID"];
-     $Basic_Meter_Price[] = $row["Basic_Meter_Price"];
+     $Basic_ID[] = $row["ID"];
+     $Basic_Meter_Price[] = $row["Basic Meter Price"];
    }
  $basic_prices = array("Basic_ID"=>$Basic_ID, "Basic_Meter_Price"=>$Basic_Meter_Price );
 

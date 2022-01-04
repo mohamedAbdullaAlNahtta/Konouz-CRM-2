@@ -78,13 +78,13 @@ if (isset($_POST['submit'])) {
       `usufruct_meter_price`, `Usufruct_Price`, `Net_Area`, `Load_Ratio`,
        `Status_ID`, `added_by`, `Creation_Date`, `last_update_on`,
         `maintenance_pct`, `finishing_level`, `Rooms_Desc`, `has_activity`,
-         `activity_id`) 
+         `activity_id`,`Approval_Requested`) 
    VALUES ('', '".$Unit_No."', '".$Build_No."', '".$Project_ID."', '".$floor_id."',
     '".$Raw_ID."', '".$Pos_ID."', '".$Unit_Area."', '".$Basic_Meter_Price."', '',
      '".$Roof_Area."', '".$Garden_Area."', '".$Open_terrace_Area."', '".$Usufruct_type."',
       ".$usufruct_meter_price.", '', '".$Net_Area."', '$Load_Ratio_new',
        '".$Status_ID."', '', current_timestamp(), current_timestamp(),
-        '', '".$finishing_level_new."', '".$Rooms_Desc."', '', NULL)";
+        '', '".$finishing_level_new."', '".$Rooms_Desc."', '', NULL,'No')";
 
     $update_unit_data= $database->query($sql_in); 
 
