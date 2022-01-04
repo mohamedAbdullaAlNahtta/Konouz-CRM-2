@@ -84,7 +84,7 @@ if (isset($_POST['submit'])) {
      '".$Roof_Area."', '".$Garden_Area."', '".$Open_terrace_Area."', '".$Usufruct_type."',
       ".$usufruct_meter_price.", '', '".$Net_Area."', '$Load_Ratio_new',
        '".$Status_ID."', '', current_timestamp(), current_timestamp(),
-        '', '".$finishing_level_new."', '".$Rooms_Desc."', '', NULL,'No')";
+        '', '".$finishing_level_new."', '".$Rooms_Desc."', '', NULL,'2')";
 
     $update_unit_data= $database->query($sql_in); 
 
@@ -245,7 +245,7 @@ if (isset($_POST['submit'])) {
                         <div class="tab-pane active" id="profile" role="tabpanel">
                             <div class="card-block">
                                 <div class="row">
-                                    <div class="col-md-3 col-xs-6 b-r">
+                                    <div class="col-md-4 col-xs-6 b-r">
                                         <strong>Project</strong>
                                         <div class="form-group">
                                             <select id="myselect" name="Project_ID" class="form-control form-control-line" required="test">
@@ -276,7 +276,7 @@ for ($i=0; $i < $projectsNameCount ; $i++) {
                                             <input type="number" name="Unit_No" class="form-control" required/>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-xs-6">
+                                    <div class="col-md-4 col-xs-6">
                                         <strong>Floor</strong>
                                         <div class="form-group">
                                             <select id="myselect" name="floor_id" class="form-control form-control-line" required>
@@ -295,7 +295,7 @@ for ($i=0; $i < $FloorNameCount ; $i++) {
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-2 col-xs-6">
+                                    <div class="col-md-3 col-xs-6">
                                         <strong>Unit Status</strong>
                                         <div class="form-group">
                                             <select id="myselect" name="Status_ID" class="form-control form-control-line" required>
@@ -312,8 +312,32 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
 ?> 
                                             </select>
                                         </div>
-                                    </div>
                                 </div>
+                                <div class="col-md-9 col-xs-6">
+                                        <strong>Status Reason</strong>
+                                        <div class="form-group">
+                                        <input type="test" id="" name="" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-xs-6">
+                                        <strong>Approval Status </strong>
+                                        <div class="form-group">
+                                            <select id="" name="" class="form-control form-control-line" >
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $approvalStatusGetCount ; $i++) { 
+    echo "<option value='".$Approval_Status_Data["Approval_ID"][$i]."' >".$Approval_Status_Data["Approval_Status"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>                                
                                 <hr />
                                 <div class="ribbon-wrapper">
                                     <div class="ribbon ribbon-bookmark ribbon-info">Unit Discription</div>
