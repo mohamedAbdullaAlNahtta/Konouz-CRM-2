@@ -271,6 +271,31 @@ window.setTimeout(function () {
 }
 ?>
 
+<!-- Drop-down list dependent form -->
+<script>
+    $(document).ready($(function() {
+    $(".dependent-form").hide();
+    $("#unitStatusform").change(function() {
+        switch($(this).val()){ 
+            case "4":
+                $(".dependent-form").hide().parent().find("#Status-Reason").show();
+                $(".Held-For").hide().parent().find("#Held-For").show();
+                $(".Hold-Can-Work-On").hide().parent().find("#Hold-Can-Work-On").show();
+                break;
+            case "5":
+                $(".dependent-form").hide().parent().find("#Status-Reason").show();
+                $(".Held-For").hide().parent().find("#Held-For").show();
+                $(".Hold-Can-Work-On").hide().parent().find("#Hold-Can-Work-On").show();
+                break;
+            case "6":
+                $(".dependent-form").parent().find("#Status-Reason").show();
+                $(".Held-For").parent().find("#Held-For").show();
+                $(".Hold-Can-Work-On").hide().parent().find("#Hold-Can-Work-On").show();
+                break;
+        }
+    });
+}));
+</script>
 <!-- ============================================================== -->
 <!-- ============================================================== -->
 <!-- <script type="text/javascript">

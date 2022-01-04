@@ -298,7 +298,7 @@ for ($i=0; $i < $FloorNameCount ; $i++) {
                                     <div class="col-md-3 col-xs-6">
                                         <strong>Unit Status</strong>
                                         <div class="form-group">
-                                            <select id="myselect" name="Status_ID" class="form-control form-control-line" required>
+                                            <select id="unitStatusform" name="Status_ID" class="form-control form-control-line" required>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -313,28 +313,28 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
                                             </select>
                                         </div>
                                    </div>
-                                   <div class="col-md-9 col-xs-6">
+                                   <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form Status-Reason">
                                         <strong>Status Reason</strong>
                                         <div class="form-group">
                                         <input type="text" id="" name="" class="form-control" />
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-xs-6">
+                                    <div class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Hold Can Work On </strong>
                                         <div class="form-group">
-                                            <select id="" name="" class="form-control form-control-line" >
+                                            <select id="" name="" class="form-control form-control-line " >
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-9 col-xs-6">
+                                    <div class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Held For</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="" class="form-control" />
+                                        <input type="text" id="" name="" class="form-control d" />
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-xs-6">
+                                    <div class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Approval Status </strong>
                                         <div class="form-group">
                                             <select id="" name="" class="form-control form-control-line" >
@@ -352,10 +352,10 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-9 col-xs-6">
+                                    <div class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Feedback</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="" class="form-control" />
+                                        <input type="text" id="" name="" class="form-control " />
                                         </div>
                                     </div>
                                 </div>                                
