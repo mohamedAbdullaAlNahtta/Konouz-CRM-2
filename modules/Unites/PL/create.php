@@ -104,20 +104,20 @@ if (isset($_POST['submit'])) {
     $Parking = $upFile->do_upload($Parking, "units/");
     $Model= $upFile->do_upload($Model, "units/");
 
-    $sql_prepar_attachment_table ="INSERT INTO `attachements` (`ATTID`, `Unit_ID`, `FileName`, `FileLocation`) 
+    $sql_prepar_attachment_table ="INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
     VALUES (NULL, '".$uId."', 'Layout With dimensions', NULL);
-    INSERT INTO `attachements` (`ATTID`, `Unit_ID`, `FileName`, `FileLocation`) 
+    INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
     VALUES (NULL, '".$uId."', 'Layout Without dimensions', NULL);
-    INSERT INTO `attachements` (`ATTID`, `Unit_ID`, `FileName`, `FileLocation`) 
+    INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
     VALUES (NULL, '".$uId."', 'Parking', NULL);
-    INSERT INTO `attachements` (`ATTID`, `Unit_ID`, `FileName`, `FileLocation`) 
+    INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
     VALUES (NULL, '".$uId."', 'Model', NULL);";
     $update_sql_prepar_attachment_table= $database->multi_query($sql_prepar_attachment_table); 
 
-    $sql_attachment="UPDATE `attachements` SET `FileLocation`='".$Layout_With_dimensions[1]."' WHERE `Unit_ID`='".$uId."' AND `FileName`='Layout With dimensions';
-    UPDATE `attachements` SET `FileLocation`='".$Layout_Without_dimensions[1]."' WHERE `Unit_ID`='".$uId."' AND `FileName`='Layout Without dimensions';
-    UPDATE `attachements` SET `FileLocation`='".$Parking[1]."' WHERE `Unit_ID`='".$uId."' AND `FileName`='Parking';
-    UPDATE `attachements` SET `FileLocation`='".$Model[1]."' WHERE `Unit_ID`='".$uId."' AND `FileName`='Model';";
+    $sql_attachment="UPDATE `attachements` SET `File Location`='".$Layout_With_dimensions[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Layout With dimensions';
+    UPDATE `attachements` SET `File Location`='".$Layout_Without_dimensions[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Layout Without dimensions';
+    UPDATE `attachements` SET `File Location`='".$Parking[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Parking';
+    UPDATE `attachements` SET `File Location`='".$Model[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Model';";
 
     // $sql_attachment="INSERT INTO `attachements` (`ATTID`, `Unit_ID`, `FileName`, `FileLocation`) 
     // VALUES (NULL, '".$uId."', 'Layout With dimensions', '".$Layout_With_dimensions[1]."');

@@ -4,14 +4,14 @@
 /////////////////////////////////////////////////////////////
 // Start of ------getting all developers names and ids 
 /////////////////////////////////////////////////////////////
-$sql_get_pro= "SELECT `ProID`, `ProName` FROM `projects`";
+$sql_get_pro= "SELECT `ID`, `Name` FROM `projects`";
 $projects_all_get= $database->query($sql_get_pro);
 
 $projectsNameCount = $projects_all_get->num_rows;
    // output data of each row
    while($row = $projects_all_get->fetch_assoc()) {
-     $ProID[] = $row["ProID"];
-     $ProName[] = $row["ProName"];
+     $ProID[] = $row["ID"];
+     $ProName[] = $row["Name"];
    }
  $project_name= array("ProID"=>$ProID, "ProName"=>$ProName );
 
@@ -22,14 +22,14 @@ $projectsNameCount = $projects_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all  Floor  names and ids 
 /////////////////////////////////////////////////////////////
-$sql_get_Floor= "SELECT `Floor_Id`, `Floor_Name` FROM `floor`";
+$sql_get_Floor= "SELECT `ID`, `Name` FROM `floor`";
 $floors_all_get= $database->query($sql_get_Floor);
 
 $FloorNameCount = $floors_all_get->num_rows;
    // output data of each row
    while($row = $floors_all_get->fetch_assoc()) {
-     $Floor_Id[] = $row["Floor_Id"];
-     $Floor_Name[] = $row["Floor_Name"];
+     $Floor_Id[] = $row["ID"];
+     $Floor_Name[] = $row["Name"];
    }
  $floor_name= array("Floor_Id"=>$Floor_Id, "Floor_Name"=>$Floor_Name );
 
@@ -40,14 +40,14 @@ $FloorNameCount = $floors_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all  Status  names and ids 
 /////////////////////////////////////////////////////////////
-$sql_get_Status= "SELECT `Status_ID`, `status_Name` FROM `status` ORDER BY `status_Name` ASC";
+$sql_get_Status= "SELECT `ID`, `Name` FROM `unit status` ORDER BY `Name` ASC";
 $status_all_get= $database->query($sql_get_Status);
 
 $StatusNameCount = $status_all_get->num_rows;
    // output data of each row
    while($row = $status_all_get->fetch_assoc()) {
-     $Status_ID[] = $row["Status_ID"];
-     $status_Name[] = $row["status_Name"];
+     $Status_ID[] = $row["ID"];
+     $status_Name[] = $row["Name"];
    }
  $Status_name= array("Status_ID"=>$Status_ID, "status_Name"=>$status_Name );
 
@@ -58,14 +58,14 @@ $StatusNameCount = $status_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all  Rows  names and ids 
 /////////////////////////////////////////////////////////////
-$sql_get_row= "SELECT `R_ID`, `R_Type` FROM `raw_type`";
+$sql_get_row= "SELECT `ID`, `Type` FROM `raw type`";
 $row_all_get= $database->query($sql_get_row);
 
 $rowNameCount = $row_all_get->num_rows;
    // output data of each row
    while($row = $row_all_get->fetch_assoc()) {
-     $R_ID[] = $row["R_ID"];
-     $R_Type[] = $row["R_Type"];
+     $R_ID[] = $row["ID"];
+     $R_Type[] = $row["Type"];
    }
  $row_name= array("R_ID"=>$R_ID, "R_Type"=>$R_Type );
 
