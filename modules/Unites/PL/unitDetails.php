@@ -9,63 +9,60 @@ $unitDetailsID = $_GET['unitId'];
  `u`.`Unit_No`,
  `u`.`Build_No`,
  `u`.`Project_ID`,
- `P`.`ProName`,
+ `P`.`Name`as`ProName`,
  `u`.`floor_id`,
- `f`.`Floor_Name`,
+ `f`.`Name`as`Floor_Name`,
  `u`.`Raw_ID`,
- `r`.`R_Type`,
+ `r`.`Type`as`R_Type`,
  `u`.`Pos_ID`,
- `up`.`Pos_Name`,
+ `up`.`Name`as`Pos_Name`,
  `u`.`Unit_Area`,
- `u`.`Basic_Meter_Price`,
- `bp`.`Basic_Meter_Price`,
+ `bp`.`Basic Meter Price`as`Basic_Meter_Price`,
  `u`.`Unit_Basic_Price`,
  `u`.`Roof_Area`,
  `u`.`Garden_Area`,
  `u`.`Open_terrace_Area`,
  `u`.`Usufruct_type`,
- `u`.`usufruct_meter_price`,
- `usup`.`Usufruct_Meter_Price`,
+ `usup`.`Usufruct Meter Price`as`Usufruct_Meter_Price`,
  `Usufruct_Price`,
  `Net_Area`,
  `Load_Ratio`,
  `u`.`Status_ID`,
- `st`.`status_Name`,
- `st`.`colour`,
+ `unit status`.`Name`as`status_Name`,
+ `unit status`.`colour`,
  `u`.`added_by`,
  `u`.`Creation_Date`,
  `u`.`last_update_on`,
  `u`.`maintenance_pct`,
  `u`.`finishing_level`,
- `fi`.`LEVEL`,
  `fi`.`Level`,
  `u`.`Rooms_Desc`,
- `Ro`.`Rooms_Count`,
- `ro`.`Rooms_Description`,
+ `Ro`.`Count`as`Rooms_Count`,
+ `ro`.`Description`as`Rooms_Description`,
  `u`.`has_activity`,
  `u`.`activity_id`,
- `proj`.`location_OnMap`
+ `proj`.`location On Map` as `location_OnMap`
  From Units u 
- LEFT JOIN projects p
- on u.Project_ID = p.ProID
- LEFT JOIN floor f
- on u.floor_id = f.Floor_Id
- LEFT JOIN raw_type r
- on u.Raw_ID = r.R_ID
- left join unit_position up
- on u.Pos_ID = up.Pos_ID
- left join basic_prices bp
- on u.Basic_Meter_Price = bp.Basic_ID
- LEFT JOIN usufruct_prices usup
- on u.usufruct_meter_price = usup.UsuID
- LEFT JOIN status st
- on u.Status_ID = st.Status_ID
- LEFT JOIN finishing_level fi
+ LEFT JOIN `projects` `p`
+ on u.Project_ID = p.ID
+ LEFT JOIN `floor` f
+ on u.floor_id = f.ID
+ LEFT JOIN `raw type` `r`
+ on u.Raw_ID = r.ID
+ left join `unit position` `up`
+ on u.Pos_ID = up.ID
+ left join `basic prices` `bp`
+ on u.Basic_Meter_Price = bp.ID
+ LEFT JOIN `usufruct prices` usup
+ on u.usufruct_meter_price = usup.ID
+ LEFT JOIN  `unit status`
+ on u.Status_ID = `unit status`.ID
+ LEFT JOIN `finishing level` fi
  on u.finishing_level = fi.ID
  LEFT JOIN rooms ro
  on u.Rooms_Desc = ro.ID
  LEFT JOIN projects proj
- on u.Project_ID = proj.ProID
+ on u.Project_ID = proj.ID
  WHERE u.Unit_ID='".$unitDetailsID."'";
 
  $units_all= $database->query($sql_get_units);
