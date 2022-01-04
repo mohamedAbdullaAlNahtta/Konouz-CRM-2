@@ -312,11 +312,26 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
 ?> 
                                             </select>
                                         </div>
-                                </div>
-                                <div class="col-md-9 col-xs-6">
+                                   </div>
+                                   <div class="col-md-9 col-xs-6">
                                         <strong>Status Reason</strong>
                                         <div class="form-group">
-                                        <input type="test" id="" name="" class="form-control" />
+                                        <input type="text" id="" name="" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-xs-6">
+                                        <strong>Hold Can Work On </strong>
+                                        <div class="form-group">
+                                            <select id="" name="" class="form-control form-control-line" >
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 col-xs-6">
+                                        <strong>Held For</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-xs-6">
@@ -335,6 +350,12 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
 ///////////////////////////////////////////////////////////////
 ?>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 col-xs-6">
+                                        <strong>Feedback</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="" class="form-control" />
                                         </div>
                                     </div>
                                 </div>                                
