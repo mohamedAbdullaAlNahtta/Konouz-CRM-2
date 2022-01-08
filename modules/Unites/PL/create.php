@@ -315,7 +315,7 @@ for ($i=0; $i < $FloorNameCount ; $i++) {
                                     <div class="col-md-3 col-xs-6">
                                         <strong>Unit Status</strong>
                                         <div class="form-group">
-                                            <select id="unitStatusform" name="Status_ID" class="form-control form-control-line" required>
+                                            <select id="unitStatusform" name="status_id" class="form-control form-control-line" required>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -333,13 +333,13 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
                                    <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form ">
                                         <strong>Status Reason</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="" class="form-control" />
+                                        <input type="text" id="" name="status_reason" class="form-control" />
                                         </div>
                                     </div>
                                     <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Hold Can Work On </strong>
                                         <div class="form-group">
-                                            <select id="" name="" class="form-control form-control-line " >
+                                            <select id="" name="Hold_can_work_on" class="form-control form-control-line " >
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
                                             </select>
@@ -348,13 +348,13 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
                                     <div id="Held-For" class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Held For</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="" class="form-control d" />
+                                        <input type="text" id="" name="Held_for" class="form-control d" />
                                         </div>
                                     </div>
                                     <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Approval Status </strong>
                                         <div class="form-group">
-                                            <select id="Approval-status-op" name="" class="form-control form-control-line" >
+                                            <select id="Approval-status-op" name="approval_status" class="form-control form-control-line" >
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -372,7 +372,7 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                     <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Approval Feedback</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="" class="form-control " />
+                                        <input type="text" id="" name="approval_feed_back" class="form-control " />
                                         </div>
                                     </div>
                                 </div>                                
