@@ -300,7 +300,7 @@ if (isset($module)) {
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="index?module=Developers">Developers</a></li>
                                 <li><a href="index?module=Projects">Projects</a></li>
-                                <li><a href="index?module=Broker&tableName=Broker&objecthome=true">Broker</a></li>
+                                <li><a href="index?module=Broker&tableName=brokers&objecthome=true">Broker</a></li>
                                 <li><a href="index?module=Unites">Units</a></li>
                                 <li><a href="index?module=Activities">Activities</a></li>
                                 <li>

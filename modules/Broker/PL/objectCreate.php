@@ -34,7 +34,7 @@ while ($row = $get_col_name->fetch_assoc())
 
 //php Creating a dynamic  query with PHP and MySQL
 $setColumnName = array(); 
-for ($i=0; $i < $col_count; $i++) { 
+for ($i=0; $i < $col_count-2; $i++) { 
     $setColumnName[] = "`".$columns[$i]."`";
 }
 $setColumnName = "(" . implode(", ", $setColumnName).")";
@@ -42,13 +42,13 @@ $setColumnName = "(" . implode(", ", $setColumnName).")";
 
 if (isset($_POST['submit'])) {
 
-    for ($i=1; $i < $col_count; $i++) { 
+    for ($i=1; $i < $col_count-2; $i++) { 
         $columnsNew[$i] = $_POST[$columns[$i]."_create"];
         $columnsNew[$i] = $database->escape_string($columnsNew[$i]);
     }
 
     $setValues = array(); 
-    for ($i=1; $i < $col_count; $i++) { 
+    for ($i=1; $i < $col_count-2; $i++) { 
         $setValues[] = "'".$columnsNew[$i]."'";
     }
     $setValues = "(NULL, " . implode(", ", $setValues).")";
@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-6 col-8 align-self-center">
-            <h3 class="text-themecolor m-b-0 m-t-0">Status Configuration</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0"><?php echo htmlentities($tableName); ?> Configuration</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
                 <li class="breadcrumb-item active">New <?php echo htmlentities($tableName); ?></li>
@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row">
         <div class="col-3">
-            <button onclick="location.href='index?module=Inventory.Conf&tableName=<?php echo $tableName?>&objecthome=true'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
+            <button onclick="location.href='index?module=broker&tableName=<?php echo $tableName?>&objecthome=true'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
         </div>
     </div>
     <br />
@@ -101,7 +101,7 @@ if (isset($_POST['submit'])) {
                     <h4 class="m-b-0 text-white">New <?php echo $tableName; ?></h4>
                 </div>
                 <div class="card-block">
-                    <form action="index?module=Broker&tableName=<?php echo $tableName; ?>&objectCreate=true" method="post">
+                    <form action="index?module=broker&tableName=<?php echo $tableName; ?>&objectCreate=true" method="post">
                         <div class="form-body">
                             <h3 class="card-title"><?php echo $tableName; ?> Info</h3>
 
@@ -112,7 +112,14 @@ for ($i=1; $i < $col_count ; $i++) {
     echo"<div class='col-md-3'>
     <div class='form-group'>";
     echo"<label class='control-label'>".$columns[$i]."</label>";
-    echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' required/>";
+    if ($columns[$i]==='Added By') {
+        echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' value='".$user_name."' disabled/>";
+    } elseif($columns[$i]==='Insertion Date') {
+        echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' value='".date("Y/m/d") ." ". date("h:i:a")."' disabled/>";
+    }else{
+        echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' required/>";
+    }
+    
     echo"<small class='form-control-feedback'>".$columns[$i]."....."."</small>";
     echo" </div>
     </div>";
@@ -122,7 +129,7 @@ for ($i=1; $i < $col_count ; $i++) {
                         </div>
                         <div class="form-actions">
                             <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
-                            <button type="button" onclick="location.href='index?module=Broker&tableName=<?php echo $tableName; ?>&objecthome=true'" class="btn btn-inverse">Cancel</button>
+                            <button type="button"  onclick="location.href='index?module=Broker&tableName=<?php echo $tableName; ?>&objecthome=true'" class="btn btn-inverse">Cancel</button>
                         </div>
                     </form>
                 </div>
