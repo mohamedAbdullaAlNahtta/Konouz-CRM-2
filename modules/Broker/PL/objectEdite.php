@@ -117,13 +117,24 @@ for ($row = 0;$row < $objectRowCount;$row++)
 {
     for ($col = 1;$col < $col_count;$col++)
     {
-    echo"<div class='col-md-3'>
-    <div class='form-group'>";
-    echo"<label class='control-label'>".$columns[$col]."</label>";
-    echo"<input type='text' name='".$columns[$col]."_edite"."' class='form-control' placeholder='".$objectdata[$row][$columns[$col]]."' value='".$objectdata[$row][$columns[$col]]."'/>";
-    echo"<small class='form-control-feedback'>".$columns[$col]."....."."</small>";
-    echo" </div>
-    </div>";
+        if ($columns[$col]==="Insertion Date"||$columns[$col]==="Added By") {
+            echo"<div class='col-md-3'>
+            <div class='form-group'>";
+            echo"<label class='control-label'>".$columns[$col]."</label>";
+            echo"<input type='text' name='".$columns[$col]."_edite"."' class='form-control' placeholder='".$objectdata[$row][$columns[$col]]."' value='".$objectdata[$row][$columns[$col]]."' disabled/>";
+            echo"<small class='form-control-feedback'>".$columns[$col]."....."."</small>";
+            echo" </div>
+            </div>";
+        } else {
+            echo"<div class='col-md-3'>
+            <div class='form-group'>";
+            echo"<label class='control-label'>".$columns[$col]."</label>";
+            echo"<input type='text' name='".$columns[$col]."_edite"."' class='form-control' placeholder='".$objectdata[$row][$columns[$col]]."' value='".$objectdata[$row][$columns[$col]]."'/>";
+            echo"<small class='form-control-feedback'>".$columns[$col]."....."."</small>";
+            echo" </div>
+            </div>";
+        }
+        
     }
 
 }
