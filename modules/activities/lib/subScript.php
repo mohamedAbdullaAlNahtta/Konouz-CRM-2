@@ -92,7 +92,7 @@
                 $(".formN").hide().parent().find("#Form1").show();
                 break;
             case "Model 2":
-                $(".formN").hide().parent().find("#Form2").show();
+                $(".formN").hide().parent().find("#Form2").hide();
                 break;
             case "Model 3":
                 $(".formN").parent().find("#Form2").show();

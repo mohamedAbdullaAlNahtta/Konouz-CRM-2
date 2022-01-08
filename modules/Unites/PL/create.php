@@ -313,13 +313,13 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
                                             </select>
                                         </div>
                                    </div>
-                                   <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form Status-Reason">
+                                   <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form ">
                                         <strong>Status Reason</strong>
                                         <div class="form-group">
                                         <input type="text" id="" name="" class="form-control" />
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-xs-6 dependent-form">
+                                    <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Hold Can Work On </strong>
                                         <div class="form-group">
                                             <select id="" name="" class="form-control form-control-line " >
@@ -328,7 +328,7 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-9 col-xs-6 dependent-form">
+                                    <div id="Held-For" class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Held For</strong>
                                         <div class="form-group">
                                         <input type="text" id="" name="" class="form-control d" />
@@ -353,7 +353,7 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-xs-6 dependent-form">
-                                        <strong>Feedback</strong>
+                                        <strong> Approval Feedback</strong>
                                         <div class="form-group">
                                         <input type="text" id="" name="" class="form-control " />
                                         </div>
