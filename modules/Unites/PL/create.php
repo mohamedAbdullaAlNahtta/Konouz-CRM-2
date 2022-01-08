@@ -62,6 +62,14 @@ if (isset($_POST['submit'])) {
     $Build_No = $database->escape_string($Build_No);
     $Project_ID = $database->escape_string($Project_ID);
     $floor_id = $database->escape_string($floor_id);
+
+    $status_id = $database->escape_string($status_id);
+    $status_reason = $database->escape_string($status_reason);
+    $Held_for = $database->escape_string($Held_for);
+    $Hold_can_work_on = $database->escape_string($Hold_can_work_on);
+    $approval_status = $database->escape_string($approval_status);
+    $approval_feed_back = $database->escape_string($approval_feed_back);
+
     $Raw_ID = $database->escape_string($Raw_ID);
     $Pos_ID = $database->escape_string($Pos_ID);
     $Unit_Area = $database->escape_string($Unit_Area);
@@ -86,13 +94,13 @@ if (isset($_POST['submit'])) {
       `usufruct_meter_price`, `Usufruct_Price`, `Net_Area`, `Load_Ratio`,
        `Status_ID`, `added_by`, `Creation_Date`, `last_update_on`,
         `maintenance_pct`, `finishing_level`, `Rooms_Desc`, `has_activity`,
-         `activity_id`,`Approval_Requested`) 
+         `activity_id`,`Status_ID`, `Status_Reason`, `Held_For`, `Hold_can_Workon`, `Approval_status`, `Approval_feedback`) 
    VALUES ('', '".$Unit_No."', '".$Build_No."', '".$Project_ID."', '".$floor_id."',
     '".$Raw_ID."', '".$Pos_ID."', '".$Unit_Area."', '".$Basic_Meter_Price."', '',
      '".$Roof_Area."', '".$Garden_Area."', '".$Open_terrace_Area."', '".$Usufruct_type."',
       ".$usufruct_meter_price.", '', '".$Net_Area."', '$Load_Ratio_new',
        '".$Status_ID."', '', current_timestamp(), current_timestamp(),
-        '', '".$finishing_level_new."', '".$Rooms_Desc."', '', NULL,'2')";
+        '', '".$finishing_level_new."', '".$Rooms_Desc."', '', NULL,)";
 
     $update_unit_data= $database->query($sql_in); 
 
