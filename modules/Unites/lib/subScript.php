@@ -289,21 +289,18 @@ window.setTimeout(function () {
                 $(".dependent-form").parent().find("#Held-For").show();
                 $(".dependent-form").parent().find("#Hold-Can-Work-On").show();
                 $(".dependent-form").parent().find("#Approval-status").show();
-                $(".dependent-form").parent().find("#Approval-feedback").hide();
                 break;
             case "5":
                 $(".dependent-form").parent().find("#Status-Reason").show();
                 $(".dependent-form").parent().find("#Held-For").hide();
                 $(".dependent-form").parent().find("#Hold-Can-Work-On").hide();
                 $(".dependent-form").parent().find("#Approval-status").show();
-                $(".dependent-form").parent().find("#Approval-feedback").hide();
                 break;
             case "6":
                 $(".dependent-form").parent().find("#Status-Reason").show();
                 $(".dependent-form").parent().find("#Held-For").hide();
                 $(".dependent-form").parent().find("#Hold-Can-Work-On").hide();
                 $(".dependent-form").parent().find("#Approval-status").show();
-                $(".dependent-form").parent().find("#Approval-feedback").hide();
                 break;
             case "3":
                 $(".dependent-form").hide().parent().find("#Status-Reason").hide();
@@ -328,16 +325,16 @@ window.setTimeout(function () {
                 break;
         }
     });
-    $("#Approval-status").change(function() {
+    $("#Approval-status-op").change(function() {
         switch($(this).val()){ 
             case "1":
-                $(".dependent-form").parent().find("#Approval-feedback").hide();
+                $("#Approval-feedback").hide();
                 break;
             case "2":
-                $(".dependent-form").parent().find("#Approval-feedback").show();
+                $("#Approval-feedback").show();
                 break;
             case "3":
-                $(".dependent-form").parent().find("#Approval-feedback").hide();
+                $("#Approval-feedback").hide();
                 break;
         }
     });

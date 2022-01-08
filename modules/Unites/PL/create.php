@@ -337,7 +337,7 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
                                     <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Approval Status </strong>
                                         <div class="form-group">
-                                            <select id="" name="" class="form-control form-control-line" >
+                                            <select id="Approval-status-op" name="" class="form-control form-control-line" >
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
