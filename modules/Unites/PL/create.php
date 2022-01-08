@@ -154,7 +154,7 @@ if (isset($_POST['submit'])) {
     
     if ($check_er->error_list["Error_count"]>0) {
         $unit_dml=$check_er->error_list["error_mes"];
-    }else{
+    }else {
         $unit_dml = true;
     }
 
