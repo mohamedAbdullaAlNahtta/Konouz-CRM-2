@@ -334,7 +334,7 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
                                         <input type="text" id="" name="" class="form-control d" />
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-xs-6 dependent-form">
+                                    <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Approval Status </strong>
                                         <div class="form-group">
                                             <select id="" name="" class="form-control form-control-line" >
@@ -352,7 +352,7 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-9 col-xs-6 dependent-form">
+                                    <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
                                         <strong> Approval Feedback</strong>
                                         <div class="form-group">
                                         <input type="text" id="" name="" class="form-control " />
