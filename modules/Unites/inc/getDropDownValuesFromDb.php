@@ -184,7 +184,7 @@ $basicpricesNameCount = $basic_prices_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all   Approval status
 /////////////////////////////////////////////////////////////
-$sql_get_approval_status= "SELECT `ID`, `Status` FROM `approval status`";
+$sql_get_approval_status= "SELECT `ID`, `Status` FROM `approval status` order by `ID` ASC";
 $approval_status_get= $database->query($sql_get_approval_status);
 
 $approvalStatusGetCount = $approval_status_get->num_rows;
