@@ -3,7 +3,6 @@
 ///////////////////////////////////////////////////////////////
 /// start of ---> getting Object details
 ///////////////////////////////////////////////////////////////
-$objectEditeId = $_GET['objectEditeId'];
 $tableName = $_GET['tableName'];
 // $_SESSION['tableName'] = $tableName;
 // $tableName =$_SESSION['tableName'];
@@ -27,16 +26,6 @@ while ($row = $get_col_name->fetch_assoc())
 }
 
 
-
-// getting table data
-$sql_get_table_data = "SELECT * FROM `{$tableName}` WHERE {$columns[0]}={$objectEditeId}";
-$get_table_data = $database->query($sql_get_table_data);
-$objectRowCount = $get_table_data->num_rows;
-
-//     // output data of each row into multidimension Array 
-for ($objectdata = array();$row = $get_table_data->fetch_array();$objectdata[] = $row);
-
-
 ///////////////////////////////////////////////////////////////
 /// start of ---> submitting form data to the database 
 ///////////////////////////////////////////////////////////////
@@ -44,23 +33,28 @@ for ($objectdata = array();$row = $get_table_data->fetch_array();$objectdata[] =
 
 
 //php Creating a dynamic  query with PHP and MySQL
+$setColumnName = array(); 
+for ($i=0; $i < $col_count; $i++) { 
+    $setColumnName[] = "`".$columns[$i]."`";
+}
+$setColumnName = "(" . implode(", ", $setColumnName).")";
 
 
 if (isset($_POST['submit'])) {
 
     for ($i=1; $i < $col_count; $i++) { 
-        $columnsNew[$i] = $_POST[$columns[$i]."_edite"];
+        $columnsNew[$i] = $_POST[$columns[$i]."_create"];
         $columnsNew[$i] = $database->escape_string($columnsNew[$i]);
     }
 
     $setValues = array(); 
     for ($i=1; $i < $col_count; $i++) { 
-        $setValues[] = "`".$columns[$i]."`='".$columnsNew[$i]."'";
+        $setValues[] = "'".$columnsNew[$i]."'";
     }
-    $setValues = "SET " . implode(", ", $setValues);
+    $setValues = "(NULL, " . implode(", ", $setValues).")";
 
 
-    $sql= "UPDATE `{$tableName}` {$setValues}  WHERE {$columns[0]}={$objectEditeId}";
+    $sql= "INSERT INTO `{$tableName}` {$setColumnName} VALUES {$setValues}";
     $object_dml= $database->query($sql); 
 
 } 
@@ -77,9 +71,9 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-6 col-8 align-self-center">
-            <h3 class="text-themecolor m-b-0 m-t-0"><?php echo htmlentities($tableName); ?> Configuration</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0">Status Configuration</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory </a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
                 <li class="breadcrumb-item active">New <?php echo htmlentities($tableName); ?></li>
             </ol>
         </div>
@@ -104,37 +98,31 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">Edite <?php echo htmlentities($tableName); ?></h4>
+                    <h4 class="m-b-0 text-white">New <?php echo $tableName; ?></h4>
                 </div>
                 <div class="card-block">
-                    <form action="index?module=Inventory.Conf&tableName=<?php echo $tableName; ?>&objectEditeId=<?php echo $objectEditeId; ?>" method="post">
+                    <form action="index?module=Broker&tableName=<?php echo $tableName; ?>&objectCreate=true" method="post">
                         <div class="form-body">
-                            <h3 class="card-title"><?php echo htmlentities($tableName); ?> Info</h3>
+                            <h3 class="card-title"><?php echo $tableName; ?> Info</h3>
 
                             <div class="row p-t-20">
-<?php
-for ($row = 0;$row < $objectRowCount;$row++)
-{
-    for ($col = 1;$col < $col_count;$col++)
-    {
+
+<?php 
+for ($i=1; $i < $col_count ; $i++) { 
     echo"<div class='col-md-3'>
     <div class='form-group'>";
-    echo"<label class='control-label'>".$columns[$col]."</label>";
-    echo"<input type='text' name='".$columns[$col]."_edite"."' class='form-control' placeholder='".$objectdata[$row][$columns[$col]]."' value='".$objectdata[$row][$columns[$col]]."'/>";
-    echo"<small class='form-control-feedback'>".$columns[$col]."....."."</small>";
+    echo"<label class='control-label'>".$columns[$i]."</label>";
+    echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' required/>";
+    echo"<small class='form-control-feedback'>".$columns[$i]."....."."</small>";
     echo" </div>
     </div>";
-    }
-
 }
-
 ?>
-
 
                         </div>
                         <div class="form-actions">
-                            <button type="submit" name="submit"  class="btn btn-success"><i class="fa fa-check"></i> Save </button>
-                            <button type="button" onclick="location.href='index?module=Inventory.Conf&tableName=<?php echo $tableName; ?>&objecthome=true'" class="btn btn-inverse">Cancel</button>
+                            <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
+                            <button type="button" onclick="location.href='index?module=Broker&tableName=<?php echo $tableName; ?>&objecthome=true'" class="btn btn-inverse">Cancel</button>
                         </div>
                     </form>
                 </div>

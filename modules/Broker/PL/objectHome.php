@@ -3,7 +3,6 @@
 ///////////////////////////////////////////////////////////////
 /// start of ---> getting Object details
 ///////////////////////////////////////////////////////////////
-$objectEditeId = $_GET['objectEditeId'];
 $tableName = $_GET['tableName'];
 // $_SESSION['tableName'] = $tableName;
 // $tableName =$_SESSION['tableName'];
@@ -26,47 +25,34 @@ while ($row = $get_col_name->fetch_assoc())
     $columns[] = $row["COLUMN_NAME"];
 }
 
-
-
 // getting table data
-$sql_get_table_data = "SELECT * FROM `{$tableName}` WHERE {$columns[0]}={$objectEditeId}";
+$sql_get_table_data = "SELECT * FROM `{$tableName}`";
 $get_table_data = $database->query($sql_get_table_data);
 $objectRowCount = $get_table_data->num_rows;
 
 //     // output data of each row into multidimension Array 
-for ($objectdata = array();$row = $get_table_data->fetch_array();$objectdata[] = $row);
+for ($objectdata = array();$row = $get_table_data->fetch_assoc();$objectdata[] = $row);
+
 
 
 ///////////////////////////////////////////////////////////////
-/// start of ---> submitting form data to the database 
+/// End of ---> getting Object details
 ///////////////////////////////////////////////////////////////
 
 
 
-//php Creating a dynamic  query with PHP and MySQL
+/////////////////////////////////////////////////////////////
+// start of ---> delete Object if requested
+/////////////////////////////////////////////////////////////
+if (isset($_GET['deleteObjectId'])) {
+    $deleteObjectId = $_GET['deleteObjectId'];
+    $sql_delete_object= "DELETE  FROM `{$tableName}` WHERE `{$columns[0]}`='".$deleteObjectId."'";
+    $object_delete= $database->query($sql_delete_object);
+}
+/////////////////////////////////////////////////////////////
+// End of ---> delete Object if requested
+/////////////////////////////////////////////////////////////
 
-
-if (isset($_POST['submit'])) {
-
-    for ($i=1; $i < $col_count; $i++) { 
-        $columnsNew[$i] = $_POST[$columns[$i]."_edite"];
-        $columnsNew[$i] = $database->escape_string($columnsNew[$i]);
-    }
-
-    $setValues = array(); 
-    for ($i=1; $i < $col_count; $i++) { 
-        $setValues[] = "`".$columns[$i]."`='".$columnsNew[$i]."'";
-    }
-    $setValues = "SET " . implode(", ", $setValues);
-
-
-    $sql= "UPDATE `{$tableName}` {$setValues}  WHERE {$columns[0]}={$objectEditeId}";
-    $object_dml= $database->query($sql); 
-
-} 
-///////////////////////////////////////////////////////////////
-/// End of ---> submitting form data to the database 
-///////////////////////////////////////////////////////////////
 
 ?>
 <!-- Container fluid  -->
@@ -77,72 +63,82 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-6 col-8 align-self-center">
-            <h3 class="text-themecolor m-b-0 m-t-0"><?php echo htmlentities($tableName); ?> Configuration</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0"><?php echo htmlentities($tableName); ?></h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory </a></li>
-                <li class="breadcrumb-item active">New <?php echo htmlentities($tableName); ?></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
+                <li class="breadcrumb-item active">All <?php echo htmlentities($tableName); ?> Configuration</li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
             <button class="right-side-toggle waves-effect waves-light btn-info btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+            <button onclick="location.href='index?module=Broker&tableName=<?php echo $tableName; ?>&objectCreate=true'" class="btn pull-right hidden-sm-down btn-success"><i class="mdi mdi-plus-circle"></i> Create</button>
         </div>
     </div>
     <!-- ============================================================== -->
     <!-- End Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- Start Page Content -->
+     <!-- Start Page Content -->
     <!-- ============================================================== -->
     <div class="row">
-        <div class="col-3">
-            <button onclick="location.href='index?module=Inventory.Conf&tableName=<?php echo $tableName?>&objecthome=true'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
-        </div>
-    </div>
-    <br />
-    <!-- ============================================================== -->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card card-outline-info">
-                <div class="card-header">
-                    <h4 class="m-b-0 text-white">Edite <?php echo htmlentities($tableName); ?></h4>
-                </div>
+        <div class="col-12">
+            <div class="card">
                 <div class="card-block">
-                    <form action="index?module=Inventory.Conf&tableName=<?php echo $tableName; ?>&objectEditeId=<?php echo $objectEditeId; ?>" method="post">
-                        <div class="form-body">
-                            <h3 class="card-title"><?php echo htmlentities($tableName); ?> Info</h3>
-
-                            <div class="row p-t-20">
+                    <h4 class="card-title">Data Export</h4>
+                    <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                    <div class="table-responsive m-t-40">
+                        <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    
 <?php
-for ($row = 0;$row < $objectRowCount;$row++)
+foreach ($columns as $coloumnName)
 {
-    for ($col = 1;$col < $col_count;$col++)
-    {
-    echo"<div class='col-md-3'>
-    <div class='form-group'>";
-    echo"<label class='control-label'>".$columns[$col]."</label>";
-    echo"<input type='text' name='".$columns[$col]."_edite"."' class='form-control' placeholder='".$objectdata[$row][$columns[$col]]."' value='".$objectdata[$row][$columns[$col]]."'/>";
-    echo"<small class='form-control-feedback'>".$columns[$col]."....."."</small>";
-    echo" </div>
-    </div>";
-    }
-
+    echo "<th>" . $coloumnName . "</th>";
 }
 
 ?>
+    
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+<?php
+foreach ($columns as $coloumnName)
+{
+    echo "<th>" . $coloumnName . "</th>";
+}
 
+?>
+    
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+<?php
+for ($row = 0;$row < $objectRowCount;$row++)
+{
+    echo "<tr>";
+    for ($col = 0;$col < $col_count;$col++)
+    {
+        echo "<td>" . $objectdata[$row][$columns[$col]] . "</td> ";
+    }
 
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" name="submit"  class="btn btn-success"><i class="fa fa-check"></i> Save </button>
-                            <button type="button" onclick="location.href='index?module=Inventory.Conf&tableName=<?php echo $tableName; ?>&objecthome=true'" class="btn btn-inverse">Cancel</button>
-                        </div>
-                    </form>
+    echo "<td>
+    <a href='index?module=Broker&tableName={$tableName}&objectEditeId=".$objectdata[$row][$columns[0]]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
+    <a href='index?module=Broker&tableName={$tableName}&objecthome=true&deleteObjectId=".$objectdata[$row][$columns[0]]."' data-toggle='tooltip' data-original-title='delete'> <i class='fa fa-trash'></i></a></td> </tr>";
+}
+
+?>
+                               
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Row -->
-
     <!-- ============================================================== -->
     <!-- End PAge Content -->
     <!-- ============================================================== -->

@@ -15,7 +15,7 @@ if (strlen($_SESSION['username']) == 0 && strlen($_SESSION['password']) == 0) {
 } else {
 
 
-    $database = new DB('localhost', $user_name, $user_pass, 'inventory');
+    $database = new DB('10.144.120.27', $user_name, $user_pass, 'inventory');
 
     if ($database->open_db_connection() !== true) {
         $_SESSION['errormsg'] = "Invalid User Name and Password";
@@ -300,6 +300,7 @@ if (isset($module)) {
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="index?module=Developers">Developers</a></li>
                                 <li><a href="index?module=Projects">Projects</a></li>
+                                <li><a href="index?module=Broker&tableName=Broker&objecthome=true">Broker</a></li>
                                 <li><a href="index?module=Unites">Units</a></li>
                                 <li><a href="index?module=Activities">Activities</a></li>
                                 <li>

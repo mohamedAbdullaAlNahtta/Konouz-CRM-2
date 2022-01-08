@@ -104,12 +104,12 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">Edite <?php echo htmlentities($tableName); ?></h4>
+                    <h4 class="m-b-0 text-white">New Status</h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=Inventory.Conf&tableName=<?php echo $tableName; ?>&objectEditeId=<?php echo $objectEditeId; ?>" method="post">
                         <div class="form-body">
-                            <h3 class="card-title"><?php echo htmlentities($tableName); ?> Info</h3>
+                            <h3 class="card-title">Status Info</h3>
 
                             <div class="row p-t-20">
 <?php

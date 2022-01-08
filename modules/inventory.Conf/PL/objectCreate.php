@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-6 col-8 align-self-center">
-            <h3 class="text-themecolor m-b-0 m-t-0">Status Configuration</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0"><?php echo htmlentities($tableName); ?> Configuration</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
                 <li class="breadcrumb-item active">New <?php echo htmlentities($tableName); ?></li>
@@ -98,12 +98,12 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">New Status</h4>
+                    <h4 class="m-b-0 text-white">New <?php echo htmlentities($tableName); ?></h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=Inventory.Conf&tableName=<?php echo $tableName; ?>&objectCreate=true" method="post">
                         <div class="form-body">
-                            <h3 class="card-title">Status Info</h3>
+                            <h3 class="card-title"><?php echo htmlentities($tableName); ?> Info</h3>
 
                             <div class="row p-t-20">
 
