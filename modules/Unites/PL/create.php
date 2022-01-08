@@ -11,6 +11,14 @@ if (isset($_POST['submit'])) {
     $Build_No = $_POST['Build_No'];
     $Project_ID = $_POST['Project_ID'];
     $floor_id = $_POST['floor_id'];
+
+    $status_id = $_POST['status_id'];
+    $status_reason = $_POST['status_reason'];
+    $Held_for = $_POST['Held_for'];
+    $Hold_can_work_on = $_POST['Hold_can_work_on'];
+    $approval_status = $_POST['approval_status'];
+    $approval_feed_back = $_POST['approval_feed_back'];
+
     $Raw_ID = $_POST['Raw_ID'];
     $Pos_ID = $_POST['Pos_ID'];
     $Unit_Area = $_POST['Unit_Area'];
@@ -353,7 +361,7 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                         </div>
                                     </div>
                                     <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
-                                        <strong> Approval Feedback</strong>
+                                        <strong>Approval Feedback</strong>
                                         <div class="form-group">
                                         <input type="text" id="" name="" class="form-control " />
                                         </div>
