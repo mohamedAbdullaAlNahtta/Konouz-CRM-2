@@ -52,7 +52,6 @@ if (isset($_POST['submit'])) {
     //$Usufruct_Price = $_POST['Usufruct_Price'];
     $Net_Area = $_POST['Net_Area'];
     $Load_Ratio_new = $_POST['Load_Ratio_new']/100;
-    $Status_ID = $_POST['Status_ID'];
     //$maintenance_pct = $_POST['maintenance_pct'];
     $finishing_level_new = $_POST['finishing_level'];
     $Rooms_Desc = $_POST['Rooms_Desc'];
@@ -83,7 +82,6 @@ if (isset($_POST['submit'])) {
     //$Usufruct_Price = $database->escape_string($Usufruct_Price);
     $Net_Area = $database->escape_string($Net_Area);
     $Load_Ratio_new = $database->escape_string($Load_Ratio_new);
-    $Status_ID = $database->escape_string($Status_ID);
     //$maintenance_pct = $database->escape_string($maintenance_pct);
     $finishing_level_new = $database->escape_string($finishing_level_new);
     $Rooms_Desc = $database->escape_string($Rooms_Desc);
@@ -92,16 +90,16 @@ if (isset($_POST['submit'])) {
     `Raw_ID`, `Pos_ID`, `Unit_Area`, `Basic_Meter_Price`, `Unit_Basic_Price`,
      `Roof_Area`, `Garden_Area`, `Open_terrace_Area`, `Usufruct_type`,
       `usufruct_meter_price`, `Usufruct_Price`, `Net_Area`, `Load_Ratio`,
-       `Status_ID`, `added_by`, `Creation_Date`, `last_update_on`,
+        `added_by`, `Creation_Date`, `last_update_on`,
         `maintenance_pct`, `finishing_level`, `Rooms_Desc`, `has_activity`,
-         `activity_id`,`Status_ID`, `Status_Reason`, `Held_For`, `Hold_can_Workon`, `Approval_status`, `Approval_feedback`) 
+         `activity_id`,`Status_ID`, `Status_Reason`, `Held_For`, `Hold_can_Workon`, `Approval_status`, `Approval_feedback`, `Approval_Requested`) 
    VALUES ('', '".$Unit_No."', '".$Build_No."', '".$Project_ID."', '".$floor_id."',
     '".$Raw_ID."', '".$Pos_ID."', '".$Unit_Area."', '".$Basic_Meter_Price."', '',
      '".$Roof_Area."', '".$Garden_Area."', '".$Open_terrace_Area."', '".$Usufruct_type."',
       ".$usufruct_meter_price.", '', '".$Net_Area."', '$Load_Ratio_new',
-       '".$Status_ID."', '', current_timestamp(), current_timestamp(),
+        '', current_timestamp(), current_timestamp(),
         '', '".$finishing_level_new."', '".$Rooms_Desc."', '', NULL, '".$status_id."', '".$status_reason."', '".$Held_for."',
-         '".$Hold_can_work_on."', '".$approval_status."', '".$approval_feed_back."')";
+         '".$Hold_can_work_on."', '".$approval_status."', '".$approval_feed_back."', '1')";
 
     $update_unit_data= $database->query($sql_in); 
 
