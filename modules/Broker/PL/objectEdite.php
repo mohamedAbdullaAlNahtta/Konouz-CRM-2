@@ -104,7 +104,7 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">New Status</h4>
+                    <h4 class="m-b-0 text-white">New <?php echo htmlentities($tableName); ?></h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=broker&tableName=<?php echo $tableName; ?>&objectEditeId=<?php echo $objectEditeId; ?>" method="post">
