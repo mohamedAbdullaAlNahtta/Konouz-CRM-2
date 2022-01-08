@@ -1,6 +1,6 @@
 <!-- Favicon icon -->
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon.ico">
-<title>Inventory Configuration</title>
+<title><?php echo "Broker"; ?></title>
 <!--alerts CSS -->
 <link href="assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
 <!-- Bootstrap Core CSS -->

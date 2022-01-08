@@ -109,23 +109,53 @@ if (isset($_POST['submit'])) {
 
 <?php 
 for ($i=1; $i < $col_count ; $i++) { 
-    echo"<div class='col-md-3'>
-    <div class='form-group'>";
-    echo"<label class='control-label'>".$columns[$i]."</label>";
+    
     if ($columns[$i]==='Added By') {
+        echo"<div class='col-md-3'>
+        <div class='form-group'>";
+        echo"<label class='control-label'>".$columns[$i]."</label>";
         echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' value='".$user_name."' disabled/>";
+        echo"<small class='form-control-feedback'>".$columns[$i]."....."."</small>";
+        echo" </div>
+        </div>";
     } elseif($columns[$i]==='Insertion Date') {
+        echo"<div class='col-md-3'>
+        <div class='form-group'>";
+        echo"<label class='control-label'>".$columns[$i]."</label>";
         echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' value='".date("Y/m/d") ." ". date("h:i:a")."' disabled/>";
-    }else{
+        echo"<small class='form-control-feedback'>".$columns[$i]."....."."</small>";
+        echo" </div>
+        </div>";
+    }elseif($columns[$i]!=='Type'){
+        echo"<div class='col-md-3'>
+        <div class='form-group'>";
+        echo"<label class='control-label'>".$columns[$i]."</label>";
         echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' required/>";
+        echo"<small class='form-control-feedback'>".$columns[$i]."....."."</small>";
+        echo" </div>
+        </div>";
     }
     
-    echo"<small class='form-control-feedback'>".$columns[$i]."....."."</small>";
-    echo" </div>
-    </div>";
 }
 ?>
-
+                                    <div class="col-md-4 col-xs-6">
+                                        <strong>Type</strong>
+                                        <div class="form-group">
+                                            <select id="myselect" name="Type_create" class="form-control form-control-line" required>
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $BrokerTypeCount ; $i++) { 
+    echo "<option value='".$Broker_Type_all["ID"][$i]."' >".$Broker_Type_all["Broker_Type"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>   
+                                            </select>
+                                        </div>
+                                    </div>
                         </div>
                         <div class="form-actions">
                             <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
