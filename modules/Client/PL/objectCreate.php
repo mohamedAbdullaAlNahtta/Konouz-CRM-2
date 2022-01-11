@@ -138,24 +138,7 @@ for ($i=1; $i < $col_count ; $i++) {
     
 }
 ?>
-                                    <div class="col-md-4 col-xs-6">
-                                        <strong>Type</strong>
-                                        <div class="form-group">
-                                            <select id="myselect" name="Type_create" class="form-control form-control-line" required>
-<?php
-///////////////////////////////////////////////////////////////
-/// Start of ------> 
-///////////////////////////////////////////////////////////////
-for ($i=0; $i < $BrokerTypeCount ; $i++) { 
-    echo "<option value='".$Broker_Type_all["ID"][$i]."' >".$Broker_Type_all["Broker_Type"][$i]."</option>";
-}
-///////////////////////////////////////////////////////////////
-/// End of of ------> 
-///////////////////////////////////////////////////////////////
-?>   
-                                            </select>
-                                        </div>
-                                    </div>
+
                         </div>
                         <div class="form-actions">
                             <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
