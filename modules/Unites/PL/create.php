@@ -120,19 +120,19 @@ if (isset($_POST['submit'])) {
     $Model= $upFile->do_upload($Model, "units/");
 
     $sql_prepar_attachment_table ="INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
-    VALUES (NULL, '".$uId."', 'Layout With dimensions', NULL);
+    VALUES (NULL, '".$uId."', 'Layout With dimensions', '".$Layout_With_dimensions[1]."');
     INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
-    VALUES (NULL, '".$uId."', 'Layout Without dimensions', NULL);
+    VALUES (NULL, '".$uId."', 'Layout Without dimensions', '".$Layout_Without_dimensions[1]."');
     INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
-    VALUES (NULL, '".$uId."', 'Parking', NULL);
+    VALUES (NULL, '".$uId."', 'Parking', '".$Parking[1]."');
     INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
-    VALUES (NULL, '".$uId."', 'Model', NULL);";
+    VALUES (NULL, '".$uId."', 'Model', '".$Model[1]."');";
     $update_sql_prepar_attachment_table= $database->multi_query($sql_prepar_attachment_table); 
 
-    $sql_attachment="UPDATE `attachements` SET `File Location`='".$Layout_With_dimensions[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Layout With dimensions';
-    UPDATE `attachements` SET `File Location`='".$Layout_Without_dimensions[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Layout Without dimensions';
-    UPDATE `attachements` SET `File Location`='".$Parking[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Parking';
-    UPDATE `attachements` SET `File Location`='".$Model[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Model';";
+    // $sql_attachment="UPDATE `attachements` SET `File Location`='".$Layout_With_dimensions[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Layout With dimensions';
+    // UPDATE `attachements` SET `File Location`='".$Layout_Without_dimensions[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Layout Without dimensions';
+    // UPDATE `attachements` SET `File Location`='".$Parking[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Parking';
+    // UPDATE `attachements` SET `File Location`='".$Model[1]."' WHERE `Unit ID`='".$uId."' AND `File Name`='Model';";
 
     // $sql_attachment="INSERT INTO `attachements` (`ATTID`, `Unit_ID`, `FileName`, `FileLocation`) 
     // VALUES (NULL, '".$uId."', 'Layout With dimensions', '".$Layout_With_dimensions[1]."');
@@ -147,7 +147,7 @@ if (isset($_POST['submit'])) {
 
     // checking errors 
     $check_er = new errors_info();
-    $actions_in_array_for_check=array($Layout_With_dimensions, $Layout_Without_dimensions, $Parking, $Model, $update_atta_data, $update_unit_data);
+    $actions_in_array_for_check=array($Layout_With_dimensions, $Layout_Without_dimensions, $Parking, $Model,$update_sql_prepar_attachment_table, $update_unit_data);
     $check_er->multi_check_if_there_error($actions_in_array_for_check);
     
     if ($check_er->error_list["Error_count"]>0) {

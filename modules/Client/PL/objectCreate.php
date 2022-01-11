@@ -43,7 +43,7 @@ $setColumnName = "(" . implode(", ", $setColumnName).")";
 if (isset($_POST['submit'])) {
 
     for ($i=1; $i < $col_count; $i++) { 
-        $columnsNew[$i] = $_POST[$columns[$i]."_create"];
+        $columnsNew[$i] = (string) $_POST[$columns[$i]];
         $columnsNew[$i] = $database->escape_string($columnsNew[$i]);
     }
 
@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
         <div class="col-md-6 col-8 align-self-center">
             <h3 class="text-themecolor m-b-0 m-t-0"><?php echo htmlentities($tableName); ?> Configuration</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory <?php echo $sql; ?></a></li>
                 <li class="breadcrumb-item active">New <?php echo htmlentities($tableName); ?></li>
             </ol>
         </div>
@@ -98,7 +98,7 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">New <?php echo $tableName; ?></h4>
+                    <h4 class="m-b-0 text-white">New <?php echo $tableName; var_dump($_POST['First Name']); ?></h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=Client&tableName=<?php echo $tableName; ?>&objectCreate=true" method="post">
@@ -110,27 +110,27 @@ if (isset($_POST['submit'])) {
 <?php 
 for ($i=1; $i < $col_count ; $i++) { 
     
-    if ($columns[$i]==='Added By') {
+    if ($columns[$i]==='National ID Issue Date') {
         echo"<div class='col-md-3'>
         <div class='form-group'>";
         echo"<label class='control-label'>".$columns[$i]."</label>";
-        echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' value='".$user_name."' disabled/>";
-        echo"<small class='form-control-feedback'>".$columns[$i]."....."."</small>";
+        echo"<input type='text' pattern='\d{4}-\d{1,2}-\d{1,2}' placeholder='0000-00-00' name='".$columns[$i]."' class='form-control'  />";
+        echo"<small class='form-control-feedback'>Y-M-D example: 2020-2-22..</small>";
         echo" </div>
         </div>";
-    } elseif($columns[$i]==='Insertion Date') {
+    } elseif($columns[$i]==='National ID Valid To') {
         echo"<div class='col-md-3'>
         <div class='form-group'>";
         echo"<label class='control-label'>".$columns[$i]."</label>";
-        echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' value='".date("Y/m/d") ." ". date("h:i:a")."' disabled/>";
-        echo"<small class='form-control-feedback'>".$columns[$i]."....."."</small>";
+        echo"<input type='text' pattern='\d{4}-\d{1,2}-\d{1,2}' placeholder='0000-00-00' name='".$columns[$i]."' class='form-control'  />";
+        echo"<small class='form-control-feedback'>Y-M-D example: 2020-2-22..</small>";
         echo" </div>
         </div>";
-    }elseif($columns[$i]!=='Type'){
+    }else{
         echo"<div class='col-md-3'>
         <div class='form-group'>";
         echo"<label class='control-label'>".$columns[$i]."</label>";
-        echo"<input type='text' name='".$columns[$i]."_create"."' class='form-control' required/>";
+        echo"<input type='text' name='".$columns[$i]."' class='form-control' />";
         echo"<small class='form-control-feedback'>".$columns[$i]."....."."</small>";
         echo" </div>
         </div>";
