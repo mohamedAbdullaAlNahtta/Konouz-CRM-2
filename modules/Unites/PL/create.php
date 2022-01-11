@@ -314,17 +314,13 @@ for ($i=0; $i < $FloorNameCount ; $i++) {
                                         <strong>Unit Status</strong>
                                         <div class="form-group">
                                             <select id="unitStatusform" name="status_id" class="form-control form-control-line" required>
-<?php
-///////////////////////////////////////////////////////////////
-/// Start of ------> 
-///////////////////////////////////////////////////////////////
-for ($i=0; $i < $StatusNameCount ; $i++) { 
-    echo "<option value='".$Status_name["Status_ID"][$i]."' >".$Status_name["status_Name"][$i]."</option>";
-}
-///////////////////////////////////////////////////////////////
-/// End of of ------> 
-///////////////////////////////////////////////////////////////
-?> 
+                                                <option value="2">Available</option>
+                                                <option value="4">Hold</option>
+                                                <!-- <option value="7">On Sale</option>
+                                                <option value="3">Reserved</option>
+                                                <option value="8">Sold</option> -->
+                                                <option value="6">Restricted</option>
+                                                <option value="5">Un-Available</option>
                                             </select>
                                         </div>
                                    </div>

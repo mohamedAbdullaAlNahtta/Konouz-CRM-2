@@ -115,7 +115,7 @@ $unitDetailsID = $_GET['unitId'];
     }
         
 
-  $sql_get_attachement_file="SELECT `FileName`, `FileLocation` FROM `attachements` WHERE `Unit_ID`='".$unitDetailsID."' ORDER BY `FileName` ASC";
+  $sql_get_attachement_file="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$unitDetailsID."' ORDER BY `File Name` ASC";
   $units_all_attachement_file = $database->query($sql_get_attachement_file);
 
   $unitsAttachementFileCount = $units_all_attachement_file->num_rows;
@@ -123,8 +123,8 @@ $unitDetailsID = $_GET['unitId'];
   if($unitsAttachementFileCount>0){
 
     while($row = $units_all_attachement_file->fetch_assoc()) {
-        $FileName[] = $row["FileName"]; 
-        $FileLocation[] = $row["FileLocation"]; 
+        $FileName[] = $row["File Name"]; 
+        $FileLocation[] = $row["File Location"]; 
       }
      $attachement_files= array("FileName"=>$FileName, "FileLocation"=>$FileLocation);
 

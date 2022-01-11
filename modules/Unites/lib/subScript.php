@@ -297,25 +297,22 @@ window.setTimeout(function () {
                 $(".dependent-form").parent().find("#Approval-status").show();
                 break;
             case "3":
-                $(".dependent-form").hide().parent().find("#Status-Reason").hide();
-                $(".dependent-form").hide().parent().find("#Held-For").hide();
-                $(".dependent-form").hide().parent().find("#Hold-Can-Work-On").hide();
-                $(".dependent-form").hide().parent().find("#Approval-status").hide();
-                $(".dependent-form").hide().parent().find("#Approval-feedback").hide();
+                $(".dependent-form").parent().find("#Status-Reason").show();
+                $(".dependent-form").parent().find("#Held-For").hide();
+                $(".dependent-form").parent().find("#Hold-Can-Work-On").hide();
+                $(".dependent-form").parent().find("#Approval-status").show();
                 break;
             case "7":
-                $(".dependent-form").hide().parent().find("#Status-Reason").hide();
-                $(".dependent-form").hide().parent().find("#Held-For").hide();
-                $(".dependent-form").hide().parent().find("#Hold-Can-Work-On").hide();
-                $(".dependent-form").hide().parent().find("#Approval-status").hide();
-                $(".dependent-form").hide().parent().find("#Approval-feedback").hide();
+                $(".dependent-form").parent().find("#Status-Reason").show();
+                $(".dependent-form").parent().find("#Held-For").hide();
+                $(".dependent-form").parent().find("#Hold-Can-Work-On").hide();
+                $(".dependent-form").parent().find("#Approval-status").show();
                 break;
             case "8":
-                $(".dependent-form").hide().parent().find("#Status-Reason").hide();
-                $(".dependent-form").hide().parent().find("#Held-For").hide();
-                $(".dependent-form").hide().parent().find("#Hold-Can-Work-On").hide();
-                $(".dependent-form").hide().parent().find("#Approval-status").hide();
-                $(".dependent-form").hide().parent().find("#Approval-feedback").hide();
+                $(".dependent-form").parent().find("#Status-Reason").show();
+                $(".dependent-form").parent().find("#Held-For").hide();
+                $(".dependent-form").parent().find("#Hold-Can-Work-On").hide();
+                $(".dependent-form").parent().find("#Approval-status").show();
                 break;
         }
     });
