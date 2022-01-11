@@ -1,0 +1,38 @@
+<?php
+
+
+/////////////////////////
+// loading module screen
+/////////////////////////
+
+if (isset($_GET['objectCreate']))
+{
+    // getDropDownValuesFromDb
+    require_once __DIR__ . "/inc/getDropDownValuesFromDb.php";
+    //loading create page
+    require_once ("PL/objectCreate.php");
+}
+elseif (isset($_GET['objectEditeId']))
+{
+    // getDropDownValuesFromDb
+    require_once __DIR__ . "/inc/getDropDownValuesFromDb.php";
+    ///loading project details
+    require_once ("PL/objectEdite.php");
+}
+
+elseif (isset($_GET['objecthome']))
+{
+    //...
+    require_once ("PL/objectHome.php");
+}
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+
+
+?>

@@ -289,18 +289,14 @@ if (isset($module)) {
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">Main</li>
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="index?module=home">Dashboard</a></li>
-                                <li><a href="index?module=Dashboard">Awesome Dashboard</a></li>
-                            </ul>
+                            <a href="index?module=home"><i class="mdi mdi-gauge"></i>Dashboard </a>
                         </li>
+                        <li><a href="index?module=Developers">Developers</a></li>
+                        <li><a href="index?module=Projects">Projects</a></li>
+                        <li><a href="index?module=Broker&tableName=brokers&objecthome=true">Broker</a></li>
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Inventory</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="index?module=Developers">Developers</a></li>
-                                <li><a href="index?module=Projects">Projects</a></li>
-                                <li><a href="index?module=Broker&tableName=brokers&objecthome=true">Broker</a></li>
                                 <li><a href="index?module=Unites">Units</a></li>
                                 <li><a href="index?module=Activities">Activities</a></li>
                                 <li>
