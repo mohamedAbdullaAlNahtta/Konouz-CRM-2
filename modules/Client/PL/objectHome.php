@@ -71,7 +71,7 @@ if (isset($_GET['deleteObjectId'])) {
         </div>
         <div class="col-md-6 col-4 align-self-center">
             <button class="right-side-toggle waves-effect waves-light btn-info btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
-            <button onclick="location.href='index?module=Broker&tableName=<?php echo $tableName; ?>&objectCreate=true'" class="btn pull-right hidden-sm-down btn-success"><i class="mdi mdi-plus-circle"></i> Create</button>
+            <button onclick="location.href='index?module=Client&tableName=<?php echo $tableName; ?>&objectCreate=true'" class="btn pull-right hidden-sm-down btn-success"><i class="mdi mdi-plus-circle"></i> Create</button>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -105,9 +105,9 @@ foreach ($columns as $coloumnName)
                             <tfoot>
                                 <tr>
 <?php
-foreach ($columns as $coloumnName)
+for($x = 0; $x < 5; $x++)
 {
-    echo "<th>" . $coloumnName . "</th>";
+    echo "<th>" . $columns[$x] . "</th>";
 }
 
 ?>
@@ -120,14 +120,14 @@ foreach ($columns as $coloumnName)
 for ($row = 0;$row < $objectRowCount;$row++)
 {
     echo "<tr>";
-    for ($col = 0;$col < $col_count;$col++)
+    for ($col = 0;$col < 5;$col++)
     {
         echo "<td>" . $objectdata[$row][$columns[$col]] . "</td> ";
     }
 
     echo "<td>
-    <a href='index?module=Broker&tableName={$tableName}&objectEditeId=".$objectdata[$row][$columns[0]]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
-    <a href='index?module=Broker&tableName={$tableName}&objecthome=true&deleteObjectId=".$objectdata[$row][$columns[0]]."' data-toggle='tooltip' data-original-title='delete'> <i class='fa fa-trash'></i></a></td> </tr>";
+    <a href='index?module=Client&tableName={$tableName}&objectEditeId=".$objectdata[$row][$columns[0]]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
+    <a href='index?module=Client&tableName={$tableName}&objecthome=true&deleteObjectId=".$objectdata[$row][$columns[0]]."' data-toggle='tooltip' data-original-title='delete'> <i class='fa fa-trash'></i></a></td> </tr>";
 }
 
 ?>
