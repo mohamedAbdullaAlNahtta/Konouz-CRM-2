@@ -293,6 +293,7 @@ if (isset($module)) {
                         </li>
                         <li><a href="index?module=Developers">Developers</a></li>
                         <li><a href="index?module=Projects">Projects</a></li>
+                        <li><a href="index?module=Client&tableName=Client&objecthome=true">Broker</a></li>
                         <li><a href="index?module=Broker&tableName=brokers&objecthome=true">Broker</a></li>
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Inventory</span></a>
