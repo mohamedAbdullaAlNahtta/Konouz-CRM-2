@@ -120,7 +120,7 @@ $EditeunitId = $_GET['EditeunitId'];
   $unitsAttachementFileCount = $units_all_attachement_file->num_rows;
 
   /////////////////////////////////////////////////////////////
-  $sql_get_Layout_With_dimensions="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Layout With dimensions' ORDER BY `FileName` ASC";
+  $sql_get_Layout_With_dimensions="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Layout With dimensions' ORDER BY `File Name` ASC";
   $units_get_Layout_With_dimensions = $database->query($sql_get_Layout_With_dimensions);
 
   $units_get_Layout_With_dimensionsCount = $units_get_Layout_With_dimensions->num_rows;
@@ -128,12 +128,12 @@ $EditeunitId = $_GET['EditeunitId'];
   if($units_get_Layout_With_dimensionsCount>0){
 
     while($row = $units_get_Layout_With_dimensions->fetch_assoc()) {
-        $Layout_With_dimensions_FileLocation = $row["File Name"]; 
+        $Layout_With_dimensions_FileLocation = $row["File Location"]; 
       }
 
   }
   ///////////////////////////////////////////////////////////////
-  $sql_get_Layout_Without_dimensions="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Layout Without dimensions' ORDER BY `FileName` ASC";
+  $sql_get_Layout_Without_dimensions="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Layout Without dimensions' ORDER BY `File Name` ASC";
   $units_get_Layout_Without_dimensions = $database->query($sql_get_Layout_Without_dimensions);
   $units_get_Layout_Without_dimensionsCount = $units_get_Layout_Without_dimensions->num_rows;
 
@@ -145,7 +145,7 @@ $EditeunitId = $_GET['EditeunitId'];
 
   }
 ////////////////////////////////////////////////////////////////////
-  $sql_get_Model="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Model' ORDER BY `FileName` ASC";
+  $sql_get_Model="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Model' ORDER BY `File Name` ASC";
   $units_get_Model = $database->query($sql_get_Model);
 
   $units_get_ModelCount = $units_get_Model->num_rows;
@@ -156,7 +156,7 @@ $EditeunitId = $_GET['EditeunitId'];
       }
   }
   ////////////////////////////////////////////////////////////////////////
-  $sql_get_Parking="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Parking' ORDER BY `FileName` ASC";
+  $sql_get_Parking="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Parking' ORDER BY `File Name` ASC";
   $units_get_Parking = $database->query($sql_get_Parking);
   $units_get_ParkingCount = $units_get_Parking->num_rows;
   if($units_get_ParkingCount>0){
@@ -541,7 +541,7 @@ for ($i=0; $i < $unitPositionNameCount ; $i++) {
                                             <strong><span class="label label-info">Basic Meter Price</span></strong>
                                         </h3>
                                         <div class="form-group">
-                                        <select id="myselect" name="Basic_Meter_Price_edite" class="form-control form-control-line" required>
+                                        <select id="myselect" name="Basic_Meter_Price_edite" class="form-control form-control-line" >
                                                 <option value="<?php echo htmlentities($Basic_Meter_Price_ID); ?>"><?php echo htmlentities($Basic_Meter_Price); ?></option>
 <?php
 ///////////////////////////////////////////////////////////////
