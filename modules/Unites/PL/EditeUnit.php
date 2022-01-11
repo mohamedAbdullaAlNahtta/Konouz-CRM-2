@@ -120,7 +120,7 @@ $EditeunitId = $_GET['EditeunitId'];
   $unitsAttachementFileCount = $units_all_attachement_file->num_rows;
 
   /////////////////////////////////////////////////////////////
-  $sql_get_Layout_With_dimensions="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit_ID`='".$EditeunitId."' and `File Name`='Layout With dimensions' ORDER BY `FileName` ASC";
+  $sql_get_Layout_With_dimensions="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Layout With dimensions' ORDER BY `FileName` ASC";
   $units_get_Layout_With_dimensions = $database->query($sql_get_Layout_With_dimensions);
 
   $units_get_Layout_With_dimensionsCount = $units_get_Layout_With_dimensions->num_rows;
@@ -133,7 +133,7 @@ $EditeunitId = $_GET['EditeunitId'];
 
   }
   ///////////////////////////////////////////////////////////////
-  $sql_get_Layout_Without_dimensions="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit_ID`='".$EditeunitId."' and `File Name`='Layout Without dimensions' ORDER BY `FileName` ASC";
+  $sql_get_Layout_Without_dimensions="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Layout Without dimensions' ORDER BY `FileName` ASC";
   $units_get_Layout_Without_dimensions = $database->query($sql_get_Layout_Without_dimensions);
   $units_get_Layout_Without_dimensionsCount = $units_get_Layout_Without_dimensions->num_rows;
 
@@ -145,7 +145,7 @@ $EditeunitId = $_GET['EditeunitId'];
 
   }
 ////////////////////////////////////////////////////////////////////
-  $sql_get_Model="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit_ID`='".$EditeunitId."' and `File Name`='Model' ORDER BY `FileName` ASC";
+  $sql_get_Model="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Model' ORDER BY `FileName` ASC";
   $units_get_Model = $database->query($sql_get_Model);
 
   $units_get_ModelCount = $units_get_Model->num_rows;
@@ -156,7 +156,7 @@ $EditeunitId = $_GET['EditeunitId'];
       }
   }
   ////////////////////////////////////////////////////////////////////////
-  $sql_get_Parking="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit_ID`='".$EditeunitId."' and `File Name`='Parking' ORDER BY `FileName` ASC";
+  $sql_get_Parking="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Parking' ORDER BY `FileName` ASC";
   $units_get_Parking = $database->query($sql_get_Parking);
   $units_get_ParkingCount = $units_get_Parking->num_rows;
   if($units_get_ParkingCount>0){
