@@ -92,9 +92,9 @@ if (isset($_GET['deleteObjectId'])) {
                                 <tr>
                                     
 <?php
-foreach ($columns as $coloumnName)
+for($x = 0; $x < 5; $x++)
 {
-    echo "<th>" . $coloumnName . "</th>";
+    echo "<th>" . $columns[$x] . "</th>";
 }
 
 ?>
