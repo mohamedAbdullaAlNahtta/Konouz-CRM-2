@@ -1,3 +1,42 @@
+<?php
+///////////////////////////////////////////////////////////////
+/// start of ---> delete developer if requested 
+///////////////////////////////////////////////////////////////
+if (isset($_GET['deleteDeveloperId'])) {
+
+    $deleteactivityid = $_GET['deleteactivityid'];
+    $sql_delete_act= "DELETE  FROM `activites` WHERE `Activity_ID`='".$deleteactivityid."'";
+    $activity_delete= $database->query($sql_delete_dev); 
+
+} 
+///////////////////////////////////////////////////////////////
+/// End of ---> delete developer if requested 
+///////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////
+/// start of ---> getting developer details 
+///////////////////////////////////////////////////////////////
+ $sql= "SELECT `Activity_ID`, `Unit_ID`, `Seller_Account`, `CST_NID` FROM `activites` ORDER BY `ID` DESC";
+ $activities_all= $database->query($sql);
+
+ $activityCount = $activities_all->num_rows;
+
+    // output data of each row
+    while($row = $activities_all->fetch_assoc()) {
+      $Activity_ID[] = $row["Activity_ID"];
+      $Unit_ID[] = $row["Unit_ID"];
+      $Seller_Account[] = $row["Seller_Account"];
+      $CST_NID[] = $row["CST_NID"];
+    }
+
+
+  $activities= array("Activity_ID"=>$Activity_ID, "Activity_ID"=>$Activity_ID, "Seller_Account"=>$Seller_Account,
+   "CST_NID"=>$CST_NID);
+///////////////////////////////////////////////////////////////
+/// End of ---> getting developer details 
+///////////////////////////////////////////////////////////////
+
+?>
 <!-- Container fluid  -->
 <!-- ============================================================== -->
 <div class="container-fluid">
