@@ -1,6 +1,6 @@
 <!-- Favicon icon -->
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon.ico">
-<title><?php echo "Broker"; ?></title>
+<title><?php echo "Clients"; ?></title>
 <!--alerts CSS -->
 <link href="assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
 <!-- Bootstrap Core CSS -->
