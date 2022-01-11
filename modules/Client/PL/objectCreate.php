@@ -34,7 +34,7 @@ while ($row = $get_col_name->fetch_assoc())
 
 //php Creating a dynamic  query with PHP and MySQL
 $setColumnName = array(); 
-for ($i=0; $i < $col_count-2; $i++) { 
+for ($i=0; $i < $col_count; $i++) { 
     $setColumnName[] = "`".$columns[$i]."`";
 }
 $setColumnName = "(" . implode(", ", $setColumnName).")";
@@ -42,13 +42,13 @@ $setColumnName = "(" . implode(", ", $setColumnName).")";
 
 if (isset($_POST['submit'])) {
 
-    for ($i=1; $i < $col_count-2; $i++) { 
+    for ($i=1; $i < $col_count; $i++) { 
         $columnsNew[$i] = $_POST[$columns[$i]."_create"];
         $columnsNew[$i] = $database->escape_string($columnsNew[$i]);
     }
 
     $setValues = array(); 
-    for ($i=1; $i < $col_count-2; $i++) { 
+    for ($i=1; $i < $col_count; $i++) { 
         $setValues[] = "'".$columnsNew[$i]."'";
     }
     $setValues = "(NULL, " . implode(", ", $setValues).")";
