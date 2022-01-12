@@ -15,7 +15,52 @@ $tableName = $_GET['tableName'];
 
 if (isset($_POST['submit'])) {
 
-  
+    $First_Name_create = $_POST['First_Name_create'];
+    $Middle_Name_create = $_POST['Middle_Name_create'];
+    $Last_Name_create = $_POST['Last_Name_create'];
+    $ch_id_create = $_POST['ch_id_create'];
+    $Mobile1_create = $_POST['Mobile1_create'];
+    $Mobile2_create = $_POST['Mobile2_create'];
+    $email_create = $_POST['email_create'];
+    $National_ID_create = $_POST['National_ID_create'];
+    $National_ID_Issue_Date_create = $_POST['National_ID_Issue_Date_create'];
+    $National_ID_Valid_To_create = $_POST['National_ID_Valid_To_create'];
+    $nationality_create = $_POST['nationality_create'];
+    $Job_Title_create = $_POST['Job_Title_create'];
+    $Employer_create = $_POST['Employer_create'];
+    $Building_No_create = $_POST['Building_No_create'];
+    $street_create = $_POST['street_create'];
+    $zone_create = $_POST['zone_create'];
+    $governorate_create = $_POST['governorate_create'];
+    
+    // escaping variables
+    $First_Name_create = $database->escape_string($First_Name_create);
+    $Middle_Name_create = $database->escape_string($Middle_Name_create);
+    $Last_Name_create = $database->escape_string($Last_Name_create);
+    $ch_id_create = $database->escape_string($ch_id_create);
+    $Mobile1_create = $database->escape_string($Mobile1_create);
+    $Mobile2_create = $database->escape_string($Mobile2_create);
+    $email_create = $database->escape_string($email_create);
+    $National_ID_create = $database->escape_string($National_ID_create);
+    $National_ID_Issue_Date_create = $database->escape_string($National_ID_Issue_Date_create);
+    $National_ID_Valid_To_create = $database->escape_string($National_ID_Valid_To_create);
+    $nationality_create = $database->escape_string($nationality_create);
+    $Job_Title_create = $database->escape_string($Job_Title_create);
+    $Employer_create = $database->escape_string($Employer_create);
+    $Building_No_create = $database->escape_string($Building_No_create);
+    $street_create = $database->escape_string($street_create);
+    $zone_create = $database->escape_string($zone_create);
+    $governorate_create = $database->escape_string($governorate_create);
+
+    // casting dates for my sql 
+    $National_ID_Issue_Date_create   = explode("/",$National_ID_Issue_Date_create);
+    $National_ID_Issue_Date_create    = $National_ID_Issue_Date_create[2]."-".$National_ID_Issue_Date_create[0]."-".$National_ID_Issue_Date_create[1];
+    $National_ID_Issue_Date_create= strval($National_ID_Issue_Date_create);
+
+    $National_ID_Valid_To_create   = explode("/",$National_ID_Valid_To_create);
+    $National_ID_Valid_To_create    = $National_ID_Valid_To_create[2]."-".$National_ID_Valid_To_create[0]."-".$National_ID_Valid_To_create[1];
+    $National_ID_Valid_To_create= strval($National_ID_Valid_To_create);
+
 
 
     $sql= "INSERT INTO `clients` (`ID`, `First Name`, `National ID`, `Mobile1`, `Email`, `Middle Name`,
