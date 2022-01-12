@@ -7,54 +7,23 @@ $tableName = $_GET['tableName'];
 // $_SESSION['tableName'] = $tableName;
 // $tableName =$_SESSION['tableName'];
 
-// getting colomn count
-$sql_get_col_count = "SELECT count(*) FROM information_schema.`COLUMNS` c WHERE TABLE_NAME = '{$tableName}'";
-$get_col_count = $database->query($sql_get_col_count);
-
-while ($row = $get_col_count->fetch_array())
-{
-    $col_count = (int)$row[0];
-}
-
-// getting colomn Names
-$sql_get_col_name = "SELECT COLUMN_NAME FROM information_schema.`COLUMNS` c WHERE TABLE_NAME = '{$tableName}'";
-$get_col_name = $database->query($sql_get_col_name);
-
-while ($row = $get_col_name->fetch_assoc())
-{
-    $columns[] = $row["COLUMN_NAME"];
-}
-
 
 ///////////////////////////////////////////////////////////////
 /// start of ---> submitting form data to the database 
 ///////////////////////////////////////////////////////////////
 
 
-
-//php Creating a dynamic  query with PHP and MySQL
-$setColumnName = array(); 
-for ($i=0; $i < $col_count; $i++) { 
-    $setColumnName[] = "`".$columns[$i]."`";
-}
-$setColumnName = "(" . implode(", ", $setColumnName).")";
-
-
 if (isset($_POST['submit'])) {
 
-    for ($i=1; $i < $col_count; $i++) { 
-        $columnsNew[$i] = (string) $_POST[$columns[$i]];
-        $columnsNew[$i] = $database->escape_string($columnsNew[$i]);
-    }
-
-    $setValues = array(); 
-    for ($i=1; $i < $col_count; $i++) { 
-        $setValues[] = "'".$columnsNew[$i]."'";
-    }
-    $setValues = "(NULL, " . implode(", ", $setValues).")";
+  
 
 
-    $sql= "INSERT INTO `{$tableName}` {$setColumnName} VALUES {$setValues}";
+    $sql= "INSERT INTO `clients` (`ID`, `First Name`, `National ID`, `Mobile1`, `Email`, `Middle Name`,
+     `Last Name`, `ch_id`, `nationality`, `Job Title`, `Employer`, `National ID Issue Date`,
+      `National ID Valid To`, `Building No`, `street`, `zone`, `governorate`, `Mobile 2`)
+       VALUES (NULL, 'Ahmed', '12345678907654', '01093001072', 'moh@moh.com', 'Ahmed', 'Ahmed',
+        NULL, 'egyption', 'manger', 'ahmed', '2022-01-10', '2026-01-10', '32', 'ads', 'dasddas',
+         'cairo', '01093001234');";
     $object_dml= $database->query($sql); 
 
 } 
@@ -98,58 +67,152 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">New <?php echo $tableName; var_dump($_POST['First Name']); ?></h4>
+                    <h4 class="m-b-0 text-white">New Client</h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=Client&tableName=<?php echo $tableName; ?>&objectCreate=true" method="post">
                         <div class="form-body">
-                            <h3 class="card-title"><?php echo $tableName; ?> Info</h3>
-
+                            <h3 class="card-title">Client Information </h3>
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"></label>
-                                        <input type="text" placeholder="0000-00-00" name="First_Name_create" class="form-control" />
+                                        <label class="control-label"> First Name</label>
+                                        <input type="text"  name="First_Name_create" class="form-control" required/>
                                         <small class="form-control-feedback"> Example Jhone....</small>
                                     </div>
                                 </div>
-                                <hr>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Middle  Name</label>
+                                        <input type="text"  name="Middle_Name_create" class="form-control" required/>
+                                        <small class="form-control-feedback"> Example adam....</small>
+                                    </div>
                                 </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Lats Name</label>
+                                        <input type="text"  name="Last_Name_create" class="form-control" required/>
+                                        <small class="form-control-feedback"> Example smith....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Source Channel</label>
+                                        <input type="text"  name="ch_id_create" class="form-control" disabled/>
+                                        <small class="form-control-feedback"> Example Facebook Lead....</small>
+                                    </div>
+                                </div>
+                            </div>
+                                <h3 class="box-title m-t-40">Contact Info</h3>
                             <div class="row p-t-20">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> 1st Mobile Number</label>
+                                        <input type="number"  name="Mobile1_create" class="form-control" required/>
+                                        <small class="form-control-feedback"> Example 01093002345....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> 2nd Mobile Number</label>
+                                        <input type="number"  name="Mobile2_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example 01132332856....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Email</label>
+                                        <input type="text"  name="email_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example smith@yahoo.com....</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row p-t-20">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> National ID</label>
+                                        <input type="text"  name="National_ID_create" class="form-control" required/>
+                                        <small class="form-control-feedback">Must be 14 Digits Example 28767....etc</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> National ID Issue Date</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy"  name="National_ID_Issue_Date_create" required/>
+                                                <span class="input-group-addon"><i class="icon-calender"></i></span>
+                                            </div>
+                                        <small class="form-control-feedback"> mm/dd/yyyy example: 3/22/2022..</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> National ID Valid To</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy"  name="National_ID_Valid_To_create" required/>
+                                                <span class="input-group-addon"><i class="icon-calender"></i></span>
+                                            </div>
+                                        <small class="form-control-feedback"> mm/dd/yyyy example: 3/22/2022..</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Nationality</label>
+                                        <input type="text"  name="nationality_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example Egyption....</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="box-title m-t-40">Job Info</h3>
+                            <div class="row p-t-20">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Job Title</label>
+                                        <input type="text"  name="Job_Title_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example Manager....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Employer Name</label>
+                                        <input type="text"  name="Employer_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example Ezz Steel....</small>
+                                    </div>
+                                </div>
 
-
-<?php 
-for ($i=1; $i < $col_count ; $i++) { 
-    
-    if ($columns[$i]==='National ID Issue Date') {
-        echo"<div class='col-md-3'>
-        <div class='form-group'>";
-        echo"<label class='control-label'>".$columns[$i]."</label>";
-        echo"<input type='text' pattern='\d{4}-\d{1,2}-\d{1,2}' placeholder='0000-00-00' name='".$columns[$i]."' class='form-control'  />";
-        echo"<small class='form-control-feedback'>Y-M-D example: 2020-2-22..</small>";
-        echo" </div>
-        </div>";
-    } elseif($columns[$i]==='National ID Valid To') {
-        echo"<div class='col-md-3'>
-        <div class='form-group'>";
-        echo"<label class='control-label'>".$columns[$i]."</label>";
-        echo"<input type='text' pattern='\d{4}-\d{1,2}-\d{1,2}' placeholder='0000-00-00' name='".$columns[$i]."' class='form-control'  />";
-        echo"<small class='form-control-feedback'>Y-M-D example: 2020-2-22..</small>";
-        echo" </div>
-        </div>";
-    }else{
-        echo"<div class='col-md-3'>
-        <div class='form-group'>";
-        echo"<label class='control-label'>".$columns[$i]."</label>";
-        echo"<input type='text' name='".$columns[$i]."' class='form-control' />";
-        echo"<small class='form-control-feedback'>".$columns[$i]."....."."</small>";
-        echo" </div>
-        </div>";
-    }
-    
-}
-?>
-
+                            </div>
+                            <h3 class="box-title m-t-40">Address Info</h3>
+                            <div class="row p-t-20">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Building No</label>
+                                        <input type="number"  name="Building_No_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example 34....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Street Name</label>
+                                        <input type="text"  name="street_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example saad zaghlol street....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Zone </label>
+                                        <input type="text"  name="zone_create" class="form-control" />
+                                        <small class="form-control-feedback">....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Governorate </label>
+                                        <input type="text"  name="governorate_create" class="form-control" />
+                                        <small class="form-control-feedback">Example Cairo....</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-actions">
                             <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>

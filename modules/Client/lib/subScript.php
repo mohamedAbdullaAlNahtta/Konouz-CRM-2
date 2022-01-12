@@ -23,6 +23,37 @@
 <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+
+ <!-- Plugins for this page -->
+    <!-- ============================================================== -->
+    <!-- Plugin JavaScript -->
+    <script src="assets/plugins/moment/moment.js"></script>
+    <!-- Clock Plugin JavaScript -->
+    <script src="assets/plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <!-- Color Picker Plugin JavaScript -->
+    <script src="assets/plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="assets/plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="assets/plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <!-- Date Picker Plugin JavaScript -->
+    <script src="assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <!-- Date range Plugin JavaScript -->
+    <script src="assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script>
+    // Date Picker
+    jQuery('.mydatepicker, #datepicker').datepicker();
+    jQuery('#datepicker-autoclose').datepicker({
+        autoclose: true,
+        todayHighlight: true
+    });
+    jQuery('#date-range').datepicker({
+        toggleActive: true
+    });
+    jQuery('#datepicker-inline').datepicker({
+        todayHighlight: true
+    });
+   
+    </script>
 <!-- end - This is for export functionality only -->
 <script>
     $(document).ready(function () {

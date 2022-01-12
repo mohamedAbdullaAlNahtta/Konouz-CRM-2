@@ -1,12 +1,21 @@
 <!-- Favicon icon -->
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon.ico">
-<title><?php echo "Clients"; ?></title>
+<title>Clients</title>
 <!--alerts CSS -->
 <link href="assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
 <!-- Bootstrap Core CSS -->
 <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="css/style.css" rel="stylesheet">
+<!-- Page plugins css -->
+<link href="assets/plugins/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet">
+    <!-- Color picker plugins css -->
+    <link href="assets/plugins/jquery-asColorPicker-master/css/asColorPicker.css" rel="stylesheet">
+    <!-- Date picker plugins css -->
+    <link href="assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <!-- Daterange picker plugins css -->
+    <link href="assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 <style>
     .table td{
         border-color: #000
