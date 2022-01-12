@@ -66,9 +66,9 @@ if (isset($_POST['submit'])) {
     $sql= "INSERT INTO `clients` (`ID`, `First Name`, `National ID`, `Mobile1`, `Email`, `Middle Name`,
      `Last Name`, `ch_id`, `nationality`, `Job Title`, `Employer`, `National ID Issue Date`,
       `National ID Valid To`, `Building No`, `street`, `zone`, `governorate`, `Mobile 2`)
-       VALUES (NULL, 'Ahmed', '12345678907654', '01093001072', 'moh@moh.com', 'Ahmed', 'Ahmed',
-        NULL, 'egyption', 'manger', 'ahmed', '2022-01-10', '2026-01-10', '32', 'ads', 'dasddas',
-         'cairo', '01093001234');";
+       VALUES (NULL, '".$First_Name_create."', '".$National_ID_create."', '".$Mobile1_create."', '".$email_create."', '".$Middle_Name_create."',
+        '".$Last_Name_create."','".$ch_id_create."', '".$nationality_create."', '".$Job_Title_create."', '".$Employer_create."', '".$National_ID_Issue_Date_create."',
+         '".$National_ID_Valid_To_create."', '".$Building_No_create."', '".$street_create."', '".$zone_create."', '".$governorate_create."', '".$Mobile2_create."');";
     $object_dml= $database->query($sql); 
 
 } 
