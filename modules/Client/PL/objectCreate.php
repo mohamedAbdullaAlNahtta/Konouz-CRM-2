@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
      `Last Name`, `ch_id`, `nationality`, `Job Title`, `Employer`, `National ID Issue Date`,
       `National ID Valid To`, `Building No`, `street`, `zone`, `governorate`, `Mobile 2`)
        VALUES (NULL, '".$First_Name_create."', '".$National_ID_create."', '".$Mobile1_create."', '".$email_create."', '".$Middle_Name_create."',
-        '".$Last_Name_create."','".$ch_id_create."', '".$nationality_create."', '".$Job_Title_create."', '".$Employer_create."', '".$National_ID_Issue_Date_create."',
+        '".$Last_Name_create."',NULL, '".$nationality_create."', '".$Job_Title_create."', '".$Employer_create."', '".$National_ID_Issue_Date_create."',
          '".$National_ID_Valid_To_create."', '".$Building_No_create."', '".$street_create."', '".$zone_create."', '".$governorate_create."', '".$Mobile2_create."');";
     $object_dml= $database->query($sql); 
 
@@ -87,8 +87,8 @@ if (isset($_POST['submit'])) {
         <div class="col-md-6 col-8 align-self-center">
             <h3 class="text-themecolor m-b-0 m-t-0"><?php echo htmlentities($tableName); ?> Configuration</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory <?php echo $sql; ?></a></li>
-                <li class="breadcrumb-item active">New <?php echo htmlentities($tableName); ?></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)"> </a></li>
+                <li class="breadcrumb-item active">New Client</li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
@@ -122,28 +122,28 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> First Name</label>
-                                        <input type="text"  name="First_Name_create" class="form-control" required/>
+                                        <input type="text"   name="First_Name_create" class="form-control" required/>
                                         <small class="form-control-feedback"> Example Jhone....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Middle  Name</label>
-                                        <input type="text"  name="Middle_Name_create" class="form-control" required/>
-                                        <small class="form-control-feedback"> Example adam....</small>
+                                        <input type="text"   name="Middle_Name_create" class="form-control" required/>
+                                        <small class="form-control-feedback"> Example Adam....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Lats Name</label>
-                                        <input type="text"  name="Last_Name_create" class="form-control" required/>
+                                        <input type="text"   name="Last_Name_create" class="form-control" required/>
                                         <small class="form-control-feedback"> Example smith....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Source Channel</label>
-                                        <input type="text"  name="ch_id_create" class="form-control" disabled/>
+                                        <input type="text" placeholder="Facebook Lead" name="ch_id_create" class="form-control" disabled/>
                                         <small class="form-control-feedback"> Example Facebook Lead....</small>
                                     </div>
                                 </div>
@@ -160,14 +160,14 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> 2nd Mobile Number</label>
-                                        <input type="number"  name="Mobile2_create" class="form-control" />
+                                        <input type="number" placeholder="01132332856"  name="Mobile2_create" class="form-control" />
                                         <small class="form-control-feedback"> Example 01132332856....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Email</label>
-                                        <input type="text"  name="email_create" class="form-control" />
+                                        <input type="text"   name="email_create" class="form-control" />
                                         <small class="form-control-feedback"> Example smith@yahoo.com....</small>
                                     </div>
                                 </div>
@@ -177,7 +177,7 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> National ID</label>
-                                        <input type="text"  name="National_ID_create" class="form-control" required/>
+                                        <input type="text"   name="National_ID_create" class="form-control" required/>
                                         <small class="form-control-feedback">Must be 14 Digits Example 28767....etc</small>
                                     </div>
                                 </div>
@@ -204,7 +204,7 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Nationality</label>
-                                        <input type="text"  name="nationality_create" class="form-control" />
+                                        <input type="text"   name="nationality_create" class="form-control" />
                                         <small class="form-control-feedback"> Example Egyption....</small>
                                     </div>
                                 </div>
@@ -214,14 +214,14 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Job Title</label>
-                                        <input type="text"  name="Job_Title_create" class="form-control" />
+                                        <input type="text"   name="Job_Title_create" class="form-control" />
                                         <small class="form-control-feedback"> Example Manager....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Employer Name</label>
-                                        <input type="text"  name="Employer_create" class="form-control" />
+                                        <input type="text"   name="Employer_create" class="form-control" />
                                         <small class="form-control-feedback"> Example Ezz Steel....</small>
                                     </div>
                                 </div>
@@ -239,21 +239,50 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Street Name</label>
-                                        <input type="text"  name="street_create" class="form-control" />
+                                        <input type="text"   name="street_create" class="form-control" />
                                         <small class="form-control-feedback"> Example saad zaghlol street....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Zone </label>
-                                        <input type="text"  name="zone_create" class="form-control" />
+                                        <input type="text"   name="zone_create" class="form-control" />
                                         <small class="form-control-feedback">....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Governorate </label>
-                                        <input type="text"  name="governorate_create" class="form-control" />
+                                        <select id="Location" name="governorate_create" class="form-control form-control-line" required>
+                                            <option value="">Select Governorate</option>
+                                            <option value="Alexandria"> Alexandria </option>
+                                            <option value="Aswan"> Aswan </option>
+                                            <option value="Asyut"> Asyut </option>
+                                            <option value="Beheira"> Beheira </option>
+                                            <option value="Beni Suef"> Beni Suef </option>
+                                            <option value="Cairo"> Cairo </option>
+                                            <option value="Dakahlia"> Dakahlia </option>
+                                            <option value="Damietta"> Damietta </option>
+                                            <option value="Faiyum"> Faiyum </option>
+                                            <option value="Gharbia"> Gharbia </option>
+                                            <option value="Giza"> Giza </option>
+                                            <option value="Ismailia"> Ismailia </option>
+                                            <option value="Kafr El Sheikh"> Kafr El Sheikh </option>
+                                            <option value="Luxor"> Luxor </option>
+                                            <option value="Matruh"> Matruh </option>
+                                            <option value="Minya"> Minya </option>
+                                            <option value="Monufia"> Monufia </option>
+                                            <option value="New Valley"> New Valley </option>
+                                            <option value="North Sinai"> North Sinai </option>
+                                            <option value="Port Said"> Port Said </option>
+                                            <option value="Qalyubia"> Qalyubia </option>
+                                            <option value="Qena"> Qena </option>
+                                            <option value="Red Sea"> Red Sea </option>
+                                            <option value="Sharqia"> Sharqia </option>
+                                            <option value="Sohag"> Sohag </option>
+                                            <option value="South Sinai"> South Sinai </option>
+                                            <option value="Suez"> Suez </option>
+                                        </select>
                                         <small class="form-control-feedback">Example Cairo....</small>
                                     </div>
                                 </div>
