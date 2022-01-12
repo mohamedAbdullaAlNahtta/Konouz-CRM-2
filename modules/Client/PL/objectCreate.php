@@ -106,6 +106,17 @@ if (isset($_POST['submit'])) {
                             <h3 class="card-title"><?php echo $tableName; ?> Info</h3>
 
                             <div class="row p-t-20">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"></label>
+                                        <input type="text" placeholder="0000-00-00" name="First_Name_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example Jhone....</small>
+                                    </div>
+                                </div>
+                                <hr>
+                                </div>
+                            <div class="row p-t-20">
+
 
 <?php 
 for ($i=1; $i < $col_count ; $i++) { 
