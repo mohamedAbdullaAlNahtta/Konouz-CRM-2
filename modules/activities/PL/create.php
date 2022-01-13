@@ -84,7 +84,13 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">  Usufruct Meter Price </label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="10010" placeholder="110" disabled/>
+                                                        <input type="number" id="" name="unit_id" class="form-control" value="10010" placeholder="110" disabled/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Usufruct Area </label>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="10010" placeholder="110" required/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -259,6 +265,23 @@
                                         <h3>Installment Info </h3>
                                         <div class="row">
                                             <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Maintenance Feest %</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Interest %</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <hr>
+                                        <div class="row">   
+                                            <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Garage Requested</label>                                                    
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
@@ -269,6 +292,30 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
+                                                    <label class="control-label">Installment Discount %</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Installment Years</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 years for example </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Other Discount % </label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <hr>
+                                        <div class="row">     
+                                            <div class="col-md-3">
+                                                <div class="form-group">
                                                     <label class="control-label">Annual Payment Amount</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                     <small class="form-control-feedback">For Example : 300 LE.... </small>
@@ -276,11 +323,20 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Annual With Rate</label>
+                                                    <label class="control-label">Down Payment Amount</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">For Example : 30000 LE.... </small>
+                                                    <small class="form-control-feedback">3000 LE for Example.... </small>
                                                 </div>
                                             </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Receiving Payment Amount</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <hr>
+                                        <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual Payment %</label>
@@ -290,56 +346,87 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Down Payment Amount</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <label class="control-label">Down Payment %</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                </div>
+                                            </div> 
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Receiving Payment %</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <hr>
+                                        <div class="row">       
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Annual With Rate</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">For Example : 30000 LE.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Down Payment After Interest</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                     <small class="form-control-feedback">3000 LE for Example.... </small>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Down Payment %</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 mean 3%.... </small>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="control-label">Installment Years</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 years for example </small>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="control-label">Intrest %</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                    <label class="control-label">Installment Amount</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Intrest Amount</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                     <small class="form-control-feedback">2000 LE for Example.... </small>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Maintenance Feest %</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                    <label class="control-label">Meter Price After Interest </label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Down Payment %</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                    <label class="control-label">Meter Price With Discount </label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Receiving Payment Amount After Interest</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Remaining Amount</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Total Discout Amount</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Total Price After Interest</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <hr>
                                             <div class="form-actions">
-                                                <button name="submit" class="btn btn-success"><i class="fa fa-check"></i> Calculate</button>
+                                                <button name="submit" class="btn btn-success"><i class="mdi mdi-calculator"></i> Calculate</button>
                                                 <button type="button" onclick="location.href='index?module=Activities'" class="btn btn-inverse">Cancel</button>
                                             </div>
                                     
