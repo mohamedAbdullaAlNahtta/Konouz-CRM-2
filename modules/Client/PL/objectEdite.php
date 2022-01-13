@@ -5,36 +5,70 @@
 ///////////////////////////////////////////////////////////////
 $objectEditeId = $_GET['objectEditeId'];
 $tableName = $_GET['tableName'];
-// $_SESSION['tableName'] = $tableName;
-// $tableName =$_SESSION['tableName'];
-
-// getting colomn count
-$sql_get_col_count = "SELECT count(*) FROM information_schema.`COLUMNS` c WHERE TABLE_NAME = '{$tableName}'";
-$get_col_count = $database->query($sql_get_col_count);
-
-while ($row = $get_col_count->fetch_array())
-{
-    $col_count = (int)$row[0];
-}
-
-// getting colomn Names
-$sql_get_col_name = "SELECT COLUMN_NAME FROM information_schema.`COLUMNS` c WHERE TABLE_NAME = '{$tableName}'";
-$get_col_name = $database->query($sql_get_col_name);
-
-while ($row = $get_col_name->fetch_assoc())
-{
-    $columns[] = $row["COLUMN_NAME"];
-}
-
 
 
 // getting table data
-$sql_get_table_data = "SELECT * FROM `{$tableName}` WHERE {$columns[0]}={$objectEditeId}";
-$get_table_data = $database->query($sql_get_table_data);
-$objectRowCount = $get_table_data->num_rows;
+$sql_get_table_data = "SELECT `First Name`,
+ `National ID`,
+ `Mobile1`, 
+ `Email`,
+ `Middle Name`,
+ `Last Name`,
+ `ch_id`,
+ `nationality`,
+ `Job Title`, 
+ `Employer`, 
+ `National ID Issue Date`, 
+ `National ID Valid To`, 
+ `Building No`, 
+ `street`, 
+ `zone`, 
+ `governorate`, 
+ `Mobile 2`  
+ FROM `clients` WHERE `ID`={$objectEditeId}";
 
-//     // output data of each row into multidimension Array 
-for ($objectdata = array();$row = $get_table_data->fetch_array();$objectdata[] = $row);
+$get_table_data = $database->query($sql_get_table_data);
+$clientRowCount = $get_table_data->num_rows;
+
+while($row = $get_table_data->fetch_assoc()) {
+    $First_Name = $row["First Name"];
+    $Middle_Name = $row["Middle Name"];
+    $Last_Name = $row["Last Name"];
+    $ch_id = $row["ch_id"];
+    $Mobile1 = $row["Mobile1"];
+    $Mobile2 = $row["Mobile 2"];
+    $Email = $row["Email"];
+    $National_ID = $row["National ID"];
+    $National_ID_Issue_Date = $row["National ID Issue Date"];
+    $National_ID_Valid_To = $row["National ID Valid To"];
+    $nationality = $row["nationality"];
+    $Job_Title = $row["Job Title"];
+    $Employer = $row["Employer"];
+    $Building_No = $row["Building No"];
+    $streets = $row["street"];
+    $zone = $row["zone"];
+    $governorate = $row["governorate"];
+  }
+
+// $clientdata = array("First_Name"=>$First_Name, 
+// "Middle_Name"=>$Middle_Name, 
+// "Last_Name"=>$Last_Name, 
+// "ch_id"=>$ch_id, 
+// "Mobile1"=>$Mobile1, 
+// "Mobile2"=>$Mobile2, 
+// "Email"=>$Email, 
+// "National_ID"=>$National_ID, 
+// "National_ID_Issue_Date"=>$National_ID_Issue_Date, 
+// "National_ID_Valid_To"=>$National_ID_Valid_To, 
+// "nationality"=>$nationality, 
+// "Job_Title"=>$Job_Title, 
+// "Employer"=>$Employer,
+// "Building_No"=>$Building_No, 
+// "streets"=>$streets, 
+// "zone"=>$zone, 
+// "governorate"=>$governorate, 
+// "DevID"=>$DevID, );
+
 
 
 ///////////////////////////////////////////////////////////////
@@ -77,10 +111,10 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-6 col-8 align-self-center">
-            <h3 class="text-themecolor m-b-0 m-t-0"><?php echo htmlentities($tableName); ?> Configuration</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0">Client Configuration</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory </a></li>
-                <li class="breadcrumb-item active">New <?php echo htmlentities($tableName); ?></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
+                <li class="breadcrumb-item active">Edite Client</li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
@@ -104,34 +138,182 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">New <?php echo htmlentities($tableName); ?></h4>
+                    <h4 class="m-b-0 text-white">Edite Client</h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=Client&tableName=<?php echo $tableName; ?>&objectEditeId=<?php echo $objectEditeId; ?>" method="post">
                         <div class="form-body">
-                            <h3 class="card-title"><?php echo $tableName; ?> Info</h3>
+                            <h3 class="card-title"> Client Info </h3>
 
                             <div class="row p-t-20">
-<?php
-for ($row = 0;$row < $objectRowCount;$row++)
-{
-    for ($col = 1;$col < $col_count;$col++)
-    {
-            echo"<div class='col-md-3'>
-            <div class='form-group'>";
-            echo"<label class='control-label'>".$columns[$col]."</label>";
-            echo"<input type='text' name='".$columns[$col]."_edite"."' class='form-control' placeholder='".$objectdata[$row][$columns[$col]]."' value='".$objectdata[$row][$columns[$col]]."'/>";
-            echo"<small class='form-control-feedback'>".$columns[$col]."....."."</small>";
-            echo" </div>
-            </div>";
-        
-    }
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> First Name</label>
+                                        <input type="text"  name="First_Name_edite" value="<?php echo htmlentities($First_Name)?>" placeholder="<?php echo htmlentities($First_Name)?>" class="form-control" />
+                                        <small class="form-control-feedback"> Example Jhone....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Middle  Name</label>
+                                        <input type="text" name="Middle_Name_edite" value="<?php echo htmlentities($Middle_Name)?>" placeholder="<?php echo htmlentities($Middle_Name)?>" class="form-control" />
+                                        <small class="form-control-feedback"> Example Adam....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Last Name</label>
+                                        <input type="text" name="Last_Name_edite" value="<?php echo htmlentities($Last_Name)?>" placeholder="<?php echo htmlentities($Last_Name)?>" class="form-control" />
+                                        <small class="form-control-feedback"> Example smith....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Source Channel</label>
+                                        <input type="text" placeholder="Facebook Lead" name="ch_id_create" class="form-control" disabled/>
+                                        <small class="form-control-feedback"> Example Facebook Lead....</small>
+                                    </div>
+                                </div>
+                            </div>
+                                <h3 class="box-title m-t-40">Contact Info</h3>
+                            <div class="row p-t-20">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> 1st Mobile Number</label>
+                                        <input type="number"  name="Mobile1_create" class="form-control" required/>
+                                        <small class="form-control-feedback"> Example 01093002345....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> 2nd Mobile Number</label>
+                                        <input type="number" placeholder="01132332856"  name="Mobile2_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example 01132332856....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Email</label>
+                                        <input type="text"   name="email_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example smith@yahoo.com....</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row p-t-20">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> National ID</label>
+                                        <input type="text"   name="National_ID_create" class="form-control" required/>
+                                        <small class="form-control-feedback">Must be 14 Digits Example 28767....etc</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> National ID Issue Date</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy"  name="National_ID_Issue_Date_create" required/>
+                                                <span class="input-group-addon"><i class="icon-calender"></i></span>
+                                            </div>
+                                        <small class="form-control-feedback"> mm/dd/yyyy example: 3/22/2022..</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> National ID Valid To</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy"  name="National_ID_Valid_To_create" required/>
+                                                <span class="input-group-addon"><i class="icon-calender"></i></span>
+                                            </div>
+                                        <small class="form-control-feedback"> mm/dd/yyyy example: 3/22/2022..</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Nationality</label>
+                                        <input type="text"   name="nationality_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example Egyption....</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="box-title m-t-40">Job Info</h3>
+                            <div class="row p-t-20">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Job Title</label>
+                                        <input type="text"   name="Job_Title_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example Manager....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Employer Name</label>
+                                        <input type="text"   name="Employer_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example Ezz Steel....</small>
+                                    </div>
+                                </div>
 
-}
-
-?>
-
-
+                            </div>
+                            <h3 class="box-title m-t-40">Address Info</h3>
+                            <div class="row p-t-20">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Building No</label>
+                                        <input type="number"  name="Building_No_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example 34....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Street Name</label>
+                                        <input type="text"   name="street_create" class="form-control" />
+                                        <small class="form-control-feedback"> Example saad zaghlol street....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Zone </label>
+                                        <input type="text"   name="zone_create" class="form-control" />
+                                        <small class="form-control-feedback">....</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Governorate </label>
+                                        <select id="Location" name="governorate_create" class="form-control form-control-line" required>
+                                            <option value="">Select Governorate</option>
+                                            <option value="Alexandria"> Alexandria </option>
+                                            <option value="Aswan"> Aswan </option>
+                                            <option value="Asyut"> Asyut </option>
+                                            <option value="Beheira"> Beheira </option>
+                                            <option value="Beni Suef"> Beni Suef </option>
+                                            <option value="Cairo"> Cairo </option>
+                                            <option value="Dakahlia"> Dakahlia </option>
+                                            <option value="Damietta"> Damietta </option>
+                                            <option value="Faiyum"> Faiyum </option>
+                                            <option value="Gharbia"> Gharbia </option>
+                                            <option value="Giza"> Giza </option>
+                                            <option value="Ismailia"> Ismailia </option>
+                                            <option value="Kafr El Sheikh"> Kafr El Sheikh </option>
+                                            <option value="Luxor"> Luxor </option>
+                                            <option value="Matruh"> Matruh </option>
+                                            <option value="Minya"> Minya </option>
+                                            <option value="Monufia"> Monufia </option>
+                                            <option value="New Valley"> New Valley </option>
+                                            <option value="North Sinai"> North Sinai </option>
+                                            <option value="Port Said"> Port Said </option>
+                                            <option value="Qalyubia"> Qalyubia </option>
+                                            <option value="Qena"> Qena </option>
+                                            <option value="Red Sea"> Red Sea </option>
+                                            <option value="Sharqia"> Sharqia </option>
+                                            <option value="Sohag"> Sohag </option>
+                                            <option value="South Sinai"> South Sinai </option>
+                                            <option value="Suez"> Suez </option>
+                                        </select>
+                                        <small class="form-control-feedback">Example Cairo....</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-actions">
                             <button type="submit" name="submit"  class="btn btn-success"><i class="fa fa-check"></i> Save </button>
