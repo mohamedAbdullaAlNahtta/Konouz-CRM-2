@@ -170,7 +170,7 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Source Channel</label>
-                                        <input type="text" placeholder="Facebook Lead" name="ch_id_create" class="form-control" disabled/>
+                                        <input type="text" name="ch_id_edite" value="<?php echo htmlentities($ch_id)?>" placeholder="<?php echo htmlentities($ch_id)?>" class="form-control" disabled/>
                                         <small class="form-control-feedback"> Example Facebook Lead....</small>
                                     </div>
                                 </div>

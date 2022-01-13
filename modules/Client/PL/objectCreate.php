@@ -135,7 +135,7 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> Lats Name</label>
+                                        <label class="control-label"> Last Name</label>
                                         <input type="text"   name="Last_Name_create" class="form-control" required/>
                                         <small class="form-control-feedback"> Example smith....</small>
                                     </div>
