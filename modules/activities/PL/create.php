@@ -71,6 +71,12 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
+                                                        <label class="control-label"> Basic Meter Price </label>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="1030" placeholder="110" disabled/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
                                                         <label class="control-label"> Unit Basic Price </label>
                                                         <input type="text" id="" name="unit_id" class="form-control" value="90010" placeholder="110" disabled/>
                                                     </div>
@@ -79,6 +85,12 @@
                                                     <div class="form-group">
                                                         <label class="control-label">  Usufruct Meter Price </label>
                                                         <input type="text" id="" name="unit_id" class="form-control" value="10010" placeholder="110" disabled/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Garage Price</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="5000" disabled/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -98,29 +110,51 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Direct Manager</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                        <small class="form-control-feedback">Manager Name.... </small>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="1">Ahmed mahmoud</option>
+                                                            <option value="2">root</option>   
+                                                            <option value="3">Admin</option>      
+                                                            <option value="4">Muhammad Soliman</option>  
+                                                            <option value="4">Essam</option>                                                         
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller Assistant </label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" />
-                                                        <small class="form-control-feedback">Seller Assistant if Available.... </small>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" >
+                                                            <option value="">Select One if available</option>
+                                                            <option value="1">Ahmed mahmoud</option>
+                                                            <option value="2">root</option>   
+                                                            <option value="3">Admin</option>      
+                                                            <option value="4">Muhammad Soliman</option>  
+                                                            <option value="4">Essam</option>                                                         
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller Assistant Direct Manager</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                        <small class="form-control-feedback">if Available.... </small>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" >
+                                                            <option value="">Select One if available</option>
+                                                            <option value="1">Ahmed mahmoud</option>
+                                                            <option value="2">root</option>   
+                                                            <option value="3">Admin</option>      
+                                                            <option value="4">Muhammad Soliman</option>  
+                                                            <option value="4">Essam</option>                                                         
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Section Head</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                        <small class="form-control-feedback">Section Head Name.... </small>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="1">Ahmed mahmoud</option>
+                                                            <option value="2">root</option>   
+                                                            <option value="3">Admin</option>      
+                                                            <option value="4">Muhammad Soliman</option>  
+                                                            <option value="4">Essam</option>                                                         
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -138,6 +172,36 @@
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
                                                             <option value="2">Ahmed Mahmoud</option>
                                                             <option value="1">Adel Ali</option>                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>                                                                                                                                
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Comment</label>
+                                                        <input type="area" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <hr>
+                                            <div class="ribbon-wrapper">
+                                                <div class="ribbon ribbon-bookmark ribbon-info">Activity input</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Payment Type</label>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="1">Installment</option>
+                                                            <option value="2">Cash</option>                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Refunded</label>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="0">No</option>
+                                                            <option value="1">Yes</option>                                                            
                                                         </select>
                                                     </div>
                                                 </div>
@@ -168,50 +232,13 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Garage Price</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Payment Type</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
-                                                            <option value="1">Installment</option>
-                                                            <option value="2">Cash</option>                                                            
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Refunded</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
-                                                            <option value="0">No</option>
-                                                            <option value="1">Yes</option>                                                            
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Comment</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Creator Manager</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    </div>
-                                                </div>
-                                            </div> 
+                                            </div>
                                             <hr>
                                             <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                         <label class="control-label">Creation Date</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="01/18/2022" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -223,7 +250,7 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Creator Manager</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" Disabled/>
                                                     </div>
                                                 </div>
                                             </div>                          
@@ -242,30 +269,72 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Project Name</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">Pro Name.... </small>
+                                                    <label class="control-label">Annual Payment Amount</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">For Example : 300 LE.... </small>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Project Name</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">Pro Name.... </small>
+                                                    <label class="control-label">Annual With Rate</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">For Example : 30000 LE.... </small>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Project Name</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">Pro Name.... </small>
+                                                    <label class="control-label">Annual Payment %</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 Mean %.... </small>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Project Name</label>
+                                                    <label class="control-label">Down Payment Amount</label>
                                                     <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">Pro Name.... </small>
+                                                    <small class="form-control-feedback">3000 LE for Example.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Down Payment %</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Installment Years</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 years for example </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Intrest %</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Intrest Amount</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">2000 LE for Example.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Maintenance Feest %</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Down Payment %</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 mean 3%.... </small>
                                                 </div>
                                             </div>
                                             <hr>
