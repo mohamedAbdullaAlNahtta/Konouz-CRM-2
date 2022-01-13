@@ -63,21 +63,28 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="control-label">Seller Assistant Name</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" />
-                                                        <small class="form-control-feedback">Seller Assistant if Available.... </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Direct Manager Name</label>
+                                                        <label class="control-label">Direct Manager</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                         <small class="form-control-feedback">Pro Name.... </small>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="control-label">Project Name</label>
+                                                        <label class="control-label">Seller Assistant </label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" />
+                                                        <small class="form-control-feedback">Seller Assistant if Available.... </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Seller Assistant Direct Manager</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <small class="form-control-feedback">Seller Assistant if Available.... </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Section Head</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                         <small class="form-control-feedback">Pro Name.... </small>
                                                     </div>
