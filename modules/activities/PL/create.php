@@ -54,7 +54,7 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Unit ID</label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="11-11-20" placeholder="11-11-20" disabled/>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($unitId);?>" placeholder="<?php echo htmlentities($unitId);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
