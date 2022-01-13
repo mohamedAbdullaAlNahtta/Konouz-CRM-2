@@ -45,10 +45,18 @@ while($row = $get_table_data->fetch_assoc()) {
     $Job_Title = $row["Job Title"];
     $Employer = $row["Employer"];
     $Building_No = $row["Building No"];
-    $streets = $row["street"];
+    $street = $row["street"];
     $zone = $row["zone"];
     $governorate = $row["governorate"];
   }
+
+$National_ID_Issue_Date   = explode("-",$National_ID_Issue_Date);
+$National_ID_Issue_Date    = $National_ID_Issue_Date[2]."/".$National_ID_Issue_Date[0]."/".$National_ID_Issue_Date[1];
+$National_ID_Issue_Date= strval($National_ID_Issue_Date);
+
+$National_ID_Valid_To   = explode("-",$National_ID_Valid_To);
+$National_ID_Valid_To    = $National_ID_Valid_To[2]."/".$National_ID_Valid_To[0]."/".$National_ID_Valid_To[1];
+$National_ID_Valid_To= strval($National_ID_Valid_To);
 
 // $clientdata = array("First_Name"=>$First_Name, 
 // "Middle_Name"=>$Middle_Name, 
@@ -75,6 +83,13 @@ while($row = $get_table_data->fetch_assoc()) {
 /// start of ---> submitting form data to the database 
 ///////////////////////////////////////////////////////////////
 
+$National_ID_Issue_Date_create   = explode("/",$National_ID_Issue_Date_create);
+$National_ID_Issue_Date_create    = $National_ID_Issue_Date_create[2]."-".$National_ID_Issue_Date_create[0]."-".$National_ID_Issue_Date_create[1];
+$National_ID_Issue_Date_create= strval($National_ID_Issue_Date_create);
+
+$National_ID_Valid_To_create   = explode("/",$National_ID_Valid_To_create);
+$National_ID_Valid_To_create    = $National_ID_Valid_To_create[2]."-".$National_ID_Valid_To_create[0]."-".$National_ID_Valid_To_create[1];
+$National_ID_Valid_To_create= strval($National_ID_Valid_To_create);
 
 
 //php Creating a dynamic  query with PHP and MySQL
@@ -113,7 +128,7 @@ if (isset($_POST['submit'])) {
         <div class="col-md-6 col-8 align-self-center">
             <h3 class="text-themecolor m-b-0 m-t-0">Client Configuration</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)"></a></li>
                 <li class="breadcrumb-item active">Edite Client</li>
             </ol>
         </div>
@@ -180,21 +195,21 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> 1st Mobile Number</label>
-                                        <input type="number"  name="Mobile1_create" class="form-control" required/>
+                                        <input type="number" name="Mobile1_edite" value="<?php echo htmlentities($Mobile1)?>" placeholder="<?php echo htmlentities($Mobile1)?>" class="form-control" />
                                         <small class="form-control-feedback"> Example 01093002345....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> 2nd Mobile Number</label>
-                                        <input type="number" placeholder="01132332856"  name="Mobile2_create" class="form-control" />
+                                        <input type="number"  name="Mobile2_edite" value="<?php echo htmlentities($Mobile2)?>" placeholder="<?php echo htmlentities($Mobile2)?> "class="form-control" />
                                         <small class="form-control-feedback"> Example 01132332856....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Email</label>
-                                        <input type="text"   name="email_create" class="form-control" />
+                                        <input type="text" name="Email_edite" value="<?php echo htmlentities($Email)?>" placeholder="<?php echo htmlentities($Email)?>" class="form-control" />
                                         <small class="form-control-feedback"> Example smith@yahoo.com....</small>
                                     </div>
                                 </div>
@@ -204,7 +219,7 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> National ID</label>
-                                        <input type="text"   name="National_ID_create" class="form-control" required/>
+                                        <input type="text" name="National_ID_edite" value="<?php echo htmlentities($National_ID)?>" placeholder="<?php echo htmlentities($National_ID)?>" class="form-control" />
                                         <small class="form-control-feedback">Must be 14 Digits Example 28767....etc</small>
                                     </div>
                                 </div>
@@ -212,7 +227,7 @@ if (isset($_POST['submit'])) {
                                     <div class="form-group">
                                         <label class="control-label"> National ID Issue Date</label>
                                             <div class="input-group">
-                                                <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy"  name="National_ID_Issue_Date_create" required/>
+                                                <input type="text" class="form-control mydatepicker"  name="National_ID_Issue_Date_edite" value="<?php echo htmlentities($National_ID_Issue_Date)?>" placeholder="<?php echo htmlentities($National_ID_Issue_Date)?>" />
                                                 <span class="input-group-addon"><i class="icon-calender"></i></span>
                                             </div>
                                         <small class="form-control-feedback"> mm/dd/yyyy example: 3/22/2022..</small>
@@ -222,7 +237,7 @@ if (isset($_POST['submit'])) {
                                     <div class="form-group">
                                         <label class="control-label"> National ID Valid To</label>
                                             <div class="input-group">
-                                                <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy"  name="National_ID_Valid_To_create" required/>
+                                                <input type="text" class="form-control mydatepicker" name="National_ID_Valid_To_edite" value="<?php echo htmlentities($National_ID_Valid_To)?>" placeholder="<?php echo htmlentities($National_ID_Valid_To)?>"  />
                                                 <span class="input-group-addon"><i class="icon-calender"></i></span>
                                             </div>
                                         <small class="form-control-feedback"> mm/dd/yyyy example: 3/22/2022..</small>
@@ -231,7 +246,7 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Nationality</label>
-                                        <input type="text"   name="nationality_create" class="form-control" />
+                                        <input type="text" name="nationality_edite" value="<?php echo htmlentities($nationality)?>" placeholder="<?php echo htmlentities($nationality)?>" class="form-control" />
                                         <small class="form-control-feedback"> Example Egyption....</small>
                                     </div>
                                 </div>
@@ -241,14 +256,14 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Job Title</label>
-                                        <input type="text"   name="Job_Title_create" class="form-control" />
+                                        <input type="text"  name="Job_Title_edite" value="<?php echo htmlentities($Job_Title)?>" placeholder="<?php echo htmlentities($Job_Title)?>" class="form-control" />
                                         <small class="form-control-feedback"> Example Manager....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Employer Name</label>
-                                        <input type="text"   name="Employer_create" class="form-control" />
+                                        <input type="text" name="Employer_edite" value="<?php echo htmlentities($Employer)?>" placeholder="<?php echo htmlentities($Employer)?>" class="form-control" />
                                         <small class="form-control-feedback"> Example Ezz Steel....</small>
                                     </div>
                                 </div>
@@ -259,29 +274,29 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Building No</label>
-                                        <input type="number"  name="Building_No_create" class="form-control" />
+                                        <input type="number"  name="Building_No_edite" value="<?php echo htmlentities($Building_No)?>" placeholder="<?php echo htmlentities($Building_No)?>" class="form-control" />
                                         <small class="form-control-feedback"> Example 34....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Street Name</label>
-                                        <input type="text"   name="street_create" class="form-control" />
+                                        <input type="text"  name="street_edite" value="<?php echo htmlentities($street)?>" placeholder="<?php echo htmlentities($street)?>" class="form-control" />
                                         <small class="form-control-feedback"> Example saad zaghlol street....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Zone </label>
-                                        <input type="text"   name="zone_create" class="form-control" />
+                                        <input type="text"name="zone_edite" value="<?php echo htmlentities($zone)?>" placeholder="<?php echo htmlentities($zone)?>" class="form-control" />
                                         <small class="form-control-feedback">....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label"> Governorate </label>
-                                        <select id="Location" name="governorate_create" class="form-control form-control-line" required>
-                                            <option value="">Select Governorate</option>
+                                        <select id="Location" name="governorate_edite" class="form-control form-control-line" required>
+                                            <option value="<?php echo htmlentities($governorate)?>"><?php echo htmlentities($governorate)?></option>
                                             <option value="Alexandria"> Alexandria </option>
                                             <option value="Aswan"> Aswan </option>
                                             <option value="Asyut"> Asyut </option>
