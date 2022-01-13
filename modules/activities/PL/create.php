@@ -70,7 +70,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="control-label">Project Name</label>
+                                                        <label class="control-label">Direct Manager Name</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                         <small class="form-control-feedback">Pro Name.... </small>
                                                     </div>
