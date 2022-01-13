@@ -31,57 +31,108 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-block">
-                    <h4 class="card-title">Data Export</h4>
-                    <h6 class="card-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae velit, dignissimos vero tempore quam voluptatibus reprehenderit deleniti magnam hic repellendus, dolores atque tempora id natus, adipisci numquam earum harum ipsa?</h6>
-                    <div class="tab-pane" id="settings" role="tabpanel">
-                        <div class="card-block">
-                            <form class="form-horizontal form-material">
-                                <div class="form-group">
-                                    <label class="col-sm-12">Change Status</label>
-                                    <div class="col-sm-12">
-                                        <select id="myselect" class="form-control form-control-line">
-                                            <option>Select Status</option>
-                                            <option value="Model 1">Reservation</option>
-                                            <option value="Model 2">Done Deal</option>
-                                            <option value="Model 3">Canceled</option>
-                                            <option value="Model 4">Closed</option>
-                                            <option value="Model 5">Hold</option>
-                                            <option value="Model 6">Available</option>
-                                            <option value="Model 7">Restricted For Sale</option>
-                                            <option value="Model 8">Un-Available</option>
-                                            <option value="Model 9">Prospecting</option>
-                                        </select>
+                <div class="card-block"> 
+                    <form action="index?module=activities&create=true" method="post">
+                        <div class="form-body">
+                            <h4 class="card-title"> New Activity <small> For Unit ID <code>11-11-20</code></small></h4>
+                            <!-- Nav tabs -->
+                            <div class="vtabs col-md-12">
+                                <ul class="nav nav-tabs tabs-vertical" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home4" role="tab" aria-expanded="true"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Ticket Data</span> </a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile4" role="tab" aria-expanded="false"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Installment Plan</span></a> </li>
+                                    <!-- <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages4" role="tab" aria-expanded="false"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Messages</span></a> </li> -->
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane p-20 active" id="home4" role="tabpanel" aria-expanded="true">
+                                            <h3>Ticket Info </h3>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Unit ID</label>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="11-11-20" placeholder="11-11-20" disabled/>
+                                                        <small class="form-control-feedback">Unite ID: 11-11-20 </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Project Name</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <small class="form-control-feedback">Pro Name.... </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Project Name</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <small class="form-control-feedback">Pro Name.... </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Project Name</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <small class="form-control-feedback">Pro Name.... </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Project Name</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <small class="form-control-feedback">Pro Name.... </small>
+                                                    </div>
+                                                </div>
+                                            </div>                           
                                     </div>
-                                </div>
-                                <div id="Form1" class="form-group formN">
-                                    <label class="col-sm-12">Change ay 7aga</label>
-                                    <div class="col-sm-12">
-                                        <select class="form-control form-control-line">
-                                            <option>Inshra7</option>
-                                            <option>tafida</option>
-                                            <option>fawzya</option>
-                                        </select>
+                                    <div class="tab-pane p-20" id="profile4" role="tabpanel" aria-expanded="true">
+                                        <h3>Installment Info </h3>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Project Name</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">Pro Name.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Project Name</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">Pro Name.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Project Name</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">Pro Name.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Project Name</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">Pro Name.... </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Project Name</label>
+                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">Pro Name.... </small>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <!-- <div class="tab-pane p-20" id="messages4" role="tabpanel" aria-expanded="false">3</div> -->
                                 </div>
-                                <div id="Form2" class="form-group formN">
-                                    <label class="col-sm-12">Change ay 7etta</label>
-                                    <div class="col-sm-12">
-                                        <select class="form-control form-control-line">
-                                            <option>ali</option>
-                                            <option>Moustafa</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <button class="btn btn-success">Update Profile</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-actions">
+                            <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
+                            <button type="button" onclick="location.href='index?module=Activities'" class="btn btn-inverse">Cancel</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
