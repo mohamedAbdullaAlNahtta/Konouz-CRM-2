@@ -99,8 +99,7 @@ if (isset($_POST['submit'])) {
     $National_ID_Valid_To_edite= strval($National_ID_Valid_To_edite);
 
   
-    $setcolumn = array(); 
-    $setValues[] = "`".$columns[$i]."`='".$columnsNew[$i]."'";
+ 
     if ($First_Name_edite != "") 
     $setcolumn[] = "`First Name`='{$First_Name_edite}' ";
     if ($Middle_Name_edite != "") 
@@ -135,7 +134,7 @@ if (isset($_POST['submit'])) {
     $setcolumn[] = "`governorate`='{$governorate_edite}' ";
 
 
-    $setValues = "SET " . implode(", ", $setcolumn);
+    $setcolumn = "SET " . implode(", ", $setcolumn);
 
 
     $sql= "UPDATE `clients` {$setcolumn}  WHERE `ID`={$objectEditeId}";
