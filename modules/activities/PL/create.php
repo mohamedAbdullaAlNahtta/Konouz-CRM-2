@@ -126,32 +126,46 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Sale Type</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                        <small class="form-control-feedback">Section Head Name.... </small>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="1">Direct</option>
+                                                            <option value="2">Indirect</option>                                                            
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Broker</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="2">Ahmed Mahmoud</option>
+                                                            <option value="1">Adel Ali</option>                                                            
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Signed Contract</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="0">No</option>
+                                                            <option value="1">Yes</option>                                                            
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Cheque Submitted</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="0">No</option>
+                                                            <option value="1">Yes</option>                                                            
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Filled Claim</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="0">No</option>
+                                                            <option value="1">Yes</option>                                                            
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -163,13 +177,19 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="1">Installment</option>
+                                                            <option value="2">Cash</option>                                                            
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Refunded</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="0">No</option>
+                                                            <option value="1">Yes</option>                                                            
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 
@@ -197,7 +217,7 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">created_by</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" value="root@localhost" placeholder="root@localhost" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -213,8 +233,11 @@
                                         <div class="row">
                                             <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="control-label">Garage Requested</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <label class="control-label">Garage Requested</label>                                                    
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="0">No</option>
+                                                            <option value="1">Yes</option>                                                            
+                                                        </select>
                                                     </div>
                                             </div>
                                             <div class="col-md-3">
@@ -245,6 +268,12 @@
                                                     <small class="form-control-feedback">Pro Name.... </small>
                                                 </div>
                                             </div>
+                                            <hr>
+                                            <div class="form-actions">
+                                                <button name="submit" class="btn btn-success"><i class="fa fa-check"></i> Calculate</button>
+                                                <button type="button" onclick="location.href='index?module=Activities'" class="btn btn-inverse">Cancel</button>
+                                            </div>
+                                    
                                         </div>
                                     </div>
                                     <!-- <div class="tab-pane p-20" id="messages4" role="tabpanel" aria-expanded="false">3</div> -->
