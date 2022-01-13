@@ -46,14 +46,48 @@
                                 <div class="tab-content">
                                     <div class="tab-pane p-20 active" id="home4" role="tabpanel" aria-expanded="true">
                                             <h3>Ticket Info </h3>
+                                            <div class="ribbon-wrapper">
+                                                <div class="ribbon ribbon-bookmark ribbon-info">Unit Data</div>
+                                                <p class="ribbon-content">check out the unit data</p>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Unit ID</label>
                                                         <input type="text" id="" name="unit_id" class="form-control" value="11-11-20" placeholder="11-11-20" disabled/>
-                                                        <small class="form-control-feedback">Unite ID: 11-11-20 </small>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Building No</label>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="11" placeholder="11" disabled/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Unit Area </label>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="110" placeholder="110" disabled/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Unit Basic Price </label>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="90010" placeholder="110" disabled/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">  Usufruct Meter Price </label>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="10010" placeholder="110" disabled/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="ribbon-wrapper">
+                                                <div class="ribbon ribbon-bookmark ribbon-info">Employee Data</div>
+                                                <!-- <p class="ribbon-content">check out the unit data</p> -->
+                                            </div>
+                                            <div class="row"> 
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller</label>
@@ -122,17 +156,57 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="control-label">Cheque Submitted</label>
+                                                        <label class="control-label">Garage Price</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="control-label">Cheque Submitted</label>
+                                                        <label class="control-label">Payment Type</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                     </div>
                                                 </div>
-                                            </div>                           
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Refunded</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Comment</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Creator Manager</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <hr>
+                                            <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                        <label class="control-label">Creation Date</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">created_by</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Creator Manager</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                            </div>                          
                                     </div>
                                     <div class="tab-pane p-20" id="profile4" role="tabpanel" aria-expanded="true">
                                         <h3>Installment Info </h3>
