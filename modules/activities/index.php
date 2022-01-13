@@ -9,6 +9,8 @@ include_once("inc/classautoloader.inc");
 /////////////////////////
 // loading module screen
 /////////////////////////
+$unitId = $_GET['unitId'];
+
 if (isset($_GET['create']))
 {
     // getDropDownValuesFromDb
