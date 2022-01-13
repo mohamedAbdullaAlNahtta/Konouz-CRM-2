@@ -51,31 +51,14 @@ while($row = $get_table_data->fetch_assoc()) {
   }
 
 $National_ID_Issue_Date   = explode("-",$National_ID_Issue_Date);
-$National_ID_Issue_Date    = $National_ID_Issue_Date[2]."/".$National_ID_Issue_Date[0]."/".$National_ID_Issue_Date[1];
+$National_ID_Issue_Date    = $National_ID_Issue_Date[1]."/".$National_ID_Issue_Date[2]."/".$National_ID_Issue_Date[0];
 $National_ID_Issue_Date= strval($National_ID_Issue_Date);
 
 $National_ID_Valid_To   = explode("-",$National_ID_Valid_To);
-$National_ID_Valid_To    = $National_ID_Valid_To[2]."/".$National_ID_Valid_To[0]."/".$National_ID_Valid_To[1];
+$National_ID_Valid_To    = $National_ID_Valid_To[1]."/".$National_ID_Valid_To[2]."/".$National_ID_Valid_To[0];
 $National_ID_Valid_To= strval($National_ID_Valid_To);
 
-// $clientdata = array("First_Name"=>$First_Name, 
-// "Middle_Name"=>$Middle_Name, 
-// "Last_Name"=>$Last_Name, 
-// "ch_id"=>$ch_id, 
-// "Mobile1"=>$Mobile1, 
-// "Mobile2"=>$Mobile2, 
-// "Email"=>$Email, 
-// "National_ID"=>$National_ID, 
-// "National_ID_Issue_Date"=>$National_ID_Issue_Date, 
-// "National_ID_Valid_To"=>$National_ID_Valid_To, 
-// "nationality"=>$nationality, 
-// "Job_Title"=>$Job_Title, 
-// "Employer"=>$Employer,
-// "Building_No"=>$Building_No, 
-// "streets"=>$streets, 
-// "zone"=>$zone, 
-// "governorate"=>$governorate, 
-// "DevID"=>$DevID, );
+
 
 
 
@@ -97,19 +80,65 @@ $National_ID_Valid_To_create= strval($National_ID_Valid_To_create);
 
 if (isset($_POST['submit'])) {
 
-    for ($i=1; $i < $col_count; $i++) { 
-        $columnsNew[$i] = $_POST[$columns[$i]."_edite"];
-        $columnsNew[$i] = $database->escape_string($columnsNew[$i]);
-    }
+    $First_Name_edite = $_POST["First_Name_edite"];
+    $Middle_Name_edite = $_POST["Middle_Name_edite"];
+    $Last_Name_edite = $r_POSTow["Last_Name_edite"];
+    $ch_id_edite = $_POST["ch_id_edite"];
+    $Mobile1_edite = $_POST["Mobile1_edite"];
+    $Mobile2_edite = $_POST["Mobile2_edite"];
+    $Email_edite = $_POST["Email_edite"];
+    $National_ID_edite = $_POST["National_ID_edite"];
+    $National_ID_Issue_Date_edite = $_POST["National_ID_Issue_Date_edite"];
+    $National_ID_Valid_To_edite = $_POST["National_ID_Valid_To_edite"];
+    $nationality_edite = $_POST["nationality_edite"];
+    $Job_Title_edite = $_POST["Job_Title_edite"];
+    $Employer_edite = $_POST["Employer_edite"];
+    $Building_No_edite = $_POST["Building_No_edite"];
+    $street_edite = $_POST["street_edite"];
+    $zone_edite = $_POST["zone_edite"];
+    $governorate_edite = $_POST["governorate_edite"];
 
-    $setValues = array(); 
-    for ($i=1; $i < $col_count; $i++) { 
-        $setValues[] = "`".$columns[$i]."`='".$columnsNew[$i]."'";
-    }
-    $setValues = "SET " . implode(", ", $setValues);
+  
+    $setcolumn = array(); 
+    $setValues[] = "`".$columns[$i]."`='".$columnsNew[$i]."'";
+    if ($First_Name_edite != "") 
+    $setcolumn[] = "`First Name`='{$First_Name_edite}' ";
+    if ($Middle_Name_edite != "") 
+    $setcolumn[] = "`Middle Name`='{$Middle_Name_edite}' ";
+    if ($Last_Name_edite != "") 
+    $setcolumn[] = "`Last Name`='{$Last_Name_edite}' ";
+    if ($Mobile1_edite != "") 
+    $setcolumn[] = "`Mobile1`='{$Mobile1_edite}' ";
+    if ($Mobile2_edite != "") 
+    $setcolumn[] = "`Mobile 2`='{$Mobile2_edite}' ";
+    if ($Email_edite != "") 
+    $setcolumn[] = "`Email`='{$Email_edite}' ";
+    if ($National_ID_edite != "") 
+    $setcolumn[] = "`National ID`='{$National_ID_edite}' ";
+    if ($National_ID_Issue_Date_edite != "") 
+    $setcolumn[] = "`National ID Issue Date`='{$National_ID_Issue_Date_edite}' ";
+    if ($National_ID_Valid_To_edite != "") 
+    $setcolumn[] = "`National ID Valid To`='{$National_ID_Valid_To_edite}' ";
+    if ($nationality_edite != "") 
+    $setcolumn[] = "`nationality`='{$nationality_edite}' ";
+    if ($Job_Title_edite != "") 
+    $setcolumn[] = "`Job Title`='{$Job_Title_edite}' ";
+    if ($Employer_edite != "") 
+    $setcolumn[] = "`Employer`='{$Employer_edite}' ";
+    if ($Building_No_edite != "") 
+    $setcolumn[] = "`Building No`='{$Building_No_edite}' ";
+    if ($street_edite != "") 
+    $setcolumn[] = "`street`='{$street_edite}' ";
+    if ($zone_edite != "") 
+    $setcolumn[] = "`zone`='{$zone_edite}' ";
+    if ($governorate_edite != "") 
+    $setcolumn[] = "`governorate`='{$governorate_edite}' ";
 
 
-    $sql= "UPDATE `{$tableName}` {$setValues}  WHERE {$columns[0]}={$objectEditeId}";
+    $setValues = "SET " . implode(", ", $setcolumn);
+
+
+    $sql= "UPDATE `clients` {$setcolumn}  WHERE `ID`={$objectEditeId}";
     $object_dml= $database->query($sql); 
 
 } 
