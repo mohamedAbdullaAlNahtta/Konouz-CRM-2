@@ -66,15 +66,6 @@ $National_ID_Valid_To= strval($National_ID_Valid_To);
 /// start of ---> submitting form data to the database 
 ///////////////////////////////////////////////////////////////
 
-$National_ID_Issue_Date_create   = explode("/",$National_ID_Issue_Date_create);
-$National_ID_Issue_Date_create    = $National_ID_Issue_Date_create[2]."-".$National_ID_Issue_Date_create[0]."-".$National_ID_Issue_Date_create[1];
-$National_ID_Issue_Date_create= strval($National_ID_Issue_Date_create);
-
-$National_ID_Valid_To_create   = explode("/",$National_ID_Valid_To_create);
-$National_ID_Valid_To_create    = $National_ID_Valid_To_create[2]."-".$National_ID_Valid_To_create[0]."-".$National_ID_Valid_To_create[1];
-$National_ID_Valid_To_create= strval($National_ID_Valid_To_create);
-
-
 //php Creating a dynamic  query with PHP and MySQL
 
 
@@ -97,6 +88,15 @@ if (isset($_POST['submit'])) {
     $street_edite = $_POST["street_edite"];
     $zone_edite = $_POST["zone_edite"];
     $governorate_edite = $_POST["governorate_edite"];
+
+    
+    $National_ID_Issue_Date_edite   = explode("/",$National_ID_Issue_Date_edite);
+    $National_ID_Issue_Date_edite    = $National_ID_Issue_Date_edite[2]."-".$National_ID_Issue_Date_edite[0]."-".$National_ID_Issue_Date_edite[1];
+    $National_ID_Issue_Date_edite= strval($National_ID_Issue_Date_edite);
+
+    $National_ID_Valid_To_edite   = explode("/",$National_ID_Valid_To_edite);
+    $National_ID_Valid_To_edite    = $National_ID_Valid_To_edite[2]."-".$National_ID_Valid_To_edite[0]."-".$National_ID_Valid_To_edite[1];
+    $National_ID_Valid_To_edite= strval($National_ID_Valid_To_edite);
 
   
     $setcolumn = array(); 
