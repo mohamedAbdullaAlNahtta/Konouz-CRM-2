@@ -57,7 +57,7 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" value="root@localhost" placeholder="root@localhost" disabled/>
                                                         <small class="form-control-feedback">Seller Name.... </small>
                                                     </div>
                                                 </div>
