@@ -182,9 +182,9 @@
                                                     </div>
                                                 </div>                                                                                                                                
                                                 <div class="col-md-3">
-                                                    <div class="form-group">
+                                                    <div class="">
                                                         <label class="control-label">Comment</label>
-                                                        <input type="area" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <textarea style="resize: vertical;" name="" rows="4"></textarea>
                                                     </div>
                                                 </div>
                                             </div> 
