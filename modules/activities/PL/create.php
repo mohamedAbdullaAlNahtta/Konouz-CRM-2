@@ -65,7 +65,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Direct Manager</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                        <small class="form-control-feedback">Pro Name.... </small>
+                                                        <small class="form-control-feedback">Manager Name.... </small>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -79,14 +79,57 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Seller Assistant Direct Manager</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                        <small class="form-control-feedback">Seller Assistant if Available.... </small>
+                                                        <small class="form-control-feedback">if Available.... </small>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Section Head</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                        <small class="form-control-feedback">Pro Name.... </small>
+                                                        <small class="form-control-feedback">Section Head Name.... </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Sale Type</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                        <small class="form-control-feedback">Section Head Name.... </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Broker</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Signed Contract</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Cheque Submitted</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Filled Claim</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Cheque Submitted</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Cheque Submitted</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                     </div>
                                                 </div>
                                             </div>                           
@@ -95,11 +138,10 @@
                                         <h3>Installment Info </h3>
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="control-label">Project Name</label>
-                                                    <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">Pro Name.... </small>
-                                                </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">Garage Requested</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
