@@ -56,16 +56,16 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="control-label">Project Name</label>
+                                                        <label class="control-label">Seller</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                        <small class="form-control-feedback">Pro Name.... </small>
+                                                        <small class="form-control-feedback">Seller Name.... </small>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <label class="control-label">Project Name</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                        <small class="form-control-feedback">Pro Name.... </small>
+                                                        <label class="control-label">Seller Assistant Name</label>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" />
+                                                        <small class="form-control-feedback">Seller Assistant if Available.... </small>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
