@@ -32,10 +32,10 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-6 col-8 align-self-center">
-            <h3 class="text-themecolor m-b-0 m-t-0">Developers</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0">Service Request Ticket</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
-                <li class="breadcrumb-item active">New Developer</li>
+                <li class="breadcrumb-item active">New Ticket</li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row">
         <div class="col-3">
-            <button onclick="location.href='index?module=Developers'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
+            <button onclick="location.href='index?module=Service Request'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
         </div>
     </div>
     <br />
@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
                     <h4 class="m-b-0 text-white">New Developer</h4>
                 </div>
                 <div class="card-block">
-                    <form action="index?module=Developers&create=true" method="post">
+                    <form action="index?module=Service Request&create=true" method="post">
                         <div class="form-body">
                             <h3 class="card-title">Developre Info</h3>
 
@@ -124,7 +124,7 @@ if (isset($_POST['submit'])) {
 
                         <div class="form-actions">
                             <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
-                            <button type="button" onclick="location.href='index?module=Developers'" class="btn btn-inverse">Cancel</button>
+                            <button type="button" onclick="location.href='index?module=Service Request'" class="btn btn-inverse">Cancel</button>
                         </div>
                     </form>
                 </div>

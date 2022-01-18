@@ -299,7 +299,7 @@ if (isset($module)) {
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Inventory</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="index?module=Unites">Units</a></li>
-                                <li><a href="index?module=Service Request">Service Request</a></li>
+                                <li><a href="index?module=Service.Request">Service Request</a></li>
                                 <li><a href="index?module=Activities">Activities</a></li>
                                 <li>
                                     <a class="has-arrow" href="#" aria-expanded="false">Inventory Configuration</a>
