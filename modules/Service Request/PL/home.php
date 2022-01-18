@@ -16,47 +16,47 @@ if (isset($_GET['deleteDeveloperId'])) {
 ///////////////////////////////////////////////////////////////
 /// start of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
- $sql= "SELECT `ID`, 
- `unit_ID`, 
- `activity_ID`, 
- `unit_status`, 
- `unit_status_reason`, 
- `Hold_Can_Work_On`, 
- `Held_For`,
- `ticket_status`, 
- `ticket_feedback`,
- `created_by`
- `creation_date`,
- `Handled_by`,
- `Last_update_date`
-  FROM `service request` ORDER BY `ID` DESC";
- $service_request_all= $database->query($sql);
+//  $sql= "SELECT `ID`, 
+//  `unit_ID`, 
+//  `activity_ID`, 
+//  `unit_status`, 
+//  `unit_status_reason`, 
+//  `Hold_Can_Work_On`, 
+//  `Held_For`,
+//  `ticket_status`, 
+//  `ticket_feedback`,
+//  `created_by`
+//  `creation_date`,
+//  `Handled_by`,
+//  `Last_update_date`
+//   FROM `service request` ORDER BY `ID` DESC";
+//  $service_request_all= $database->query($sql);
 
- $service_requestCount = $service_request_all->num_rows;
+//  $service_requestCount = $service_request_all->num_rows;
 
-    // output data of each row
-    while($row = $service_request_all->fetch_assoc()) {
-      $ID[] = $row["ID"];
-      $unit_ID[] = $row["unit_ID"];
-      $activity_ID[] = $row["activity_ID"];
-      $unit_status[] = $row["unit_status"];
-      $unit_status_reason[] = $row["unit_status_reason"];
-      $Hold_Can_Work_On[] = $row["Hold_Can_Work_On"];
-      $Held_For[] = $row["Held_For"];
-      $ticket_status[] = $row["ticket_status"];
-      $ticket_feedback[] = $row["ticket_feedback"];
-      $created_by[] = $row["created_by"];
-      $creation_date[] = $row["creation_date"];
-      $Handled_by[] = $row["Handled_by"];
-      $Last_update_date[] = $row["Last_update_date"];
-    }
+//     // output data of each row
+//     while($row = $service_request_all->fetch_assoc()) {
+//       $ID[] = $row["ID"];
+//       $unit_ID[] = $row["unit_ID"];
+//       $activity_ID[] = $row["activity_ID"];
+//       $unit_status[] = $row["unit_status"];
+//       $unit_status_reason[] = $row["unit_status_reason"];
+//       $Hold_Can_Work_On[] = $row["Hold_Can_Work_On"];
+//       $Held_For[] = $row["Held_For"];
+//       $ticket_status[] = $row["ticket_status"];
+//       $ticket_feedback[] = $row["ticket_feedback"];
+//       $created_by[] = $row["created_by"];
+//       $creation_date[] = $row["creation_date"];
+//       $Handled_by[] = $row["Handled_by"];
+//       $Last_update_date[] = $row["Last_update_date"];
+//     }
 
 
-  $service_request= array("ID"=>$ID, "unit_ID"=>$unit_ID, "activity_ID"=>$activity_ID,
-   "unit_status"=>$unit_status, "unit_status_reason"=>$unit_status_reason, "Hold_Can_Work_On"=>$Hold_Can_Work_On, "Held_For"=>$Held_For,
-   "ticket_status"=>$ticket_status, "ticket_feedback"=>$ticket_feedback, "created_by"=>$created_by,
-   "creation_date"=>$creation_date, "Handled_by"=>$Handled_by, "Last_update_date"=>$Last_update_date
-   );
+//   $service_request= array("ID"=>$ID, "unit_ID"=>$unit_ID, "activity_ID"=>$activity_ID,
+//    "unit_status"=>$unit_status, "unit_status_reason"=>$unit_status_reason, "Hold_Can_Work_On"=>$Hold_Can_Work_On, "Held_For"=>$Held_For,
+//    "ticket_status"=>$ticket_status, "ticket_feedback"=>$ticket_feedback, "created_by"=>$created_by,
+//    "creation_date"=>$creation_date, "Handled_by"=>$Handled_by, "Last_update_date"=>$Last_update_date
+//    );
 ///////////////////////////////////////////////////////////////
 /// End of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
@@ -99,10 +99,10 @@ if (isset($_GET['deleteDeveloperId'])) {
                                     <th>ID</th>
                                     <th>Unit ID</th>
                                     <th>Activity ID</th>
-                                    <th>Ticket Status</th>
                                     <th>Created BY</th>
                                     <th>Handled By</th>
                                     <th>Creation Date</th>
+                                    <th>Ticket Status</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -111,10 +111,10 @@ if (isset($_GET['deleteDeveloperId'])) {
                                     <th>ID</th>
                                     <th>Unit ID</th>
                                     <th>Activity ID</th>
-                                    <th>Ticket Status</th>
                                     <th>Created BY</th>
                                     <th>Handled By</th>
                                     <th>Creation Date</th>
+                                    <th>Ticket Status</th>
                                     <th></th>
                                 </tr>
                             </tfoot>
@@ -131,9 +131,9 @@ if (isset($_GET['deleteDeveloperId'])) {
 //     echo "<td>".$service_request["Mobile1"][$i]."</td>";
 //     echo "<td>".$service_request["Mobile2"][$i]."</td>";
 //     echo "<td>
-//     <a href='index?module=Developers&EditeDeveloperId=".$service_request["DevID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
-//     <a href='index?module=Developers&DeveloperId=".$service_request["DevID"][$i]."' data-toggle='tooltip' data-original-title='View'> <i class='mdi mdi-eye'></i> </a>
-//     <a href='index?module=Developers&deleteDeveloperId=".$service_request["DevID"][$i]."' data-toggle='tooltip' data-original-title='delete'> <i class='fa fa-trash'></i></a></td> </tr>";
+//     <a href='index?module=index?module=Service Request&EditeDeveloperId=".$service_request["DevID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
+//     <a href='index?module=index?module=Service Request&DeveloperId=".$service_request["DevID"][$i]."' data-toggle='tooltip' data-original-title='View'> <i class='mdi mdi-eye'></i> </a>
+//     <a href='index?module=index?module=Service Request&SRId=".$service_request["DevID"][$i]."' data-toggle='tooltip' data-original-title='delete'> <i class='fa fa-trash'></i></a></td> </tr>";
 
 // }
 
