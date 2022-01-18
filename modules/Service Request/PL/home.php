@@ -1,14 +1,5 @@
 <?php
-///////////////////////////////////////////////////////////////
-/// start of ---> delete developer if requested 
-///////////////////////////////////////////////////////////////
-if (isset($_GET['deleteDeveloperId'])) {
 
-    $deleteDeveloperId = $_GET['deleteDeveloperId'];
-    $sql_delete_dev= "DELETE  FROM `developers` WHERE `ID`='".$deleteDeveloperId."'";
-    $developer_delete= $database->query($sql_delete_dev); 
-
-} 
 ///////////////////////////////////////////////////////////////
 /// End of ---> delete developer if requested 
 ///////////////////////////////////////////////////////////////
@@ -123,17 +114,16 @@ if (isset($_GET['deleteDeveloperId'])) {
 
 // for ($i=0; $i < $developerCount ; $i++) { 
 //     # code.
-//     echo " <tr><th>".$service_request["DevID"][$i]."</th>";
-//     echo "<td>".$service_request["DevName"][$i]."</td>";
-//     echo "<td>".$service_request["Rep"][$i]."</td>";
-//     echo "<td>".$service_request["Insertion_date"][$i]."</td>";
-//     echo "<td>".$service_request["Added_By"][$i]."</td>";
-//     echo "<td>".$service_request["Mobile1"][$i]."</td>";
-//     echo "<td>".$service_request["Mobile2"][$i]."</td>";
+//     echo " <tr><th>".$service_request["ID"][$i]."</th>";
+//     echo "<td>".$service_request["unit_ID"][$i]."</td>";
+//     echo "<td>".$service_request["activity_ID"][$i]."</td>";
+//     echo "<td>".$service_request["created_by"][$i]."</td>";
+//     echo "<td>".$service_request["Handled_by"][$i]."</td>";
+//     echo "<td>".$service_request["creation_date"][$i]."</td>";
+//     echo "<td>".$service_request["ticket_status"][$i]."</td>";
 //     echo "<td>
-//     <a href='index?module=index?module=Service Request&EditeDeveloperId=".$service_request["DevID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
-//     <a href='index?module=index?module=Service Request&DeveloperId=".$service_request["DevID"][$i]."' data-toggle='tooltip' data-original-title='View'> <i class='mdi mdi-eye'></i> </a>
-//     <a href='index?module=index?module=Service Request&SRId=".$service_request["DevID"][$i]."' data-toggle='tooltip' data-original-title='delete'> <i class='fa fa-trash'></i></a></td> </tr>";
+//     <a href='index?module=index?module=Service Request&EditeSRId=".$service_request["ID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
+//     <a href='index?module=index?module=Service Request&SRId=".$service_request["ID"][$i]."' data-toggle='tooltip' data-original-title='View'> <i class='mdi mdi-eye'></i> </a></td> </tr>";
 
 // }
 
