@@ -16,25 +16,47 @@ if (isset($_GET['deleteDeveloperId'])) {
 ///////////////////////////////////////////////////////////////
 /// start of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
- $sql= "SELECT `ID`, `Name`, `Rep`, `Mobile1`, `Insertion Date`, `Added By`, `Mobile2` FROM `developers` ORDER BY `ID` DESC";
+ $sql= "SELECT `ID`, 
+ `unit_ID`, 
+ `activity_ID`, 
+ `unit_status`, 
+ `unit_status_reason`, 
+ `Hold_Can_Work_On`, 
+ `Held_For`,
+ `ticket_status`, 
+ `ticket_feedback`,
+ `created_by`
+ `creation_date`,
+ `Handled_by`,
+ `Last_update_date`
+  FROM `service request` ORDER BY `ID` DESC";
  $developers_all= $database->query($sql);
 
  $developerCount = $developers_all->num_rows;
 
     // output data of each row
     while($row = $developers_all->fetch_assoc()) {
-      $DevID[] = $row["ID"];
-      $DevName[] = $row["Name"];
-      $Rep[] = $row["Rep"];
-      $Mobile1[] = $row["Mobile1"];
-      $Insertion_date[] = $row["Insertion Date"];
-      $Added_By[] = $row["Added By"];
-      $Mobile2[] = $row["Mobile2"];
+      $ID[] = $row["ID"];
+      $unit_ID[] = $row["unit_ID"];
+      $activity_ID[] = $row["activity_ID"];
+      $unit_status[] = $row["unit_status"];
+      $unit_status_reason[] = $row["unit_status_reason"];
+      $Hold_Can_Work_On[] = $row["Hold_Can_Work_On"];
+      $Held_For[] = $row["Held_For"];
+      $ticket_status[] = $row["ticket_status"];
+      $ticket_feedback[] = $row["ticket_feedback"];
+      $created_by[] = $row["created_by"];
+      $creation_date[] = $row["creation_date"];
+      $Handled_by[] = $row["Handled_by"];
+      $Last_update_date[] = $row["Last_update_date"];
     }
 
 
-  $developers= array("DevID"=>$DevID, "DevName"=>$DevName, "Rep"=>$Rep,
-   "Mobile1"=>$Mobile1, "Insertion_date"=>$Insertion_date, "Added_By"=>$Added_By, "Mobile2"=>$Mobile2);
+  $developers= array("ID"=>$ID, "unit_ID"=>$unit_ID, "activity_ID"=>$activity_ID,
+   "unit_status"=>$unit_status, "unit_status_reason"=>$unit_status_reason, "Hold_Can_Work_On"=>$Hold_Can_Work_On, "Held_For"=>$Held_For,
+   "ticket_status"=>$ticket_status, "ticket_feedback"=>$ticket_feedback, "created_by"=>$created_by,
+   "creation_date"=>$creation_date, "Handled_by"=>$Handled_by, "Last_update_date"=>$Last_update_date
+   );
 ///////////////////////////////////////////////////////////////
 /// End of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
