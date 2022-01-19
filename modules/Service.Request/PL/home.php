@@ -10,7 +10,8 @@
  $sql= "SELECT `service request`.`ID`, 
  `service request`.`unit_ID`, 
  `service request`.`activity_ID`, 
- `service request`.`unit_status`, 
+ `service request`.`unit_status` as `unit_status_id`, 
+ `unit status`.`Name` as `unit_status_name`, 
  `service request`.`unit_status_reason`, 
  `service request`.`Hold_Can_Work_On`, 
  `service request`.`Held_For`,
@@ -23,6 +24,7 @@
  `service request`.`Last_update_date`
   FROM `service request`
   LEFT JOIN `approval status` ON `service request`.`ticket_status`= `approval status`.`ID`
+  LEFT JOIN `unit status` ON `service request`.`unit_status`= `unit status`.`ID`
    ORDER BY `ID` DESC";
  $service_request_all= $database->query($sql);
 
@@ -33,7 +35,8 @@
       $ID[] = $row["ID"];
       $unit_ID[] = $row["unit_ID"];
       $activity_ID[] = $row["activity_ID"];
-      $unit_status[] = $row["unit_status"];
+      $unit_status_id[] = $row["unit_status_id"];
+      $unit_status_name[] = $row["unit_status_name"];
       $unit_status_reason[] = $row["unit_status_reason"];
       $Hold_Can_Work_On[] = $row["Hold_Can_Work_On"];
       $Held_For[] = $row["Held_For"];
@@ -48,7 +51,7 @@
 
 
   $service_request= array("ID"=>$ID, "unit_ID"=>$unit_ID, "activity_ID"=>$activity_ID,
-   "unit_status"=>$unit_status, "unit_status_reason"=>$unit_status_reason, "Hold_Can_Work_On"=>$Hold_Can_Work_On, "Held_For"=>$Held_For,
+   "unit_status_id"=>$unit_status_id, "unit_status_name"=>$unit_status_name, "unit_status_reason"=>$unit_status_reason, "Hold_Can_Work_On"=>$Hold_Can_Work_On, "Held_For"=>$Held_For,
    "ticket_status_id"=>$ticket_status_id, "ticket_status_name"=>$ticket_status_name, "ticket_feedback"=>$ticket_feedback, "created_by"=>$created_by,
    "creation_date"=>$creation_date, "Handled_by"=>$Handled_by, "Last_update_date"=>$Last_update_date
    );
@@ -93,6 +96,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Unit ID</th>
+                                    <th>Requested Unit Status</th>
                                     <th>Activity ID</th>
                                     <th>Created BY</th>
                                     <th>Handled By</th>
@@ -105,6 +109,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Unit ID</th>
+                                    <th>Requested Unit Status</th>
                                     <th>Activity ID</th>
                                     <th>Created BY</th>
                                     <th>Handled By</th>
@@ -120,6 +125,7 @@ for ($i=0; $i < $service_requestCount ; $i++) {
     # code.
     echo " <tr><th>".$service_request["ID"][$i]."</th>";
     echo "<td>".$service_request["unit_ID"][$i]."</td>";
+    echo "<td>".$service_request["unit_status_name"][$i]."</td>";
     echo "<td>".$service_request["activity_ID"][$i]."</td>";
     echo "<td>".$service_request["created_by"][$i]."</td>";
     echo "<td>".$service_request["Handled_by"][$i]."</td>";

@@ -5,21 +5,23 @@
 $SRId= $_GET["EditeSRId"];
 
 $sql_request= "SELECT `service request`.`ID`, 
-`service request`.`unit_ID`, 
-`service request`.`activity_ID`, 
-`service request`.`unit_status`, 
-`service request`.`unit_status_reason`, 
-`service request`.`Hold_Can_Work_On`, 
-`service request`.`Held_For`,
-`service request`.`ticket_status` as `ticket_status_id`,
-`approval status`.`Status` as `ticket_status_name` , 
-`service request`.`ticket_feedback`,
-`service request`.`created_by`,
-`service request`.`creation_date`,
-`service request`.`Handled_by`,
-`service request`.`Last_update_date`
- FROM `service request`
- LEFT JOIN `approval status` ON `service request`.`ticket_status`= `approval status`.`ID` WHERE `service request`.`ID`=".$SRId."";
+ `service request`.`unit_ID`, 
+ `service request`.`activity_ID`, 
+ `service request`.`unit_status` as `unit_status_id`, 
+ `unit status`.`Name` as `unit_status_name`, 
+ `service request`.`unit_status_reason`, 
+ `service request`.`Hold_Can_Work_On`, 
+ `service request`.`Held_For`,
+ `service request`.`ticket_status` as `ticket_status_id`,
+ `approval status`.`Status` as `ticket_status_name` , 
+ `service request`.`ticket_feedback`,
+ `service request`.`created_by`,
+ `service request`.`creation_date`,
+ `service request`.`Handled_by`,
+ `service request`.`Last_update_date`
+  FROM `service request`
+  LEFT JOIN `approval status` ON `service request`.`ticket_status`= `approval status`.`ID`
+  LEFT JOIN `unit status` ON `service request`.`unit_status`= `unit status`.`ID` WHERE `service request`.`ID`=".$SRId."";
 $service_request_all= $database->query($sql_request);
 
 //     // output data of each row
@@ -29,7 +31,8 @@ while($row = $service_request_all->fetch_assoc()) {
     $ID = $row["ID"];
     $unit_ID = $row["unit_ID"];
     $activity_ID = $row["activity_ID"];
-    $unit_status = $row["unit_status"];
+    $unit_status_id = $row["unit_status_id"];
+    $unit_status_name = $row["unit_status_name"];
     $unit_status_reason = $row["unit_status_reason"];
     $Hold_Can_Work_On = $row["Hold_Can_Work_On"];
     $Held_For = $row["Held_For"];
@@ -101,10 +104,10 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-6 col-8 align-self-center">
-            <h3 class="text-themecolor m-b-0 m-t-0">Developers</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0">Unit Ticket Request </h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
-                <li class="breadcrumb-item active">Edite Developer Data</li>
+                <li class="breadcrumb-item active">Edite Ticket Request Data</li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
@@ -128,7 +131,7 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">Edite Developer</h4>
+                    <h4 class="m-b-0 text-white">Edite Ticket Request NO  <?php echo $ID;?></h4>
                 </div>
                 <div class="card-block">
                 <form action="index?module=Service.Request&create=true" method="post">
@@ -141,7 +144,7 @@ if (isset($_POST['submit'])) {
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Unit ID </strong>
                                     <div class="form-group">
-                                    <input type="text" id="" name="unit_id_new" value="<?php echo htmlentities($unit_Id_new);?>" placeholder="<?php echo htmlentities($unit_Id_new);?>"  class="form-control" disabled/>
+                                    <input type="text" id="" name="unit_id_new" value="<?php echo htmlentities($unit_ID);?>" placeholder="<?php echo htmlentities($unit_ID);?>"  class="form-control" disabled/>
                                     </div>
                                 </div>
                                 <div id="" class="col-md-1 col-xs-6">
@@ -150,17 +153,26 @@ if (isset($_POST['submit'])) {
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Activity ID </strong>
                                     <div class="form-group">
-                                    <input type="text" id="" name="activity_id_new" value="<?php echo htmlentities($activity_id_new);?>" placeholder="<?php echo htmlentities($activity_id_new);?>" class="form-control" disabled/>
+                                    <input type="text" id="" name="activity_id_new" value="<?php echo htmlentities($activity_ID);?>" placeholder="<?php echo htmlentities($activity_ID);?>" class="form-control" disabled/>
                                     </div>
                                 </div>
                             </div>
                             <hr>
                             <h3 class="card-title">Ticket Info</h3>
                             <div class="row p-t-20">
+                                <div id="Status-Reason" class="col-md-3 col-xs-6">
+                                    <strong>Ticket ID</strong>
+                                    <div class="form-group">
+                                    <input type="text" value="<?php echo htmlentities($ID);?>" placeholder="<?php echo htmlentities($ID);?>" class="form-control" disabled/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row p-t-20">
                                     <div class="col-md-3 col-xs-6">
                                         <strong>Requested Unit Status</strong>
                                         <div class="form-group">
-                                            <select id="unitStatusform" name="status_id_new" class="form-control form-control-line" required>
+                                            <select id="unitStatusform" name="status_id_new" class="form-control form-control-line" >
+                                                <option value="2">Available</option>
                                                 <option value="2">Available</option>
                                                 <option value="4">Hold</option>
                                                 <option value="3">Reserved</option>
@@ -195,6 +207,7 @@ if (isset($_POST['submit'])) {
                                         <strong>Ticket Status </strong>
                                         <div class="form-group">
                                             <select id="Approval-status-op" name="ticket_status_new" class="form-control form-control-line" >
+                                                <option value="<?php echo htmlentities($ticket_status_id);?>"><?php echo htmlentities($ticket_status_name);?></option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -222,36 +235,38 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                 <div id="" class="col-md-.5 col-xs-6">
                                     <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
                                 </div>
-                                <div class="col-md-2.5">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Creation Date</label>
                                         <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
                                     </div>
                                 </div>
                                 <div id="" class="col-md-.5 col-xs-6">
-                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
-                                </div>
-                                <div class="col-md-2.5">
-                                    <div class="form-group">
-                                        <label class="control-label">last Update Date</label>
-                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div id="" class="col-md-.5 col-xs-6">
                                     <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
                                 </div>
-                                <div class="col-md-2.5">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
                                         <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
                                     </div>
                                 </div>
+                                                                <!--/span-->
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">last Update Date</label>
+                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row p-t-20">
                                 <!--/span-->
                                 <div id="" class="col-md-.5 col-xs-6">
                                     <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
                                 </div>
-                                <div class="col-md-2.5">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Handled BY</label>
                                         <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
