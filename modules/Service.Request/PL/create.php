@@ -197,7 +197,7 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
-                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
+                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities($user_name);?>" disabled="disapled" />
                                     </div>
                                 </div>
                                 <!--/span-->
