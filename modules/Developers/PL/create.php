@@ -106,14 +106,14 @@ if (isset($_POST['submit'])) {
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>1st Mobile Number</label>
+                                        <label> <i class="mdi mdi-cellphone-basic"></i> 1st Mobile Number</label>
                                         <input type="number" name="mobile1" class="form-control" required/>
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>2nd Mobile Number</label>
+                                        <label> <i class="mdi mdi-cellphone-basic"></i> 2nd Mobile Number</label>
                                         <input type="number" name="mobile2" class="form-control" required/>
                                     </div>
                                 </div>

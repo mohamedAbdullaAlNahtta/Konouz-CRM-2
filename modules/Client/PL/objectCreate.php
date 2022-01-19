@@ -112,7 +112,7 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">New Client</h4>
+                    <h4 class="m-b-0 text-white"> <i class="mdi mdi-account-plus"></i> New Client</h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=Client&tableName=<?php echo $tableName; ?>&objectCreate=true" method="post">
@@ -209,11 +209,11 @@ if (isset($_POST['submit'])) {
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="box-title m-t-40">Job Info</h3>
+                            <h3 class="box-title m-t-40"> <i class="mdi mdi-worker"></i> Job Info</h3>
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"><i class="mdi mdi-worker"></i> Job Title</label>
+                                        <label class="control-label"> Job Title</label>
                                         <input type="text"   name="Job_Title_create" class="form-control" />
                                         <small class="form-control-feedback"> Example Manager....</small>
                                     </div>
@@ -227,7 +227,7 @@ if (isset($_POST['submit'])) {
                                 </div>
 
                             </div>
-                            <h3 class="box-title m-t-40">Address Info</h3>
+                            <h3 class="box-title m-t-40"> <i class="mdi mdi-map-marker"></i> Address Info</h3>
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
