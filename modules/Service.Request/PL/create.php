@@ -129,7 +129,7 @@ if (isset($_POST['submit'])) {
                                             </select>
                                         </div>
                                    </div>
-                                   <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form ">
+                                   <div id="Status-Reason" class="col-md-9 col-xs-6">
                                         <strong>Requested Status Reason</strong>
                                         <div class="form-group">
                                         <input type="text" id="" name="requested_status_reason_new" class="form-control" />
