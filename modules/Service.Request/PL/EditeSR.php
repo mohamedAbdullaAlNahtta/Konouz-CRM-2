@@ -172,6 +172,7 @@ if (isset($_POST['submit'])) {
                                         <strong>Requested Unit Status</strong>
                                         <div class="form-group">
                                             <select id="unitStatusform" name="status_id_new" class="form-control form-control-line" >
+                                                <option value="<?php echo htmlentities($unit_status_id)?>"><?php echo htmlentities($unit_status_name) ?></option>
                                                 <option value="2">Available</option>
                                                 <option value="2">Available</option>
                                                 <option value="4">Hold</option>
