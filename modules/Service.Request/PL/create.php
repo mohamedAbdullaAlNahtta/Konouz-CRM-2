@@ -150,7 +150,7 @@ if (isset($_POST['submit'])) {
                                         <input type="text" id="" name="Held_for_new" class="form-control d" />
                                         </div>
                                     </div>
-                                    <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
+                                    <div id="Approval-status" class="col-md-3 col-xs-6 ">
                                         <strong>Ticket Status </strong>
                                         <div class="form-group">
                                             <select id="Approval-status-op" name="ticket_status_new" class="form-control form-control-line" >
