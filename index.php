@@ -302,7 +302,7 @@ if (isset($module)) {
                                 <li><a href="index?module=Service.Request"><i class="mdi mdi-calendar-clock"></i> Service Request</a></li>
                                 <li><a href="index?module=Activities"><i class="mdi mdi-calendar-check"></i> Activities</a></li>
                                 <li>
-                                    <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-settings"></i> Inventory Configuration</a>
+                                    <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-settings"></i> Configuration</a>
                                     <ul aria-expanded="false" class="collapse">
 <?php
 $sql_get_conf_table= "SELECT * FROM `lkp_tables` ";

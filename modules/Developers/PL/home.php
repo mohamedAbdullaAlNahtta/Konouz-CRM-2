@@ -103,7 +103,7 @@ if (isset($_GET['deleteDeveloperId'])) {
 for ($i=0; $i < $developerCount ; $i++) { 
     # code.
     echo " <tr><th>".$developers["DevID"][$i]."</th>";
-    echo "<td>".$developers["DevName"][$i]."</td>";
+    echo "<td><i class='mdi mdi-account-circle'></i> ".$developers["DevName"][$i]."</td>";
     echo "<td>".$developers["Rep"][$i]."</td>";
     echo "<td>".$developers["Insertion_date"][$i]."</td>";
     echo "<td>".$developers["Added_By"][$i]."</td>";
