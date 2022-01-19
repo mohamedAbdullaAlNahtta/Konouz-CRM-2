@@ -310,6 +310,67 @@ for ($i=0; $i < $FloorNameCount ; $i++) {
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-md-3 col-xs-6">
+                                        <strong>Unit Status</strong>
+                                        <div class="form-group">
+                                            <select id="unitStatusform" name="status_id" class="form-control form-control-line" required>
+                                                <option value="2">Available</option>
+                                                <option value="4">Hold</option>
+                                                <!-- <option value="7">On Sale</option>
+                                                <option value="3">Reserved</option>
+                                                <option value="8">Sold</option> -->
+                                                <option value="6">Restricted</option>
+                                                <option value="5">Un-Available</option>
+                                            </select>
+                                        </div>
+                                   </div>
+                                   <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form ">
+                                        <strong>Status Reason</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="status_reason" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
+                                        <strong>Hold Can Work On </strong>
+                                        <div class="form-group">
+                                            <select id="" name="Hold_can_work_on" class="form-control form-control-line " >
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="Held-For" class="col-md-9 col-xs-6 dependent-form">
+                                        <strong>Held For</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="Held_for" class="form-control d" />
+                                        </div>
+                                    </div>
+                                    <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
+                                        <strong>Approval Status </strong>
+                                        <div class="form-group">
+                                            <select id="Approval-status-op" name="approval_status" class="form-control form-control-line" >
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $approvalStatusGetCount ; $i++) { 
+    echo "<option value='".$Approval_Status_Data["Approval_ID"][$i]."' >".$Approval_Status_Data["Approval_Status"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
+                                        <strong>Approval Feedback</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="approval_feed_back" class="form-control " />
+                                        </div>
+                                    </div>
+                                </div>                                
+                                <hr />
                                 <div class="ribbon-wrapper">
                                     <div class="ribbon ribbon-bookmark ribbon-info">Unit Discription</div>
                                     <p class="ribbon-content">check out the unit discription</p>
