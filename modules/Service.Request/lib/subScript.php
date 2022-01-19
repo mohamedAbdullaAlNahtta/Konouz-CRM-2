@@ -160,6 +160,7 @@ window.setTimeout(function () {
 <!-- Drop-down list dependent form -->
 <script>
     $(document).ready($(function() {
+    $(".dependent-form").hide();
     $("#unitStatusform").change(function() {
         switch($(this).val()){ 
             case "2":
