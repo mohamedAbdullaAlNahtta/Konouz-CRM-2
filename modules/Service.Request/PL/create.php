@@ -1,4 +1,11 @@
 <?php
+
+if (isset($_GET['unitId'])) {
+    $unit_Id_new = $_GET['unitId'];
+}
+if (isset($_GET['unitId'])) {
+    $unit_Id_new = $_GET['unitId'];
+}
 ///////////////////////////////////////////////////////////////
 /// start of ---> submitting form data to the database 
 ///////////////////////////////////////////////////////////////
