@@ -6,6 +6,8 @@
 /////////////////////////
 if (isset($_GET['create']))
 {
+    // getDropDownValuesFromDb
+    require_once __DIR__ . "/inc/getDropDownValuesFromDb.php";
     //loading create page
     require_once ("PL/create.php");
 }
@@ -16,6 +18,8 @@ elseif (isset($_GET['SRId']))
 }
 elseif (isset($_GET['EditeSRId']))
 {
+    // getDropDownValuesFromDb
+    require_once __DIR__ . "/inc/getDropDownValuesFromDb.php";
     ///loading edite developer details page
     require_once ("PL/EditeSR.php");
 }

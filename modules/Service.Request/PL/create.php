@@ -110,9 +110,9 @@ if (isset($_POST['submit'])) {
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
-// for ($i=0; $i < $approvalStatusGetCount ; $i++) { 
-//     echo "<option value='".$Approval_Status_Data["Approval_ID"][$i]."' >".$Approval_Status_Data["Approval_Status"][$i]."</option>";
-// }
+for ($i=0; $i < $approvalStatusGetCount ; $i++) { 
+    echo "<option value='".$Approval_Status_Data["Approval_ID"][$i]."' >".$Approval_Status_Data["Approval_Status"][$i]."</option>";
+}
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
 ///////////////////////////////////////////////////////////////
