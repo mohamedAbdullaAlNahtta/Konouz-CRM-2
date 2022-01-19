@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">New Developer</h4>
+                    <h4 class="m-b-0 text-white"> <i class="mdi mdi-account-plus"></i> New Developer</h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=Developers&create=true" method="post">
@@ -93,7 +93,7 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
-                                        <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
+                                        <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities($user_name);?>" disabled="disapled" />
                                     </div>
                                 </div>
                                 <!--/span-->
