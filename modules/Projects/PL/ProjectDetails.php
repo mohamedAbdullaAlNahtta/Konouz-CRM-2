@@ -76,7 +76,7 @@ $Projects= $database->query($sql);
                             <!--/span-->
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="control-label">Developer Name</label>
+                                    <label class="control-label"> <i class="mdi mdi-account-circle"></i> Developer Name</label>
                                     <input type="text" id="DevelopertName" name="DeveloperName" class="form-control" placeholder="<?php echo htmlentities($DevName); ?>" disabled="disabled" />
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ $Projects= $database->query($sql);
                             <!--/span-->
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Location</label>
+                                    <label> <i class="mdi mdi-map-marker"></i> Location</label>
                                     <input type="text" id="Location" name="Location" class="form-control" placeholder="<?php echo htmlentities($location); ?>" disabled="disabled" />
                                 </div>
                             </div>
@@ -99,30 +99,9 @@ $Projects= $database->query($sql);
                         <!--/row-->
 
                         <!--/row-->
-                        <h3>Location on Map</h3>
+                        
 
                         <div class="row">
-                            <!--/span-->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">Creation Date</label>
-                                    <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities($Insertion_date); ?>" disabled="disapled"/>
-                                </div>
-                            </div>
-                            <!--/span-->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">Created BY</label>
-                                    <input type="text" id="DCreatedBY" name="DCreatedBY" class="form-control" placeholder="<?php echo htmlentities($Added_By); ?>" disabled="disapled" />
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">Last Update Date</label>
-                                    <input type="text" id="LastUpdateDate" name="LastUpdateDate" class="form-control" placeholder="<?php echo htmlentities($updated_on); ?>" disabled="disapled" />
-                                </div>
-                            </div>
-                            <!--/span-->
                             <!--/span-->
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -143,6 +122,39 @@ $Projects= $database->query($sql);
                             <!--/span-->
                         </div>
                         <!--/row-->
+                        <hr>
+                        <div class="row">
+                            <!--/span-->
+                            <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">Creation Date</label>
+                                    <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities($Insertion_date); ?>" disabled="disapled"/>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">Created BY</label>
+                                    <input type="text" id="DCreatedBY" name="DCreatedBY" class="form-control" placeholder="<?php echo htmlentities($Added_By); ?>" disabled="disapled" />
+                                </div>
+                            </div>
+                            <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">Last Update Date</label>
+                                    <input type="text" id="LastUpdateDate" name="LastUpdateDate" class="form-control" placeholder="<?php echo htmlentities($updated_on); ?>" disabled="disapled" />
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
                     </div>
                 </div>
             </div>
