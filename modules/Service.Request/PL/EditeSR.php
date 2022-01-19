@@ -18,10 +18,10 @@ $sql= "SELECT `ID`,
 `Handled_by`,
 `Last_update_date`
  FROM `service request` WHERE `ID`='".$SRId."'";
-$developer= $database->query($sql);
+$service_request= $database->query($sql);
 
     // output data of each row
-    while($row = $developer->fetch_assoc()) {
+    while($row = $service_request->fetch_assoc()) {
         $ID = $row["ID"];
         $unit_ID = $row["unit_ID"];
         $activity_ID = $row["activity_ID"];
@@ -78,7 +78,7 @@ if (isset($_POST['submit'])) {
     // $sql_z =  "UPDATE `developers`  {$setcolumn}  WHERE DevID=".$devId."";
 
      $sql_zxc =  "call UPDATE_dev ('".$devId."','".$DeveloperName."','".$DeveloperRepresentative."','".$mobile1."','".$mobile2."')";
-    $developer_edite= $database->query($sql_zxc); 
+    $service_request_edite= $database->query($sql_zxc); 
 
 } 
 ///////////////////////////////////////////////////////////////
@@ -213,10 +213,23 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                         <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
                                     </div>
                                 </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">last Update Date</label>
+                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
+                                    </div>
+                                </div>
                                 <!--/span-->
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
+                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Handled BY</label>
                                         <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
                                     </div>
                                 </div>
