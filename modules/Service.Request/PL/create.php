@@ -21,13 +21,17 @@ if (isset($_POST['submit'])) {
     $ticket_feedback = $_POST['ticket_feed_back_new'];
     
     // escaping variables
-    $DeveloperName = $database->escape_string($DeveloperName);
-    $DeveloperRepresentative = $database->escape_string($DeveloperRepresentative);
-    $mobile1 = $database->escape_string($mobile1);
-    $mobile2 = $database->escape_string($mobile2);
+    $unit_id_new = $database->escape_string($unit_id_new);
+    $activity_id_new = $database->escape_string($activity_id_new);
+    $unit_status = $database->escape_string($unit_status);
+    $unit_status_reason = $database->escape_string($unit_status_reason);
+    $Hold_can_work_on_new = $database->escape_string($Hold_can_work_on_new);
+    $Held_for_new = $database->escape_string($Held_for_new);
+    $ticket_status = $database->escape_string($ticket_status);
+    $ticket_feedback = $database->escape_string($ticket_feedback);
 
     $sql= "INSERT INTO `developers` (`ID`, `Name`, `Rep`, `Mobile1`, `Insertion Date`, `Added By`, `Mobile2`) VALUES (NULL, '".$DeveloperName."', '".$DeveloperRepresentative."', '".$mobile1."', current_timestamp(), '', '".$mobile2."')";
-    $developer_dml= $database->query($sql); 
+    $ticket_dml= $database->query($sql); 
 
 } 
 ///////////////////////////////////////////////////////////////
