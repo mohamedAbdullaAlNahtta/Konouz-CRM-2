@@ -260,7 +260,7 @@ if (isset($_POST['submit'])) {
                         <div class="tab-pane active" id="profile" role="tabpanel">
                             <div class="card-block">
                                 <div class="row">
-                                    <div class="col-md-4 col-xs-6 b-r">
+                                    <div class="col-md-3 col-xs-6 b-r">
                                         <strong>Project</strong>
                                         <div class="form-group">
                                             <select id="myselect" name="Project_ID" class="form-control form-control-line" required="test">
@@ -291,7 +291,7 @@ for ($i=0; $i < $projectsNameCount ; $i++) {
                                             <input type="number" name="Unit_No" class="form-control" required/>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-xs-6">
+                                    <div class="col-md-3 col-xs-6">
                                         <strong>Floor</strong>
                                         <div class="form-group">
                                             <select id="myselect" name="floor_id" class="form-control form-control-line" required>
@@ -310,7 +310,7 @@ for ($i=0; $i < $FloorNameCount ; $i++) {
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-xs-6">
+                                    <div class="col-md-2 col-xs-6">
                                         <strong>Unit Status</strong>
                                         <div class="form-group">
                                             <select id="unitStatusform" name="status_id" class="form-control form-control-line" required>
@@ -324,27 +324,6 @@ for ($i=0; $i < $FloorNameCount ; $i++) {
                                             </select>
                                         </div>
                                    </div>
-                                   <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form ">
-                                        <strong>Status Reason</strong>
-                                        <div class="form-group">
-                                        <input type="text" id="" name="status_reason" class="form-control" />
-                                        </div>
-                                    </div>
-                                    <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
-                                        <strong>Hold Can Work On </strong>
-                                        <div class="form-group">
-                                            <select id="" name="Hold_can_work_on" class="form-control form-control-line " >
-                                                <option value="1">Yes</option>
-                                                <option value="2">No</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div id="Held-For" class="col-md-9 col-xs-6 dependent-form">
-                                        <strong>Held For</strong>
-                                        <div class="form-group">
-                                        <input type="text" id="" name="Held_for" class="form-control d" />
-                                        </div>
-                                    </div>
                                     <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Approval Status </strong>
                                         <div class="form-group">
