@@ -19,27 +19,27 @@ $sql_request= "SELECT `service request`.`ID`,
 `service request`.`Handled_by`,
 `service request`.`Last_update_date`
  FROM `service request`
- LEFT JOIN `approval status` ON `service request`.`ticket_status`= `approval status`.`ID` WHERE `ID`='".$SRId."'";
-$service_request_res= $database->query($sql_request);
+ LEFT JOIN `approval status` ON `service request`.`ticket_status`= `approval status`.`ID` WHERE `service request`.`ID`=".$SRId."";
+$service_request_all= $database->query($sql_request);
 
 //     // output data of each row
 
 
 while($row = $service_request_all->fetch_assoc()) {
-    $ID[] = $row["ID"];
-    $unit_ID[] = $row["unit_ID"];
-    $activity_ID[] = $row["activity_ID"];
-    $unit_status[] = $row["unit_status"];
-    $unit_status_reason[] = $row["unit_status_reason"];
-    $Hold_Can_Work_On[] = $row["Hold_Can_Work_On"];
-    $Held_For[] = $row["Held_For"];
-    $ticket_status_id[] = $row["ticket_status_id"];
-    $ticket_status_name[] = $row["ticket_status_name"];
-    $ticket_feedback[] = $row["ticket_feedback"];
-    $created_by[] = $row["created_by"];
-    $creation_date[] = $row["creation_date"];
-    $Handled_by[] = $row["Handled_by"];
-    $Last_update_date[] = $row["Last_update_date"];
+    $ID = $row["ID"];
+    $unit_ID = $row["unit_ID"];
+    $activity_ID = $row["activity_ID"];
+    $unit_status = $row["unit_status"];
+    $unit_status_reason = $row["unit_status_reason"];
+    $Hold_Can_Work_On = $row["Hold_Can_Work_On"];
+    $Held_For = $row["Held_For"];
+    $ticket_status_id = $row["ticket_status_id"];
+    $ticket_status_name = $row["ticket_status_name"];
+    $ticket_feedback = $row["ticket_feedback"];
+    $created_by = $row["created_by"];
+    $creation_date = $row["creation_date"];
+    $Handled_by = $row["Handled_by"];
+    $Last_update_date = $row["Last_update_date"];
   }
 
 ///////////////////////////////////////////////////////////////
@@ -104,7 +104,7 @@ if (isset($_POST['submit'])) {
             <h3 class="text-themecolor m-b-0 m-t-0">Developers</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
-                <li class="breadcrumb-item active">Edite Developer Data</li>
+                <li class="breadcrumb-item active">Edite Developer Data <?php var_dump($sql_request); ?></li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
