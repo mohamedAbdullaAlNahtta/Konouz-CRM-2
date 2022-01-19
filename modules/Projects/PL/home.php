@@ -109,7 +109,7 @@ if (isset($_GET['deleteProjectId'])) {
 for ($i=0; $i < $ProjectCount; $i++) { 
     echo " <tr><th>".$Projects["ProID"][$i]."</th>";
     echo "<td>".$Projects["ProName"][$i]."</td>";
-    echo "<td><a href='index?module=Developers&EditeDeveloperId=".$Projects["DevID"][$i]."'>".$Projects["DevName"][$i]."</a></td>";
+    echo "<td><i class='mdi mdi-account-circle'></i> <a href='index?module=Developers&EditeDeveloperId=".$Projects["DevID"][$i]."'>".$Projects["DevName"][$i]."</a></td>";
     echo "<td>".$Projects["Insertion_date"][$i]."</td>";
     echo "<td>".$Projects["Added_By"][$i]."</td>";
     echo "<td>".$Projects["maintenance_pct"][$i]." % </td>";

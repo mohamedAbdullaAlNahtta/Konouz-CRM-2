@@ -99,8 +99,8 @@ $Projects= $database->query($sql);
                         <!--/row-->
 
                         <!--/row-->
-                        
-
+                        <hr>
+                        <h3> <i class="mdi mdi-map-marker"></i> Location Info</h3>
                         <div class="row">
                             <!--/span-->
                             <div class="col-md-12">
