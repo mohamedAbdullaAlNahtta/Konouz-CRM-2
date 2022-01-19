@@ -23,22 +23,25 @@ $sql_request= "SELECT `service request`.`ID`,
 $service_request_res= $database->query($sql_request);
 
 //     // output data of each row
-    // while($row = $service_request_res->fetch_assoc()) {
-    //     $ID = $row["ID"];
-    //     $unit_ID = $row["unit_ID"];
-    //     $activity_ID = $row["activity_ID"];
-    //     $unit_status = $row["unit_status"];
-    //     $unit_status_reason = $row["unit_status_reason"];
-    //     $Hold_Can_Work_On = $row["Hold_Can_Work_On"];
-    //     $Held_For = $row["Held_For"];
-    //     $ticket_status_id = $row["ticket_status_id"];
-    //     $ticket_status_name = $row["ticket_status_name"];
-    //     $ticket_feedback = $row["ticket_feedback"];
-    //     $created_by = $row["created_by"];
-    //     $creation_date = $row["creation_date"];
-    //     $Handled_by = $row["Handled_by"];
-    //     $Last_update_date = $row["Last_update_date"];
-    // }
+
+
+while($row = $service_request_all->fetch_assoc()) {
+    $ID[] = $row["ID"];
+    $unit_ID[] = $row["unit_ID"];
+    $activity_ID[] = $row["activity_ID"];
+    $unit_status[] = $row["unit_status"];
+    $unit_status_reason[] = $row["unit_status_reason"];
+    $Hold_Can_Work_On[] = $row["Hold_Can_Work_On"];
+    $Held_For[] = $row["Held_For"];
+    $ticket_status_id[] = $row["ticket_status_id"];
+    $ticket_status_name[] = $row["ticket_status_name"];
+    $ticket_feedback[] = $row["ticket_feedback"];
+    $created_by[] = $row["created_by"];
+    $creation_date[] = $row["creation_date"];
+    $Handled_by[] = $row["Handled_by"];
+    $Last_update_date[] = $row["Last_update_date"];
+  }
+
 ///////////////////////////////////////////////////////////////
 /// End of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
