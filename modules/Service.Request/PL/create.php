@@ -11,8 +11,8 @@ if (isset($_GET['activityId'])) {
 ///////////////////////////////////////////////////////////////
 if (isset($_POST['submit'])) {
 
-    $unit_id_new = $_POST['unit_id_new'];
-    $activity_id_new = $_POST['activity_id_new'];
+    $unit_id_new = $unit_Id_new;
+    $activity_id_new = $activity_id_new;
     $unit_status = $_POST['status_id_new'];
     $unit_status_reason = $_POST['requested_status_reason_new'];
     $Hold_can_work_on_new = $_POST['Hold_can_work_on_new'];
