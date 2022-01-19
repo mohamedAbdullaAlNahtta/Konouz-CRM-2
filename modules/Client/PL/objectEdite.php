@@ -181,7 +181,7 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">Edite Client</h4>
+                    <h4 class="m-b-0 text-white"> <i class="mdi mdi-account-edit"></i> Edite Client</h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=Client&tableName=<?php echo $tableName; ?>&objectEditeId=<?php echo $objectEditeId; ?>" method="post">
@@ -212,7 +212,7 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> Source Channel</label>
+                                        <label class="control-label"> <i class="mdi mdi-facebook-box"></i> <i class="mdi mdi-facebook-messenger"></i> <i class="mdi mdi-instagram"></i> <i class="mdi mdi-twitter"></i> <i class="mdi mdi-deskphone"></i> Source Channel</label>
                                         <input type="text" name="ch_id_edite" value="<?php echo htmlentities($ch_id)?>" placeholder="<?php echo htmlentities($ch_id)?>" class="form-control" disabled/>
                                         <small class="form-control-feedback"> Example Facebook Lead....</small>
                                     </div>
@@ -222,21 +222,21 @@ if (isset($_POST['submit'])) {
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> 1st Mobile Number</label>
+                                        <label class="control-label"> <i class="mdi mdi-cellphone-basic"></i> 1st Mobile Number</label>
                                         <input type="number" name="Mobile1_edite" value="<?php echo htmlentities($Mobile1)?>" placeholder="<?php echo htmlentities($Mobile1)?>" class="form-control" />
                                         <small class="form-control-feedback"> Example 01093002345....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> 2nd Mobile Number</label>
+                                        <label class="control-label"> <i class="mdi mdi-cellphone-basic"></i> 2nd Mobile Number</label>
                                         <input type="number"  name="Mobile2_edite" value="<?php echo htmlentities($Mobile2)?>" placeholder="<?php echo htmlentities($Mobile2)?> "class="form-control" />
                                         <small class="form-control-feedback"> Example 01132332856....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> Email</label>
+                                        <label class="control-label"> <i class="mdi mdi-email"></i> Email</label>
                                         <input type="text" name="Email_edite" value="<?php echo htmlentities($Email)?>" placeholder="<?php echo htmlentities($Email)?>" class="form-control" />
                                         <small class="form-control-feedback"> Example smith@yahoo.com....</small>
                                     </div>
@@ -246,7 +246,7 @@ if (isset($_POST['submit'])) {
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> National ID</label>
+                                        <label class="control-label"> <i class="mdi mdi-account-card-details"></i> National ID</label>
                                         <input type="text" name="National_ID_edite" value="<?php echo htmlentities($National_ID)?>" placeholder="<?php echo htmlentities($National_ID)?>" class="form-control" />
                                         <small class="form-control-feedback">Must be 14 Digits Example 28767....etc</small>
                                     </div>
@@ -273,13 +273,13 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> Nationality</label>
+                                        <label class="control-label"><i class="flag-icon flag-icon-eg" title="eg" id="eg"></i> Nationality</label>
                                         <input type="text" name="nationality_edite" value="<?php echo htmlentities($nationality)?>" placeholder="<?php echo htmlentities($nationality)?>" class="form-control" />
                                         <small class="form-control-feedback"> Example Egyption....</small>
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="box-title m-t-40">Job Info</h3>
+                            <h3 class="box-title m-t-40"> <i class="mdi mdi-worker"></i> Job Info</h3>
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -297,7 +297,7 @@ if (isset($_POST['submit'])) {
                                 </div>
 
                             </div>
-                            <h3 class="box-title m-t-40">Address Info</h3>
+                            <h3 class="box-title m-t-40"> <i class="mdi mdi-map-marker"></i> Address Info</h3>
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
