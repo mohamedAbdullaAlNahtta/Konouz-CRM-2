@@ -106,70 +106,108 @@ if (isset($_POST['submit'])) {
                     <h4 class="m-b-0 text-white">Edite Developer</h4>
                 </div>
                 <div class="card-block">
-                    <form action="index?module=Developers&EditeDeveloperId=<?php echo htmlentities($devId);?>" method="post">
+                <form action="index?module=Service.Request&create=true" method="post">
                         <div class="form-body">
-                            <h3 class="card-title">Developre Info</h3>
-
+                            <h3 class="card-title">Unit Info</h3>
                             <div class="row p-t-20">
-                                <div class="col-md-3">
+                                <div id="" class="col-md-3 col-xs-6">
+                                    <strong>Unit ID </strong>
                                     <div class="form-group">
-                                        <label class="control-label">Developer Name</label>
-                                        <input type="text" id="DeveloperName" name="DeveloperName" class="form-control" placeholder="<?php echo htmlentities($DevName);?>" />
-                                        <small class="form-control-feedback">Dev Name.... </small>
+                                    <input type="text" id="" name="unit_id_new" value="<?php echo htmlentities($unit_Id_new);?>" placeholder="<?php echo htmlentities($unit_Id_new);?>"  class="form-control" disabled/>
                                     </div>
                                 </div>
-                                <!--/span-->
-                                <div class="col-md-3">
+                                <div id="" class="col-md-3 col-xs-6">
+                                    <strong>Activity ID </strong>
                                     <div class="form-group">
-                                        <label class="control-label">Developer Representative</label>
-                                        <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities($Rep);?>"/>
-                                        <small class="form-control-feedback">Rep Name....</small>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>1st Mobile Number</label>
-                                        <input type="text" class="form-control" name="mobile1" placeholder="<?php echo htmlentities($Mobile1);?>" />
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>2nd Mobile Number</label>
-                                        <input type="text" class="form-control" name="mobile2" placeholder="<?php echo htmlentities($Mobile2);?>" />
+                                    <input type="text" id="" name="activity_id_new" value="<?php echo htmlentities($activity_id_new);?>" placeholder="<?php echo htmlentities($activity_id_new);?>" class="form-control" disabled/>
                                     </div>
                                 </div>
                             </div>
-                            <!--/row-->
-
-                            <!--/row-->
-                            <h3 class="box-title m-t-40">Contact Info</h3>
-
-                            <div class="row">
+                            <hr>
+                            <h3 class="card-title">Ticket Info</h3>
+                            <div class="row p-t-20">
+                                    <div class="col-md-3 col-xs-6">
+                                        <strong>Requested Unit Status</strong>
+                                        <div class="form-group">
+                                            <select id="unitStatusform" name="status_id_new" class="form-control form-control-line" required>
+                                                <option value="2">Available</option>
+                                                <option value="4">Hold</option>
+                                                <option value="3">Reserved</option>
+                                                <option value="8">Sold</option> 
+                                                <option value="6">Restricted</option>
+                                                <option value="5">Un-Available</option>
+                                            </select>
+                                        </div>
+                                   </div>
+                                   <div id="Status-Reason" class="col-md-9 col-xs-6">
+                                        <strong>Requested Status Reason</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="requested_status_reason_new" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
+                                        <strong>Hold Can Work On </strong>
+                                        <div class="form-group">
+                                            <select id="" name="Hold_can_work_on_new" class="form-control form-control-line " >
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="Held-For" class="col-md-9 col-xs-6 dependent-form">
+                                        <strong>Held For</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="Held_for_new" class="form-control d" />
+                                        </div>
+                                    </div>
+                                    <div id="Approval-status" class="col-md-3 col-xs-6 ">
+                                        <strong>Ticket Status </strong>
+                                        <div class="form-group">
+                                            <select id="Approval-status-op" name="ticket_status_new" class="form-control form-control-line" >
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $approvalStatusGetCount ; $i++) { 
+    echo "<option value='".$Approval_Status_Data["Approval_ID"][$i]."' >".$Approval_Status_Data["Approval_Status"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
+                                        <strong>Ticket Feedback</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="ticket_feed_back_new" class="form-control " />
+                                        </div>
+                                    </div>
+                            </div>                                   
+                            <hr />    
+                            <div class="row p-t-20">
                                 <!--/span-->
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Creation Date</label>
-                                        <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
+                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
-                                        <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
+                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
                                     </div>
                                 </div>
-
                                 <!--/span-->
                             </div>
                             <!--/row-->
                         </div>
-
                         <div class="form-actions">
-                            <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Save</button>
-                            <button type="button" onclick="location.href='index?module=Developers'" class="btn btn-inverse">Cancel</button>
+                            <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
+                            <button type="button" onclick="location.href='index?module=Service.Request'" class="btn btn-inverse">Cancel</button>
                         </div>
                     </form>
                 </div>
