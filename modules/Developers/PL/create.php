@@ -83,14 +83,20 @@ if (isset($_POST['submit'])) {
                                     </div>
                                 </div>
                                 <!--/span-->
-                                <div class="col-md-3">
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                                </div>
+                                <div class="col-md-2">
                                     <div class="form-group">
                                         <label class="control-label">Creation Date</label>
                                         <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
                                     </div>
                                 </div>
                                 <!--/span-->
-                                <div class="col-md-3">
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                                </div>
+                                <div class="col-md-2">
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
                                         <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities($user_name);?>" disabled="disapled" />
