@@ -111,6 +111,8 @@ if (isset($_POST['submit'])) {
 for ($i=1; $i < $col_count ; $i++) { 
     
     if ($columns[$i]==='Added By') {
+        echo"<div class='col-md-.5 col-xs-6'>
+        <img src='assets/images/users/User-01.png' style='border-radius: 50%;border: 1px solid; margin-top: 20px;' width='50'></div>";
         echo"<div class='col-md-3'>
         <div class='form-group'>";
         echo"<label class='control-label'>".$columns[$i]."</label>";
@@ -119,6 +121,8 @@ for ($i=1; $i < $col_count ; $i++) {
         echo" </div>
         </div>";
     } elseif($columns[$i]==='Insertion Date') {
+        echo"<div  class='col-md-.5 col-xs-6'>
+        <img src='assets/images/icons/Circle-icons-calendar.svg.png' style=' margin-top: 20px;' width='50'></div>";
         echo"<div class='col-md-3'>
         <div class='form-group'>";
         echo"<label class='control-label'>".$columns[$i]."</label>";
