@@ -142,7 +142,7 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> Source Channel</label>
+                                        <label class="control-label"> <i class="mdi mdi-facebook-box"></i> <i class="mdi mdi-facebook-messenger"></i> <i class="mdi mdi-instagram"></i> <i class="mdi mdi-twitter"></i> <i class="mdi mdi-deskphone"></i> Source Channel</label>
                                         <input type="text" placeholder="Facebook Lead" name="ch_id_create" class="form-control" disabled/>
                                         <small class="form-control-feedback"> Example Facebook Lead....</small>
                                     </div>
@@ -152,14 +152,14 @@ if (isset($_POST['submit'])) {
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> <i class="mdi mdi-cellphone"></i> 1st Mobile Number </label>
+                                        <label class="control-label"> <i class="mdi mdi-cellphone-basic"></i> 1st Mobile Number </label>
                                         <input type="number"  name="Mobile1_create" class="form-control" required/>
                                         <small class="form-control-feedback"> Example 01093002345....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> <i class="mdi mdi-cellphone"></i> 2nd Mobile Number </label>
+                                        <label class="control-label"> <i class="mdi mdi-cellphone-basic"></i> 2nd Mobile Number </label>
                                         <input type="number" placeholder="01132332856"  name="Mobile2_create" class="form-control" />
                                         <small class="form-control-feedback"> Example 01132332856....</small>
                                     </div>
@@ -213,7 +213,7 @@ if (isset($_POST['submit'])) {
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> Job Title</label>
+                                        <label class="control-label"><i class="mdi mdi-worker"></i> Job Title</label>
                                         <input type="text"   name="Job_Title_create" class="form-control" />
                                         <small class="form-control-feedback"> Example Manager....</small>
                                     </div>
