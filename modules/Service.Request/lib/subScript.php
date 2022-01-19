@@ -164,10 +164,10 @@ window.setTimeout(function () {
     $("#unitStatusform").change(function() {
         switch($(this).val()){ 
             case "2":
-                $(".dependent-form").hide().parent().find("#Status-Reason").show();
-                $(".dependent-form").hide().parent().find("#Held-For").hide();
-                $(".dependent-form").hide().parent().find("#Hold-Can-Work-On").hide();
-                $(".dependent-form").hide().parent().find("#Approval-status").show();
+                $(".dependent-form").parent().find("#Status-Reason").show();
+                $(".dependent-form").parent().find("#Held-For").hide();
+                $(".dependent-form").parent().find("#Hold-Can-Work-On").hide();
+                $(".dependent-form").parent().find("#Approval-status").show();
                 break;
             case "4":
                 $(".dependent-form").parent().find("#Status-Reason").show();
