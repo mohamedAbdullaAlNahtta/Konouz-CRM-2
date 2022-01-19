@@ -1,18 +1,17 @@
 <?php
 
+if (isset($_GET['unitid'])) {
+    $unit_Id = $_GET['unitid'];
+}
 
-    $unit_Id_new = $_GET['unitid'];
-
-    $activity_id_new = $_GET['activityid'];
-
+if (isset($_GET['activityId'])) {
+    $activity_id = $_GET['activityId'];
+}
 ///////////////////////////////////////////////////////////////
 /// start of ---> submitting form data to the database 
 ///////////////////////////////////////////////////////////////
 if (isset($_POST['submit'])) {
-    $x="1-4-55";
 
-    // $unit_id_new = $_POST['unitid'];
-    // $activity_id_new = $_POST['activityid'];
     $unit_status = $_POST['status_id_new'];
     $unit_status_reason = $_POST['requested_status_reason_new'];
     $Hold_can_work_on_new = $_POST['Hold_can_work_on_new'];
@@ -21,8 +20,6 @@ if (isset($_POST['submit'])) {
     $ticket_feedback = $_POST['ticket_feed_back_new'];
     
     // escaping variables
-    $unit_id_new = $database->escape_string($unit_id_new);
-    $activity_id_new = $database->escape_string($activity_id_new);
     $unit_status = $database->escape_string($unit_status);
     $unit_status_reason = $database->escape_string($unit_status_reason);
     $Hold_can_work_on_new = $database->escape_string($Hold_can_work_on_new);
@@ -30,17 +27,8 @@ if (isset($_POST['submit'])) {
     $ticket_status = $database->escape_string($ticket_status);
     $ticket_feedback = $database->escape_string($ticket_feedback);
 
-    $sql= "INSERT INTO `service request` (`ID`, 
-    `unit_ID`, 
-    `activity_ID`,
-    `unit_status`,
-    `unit_status_reason`,
-    `Hold_Can_Work_On`,
-    `Held_For`,
-    `ticket_status`,
-    `ticket_feedback`,
-    `creation_date`) 
-    VALUES (NULL,'".$unit_Id_new."', '".$activity_id_new."', '".$unit_status."', '".$unit_status_reason."', '".$Hold_can_work_on_new."', '".$Held_for_new."', '".$ticket_status."', '".$ticket_feedback."', current_timestamp())";
+    $sql= "INSERT INTO `service request` (`ID`, `unit_ID`, `activity_ID`,`unit_status`,`unit_status_reason`,`Hold_Can_Work_On`,`Held_For`,`ticket_status`,`ticket_feedback`,`creation_date`) 
+    VALUES (NULL,'".$unit_Id."', '".$activity_id."', '".$unit_status."', '".$unit_status_reason."', '".$Hold_can_work_on_new."', '".$Held_for_new."', '".$ticket_status."', '".$ticket_feedback."', current_timestamp())";
     $ticket_dml= $database->query($sql); 
 
 } 
@@ -60,7 +48,7 @@ if (isset($_POST['submit'])) {
             <h3 class="text-themecolor m-b-0 m-t-0">Service Request Ticket</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
-                <li class="breadcrumb-item active">New Ticket <?php echo htmlentities($sql) ?></li>
+                <li class="breadcrumb-item active">New Ticket</li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
@@ -75,7 +63,7 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row">
         <div class="col-3">
-            <button onclick="location.href='index?module=Service Request'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
+            <button onclick="location.href='index?module=Service.Request'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
         </div>
     </div>
     <br />
@@ -87,7 +75,7 @@ if (isset($_POST['submit'])) {
                     <h4 class="m-b-0 text-white">New Ticket Request</h4>
                 </div>
                 <div class="card-block">
-                    <form action="index?module=Service.Request&create=true" method="post">
+                    <form action="index?module=Service.Request&create=true&unitid=<?php echo htmlentities($unit_Id); ?>" method="post">
                         <div class="form-body">
                             <h3 class="card-title">Unit Info</h3>
                             <div class="row p-t-20">
@@ -97,7 +85,7 @@ if (isset($_POST['submit'])) {
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Unit ID </strong>
                                     <div class="form-group">
-                                    <input type="text" id="" name="" value="<?php echo htmlentities($unit_Id_new);?>" placeholder="<?php echo htmlentities($unit_Id_new);?>"  class="form-control" disabled/>
+                                    <input type="text" id="" name="unitid_new" value="<?php echo htmlentities($unit_Id);?>" placeholder="<?php echo htmlentities($unit_Id);?>"  class="form-control" disabled/>
                                     </div>
                                 </div>
                                 <div id="" class="col-md-1 col-xs-6">
@@ -106,7 +94,7 @@ if (isset($_POST['submit'])) {
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Activity ID </strong>
                                     <div class="form-group">
-                                    <input type="text" id="" name="" value="<?php echo htmlentities($activity_id_new);?>" placeholder="<?php echo htmlentities($activity_id_new);?>" class="form-control" disabled/>
+                                    <input type="text" id="" name="activityid_new" value="<?php echo htmlentities($activity_id);?>" placeholder="<?php echo htmlentities($activity_id);?>" class="form-control" disabled/>
                                     </div>
                                 </div>
                             </div>

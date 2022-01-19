@@ -2,40 +2,40 @@
 ///////////////////////////////////////////////////////////////
 /// start of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
-$SRId= $_GET["EditeSRId"];
+// $SRId= $_GET["EditeSRId"];
 
-$sql= "SELECT `ID`, 
-`unit_ID`, 
-`activity_ID`, 
-`unit_status`, 
-`unit_status_reason`, 
-`Hold_Can_Work_On`, 
-`Held_For`,
-`ticket_status`, 
-`ticket_feedback`,
-`created_by`
-`creation_date`,
-`Handled_by`,
-`Last_update_date`
- FROM `service request` WHERE `ID`='".$SRId."'";
-$service_request= $database->query($sql);
+// $sql= "SELECT `ID`, 
+// `unit_ID`, 
+// `activity_ID`, 
+// `unit_status`, 
+// `unit_status_reason`, 
+// `Hold_Can_Work_On`, 
+// `Held_For`,
+// `ticket_status`, 
+// `ticket_feedback`,
+// `created_by`,
+// `creation_date`,
+// `Handled_by`,
+// `Last_update_date`
+//  FROM `service request` WHERE `ID`='".$SRId."'";
+// $service_request= $database->query($sql);
 
-    // output data of each row
-    while($row = $service_request->fetch_assoc()) {
-        $ID = $row["ID"];
-        $unit_ID = $row["unit_ID"];
-        $activity_ID = $row["activity_ID"];
-        $unit_status = $row["unit_status"];
-        $unit_status_reason = $row["unit_status_reason"];
-        $Hold_Can_Work_On = $row["Hold_Can_Work_On"];
-        $Held_For = $row["Held_For"];
-        $ticket_status = $row["ticket_status"];
-        $ticket_feedback = $row["ticket_feedback"];
-        $created_by = $row["created_by"];
-        $creation_date = $row["creation_date"];
-        $Handled_by = $row["Handled_by"];
-        $Last_update_date = $row["Last_update_date"];
-    }
+//     // output data of each row
+//     while($row = $service_request->fetch_assoc()) {
+//         $ID = $row["ID"];
+//         $unit_ID = $row["unit_ID"];
+//         $activity_ID = $row["activity_ID"];
+//         $unit_status = $row["unit_status"];
+//         $unit_status_reason = $row["unit_status_reason"];
+//         $Hold_Can_Work_On = $row["Hold_Can_Work_On"];
+//         $Held_For = $row["Held_For"];
+//         $ticket_status = $row["ticket_status"];
+//         $ticket_feedback = $row["ticket_feedback"];
+//         $created_by = $row["created_by"];
+//         $creation_date = $row["creation_date"];
+//         $Handled_by = $row["Handled_by"];
+//         $Last_update_date = $row["Last_update_date"];
+//     }
 ///////////////////////////////////////////////////////////////
 /// End of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
@@ -47,16 +47,16 @@ $service_request= $database->query($sql);
 if (isset($_POST['submit'])) {
     
     // getting for data
-    $DeveloperName = $_POST['DeveloperName'];
-    $DeveloperRepresentative = $_POST['DeveloperRepresentative'];
-    $mobile1 = $_POST['mobile1'];
-    $mobile2 = $_POST['mobile2'];
+    // $DeveloperName = $_POST['DeveloperName'];
+    // $DeveloperRepresentative = $_POST['DeveloperRepresentative'];
+    // $mobile1 = $_POST['mobile1'];
+    // $mobile2 = $_POST['mobile2'];
     
     // escaping variables
-    $DeveloperName = $database->escape_string($DeveloperName);
-    $DeveloperRepresentative = $database->escape_string($DeveloperRepresentative);
-    $mobile1 = $database->escape_string($mobile1);
-    $mobile2 = $database->escape_string($mobile2);
+    // $DeveloperName = $database->escape_string($DeveloperName);
+    // $DeveloperRepresentative = $database->escape_string($DeveloperRepresentative);
+    // $mobile1 = $database->escape_string($mobile1);
+    // $mobile2 = $database->escape_string($mobile2);
    
     //php Creating a dynamic  query with PHP and MySQL
     // $setcolumn = array();
@@ -77,8 +77,8 @@ if (isset($_POST['submit'])) {
 
     // $sql_z =  "UPDATE `developers`  {$setcolumn}  WHERE DevID=".$devId."";
 
-     $sql_zxc =  "call UPDATE_dev ('".$devId."','".$DeveloperName."','".$DeveloperRepresentative."','".$mobile1."','".$mobile2."')";
-    $service_request_edite= $database->query($sql_zxc); 
+    //  $sql_zxc =  "call UPDATE_dev ('".$devId."','".$DeveloperName."','".$DeveloperRepresentative."','".$mobile1."','".$mobile2."')";
+    // $service_request_edite= $database->query($sql_zxc); 
 
 } 
 ///////////////////////////////////////////////////////////////

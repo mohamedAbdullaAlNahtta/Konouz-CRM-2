@@ -16,7 +16,7 @@
  `Held_For`,
  `ticket_status`, 
  `ticket_feedback`,
- `created_by`
+ `created_by`,
  `creation_date`,
  `Handled_by`,
  `Last_update_date`
@@ -122,8 +122,8 @@ for ($i=0; $i < $service_requestCount ; $i++) {
     echo "<td>".$service_request["creation_date"][$i]."</td>";
     echo "<td>".$service_request["ticket_status"][$i]."</td>";
     echo "<td>
-    <a href='index?module=index?module=Service Request&EditeSRId=".$service_request["ID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
-    <a href='index?module=index?module=Service Request&SRId=".$service_request["ID"][$i]."' data-toggle='tooltip' data-original-title='View'> <i class='mdi mdi-eye'></i> </a></td> </tr>";
+    <a href='index?module=Service.Request&EditeSRId=".$service_request["ID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
+    <a href='index?module=Service.Request&SRId=".$service_request["ID"][$i]."' data-toggle='tooltip' data-original-title='View'> <i class='mdi mdi-eye'></i> </a></td> </tr>";
 
 }
 
