@@ -324,30 +324,6 @@ for ($i=0; $i < $FloorNameCount ; $i++) {
                                             </select>
                                         </div>
                                    </div>
-                                    <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
-                                        <strong>Approval Status </strong>
-                                        <div class="form-group">
-                                            <select id="Approval-status-op" name="approval_status" class="form-control form-control-line" >
-<?php
-///////////////////////////////////////////////////////////////
-/// Start of ------> 
-///////////////////////////////////////////////////////////////
-for ($i=0; $i < $approvalStatusGetCount ; $i++) { 
-    echo "<option value='".$Approval_Status_Data["Approval_ID"][$i]."' >".$Approval_Status_Data["Approval_Status"][$i]."</option>";
-}
-///////////////////////////////////////////////////////////////
-/// End of of ------> 
-///////////////////////////////////////////////////////////////
-?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
-                                        <strong>Approval Feedback</strong>
-                                        <div class="form-group">
-                                        <input type="text" id="" name="approval_feed_back" class="form-control " />
-                                        </div>
-                                    </div>
                                 </div>                                
                                 <hr />
                                 <div class="ribbon-wrapper">
