@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
             <h3 class="text-themecolor m-b-0 m-t-0">Developers</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
-                <li class="breadcrumb-item active"> <i class="mdi mdi-account-edit"></i> Edite Developer Data</li>
+                <li class="breadcrumb-item active"> Edite Developer Data</li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
@@ -103,7 +103,7 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">Edite Developer</h4>
+                    <h4 class="m-b-0 text-white"> <i class="mdi mdi-account-edit"></i> Edite Developer</h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=Developers&EditeDeveloperId=<?php echo htmlentities($devId);?>" method="post">
@@ -149,7 +149,7 @@ if (isset($_POST['submit'])) {
                             <div class="row">
                                 <!--/span-->
                                 <div id="" class="col-md-.5 col-xs-6">
-                                <img src="assets/images/icons/Circle-icons-calendar.svg.png" style="border-radius: 50%;border: 1px #fff solid; margin-top: 20px;" width="50">
+                                <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">

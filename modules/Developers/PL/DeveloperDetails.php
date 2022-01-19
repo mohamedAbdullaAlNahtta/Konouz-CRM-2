@@ -59,7 +59,7 @@ $developer= $database->query($sql);
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">Developer Data</h4>
+                    <h4 class="m-b-0 text-white"> <i class="mdi mdi-account"></i> Developer Data</h4>
                 </div>
                 <div class="card-block">
                     <div class="form-body">
@@ -84,14 +84,14 @@ $developer= $database->query($sql);
                             <!--/span-->
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>1st Mobile Number</label>
+                                    <label> <i class="mdi mdi-cellphone-basic"></i> 1st Mobile Number</label>
                                     <input type="text" disabled="disabled" placeholder="<?php echo htmlentities($Mobile1);?>" class="form-control" />
                                 </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>2nd Mobile Number</label>
+                                    <label> <i class="mdi mdi-cellphone-basic"></i> 2nd Mobile Number</label>
                                     <input type="text" disabled="disabled" placeholder="<?php echo htmlentities($Mobile2);?>" class="form-control" />
                                 </div>
                             </div>
@@ -103,11 +103,19 @@ $developer= $database->query($sql);
 
                         <div class="row">
                             <!--/span-->
+                            <div id="" class="col-md-.5 col-xs-6">
+                                <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                            </div>
+                            <!--/span-->
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="control-label">Creation Date</label>
                                     <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities($Insertion_date);?>" disabled="disapled"/>
                                 </div>
+                            </div>
+                            <!--/span-->
+                            <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
                             </div>
                             <!--/span-->
                             <div class="col-md-3">
