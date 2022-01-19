@@ -203,7 +203,7 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> Nationality</label>
+                                        <label class="control-label"><i class="flag-icon flag-icon-eg" title="eg" id="eg"></i> Nationality</label>
                                         <input type="text"   name="nationality_create" class="form-control" />
                                         <small class="form-control-feedback"> Example Egyption....</small>
                                     </div>
