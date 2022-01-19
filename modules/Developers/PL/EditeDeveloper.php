@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
             <h3 class="text-themecolor m-b-0 m-t-0">Developers</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
-                <li class="breadcrumb-item active">Edite Developer Data</li>
+                <li class="breadcrumb-item active"> <i class="mdi mdi-account-edit"></i> Edite Developer Data</li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
@@ -129,14 +129,14 @@ if (isset($_POST['submit'])) {
                                 <!--/span-->
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>1st Mobile Number</label>
+                                        <label> <i class="mdi mdi-cellphone-basic"></i> 1st Mobile Number</label>
                                         <input type="text" class="form-control" name="mobile1" placeholder="<?php echo htmlentities($Mobile1);?>" />
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>2nd Mobile Number</label>
+                                        <label> <i class="mdi mdi-cellphone-basic"></i> 2nd Mobile Number</label>
                                         <input type="text" class="form-control" name="mobile2" placeholder="<?php echo htmlentities($Mobile2);?>" />
                                     </div>
                                 </div>
