@@ -84,8 +84,8 @@
 <script src="assets/plugins/sweetalert/sweetalert.min.js"></script>
 
 <?php
-if (isset($GLOBALS['developer_edite'])) {
-    $xxx = $GLOBALS['developer_edite'];
+if (isset($GLOBALS['service_request_edite'])) {
+    $xxx = $GLOBALS['service_request_edite'];
 
 $xxxx = str_replace('.', '.\n ', $xxx );
 
@@ -97,7 +97,7 @@ if ($xxx === true) { ?>
 // Your application has indicated there's an error
 window.setTimeout(function () {
     // Move to a new location or you can do something else
-    window.location.href = "index?module=Developers";
+    window.location.href = "index?module=Service.Request";
 }, 3000);
 
 //window.location.href = "index?module=Developers";
@@ -105,7 +105,7 @@ window.setTimeout(function () {
 </script>
 <?php
 
-} else if(is_string($GLOBALS['developer_edite'])) {?>
+} else if(is_string($GLOBALS['service_request_edite'])) {?>
 <script type="text/javascript">
  swal({   
             title: "Opps!",   
