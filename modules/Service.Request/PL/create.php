@@ -184,6 +184,9 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                             <hr />    
                             <div class="row p-t-20">
                                 <!--/span-->
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                                </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Creation Date</label>
@@ -191,8 +194,8 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                     </div>
                                 </div>
                                 <!--/span-->
-                                <div id="" class="col-md-1 col-xs-6">
-                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 10px;" width="70">
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
