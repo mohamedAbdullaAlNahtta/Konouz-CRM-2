@@ -62,15 +62,30 @@ if (isset($_POST['submit'])) {
                     <h4 class="m-b-0 text-white">New Ticket Request</h4>
                 </div>
                 <div class="card-block">
-                    <form action="index?module=Service Request&create=true" method="post">
+                    <form action="index?module=Service.Request&create=true" method="post">
                         <div class="form-body">
-                            <h3 class="card-title">Ticket Info</h3>
-
+                            <h3 class="card-title">Unit Info</h3>
                             <div class="row p-t-20">
-                            <div class="col-md-3 col-xs-6">
+                                <div id="" class="col-md-3 col-xs-6">
+                                    <strong>Unit ID </strong>
+                                    <div class="form-group">
+                                    <input type="text" id="" name="unit_id_new" class="form-control" disabled/>
+                                    </div>
+                                </div>
+                                <div id="" class="col-md-3 col-xs-6">
+                                    <strong>Activity ID </strong>
+                                    <div class="form-group">
+                                    <input type="text" id="" name="activity_id_new" class="form-control" disabled/>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h3 class="card-title">Ticket Info</h3>
+                            <div class="row p-t-20">
+                                    <div class="col-md-3 col-xs-6">
                                         <strong>Unit Status</strong>
                                         <div class="form-group">
-                                            <select id="unitStatusform" name="status_id" class="form-control form-control-line" required>
+                                            <select id="unitStatusform" name="status_id_new" class="form-control form-control-line" required>
                                                 <option value="2">Available</option>
                                                 <option value="4">Hold</option>
                                                 <option value="3">Reserved</option>
@@ -83,13 +98,13 @@ if (isset($_POST['submit'])) {
                                    <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form ">
                                         <strong>Status Reason</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="status_reason" class="form-control" />
+                                        <input type="text" id="" name="status_reason_new" class="form-control" />
                                         </div>
                                     </div>
                                     <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Hold Can Work On </strong>
                                         <div class="form-group">
-                                            <select id="" name="Hold_can_work_on" class="form-control form-control-line " >
+                                            <select id="" name="Hold_can_work_on_new" class="form-control form-control-line " >
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
                                             </select>
@@ -98,13 +113,13 @@ if (isset($_POST['submit'])) {
                                     <div id="Held-For" class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Held For</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="Held_for" class="form-control d" />
+                                        <input type="text" id="" name="Held_for_new" class="form-control d" />
                                         </div>
                                     </div>
                                     <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Approval Status </strong>
                                         <div class="form-group">
-                                            <select id="Approval-status-op" name="approval_status" class="form-control form-control-line" >
+                                            <select id="Approval-status-op" name="approval_status_new" class="form-control form-control-line" >
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -122,36 +137,33 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                     <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Approval Feedback</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="approval_feed_back" class="form-control " />
+                                        <input type="text" id="" name="approval_feed_back_new" class="form-control " />
                                         </div>
                                     </div>
-                                </div>                                
-                               
-                            </div>
+                            </div>                                   
                             <hr />    
                             <div class="row p-t-20">
                                 <!--/span-->
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Creation Date</label>
-                                        <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
+                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
-                                        <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
+                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
                                     </div>
                                 </div>
                                 <!--/span-->
                             </div>
                             <!--/row-->
                         </div>
-
                         <div class="form-actions">
                             <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
-                            <button type="button" onclick="location.href='index?module=Service Request'" class="btn btn-inverse">Cancel</button>
+                            <button type="button" onclick="location.href='index?module=Service.Request'" class="btn btn-inverse">Cancel</button>
                         </div>
                     </form>
                 </div>
