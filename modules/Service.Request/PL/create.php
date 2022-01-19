@@ -99,13 +99,18 @@ if (isset($_POST['submit'])) {
                     <form action="index?module=Service.Request&create=true" method="post">
                         <div class="form-body">
                             <h3 class="card-title">Unit Info</h3>
-                            <img src="assets/images/units/1.png" width="120">
                             <div class="row p-t-20">
+                                <div id="" class="col-md-1 col-xs-6">
+                                    <img src="assets/images/units/1.png" width="120">
+                                </div>
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Unit ID </strong>
                                     <div class="form-group">
                                     <input type="text" id="" name="unit_id_new" value="<?php echo htmlentities($unit_Id_new);?>" placeholder="<?php echo htmlentities($unit_Id_new);?>"  class="form-control" disabled/>
                                     </div>
+                                </div>
+                                <div id="" class="col-md-1 col-xs-6">
+                                    <img src="assets/images/units/activity.jpg" width="90">
                                 </div>
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Activity ID </strong>
@@ -186,6 +191,9 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                     </div>
                                 </div>
                                 <!--/span-->
+                                <div id="" class="col-md-1 col-xs-6">
+                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 10px;" width="70">
+                                </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
