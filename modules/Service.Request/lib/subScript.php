@@ -122,8 +122,8 @@ window.setTimeout(function () {
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 
-if (isset($GLOBALS['developer_dml'])) {
-    $xxx = $GLOBALS['developer_dml'];
+if (isset($GLOBALS['ticket_dml'])) {
+    $xxx = $GLOBALS['ticket_dml'];
 
 $xxxx = str_replace('.', '.\n ', $xxx );
 
@@ -135,7 +135,7 @@ if ($xxx === true) { ?>
 // Your application has indicated there's an error
 window.setTimeout(function () {
     // Move to a new location or you can do something else
-    window.location.href = "index?module=Developers";
+    window.location.href = "index?module=Service.Request";
 }, 3000);
 
 //window.location.href = "index?module=Developers";
@@ -143,7 +143,7 @@ window.setTimeout(function () {
 </script>
 <?php
 
-} else if(is_string($GLOBALS['developer_dml'])) {?>
+} else if(is_string($GLOBALS['ticket_dml'])) {?>
 <script type="text/javascript">
  swal({   
             title: "Opps!",   
