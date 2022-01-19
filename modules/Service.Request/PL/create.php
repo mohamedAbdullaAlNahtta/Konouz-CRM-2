@@ -123,7 +123,7 @@ if (isset($_POST['submit'])) {
                                                 <option value="2">Available</option>
                                                 <option value="4">Hold</option>
                                                 <option value="3">Reserved</option>
-                                                <option value="8">Sold</option> -->
+                                                <option value="8">Sold</option> 
                                                 <option value="6">Restricted</option>
                                                 <option value="5">Un-Available</option>
                                             </select>
