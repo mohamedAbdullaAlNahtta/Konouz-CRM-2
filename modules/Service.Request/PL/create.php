@@ -3,8 +3,8 @@
 if (isset($_GET['unitId'])) {
     $unit_Id_new = $_GET['unitId'];
 }
-if (isset($_GET['unitId'])) {
-    $unit_Id_new = $_GET['unitId'];
+if (isset($_GET['activityId'])) {
+    $activity_id_new = $_GET['activityId'];
 }
 ///////////////////////////////////////////////////////////////
 /// start of ---> submitting form data to the database 
@@ -109,7 +109,7 @@ if (isset($_POST['submit'])) {
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Activity ID </strong>
                                     <div class="form-group">
-                                    <input type="text" id="" name="activity_id_new" class="form-control" disabled/>
+                                    <input type="text" id="" name="activity_id_new" value="<?php echo htmlentities($activity_id_new);?>" placeholder="<?php echo htmlentities($activity_id_new);?>" class="form-control" disabled/>
                                     </div>
                                 </div>
                             </div>
