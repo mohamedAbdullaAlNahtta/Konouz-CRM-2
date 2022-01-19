@@ -7,20 +7,23 @@
 ///////////////////////////////////////////////////////////////
 /// start of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
- $sql= "SELECT `ID`, 
- `unit_ID`, 
- `activity_ID`, 
- `unit_status`, 
- `unit_status_reason`, 
- `Hold_Can_Work_On`, 
- `Held_For`,
- `ticket_status`, 
- `ticket_feedback`,
- `created_by`,
- `creation_date`,
- `Handled_by`,
- `Last_update_date`
-  FROM `service request` ORDER BY `ID` DESC";
+ $sql= "SELECT `service request`.`ID`, 
+ `service request`.`unit_ID`, 
+ `service request`.`activity_ID`, 
+ `service request`.`unit_status`, 
+ `service request`.`unit_status_reason`, 
+ `service request`.`Hold_Can_Work_On`, 
+ `service request`.`Held_For`,
+ `service request`.`ticket_status` as `ticket_status_id`,
+ `approval status`.`Status` as `ticket_status_name` , 
+ `service request`.`ticket_feedback`,
+ `service request`.`created_by`,
+ `service request`.`creation_date`,
+ `service request`.`Handled_by`,
+ `service request`.`Last_update_date`
+  FROM `service request`
+  LEFT JOIN `approval status` ON `service request`.`ticket_status`= `approval status`.`ID`
+   ORDER BY `ID` DESC";
  $service_request_all= $database->query($sql);
 
  $service_requestCount = $service_request_all->num_rows;
@@ -34,7 +37,8 @@
       $unit_status_reason[] = $row["unit_status_reason"];
       $Hold_Can_Work_On[] = $row["Hold_Can_Work_On"];
       $Held_For[] = $row["Held_For"];
-      $ticket_status[] = $row["ticket_status"];
+      $ticket_status_id[] = $row["ticket_status_id"];
+      $ticket_status_name[] = $row["ticket_status_name"];
       $ticket_feedback[] = $row["ticket_feedback"];
       $created_by[] = $row["created_by"];
       $creation_date[] = $row["creation_date"];
@@ -45,7 +49,7 @@
 
   $service_request= array("ID"=>$ID, "unit_ID"=>$unit_ID, "activity_ID"=>$activity_ID,
    "unit_status"=>$unit_status, "unit_status_reason"=>$unit_status_reason, "Hold_Can_Work_On"=>$Hold_Can_Work_On, "Held_For"=>$Held_For,
-   "ticket_status"=>$ticket_status, "ticket_feedback"=>$ticket_feedback, "created_by"=>$created_by,
+   "ticket_status_id"=>$ticket_status_id, "ticket_status_name"=>$ticket_status_name, "ticket_feedback"=>$ticket_feedback, "created_by"=>$created_by,
    "creation_date"=>$creation_date, "Handled_by"=>$Handled_by, "Last_update_date"=>$Last_update_date
    );
 ///////////////////////////////////////////////////////////////
@@ -120,7 +124,7 @@ for ($i=0; $i < $service_requestCount ; $i++) {
     echo "<td>".$service_request["created_by"][$i]."</td>";
     echo "<td>".$service_request["Handled_by"][$i]."</td>";
     echo "<td>".$service_request["creation_date"][$i]."</td>";
-    echo "<td>".$service_request["ticket_status"][$i]."</td>";
+    echo "<td>".$service_request["ticket_status_name"][$i]."</td>";
     echo "<td>
     <a href='index?module=Service.Request&EditeSRId=".$service_request["ID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
     <a href='index?module=Service.Request&SRId=".$service_request["ID"][$i]."' data-toggle='tooltip' data-original-title='View'> <i class='mdi mdi-eye'></i> </a></td> </tr>";

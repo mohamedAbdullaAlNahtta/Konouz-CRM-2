@@ -2,40 +2,43 @@
 ///////////////////////////////////////////////////////////////
 /// start of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
-// $SRId= $_GET["EditeSRId"];
+$SRId= $_GET["EditeSRId"];
 
-// $sql= "SELECT `ID`, 
-// `unit_ID`, 
-// `activity_ID`, 
-// `unit_status`, 
-// `unit_status_reason`, 
-// `Hold_Can_Work_On`, 
-// `Held_For`,
-// `ticket_status`, 
-// `ticket_feedback`,
-// `created_by`,
-// `creation_date`,
-// `Handled_by`,
-// `Last_update_date`
-//  FROM `service request` WHERE `ID`='".$SRId."'";
-// $service_request= $database->query($sql);
+$sql_request= "SELECT `service request`.`ID`, 
+`service request`.`unit_ID`, 
+`service request`.`activity_ID`, 
+`service request`.`unit_status`, 
+`service request`.`unit_status_reason`, 
+`service request`.`Hold_Can_Work_On`, 
+`service request`.`Held_For`,
+`service request`.`ticket_status` as `ticket_status_id`,
+`approval status`.`Status` as `ticket_status_name` , 
+`service request`.`ticket_feedback`,
+`service request`.`created_by`,
+`service request`.`creation_date`,
+`service request`.`Handled_by`,
+`service request`.`Last_update_date`
+ FROM `service request`
+ LEFT JOIN `approval status` ON `service request`.`ticket_status`= `approval status`.`ID` WHERE `ID`='".$SRId."'";
+$service_request_res= $database->query($sql_request);
 
 //     // output data of each row
-//     while($row = $service_request->fetch_assoc()) {
-//         $ID = $row["ID"];
-//         $unit_ID = $row["unit_ID"];
-//         $activity_ID = $row["activity_ID"];
-//         $unit_status = $row["unit_status"];
-//         $unit_status_reason = $row["unit_status_reason"];
-//         $Hold_Can_Work_On = $row["Hold_Can_Work_On"];
-//         $Held_For = $row["Held_For"];
-//         $ticket_status = $row["ticket_status"];
-//         $ticket_feedback = $row["ticket_feedback"];
-//         $created_by = $row["created_by"];
-//         $creation_date = $row["creation_date"];
-//         $Handled_by = $row["Handled_by"];
-//         $Last_update_date = $row["Last_update_date"];
-//     }
+    // while($row = $service_request_res->fetch_assoc()) {
+    //     $ID = $row["ID"];
+    //     $unit_ID = $row["unit_ID"];
+    //     $activity_ID = $row["activity_ID"];
+    //     $unit_status = $row["unit_status"];
+    //     $unit_status_reason = $row["unit_status_reason"];
+    //     $Hold_Can_Work_On = $row["Hold_Can_Work_On"];
+    //     $Held_For = $row["Held_For"];
+    //     $ticket_status_id = $row["ticket_status_id"];
+    //     $ticket_status_name = $row["ticket_status_name"];
+    //     $ticket_feedback = $row["ticket_feedback"];
+    //     $created_by = $row["created_by"];
+    //     $creation_date = $row["creation_date"];
+    //     $Handled_by = $row["Handled_by"];
+    //     $Last_update_date = $row["Last_update_date"];
+    // }
 ///////////////////////////////////////////////////////////////
 /// End of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
