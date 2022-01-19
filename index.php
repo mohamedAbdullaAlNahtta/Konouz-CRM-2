@@ -292,17 +292,17 @@ if (isset($module)) {
                             <a href="index?module=home"><i class="mdi mdi-gauge"></i>Dashboard </a>
                         </li>
                         <li><a href="index?module=Developers">Developers</a></li>
-                        <li><a href="index?module=Projects">Projects</a></li>
-                        <li><a href="index?module=Client&tableName=clients&objecthome=true">Clients</a></li>
-                        <li><a href="index?module=Broker&tableName=brokers&objecthome=true">Broker</a></li>
+                        <li><a href="index?module=Projects"><i class="mdi mdi-calendar-multiple-check"></i> Projects</a></li>
+                        <li><a href="index?module=Client&tableName=clients&objecthome=true"><i class="mdi mdi-account-multiple"></i> Clients</a></li>
+                        <li><a href="index?module=Broker&tableName=brokers&objecthome=true"><i class="mdi mdi-account-multiple"></i> Broker</a></li>
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Inventory</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="index?module=Unites">Units</a></li>
-                                <li><a href="index?module=Service.Request">Service Request</a></li>
-                                <li><a href="index?module=Activities">Activities</a></li>
+                                <li><a href="index?module=Unites"><i class="mdi mdi-home-variant"></i> Units</a></li>
+                                <li><a href="index?module=Service.Request"><i class="mdi mdi-calendar-clock"></i> Service Request</a></li>
+                                <li><a href="index?module=Activities"><i class="mdi mdi-calendar-check"></i> Activities</a></li>
                                 <li>
-                                    <a class="has-arrow" href="#" aria-expanded="false">Inventory Configuration</a>
+                                    <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-settings"></i> Inventory Configuration</a>
                                     <ul aria-expanded="false" class="collapse">
 <?php
 $sql_get_conf_table= "SELECT * FROM `lkp_tables` ";
@@ -325,14 +325,7 @@ $$get_conf_table_Count = $get_conf_tabl->num_rows;
                         <li class="nav-devider"></li>
                         
                         <li class="nav-small-cap">EXTRA COMPONENTS</li>
-                        <li>
-                            <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-arrange-send-backward"></i><span class="hide-menu">Multi level dd</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">item 1.1</a></li>
-                                <li><a href="#">item 1.2</a></li>
-                                <li><a href="#">item 1.4</a></li>
-                            </ul>
-                        </li>
+                        
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
