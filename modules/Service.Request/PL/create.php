@@ -59,29 +59,78 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">New Developer</h4>
+                    <h4 class="m-b-0 text-white">New Ticket Request</h4>
                 </div>
                 <div class="card-block">
                     <form action="index?module=Service Request&create=true" method="post">
                         <div class="form-body">
-                            <h3 class="card-title">Developre Info</h3>
+                            <h3 class="card-title">Ticket Info</h3>
 
                             <div class="row p-t-20">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Developer Name</label>
-                                        <input type="text" id="DeveloperName" name="DeveloperName" class="form-control" placeholder="" required/>
-                                        <small class="form-control-feedback">Dev Name.... </small>
+                            <div class="col-md-3 col-xs-6">
+                                        <strong>Unit Status</strong>
+                                        <div class="form-group">
+                                            <select id="unitStatusform" name="status_id" class="form-control form-control-line" required>
+                                                <option value="2">Available</option>
+                                                <option value="4">Hold</option>
+                                                <!-- <option value="7">On Sale</option>
+                                                <option value="3">Reserved</option>
+                                                <option value="8">Sold</option> -->
+                                                <option value="6">Restricted</option>
+                                                <option value="5">Un-Available</option>
+                                            </select>
+                                        </div>
+                                   </div>
+                                   <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form ">
+                                        <strong>Status Reason</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="status_reason" class="form-control" />
+                                        </div>
                                     </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Developer Representative</label>
-                                        <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="" required/>
-                                        <small class="form-control-feedback">Rep Name....</small>
+                                    <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
+                                        <strong>Hold Can Work On </strong>
+                                        <div class="form-group">
+                                            <select id="" name="Hold_can_work_on" class="form-control form-control-line " >
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div id="Held-For" class="col-md-9 col-xs-6 dependent-form">
+                                        <strong>Held For</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="Held_for" class="form-control d" />
+                                        </div>
+                                    </div>
+                                    <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
+                                        <strong>Approval Status </strong>
+                                        <div class="form-group">
+                                            <select id="Approval-status-op" name="approval_status" class="form-control form-control-line" >
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+// for ($i=0; $i < $approvalStatusGetCount ; $i++) { 
+//     echo "<option value='".$Approval_Status_Data["Approval_ID"][$i]."' >".$Approval_Status_Data["Approval_Status"][$i]."</option>";
+// }
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
+                                        <strong>Approval Feedback</strong>
+                                        <div class="form-group">
+                                        <input type="text" id="" name="approval_feed_back" class="form-control " />
+                                        </div>
+                                    </div>
+                                </div>                                
+                               
+                            </div>
+                            <hr />    
+                            <div class="row p-t-20">
                                 <!--/span-->
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -94,27 +143,6 @@ if (isset($_POST['submit'])) {
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
                                         <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <!--/row-->
-
-                            <!--/row-->
-                            <h3 class="box-title m-t-40">Contact Info</h3>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>1st Mobile Number</label>
-                                        <input type="number" name="mobile1" class="form-control" required/>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>2nd Mobile Number</label>
-                                        <input type="number" name="mobile2" class="form-control" required/>
                                     </div>
                                 </div>
                                 <!--/span-->
