@@ -112,7 +112,7 @@
                             <tbody>
 <?php
 
-for ($i=0; $i < $developerCount ; $i++) { 
+for ($i=0; $i < $service_requestCount ; $i++) { 
     # code.
     echo " <tr><th>".$service_request["ID"][$i]."</th>";
     echo "<td>".$service_request["unit_ID"][$i]."</td>";
