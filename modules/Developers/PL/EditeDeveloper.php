@@ -149,7 +149,7 @@ if (isset($_POST['submit'])) {
                             <div class="row">
                                 <!--/span-->
                                 <div id="" class="col-md-.5 col-xs-6">
-                                <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">

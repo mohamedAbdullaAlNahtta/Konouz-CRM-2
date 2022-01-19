@@ -291,7 +291,7 @@ if (isset($module)) {
                         <li>
                             <a href="index?module=home"><i class="mdi mdi-gauge"></i>Dashboard </a>
                         </li>
-                        <li><a href="index?module=Developers"><i class="mdi mdi-account-outline"></i> Developers</a></li>
+                        <li><a href="index?module=Developers"><i class="mdi mdi-account-multiple"></i> Developers</a></li>
                         <li><a href="index?module=Projects"><i class="mdi mdi-calendar-multiple-check"></i> Projects</a></li>
                         <li><a href="index?module=Client&tableName=clients&objecthome=true"><i class="mdi mdi-account-multiple"></i> Clients</a></li>
                         <li><a href="index?module=Broker&tableName=brokers&objecthome=true"><i class="mdi mdi-account-multiple"></i> Broker</a></li>

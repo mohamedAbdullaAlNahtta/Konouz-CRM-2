@@ -98,7 +98,7 @@ if (isset($_POST['submit'])) {
                                 <!--/span-->
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label">Developer Name</label>
+                                        <label class="control-label"> <i class="mdi mdi-account-circle"></i> Developer Name</label>
                                         <select id="myselect" name="DeveloperName" class="form-control form-control-line" required>
                                             <option>Select Developer</option>
 <?php
@@ -134,7 +134,7 @@ for ($i=0; $i < $developerNameCount ; $i++) {
                             <!--/row-->
 
                             <!--/row-->
-                            <h3>Location Info</h3>
+                            <h3> <i class="mdi mdi-map-marker"></i> Location Info</h3>
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -173,7 +173,7 @@ for ($i=0; $i < $developerNameCount ; $i++) {
                                     </div>
                                 </div>
                                 <!--/span-->
-                                <div class="col-md-8">
+                                <div class="col-md-9">
                                     <div class="form-group">
                                         <label>Location On Map</label>
                                         <input type="text" class="form-control" name="location_OnMap" required/>
@@ -181,6 +181,9 @@ for ($i=0; $i < $developerNameCount ; $i++) {
                                     </div>
                                 </div>
                                 <!--/span-->
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                                </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Creation Date</label>
@@ -188,6 +191,9 @@ for ($i=0; $i < $developerNameCount ; $i++) {
                                     </div>
                                 </div>
                                 <!--/span-->
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                                </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
