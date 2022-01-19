@@ -125,7 +125,7 @@ if (isset($_POST['submit'])) {
     <!-- ============================================================== -->
     <div class="row">
         <div class="col-3">
-            <button onclick="location.href='index?module=Developers'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
+            <button onclick="location.href='index?module=Service.Request'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
         </div>
     </div>
     <br />
@@ -134,7 +134,7 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">Edite Ticket Request NO  <?php echo $ID;?></h4>
+                    <h4 class="m-b-0 text-white">Edite Ticket Request</h4>
                 </div>
                 <div class="card-block">
                 <form action="index?module=Service.Request&create=true" method="post">
