@@ -10,7 +10,8 @@ $sql_request= "SELECT `service request`.`ID`,
  `service request`.`unit_status` as `unit_status_id`, 
  `unit status`.`Name` as `unit_status_name`, 
  `service request`.`unit_status_reason`, 
- `service request`.`Hold_Can_Work_On`, 
+ `service request`.`Hold_Can_Work_On` as `Hold_Can_Work_On_id`, 
+ `requested`.`Type`as `Hold_Can_Work_On_name`,
  `service request`.`Held_For`,
  `service request`.`ticket_status` as `ticket_status_id`,
  `approval status`.`Status` as `ticket_status_name` , 
@@ -21,6 +22,7 @@ $sql_request= "SELECT `service request`.`ID`,
  `service request`.`Last_update_date`
   FROM `service request`
   LEFT JOIN `approval status` ON `service request`.`ticket_status`= `approval status`.`ID`
+  LEFT JOIN `requested` ON `service request`.`Hold_Can_Work_On`= `requested`.`ID`
   LEFT JOIN `unit status` ON `service request`.`unit_status`= `unit status`.`ID` WHERE `service request`.`ID`=".$SRId."";
 $service_request_all= $database->query($sql_request);
 
@@ -34,7 +36,8 @@ while($row = $service_request_all->fetch_assoc()) {
     $unit_status_id = $row["unit_status_id"];
     $unit_status_name = $row["unit_status_name"];
     $unit_status_reason = $row["unit_status_reason"];
-    $Hold_Can_Work_On = $row["Hold_Can_Work_On"];
+    $Hold_Can_Work_On_id = $row["Hold_Can_Work_On_id"];
+    $Hold_Can_Work_On_name = $row["Hold_Can_Work_On_name"];
     $Held_For = $row["Held_For"];
     $ticket_status_id = $row["ticket_status_id"];
     $ticket_status_name = $row["ticket_status_name"];
@@ -186,13 +189,14 @@ if (isset($_POST['submit'])) {
                                    <div id="Status-Reason" class="col-md-9 col-xs-6">
                                         <strong>Requested Status Reason</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="requested_status_reason_new" class="form-control" />
+                                        <input type="text" id="" name="requested_status_reason_new" value="<?php echo htmlentities($unit_status_reason);?>" placeholder="<?php echo htmlentities($unit_status_reason);?>" class="form-control" />
                                         </div>
                                     </div>
                                     <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Hold Can Work On </strong>
                                         <div class="form-group">
                                             <select id="" name="Hold_can_work_on_new" class="form-control form-control-line " >
+                                                <option value=""><?php echo htmlentities($Hold_Can_Work_On) ?></option>
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
                                             </select>
