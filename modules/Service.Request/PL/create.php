@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
     $ticket_status = $database->escape_string($ticket_status);
     $ticket_feedback = $database->escape_string($ticket_feedback);
 
-    $sql= "INSERT INTO `developers` (`ID`, 
+    $sql= "INSERT INTO `service request` (`ID`, 
     `unit_ID`, 
     `activity_ID`,
     `unit_status`,
@@ -49,9 +49,7 @@ if (isset($_POST['submit'])) {
     '".$Held_for_new."', 
     '".$ticket_status."', 
     '".$ticket_feedback."', 
-    current_timestamp(), 
-    '',
-    '".$mobile2."')";
+    current_timestamp())";
     $ticket_dml= $database->query($sql); 
 
 } 
@@ -71,7 +69,7 @@ if (isset($_POST['submit'])) {
             <h3 class="text-themecolor m-b-0 m-t-0">Service Request Ticket</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
-                <li class="breadcrumb-item active">New Ticket</li>
+                <li class="breadcrumb-item active">New Ticket <?php echo htmlentities($sql) ?></li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
