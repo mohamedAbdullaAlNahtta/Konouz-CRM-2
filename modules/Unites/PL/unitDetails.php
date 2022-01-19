@@ -268,7 +268,7 @@ $unitDetailsID = $_GET['unitId'];
                         <div class="card-block">
                             <div class="profiletimeline">
                                 <div class="sl-item">
-                                    <div class="sl-left"><img src="assets/images/users/1.jpg" alt="user" class="img-circle" /></div>
+                                    <div class="sl-left"><img src="assets/images/users/User-01.png" alt="user" class="img-circle" /></div>
                                     <div class="sl-right">
                                         <div>
                                             <a class="link">John Doe</a> <span class="sl-date">5 minutes ago</span>
@@ -278,35 +278,7 @@ $unitDetailsID = $_GET['unitId'];
                                 </div>
                                 <hr />
                                 <div class="sl-item">
-                                    <div class="sl-left"><img src="assets/images/users/2.jpg" alt="user" class="img-circle" /></div>
-                                    <div class="sl-right">
-                                        <div>
-                                            <a class="link">John Doe</a> <span class="sl-date">5 minutes ago</span>
-                                            <div class="m-t-20 row">
-                                                <div class="col-md-3 col-xs-12"><img src="assets/images/big/img1.jpg" alt="user" class="img-responsive radius" /></div>
-                                                <div class="col-md-9 col-xs-12">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="sl-item">
-                                    <div class="sl-left"><img src="assets/images/users/3.jpg" alt="user" class="img-circle" /></div>
-                                    <div class="sl-right">
-                                        <div>
-                                            <a class="link">John Doe</a> <span class="sl-date">5 minutes ago</span>
-                                            <p class="m-t-10">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
-                                                ipsum. Praesent mauris. Fusce nec tellus sed augue semper
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="sl-item">
-                                    <div class="sl-left"><img src="assets/images/users/4.jpg" alt="user" class="img-circle" /></div>
+                                    <div class="sl-left"><img src="assets/images/users/User-01.png" alt="user" class="img-circle" /></div>
                                     <div class="sl-right">
                                         <div>
                                             <a class="link">John Doe</a> <span class="sl-date">5 minutes ago</span>
