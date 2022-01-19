@@ -4,7 +4,20 @@
 ///////////////////////////////////////////////////////////////
 $devId= $_GET["EditeDeveloperId"];
 
-$sql= "SELECT `ID`, `Name`, `Rep`, `Mobile1`, `Insertion Date`, `Added By`, `Mobile2` FROM `developers` WHERE `ID`='".$devId."'";
+$sql= "SELECT `ID`, 
+`unit_ID`, 
+`activity_ID`, 
+`unit_status`, 
+`unit_status_reason`, 
+`Hold_Can_Work_On`, 
+`Held_For`,
+`ticket_status`, 
+`ticket_feedback`,
+`created_by`
+`creation_date`,
+`Handled_by`,
+`Last_update_date`
+ FROM `service request` WHERE `ID`='".$devId."'";
 $developer= $database->query($sql);
 
     // output data of each row
