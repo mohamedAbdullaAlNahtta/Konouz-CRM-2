@@ -1,11 +1,10 @@
 <?php
 
-if (isset($_GET['unitid'])) {
+
     $unit_Id_new = $_GET['unitid'];
-}
-if (isset($_GET['activityId'])) {
-    $activity_id_new = $_GET['activityId'];
-}
+
+    $activity_id_new = $_GET['activityid'];
+
 ///////////////////////////////////////////////////////////////
 /// start of ---> submitting form data to the database 
 ///////////////////////////////////////////////////////////////
@@ -41,7 +40,7 @@ if (isset($_POST['submit'])) {
     `ticket_status`,
     `ticket_feedback`,
     `creation_date`) 
-    VALUES (NULL,'".$x."', '".$activity_id_new."', '".$unit_status."', '".$unit_status_reason."', '".$Hold_can_work_on_new."', '".$Held_for_new."', '".$ticket_status."', '".$ticket_feedback."', current_timestamp())";
+    VALUES (NULL,'".$unit_Id_new."', '".$activity_id_new."', '".$unit_status."', '".$unit_status_reason."', '".$Hold_can_work_on_new."', '".$Held_for_new."', '".$ticket_status."', '".$ticket_feedback."', current_timestamp())";
     $ticket_dml= $database->query($sql); 
 
 } 
