@@ -117,7 +117,7 @@ if (isset($_POST['submit'])) {
                 <div class="card-block">
                     <form action="index?module=Client&tableName=<?php echo $tableName; ?>&objectCreate=true" method="post">
                         <div class="form-body">
-                            <h3 class="card-title">Client Information </h3>
+                            <h3 class="card-title"> <i class="mdi mdi-account-plus"></i> Client Information </h3>
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -152,21 +152,21 @@ if (isset($_POST['submit'])) {
                             <div class="row p-t-20">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> 1st Mobile Number</label>
+                                        <label class="control-label"> <i class="mdi mdi-cellphone"></i> 1st Mobile Number </label>
                                         <input type="number"  name="Mobile1_create" class="form-control" required/>
                                         <small class="form-control-feedback"> Example 01093002345....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> 2nd Mobile Number</label>
+                                        <label class="control-label"> <i class="mdi mdi-cellphone"></i> 2nd Mobile Number </label>
                                         <input type="number" placeholder="01132332856"  name="Mobile2_create" class="form-control" />
                                         <small class="form-control-feedback"> Example 01132332856....</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label"> Email</label>
+                                        <label class="control-label"><i class="mdi mdi-email"></i> Email</label>
                                         <input type="text"   name="email_create" class="form-control" />
                                         <small class="form-control-feedback"> Example smith@yahoo.com....</small>
                                     </div>
