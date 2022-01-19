@@ -30,7 +30,25 @@ if (isset($_POST['submit'])) {
     $ticket_status = $database->escape_string($ticket_status);
     $ticket_feedback = $database->escape_string($ticket_feedback);
 
-    $sql= "INSERT INTO `developers` (`ID`, `Name`, `Rep`, `Mobile1`, `Insertion Date`, `Added By`, `Mobile2`) VALUES (NULL, '".$DeveloperName."', '".$DeveloperRepresentative."', '".$mobile1."', current_timestamp(), '', '".$mobile2."')";
+    $sql= "INSERT INTO `developers` (`ID`, 
+    `unit_ID`, 
+    `activity_ID`,
+    `unit_status`,
+    `unit_status_reason`,
+    `Hold_Can_Work_On`,
+    `Held_For`,
+    `ticket_status`,
+    `ticket_feedback`,
+    `creation_date`) VALUES (NULL,
+    '".$unit_id_new."', 
+    '".$activity_id_new."', 
+    '".$unit_status."', 
+    '".$mobile2."', 
+    '".$mobile2."', 
+    '".$mobile2."', 
+    current_timestamp(), 
+    '',
+    '".$mobile2."')";
     $ticket_dml= $database->query($sql); 
 
 } 
