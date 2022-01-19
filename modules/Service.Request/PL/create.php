@@ -11,10 +11,14 @@ if (isset($_GET['unitId'])) {
 ///////////////////////////////////////////////////////////////
 if (isset($_POST['submit'])) {
 
-    $DeveloperName = $_POST['DeveloperName'];
-    $DeveloperRepresentative = $_POST['DeveloperRepresentative'];
-    $mobile1 = $_POST['mobile1'];
-    $mobile2 = $_POST['mobile2'];
+    $unit_id_new = $_POST['unit_id_new'];
+    $activity_id_new = $_POST['activity_id_new'];
+    $unit_status = $_POST['status_id_new'];
+    $unit_status_reason = $_POST['requested_status_reason_new'];
+    $Hold_can_work_on_new = $_POST['Hold_can_work_on_new'];
+    $Held_for_new = $_POST['Held_for_new'];
+    $ticket_status = $_POST['ticket_status_new'];
+    $ticket_feedback = $_POST['ticket_feed_back_new'];
     
     // escaping variables
     $DeveloperName = $database->escape_string($DeveloperName);
@@ -76,7 +80,7 @@ if (isset($_POST['submit'])) {
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Unit ID </strong>
                                     <div class="form-group">
-                                    <input type="text" id="" name="unit_id_new" class="form-control" disabled/>
+                                    <input type="text" id="" name="unit_id_new" value="<?php echo htmlentities($unit_Id_new);?>" placeholder="<?php echo htmlentities($unit_Id_new);?>"  class="form-control" disabled/>
                                     </div>
                                 </div>
                                 <div id="" class="col-md-3 col-xs-6">
@@ -90,7 +94,7 @@ if (isset($_POST['submit'])) {
                             <h3 class="card-title">Ticket Info</h3>
                             <div class="row p-t-20">
                                     <div class="col-md-3 col-xs-6">
-                                        <strong>Unit Status</strong>
+                                        <strong>Requested Unit Status</strong>
                                         <div class="form-group">
                                             <select id="unitStatusform" name="status_id_new" class="form-control form-control-line" required>
                                                 <option value="2">Available</option>
@@ -103,9 +107,9 @@ if (isset($_POST['submit'])) {
                                         </div>
                                    </div>
                                    <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form ">
-                                        <strong>Status Reason</strong>
+                                        <strong>Requested Status Reason</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="status_reason_new" class="form-control" />
+                                        <input type="text" id="" name="requested_status_reason_new" class="form-control" />
                                         </div>
                                     </div>
                                     <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
@@ -124,9 +128,9 @@ if (isset($_POST['submit'])) {
                                         </div>
                                     </div>
                                     <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
-                                        <strong>Approval Status </strong>
+                                        <strong>Ticket Status </strong>
                                         <div class="form-group">
-                                            <select id="Approval-status-op" name="approval_status_new" class="form-control form-control-line" >
+                                            <select id="Approval-status-op" name="ticket_status_new" class="form-control form-control-line" >
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -142,9 +146,9 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                         </div>
                                     </div>
                                     <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
-                                        <strong>Approval Feedback</strong>
+                                        <strong>Ticket Feedback</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="approval_feed_back_new" class="form-control " />
+                                        <input type="text" id="" name="ticket_feed_back_new" class="form-control " />
                                         </div>
                                     </div>
                             </div>                                   
