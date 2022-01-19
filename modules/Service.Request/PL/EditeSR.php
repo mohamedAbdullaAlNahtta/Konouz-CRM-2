@@ -104,7 +104,7 @@ if (isset($_POST['submit'])) {
             <h3 class="text-themecolor m-b-0 m-t-0">Developers</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
-                <li class="breadcrumb-item active">Edite Developer Data <?php var_dump($sql_request); ?></li>
+                <li class="breadcrumb-item active">Edite Developer Data</li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
@@ -135,11 +135,17 @@ if (isset($_POST['submit'])) {
                         <div class="form-body">
                             <h3 class="card-title">Unit Info</h3>
                             <div class="row p-t-20">
+                                <div id="" class="col-md-1 col-xs-6">
+                                    <img src="assets/images/units/1.png" width="120">
+                                </div>
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Unit ID </strong>
                                     <div class="form-group">
                                     <input type="text" id="" name="unit_id_new" value="<?php echo htmlentities($unit_Id_new);?>" placeholder="<?php echo htmlentities($unit_Id_new);?>"  class="form-control" disabled/>
                                     </div>
+                                </div>
+                                <div id="" class="col-md-1 col-xs-6">
+                                    <img src="assets/images/units/activity.jpg" width="90">
                                 </div>
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Activity ID </strong>
@@ -213,27 +219,39 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                             <hr />    
                             <div class="row p-t-20">
                                 <!--/span-->
-                                <div class="col-md-3">
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                                </div>
+                                <div class="col-md-2.5">
                                     <div class="form-group">
                                         <label class="control-label">Creation Date</label>
                                         <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                                </div>
+                                <div class="col-md-2.5">
                                     <div class="form-group">
                                         <label class="control-label">last Update Date</label>
                                         <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled="disapled"/>
                                     </div>
                                 </div>
                                 <!--/span-->
-                                <div class="col-md-3">
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                                </div>
+                                <div class="col-md-2.5">
                                     <div class="form-group">
                                         <label class="control-label">Created BY</label>
                                         <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
                                     </div>
                                 </div>
                                 <!--/span-->
-                                <div class="col-md-3">
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                                </div>
+                                <div class="col-md-2.5">
                                     <div class="form-group">
                                         <label class="control-label">Handled BY</label>
                                         <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
