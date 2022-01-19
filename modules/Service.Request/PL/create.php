@@ -99,6 +99,7 @@ if (isset($_POST['submit'])) {
                     <form action="index?module=Service.Request&create=true" method="post">
                         <div class="form-body">
                             <h3 class="card-title">Unit Info</h3>
+                            <img src="assets/images/units/1.png" width="120">
                             <div class="row p-t-20">
                                 <div id="" class="col-md-3 col-xs-6">
                                     <strong>Unit ID </strong>
