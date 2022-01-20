@@ -51,6 +51,9 @@
                                                 <p class="ribbon-content">check out the unit data</p>
                                             </div>
                                             <div class="row">
+                                                <div id="" class="col-md-1 col-xs-6">
+                                                    <img src="assets/images/units/1.png" width="120">
+                                                </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Unit ID</label>
@@ -117,11 +120,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Direct Manager</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
-                                                            <option value="1">Ahmed mahmoud</option>
-                                                            <option value="2">root</option>   
-                                                            <option value="3">Admin</option>      
-                                                            <option value="4">Muhammad Soliman</option>  
-                                                            <option value="4">Essam</option>                                                         
+                                                            <option >Ahmed mahmoud</option>                                                      
                                                         </select>
                                                     </div>
                                                 </div>
@@ -216,7 +215,10 @@ for ($i=0; $i < $brokers_data_Count ; $i++) {
                                             <div class="ribbon-wrapper">
                                                 <div class="ribbon ribbon-bookmark ribbon-info">Activity input</div>
                                             </div>
-                                            <div class="row">
+                                        <div class="row">
+                                            <div id="" class="col-md-1 col-xs-6">
+                                                <img src="assets/images/units/activity.jpg" width="90">
+                                            </div>
                                             <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Activity Status</label>
@@ -235,7 +237,10 @@ for ($i=0; $i < $activity_status_data_Count ; $i++) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div id="" class="col-md-0.5 col-xs-6">
+                                                    <img src="assets/images/payment.JPG" width="50">
+                                                </div>
+                                                <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type</label>
                                                         <select id="" name="" class="form-control form-control-line" required>
@@ -253,16 +258,10 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Refunded</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
-                                                            <option value="0">No</option>
-                                                            <option value="1">Yes</option>                                                            
-                                                        </select>
-                                                    </div>
+                                                <div id="" class="col-md-0.5 col-xs-6">
+                                                    <img src="assets/images/contract_sign.JPG" width="80">
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Signed Contract</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
@@ -271,9 +270,18 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Cheque Submitted</label>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="0">No</option>
+                                                            <option value="1">Yes</option>                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Refunded</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
                                                             <option value="0">No</option>
                                                             <option value="1">Yes</option>                                                            

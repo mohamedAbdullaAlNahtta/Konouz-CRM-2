@@ -135,7 +135,7 @@ $payment_type_data_Count = $payment_type_data_all_get->num_rows;
 
 
 /////////////////////////////////////////////////////////////
-// Start of ------getting all payment type data
+// Start of ------getting activity_status data
 /////////////////////////////////////////////////////////////
 $sql_get_activity_status_data= "SELECT * FROM `activity status`";
 $activity_status_data_all_get= $database->query($sql_get_activity_status_data);
@@ -152,28 +152,31 @@ $activity_status_data_Count = $activity_status_data_all_get->num_rows;
  $Name=array();
 
  //////////////////////////////////////////////////////////////
-// end of ------getting all payment type data
+// end of ------getting activity_status data
 ///////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-// Start of ------getting all payment type data
+// Start of ------getting Maintenance_Feesdata
 /////////////////////////////////////////////////////////////
-$sql_get_Maintenance_Fees_data= "SELECT * FROM `activity status`";
+$sql_get_Maintenance_Fees_data= "SELECT `id` as `Pro_ID`, `unit_ID`,
+ `p`.`Maintenance pct` from `projects` `p` 
+ left join `units` `u` on P.id = u.Project_ID 
+ WHERE `u`.`unit_ID`='".$unit_ID."'; ";
 $Maintenance_Fees_data_all_get= $database->query($sql_get_Maintenance_Fees_data);
 
 $Maintenance_Fees_data_Count = $Maintenance_Fees_data_all_get->num_rows;
    // output data of each row
    while($row = $Maintenance_Fees_data_all_get->fetch_assoc()) {
-     $ID[] = $row["ID"];
-     $Name[] = $row["Name"];
+     $Pro_ID[] = $row["Pro_ID"];
+     $Maintenance_pct[] = $row["Maintenance pct"];
    }
- $Maintenance_Fees_data= array("ID"=>$ID, "Name"=>$Name );
+ $Maintenance_Fees_data= array("Pro_ID"=>$Pro_ID, "Maintenance_pct"=>$Maintenance_pct );
 
- $ID=array();
- $Name=array();
+ $Pro_ID=array();
+ $Maintenance_pct=array();
 
  //////////////////////////////////////////////////////////////
-// end of ------getting all payment type data
+// end of ------getting Maintenance_Fees data
 ///////////////////////////////////////////////////////////////
 
 
