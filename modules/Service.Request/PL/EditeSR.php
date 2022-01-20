@@ -59,12 +59,12 @@ while($row = $service_request_all->fetch_assoc()) {
 if (isset($_POST['submit'])) {
     
     // getting for data
-    $unit_status_id = $_POST['unit_status_id_new'];
-    $unit_status_reason = $_POST['unit_status_reason_new'];
-    $Hold_Can_Work_On_id = $_POST['Hold_Can_Work_On_id_new'];
-    $Held_For = $_POST['Held_For_new'];
-    $ticket_status_id = $_POST['ticket_status_id_new'];
-    $ticket_feedback = $_POST['ticket_feedback_new'];
+    $unit_status_id_new = $_POST['unit_status_id_new'];
+    $unit_status_reason_new = $_POST['unit_status_reason_new'];
+    $Hold_Can_Work_On_id_new = $_POST['Hold_Can_Work_On_id_new'];
+    $Held_For_new = $_POST['Held_For_new'];
+    $ticket_status_id_new = $_POST['ticket_status_id_new'];
+    $ticket_feedback_new = $_POST['ticket_feedback_new'];
    
     
     // escaping variables
@@ -92,8 +92,8 @@ if (isset($_POST['submit'])) {
 
     // $sql_z =  "UPDATE `developers`  {$setcolumn}  WHERE DevID=".$devId."";
 
-    //  $sql_zxc =  "call UPDATE_dev ('".$devId."','".$DeveloperName."','".$DeveloperRepresentative."','".$mobile1."','".$mobile2."')";
-    // $service_request_edite= $database->query($sql_zxc); 
+     $sql_zxc =  "call Update_sr ('".$ID."','".$unit_status_id_new."','".$unit_status_reason_new."','".$Hold_Can_Work_On_id_new."','".$Held_For_new."','".$ticket_status_id_new."','".$ticket_feedback_new."')";
+    $service_request_edite= $database->query($sql_zxc); 
 
 } 
 ///////////////////////////////////////////////////////////////
