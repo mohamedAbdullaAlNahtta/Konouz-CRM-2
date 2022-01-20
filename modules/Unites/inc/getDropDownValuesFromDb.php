@@ -1,5 +1,6 @@
 <?php
 
+$EditeunitId = $_GET['EditeunitId'];
 
 /////////////////////////////////////////////////////////////
 // Start of ------getting all developers names and ids 
@@ -204,5 +205,53 @@ $approvalStatusGetCount = $approval_status_get->num_rows;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+ ////////////////////////////////////////////////////////////
+ //Start of getting unit attachments
+  ////////////////////////////////////////////////////////////
+  $sql_get_attachement_file="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' ORDER BY `File Name` ASC";
+  $units_all_attachement_file = $database->query($sql_get_attachement_file);
+
+  $unitsAttachementFileCount = $units_all_attachement_file->num_rows;
+
+  /////////////////////////////////////////////////////////////
+  $sql_get_Layout_With_dimensions="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Layout With dimensions' ORDER BY `File Name` ASC";
+  $units_get_Layout_With_dimensions = $database->query($sql_get_Layout_With_dimensions);
+
+  $units_get_Layout_With_dimensionsCount = $units_get_Layout_With_dimensions->num_rows;
+
+  if($units_get_Layout_With_dimensionsCount>0){
+
+    while($row = $units_get_Layout_With_dimensions->fetch_assoc()) {
+        $Layout_With_dimensions_FileLocation = $row["File Location"]; 
+      }
+
+  }
+  ///////////////////////////////////////////////////////////////
+  $sql_get_Layout_Without_dimensions="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Layout Without dimensions' ORDER BY `File Name` ASC";
+  $units_get_Layout_Without_dimensions = $database->query($sql_get_Layout_Without_dimensions);
+  $units_get_Layout_Without_dimensionsCount = $units_get_Layout_Without_dimensions->num_rows;
+
+  if($units_get_Layout_Without_dimensionsCount>0){
+
+    while($row = $units_get_Layout_Without_dimensions->fetch_assoc()) {
+        $Layout_Without_dimensions_FileLocation = $row["File Location"]; 
+    }
+
+  }
+////////////////////////////////////////////////////////////////////
+  $sql_get_Model="SELECT `File Name`, `File Location` FROM `attachements` WHERE `Unit ID`='".$EditeunitId."' and `File Name`='Model' ORDER BY `File Name` ASC";
+  $units_get_Model = $database->query($sql_get_Model);
+
+  $units_get_ModelCount = $units_get_Model->num_rows;
+  if($units_get_ModelCount>0){
+
+    while($row = $units_get_Model->fetch_assoc()) {
+        $Model_FileLocation = $row["File Location"]; 
+      }
+  }
+  ////////////////////////////////////////////////////////////
+ //end of getting unit attachments
+  ////////////////////////////////////////////////////////////
+ 
 
 ?>

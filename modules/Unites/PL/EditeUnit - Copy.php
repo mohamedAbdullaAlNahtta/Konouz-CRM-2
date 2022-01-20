@@ -8,16 +8,15 @@ $EditeunitId = $_GET['EditeunitId'];
  $sql_get_units="SELECT `u`.`Unit_ID`,
  `u`.`Unit_No`,
  `u`.`Build_No`,
- `u`.`Project_ID` as`project_id`,
- `P`.`Name`as`project_name`,
+ `u`.`Project_ID`,
+ `P`.`Name`as`ProName`,
  `u`.`floor_id`,
- `f`.`Name`as`floor_name`,
- `u`.`Raw_ID` as `R_Type_id`,
+ `f`.`Name`as`Floor_Name`,
+ `u`.`Raw_ID`,
  `r`.`Type`as`R_Type`,
- `u`.`Pos_ID` as`pos_id`,
- `up`.`Name`as`pos_name`,
+ `u`.`Pos_ID`,
+ `up`.`Name`as`Pos_Name`,
  `u`.`Unit_Area`,
- `u`.`Basic_Meter_Price` as `Basic_Meter_Price_id`,
  `bp`.`Basic Meter Price`as`Basic_Meter_Price`,
  `u`.`Unit_Basic_Price`,
  `u`.`Roof_Area`,
@@ -36,14 +35,13 @@ $EditeunitId = $_GET['EditeunitId'];
  `u`.`Creation_Date`,
  `u`.`last_update_on`,
  `u`.`maintenance_pct`,
- `u`.`finishing_level` AS `finishing_level_id`,
- `fi`.`Level` AS `finishing_level_name`,
- `u`.`Rooms_Desc` as `Rooms_and_Desc_id`,
+ `u`.`finishing_level`,
+ `fi`.`Level`,
+ `u`.`Rooms_Desc`,
  `Ro`.`Count`as`Rooms_Count`,
  `ro`.`Description`as`Rooms_Description`,
  `u`.`has_activity`,
- `u`.`activity_id`,
- `p`.`Location On Map`as `location_OnMap`
+ `u`.`activity_id`
  From Units u 
  LEFT JOIN `projects` `p`
  on u.Project_ID = p.ID
@@ -74,23 +72,23 @@ $EditeunitId = $_GET['EditeunitId'];
         $Unit_ID = $row["Unit_ID"];
         $Unit_No= $row["Unit_No"];
         $Build_No= $row["Build_No"];
-        $project_id = $row["project_id"];
-        $project_name= $row["project_name"];
+        $Project_ID = $row["Project_ID"];
+        $ProName= $row["ProName"];
         $floor_id = $row["floor_id"];
-        $floor_name= $row["floor_name"];
-        $R_Type_id = $row["R_Type_id"];
+        $Floor_Name= $row["Floor_Name"];
+        $Raw_ID = $row["Raw_ID"];
         $R_Type= $row["R_Type"];
-        $pos_id = $row["pos_id"];
-        $pos_name= $row["pos_name"];
+        $Pos_ID = $row["Pos_ID"];
+        $Pos_Name= $row["Pos_Name"];
         $Unit_Area= $row["Unit_Area"];
-        $Basic_Meter_Price_id = $row["Basic_Meter_Price_id"];
+        $Basic_Meter_Price_ID = $row["Basic_Meter_Price_ID"];
         $Basic_Meter_Price= $row["Basic_Meter_Price"];
         $Unit_Basic_Price= $row["Unit_Basic_Price"];
         $Roof_Area= $row["Roof_Area"];
         $Garden_Area= $row["Garden_Area"];
         $Open_terrace_Area= $row["Open_terrace_Area"];
         $Usufruct_type = $row["Usufruct_type"];
-        $Usufruct_Meter_Price_id = $row["Usufruct_Meter_Price_id"];
+        $UsuID = $row["Usufruct_Meter_Price_id"];
         $Usufruct_Meter_Price= $row["Usufruct_Meter_Price"];
         $Usufruct_Price= $row["Usufruct_Price"];
         $Net_Area= $row["Net_Area"];
@@ -102,9 +100,9 @@ $EditeunitId = $_GET['EditeunitId'];
         $Creation_Date= $row["Creation_Date"];
         $last_update_on= $row["last_update_on"];
         $maintenance_pct= $row["maintenance_pct"];
-        $finishing_level_id = $row["finishing_level_id"];
-        $finishing_level_name = $row["finishing_level_name"];
-        $Rooms_and_Desc_id = $row["Rooms_and_Desc_id"];
+        $finishing_level_current = $row["finishing_level"];
+        $LEVEL = $row["Level"];
+        $Rooms_Desc = $row["Rooms_Desc"];
         $Rooms_Count= $row["Rooms_Count"];
         $Rooms_Description= $row["Rooms_Description"];
         $has_activity= $row["has_activity"];
