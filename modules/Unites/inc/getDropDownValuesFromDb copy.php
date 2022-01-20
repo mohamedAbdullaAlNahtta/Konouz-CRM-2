@@ -14,7 +14,7 @@ $projectsNameCount = $projects_all_get->num_rows;
      $ProID[] = $row["ID"];
      $ProName[] = $row["Name"];
    }
- $project_all= array("ProID"=>$ProID, "ProName"=>$ProName );
+ $project_name= array("ProID"=>$ProID, "ProName"=>$ProName );
 
  //////////////////////////////////////////////////////////////
 // End of ------ getting all developers names and ids 
@@ -32,7 +32,7 @@ $FloorNameCount = $floors_all_get->num_rows;
      $Floor_Id[] = $row["ID"];
      $Floor_Name[] = $row["Name"];
    }
- $floor_all= array("Floor_Id"=>$Floor_Id, "Floor_Name"=>$Floor_Name );
+ $floor_name= array("Floor_Id"=>$Floor_Id, "Floor_Name"=>$Floor_Name );
 
  //////////////////////////////////////////////////////////////
 // End of ------ getting all  Floor  names and ids 

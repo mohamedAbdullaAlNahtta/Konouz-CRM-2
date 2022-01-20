@@ -63,7 +63,7 @@ $EditeunitId = $_GET['EditeunitId'];
  on u.finishing_level = fi.ID
  LEFT JOIN rooms ro
  on u.Rooms_Desc = ro.ID
- WHERE u.Unit_ID='".$EditeunitId."'";
+ WHERE u.Unit_ID='1111-1111-35'";
 
  $units_all= $database->query($sql_get_units);
 
@@ -268,13 +268,13 @@ if (isset($_POST['submit'])) {
                                         <strong>Project</strong>
                                         <div class="form-group">
                                             <select id="myselect" name="Project_ID" class="form-control form-control-line" disabled>
-                                                <option value="<?php echo htmlentities($Project_ID); ?>"><?php echo htmlentities($ProName); ?></option>
+                                                <option value="<?php echo htmlentities($project_id); ?>"><?php echo htmlentities($project_name); ?></option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $projectsNameCount ; $i++) { 
-    echo "<option value='".$project_name["ProID"][$i]."' >".$project_name["ProName"][$i]."</option>";
+    echo "<option value='".$project_all["ProID"][$i]."' >".$project_all["ProName"][$i]."</option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
@@ -298,14 +298,14 @@ for ($i=0; $i < $projectsNameCount ; $i++) {
                                     <div class="col-md-3 col-xs-6">
                                         <strong>Floor</strong>
                                         <div class="form-group">
-                                            <select id="myselect" name="floor_id_edite" class="form-control form-control-line" required>
-                                                <option value="<?php echo htmlentities($floor_id); ?>"><?php echo htmlentities($Floor_Name); ?></option>
+                                            <select id="myselect" name="floor_id_edite" class="form-control form-control-line" >
+                                                <option value="<?php echo htmlentities($floor_id); ?>"><?php echo htmlentities($floor_name); ?></option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $FloorNameCount ; $i++) { 
-    echo "<option value='".$floor_name["Floor_Id"][$i]."' >".$floor_name["Floor_Name"][$i]."</option>";
+    echo "<option value='".$floor_all["Floor_Id"][$i]."' >".$floor_all["Floor_Name"][$i]."</option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
@@ -353,7 +353,7 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
                                         </h3>
                                         <div class="form-group">
                                             <select id="myselect" name="Raw_ID_edite" class="form-control form-control-line">
-                                                <option value="<?php echo htmlentities($Raw_ID); ?>"><?php echo htmlentities($R_Type); ?></option>
+                                                <option value="<?php echo htmlentities($R_Type_id); ?>"><?php echo htmlentities($R_Type); ?></option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -374,7 +374,7 @@ for ($i=0; $i < $rowNameCount ; $i++) {
                                         </h3>
                                         <div class="form-group">
                                             <select id="myselect" name="Pos_ID_edite" class="form-control form-control-line" >
-                                                <option value="<?php echo htmlentities($Pos_ID); ?>"><?php echo htmlentities($Pos_Name); ?></option>
+                                                <option value="<?php echo htmlentities($pos_id); ?>"><?php echo htmlentities($pos_name); ?></option>
 s<?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------>
@@ -403,7 +403,7 @@ for ($i=0; $i < $unitPositionNameCount ; $i++) {
                                         </h3>
                                         <div class="form-group">
                                         <select id="myselect" name="Basic_Meter_Price_edite" class="form-control form-control-line" >
-                                                <option value="<?php echo htmlentities($Basic_Meter_Price_ID); ?>"><?php echo htmlentities($Basic_Meter_Price); ?></option>
+                                                <option value="<?php echo htmlentities($Basic_Meter_Price_id); ?>"><?php echo htmlentities($Basic_Meter_Price); ?></option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -466,7 +466,7 @@ for ($i=0; $i < $basicpricesNameCount ; $i++) {
                                         </h3>
                                         <div class="form-group">
                                             <select id="myselect" name="Rooms_Desc_edite" class="form-control form-control-line" required>
-                                                <option value="<?php echo htmlentities($Rooms_Desc); ?>"><?php echo htmlentities($Rooms_Description); ?>Room, <?php echo htmlentities($Rooms_Description); ?></option>
+                                                <option value="<?php echo htmlentities($Rooms_and_Desc_id); ?>"><?php echo htmlentities($Rooms_Count); ?>Room, <?php echo htmlentities($Rooms_Description); ?></option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -487,7 +487,7 @@ for ($i=0; $i < $roomsNameCount ; $i++) {
                                         </h3>
                                         <div class="form-group">
                                             <select id="myselect" name="finishing_level_new_edite" class="form-control form-control-line" >
-                                                <option value="<?php echo htmlentities($finishing_level_current); ?>"><?php echo htmlentities($LEVEL); ?></option>
+                                                <option value="<?php echo htmlentities($finishing_level_id); ?>"><?php echo htmlentities($finishing_level_name); ?></option>
                                                 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -545,7 +545,7 @@ for ($i=0; $i < $usufructtypeNameCount ; $i++) {
                                         <strong><span class="label label-primary"> Usufruct Meter Price</span></strong>
                                         <div class="form-group">
                                             <select id="myselect" name="usufruct_meter_price_edite" class="form-control form-control-line" required>
-                                                <option value='<?php echo htmlentities($UsuID);?>'> <?php echo htmlentities($Usufruct_Meter_Price);?></option>
+                                                <option value='<?php echo htmlentities($Usufruct_Meter_Price_id);?>'> <?php echo htmlentities($Usufruct_Meter_Price);?></option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
