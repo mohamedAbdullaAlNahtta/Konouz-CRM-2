@@ -59,10 +59,13 @@ while($row = $service_request_all->fetch_assoc()) {
 if (isset($_POST['submit'])) {
     
     // getting for data
-    // $DeveloperName = $_POST['DeveloperName'];
-    // $DeveloperRepresentative = $_POST['DeveloperRepresentative'];
-    // $mobile1 = $_POST['mobile1'];
-    // $mobile2 = $_POST['mobile2'];
+    $unit_status_id = $_POST['unit_status_id'];
+    $unit_status_reason = $_POST['unit_status_reason'];
+    $Hold_Can_Work_On_id = $_POST['Hold_Can_Work_On_id'];
+    $Held_For = $_POST['Held_For'];
+    $ticket_status_id = $_POST['ticket_status_id'];
+    $ticket_feedback = $_POST['ticket_feedback'];
+   
     
     // escaping variables
     // $DeveloperName = $database->escape_string($DeveloperName);
@@ -89,8 +92,8 @@ if (isset($_POST['submit'])) {
 
     // $sql_z =  "UPDATE `developers`  {$setcolumn}  WHERE DevID=".$devId."";
 
-    //  $sql_zxc =  "call UPDATE_dev ('".$devId."','".$DeveloperName."','".$DeveloperRepresentative."','".$mobile1."','".$mobile2."')";
-    // $service_request_edite= $database->query($sql_zxc); 
+     $sql_zxc =  "call UPDATE_dev ('".$devId."','".$DeveloperName."','".$DeveloperRepresentative."','".$mobile1."','".$mobile2."')";
+    $service_request_edite= $database->query($sql_zxc); 
 
 } 
 ///////////////////////////////////////////////////////////////
