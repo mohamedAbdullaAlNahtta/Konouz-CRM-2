@@ -196,7 +196,7 @@ if (isset($_POST['submit'])) {
                                         <strong>Hold Can Work On </strong>
                                         <div class="form-group">
                                             <select id="" name="Hold_can_work_on_new" class="form-control form-control-line " >
-                                                <option value=""><?php echo htmlentities($Hold_Can_Work_On) ?></option>
+                                                <option value="<?php echo htmlentities($Hold_Can_Work_On_id); ?>"><?php echo htmlentities($Hold_Can_Work_On_name); ?></option>
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
                                             </select>
@@ -205,7 +205,7 @@ if (isset($_POST['submit'])) {
                                     <div id="Held-For" class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Held For</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="Held_for_new" class="form-control d" />
+                                        <input type="text" id="" name="Held_for_new" value="<?php echo htmlentities($Held_For); ?>" placeholder="<?php echo htmlentities($Held_For); ?>" class="form-control d" />
                                         </div>
                                     </div>
                                     <div id="Approval-status" class="col-md-3 col-xs-6 ">
@@ -230,7 +230,7 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                     <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Ticket Feedback</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="ticket_feed_back_new" class="form-control " />
+                                        <input type="text" id="" name="ticket_feed_back_new" value="<?php echo htmlentities($ticket_feedback);?>" placeholder="<?php echo htmlentities($ticket_feedback);?>" class="form-control " />
                                         </div>
                                     </div>
                             </div>                                   
@@ -273,7 +273,7 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label">Handled BY</label>
+                                        <label class="control-label">Last Update BY</label>
                                         <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities("Administrator");?>" disabled="disapled" />
                                     </div>
                                 </div>

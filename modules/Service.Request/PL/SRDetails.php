@@ -2,26 +2,64 @@
 ///////////////////////////////////////////////////////////////
 /// start of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
-$devId= $_GET["DeveloperId"];
+$SRId= $_GET["SRId"];
 
-$sql= "SELECT `ID`, `Name`, `Rep`, `Mobile1`, `Insertion Date`, `Added By`, `Mobile2` FROM `developers` WHERE `ID`='".$devId."'";
-$developer= $database->query($sql);
+$sql_request= "SELECT `service request`.`ID`, 
+ `service request`.`unit_ID`, 
+ `service request`.`activity_ID`, 
+ `service request`.`unit_status` as `unit_status_id`, 
+ `unit status`.`Name` as `unit_status_name`, 
+ `service request`.`unit_status_reason`, 
+ `service request`.`Hold_Can_Work_On` as `Hold_Can_Work_On_id`, 
+ `requested`.`Type`as `Hold_Can_Work_On_name`,
+ `service request`.`Held_For`,
+ `service request`.`ticket_status` as `ticket_status_id`,
+ `approval status`.`Status` as `ticket_status_name` , 
+ `service request`.`ticket_feedback`,
+ `service request`.`created_by`,
+ `service request`.`creation_date`,
+ `service request`.`Handled_by`,
+ `service request`.`Last_update_date`
+  FROM `service request`
+  LEFT JOIN `approval status` ON `service request`.`ticket_status`= `approval status`.`ID`
+  LEFT JOIN `requested` ON `service request`.`Hold_Can_Work_On`= `requested`.`ID`
+  LEFT JOIN `unit status` ON `service request`.`unit_status`= `unit status`.`ID` WHERE `service request`.`ID`=".$SRId."";
+$service_request_all= $database->query($sql_request);
 
-    // output data of each row
-    while($row = $developer->fetch_assoc()) {
-      $DevID = $row["ID"];
-      $DevName = $row["Name"];
-      $Rep = $row["Rep"];
-      $Mobile1 = $row["Mobile1"];
-      $Insertion_date = $row["Insertion Date"];
-      $Added_By = $row["Added By"];
-      $Mobile2 = $row["Mobile2"];
-    }
+//     // output data of each row
+
+
+while($row = $service_request_all->fetch_assoc()) {
+    $ID = $row["ID"];
+    $unit_ID = $row["unit_ID"];
+    $activity_ID = $row["activity_ID"];
+    $unit_status_id = $row["unit_status_id"];
+    $unit_status_name = $row["unit_status_name"];
+    $unit_status_reason = $row["unit_status_reason"];
+    $Hold_Can_Work_On_id = $row["Hold_Can_Work_On_id"];
+    $Hold_Can_Work_On_name = $row["Hold_Can_Work_On_name"];
+    $Held_For = $row["Held_For"];
+    $ticket_status_id = $row["ticket_status_id"];
+    $ticket_status_name = $row["ticket_status_name"];
+    $ticket_feedback = $row["ticket_feedback"];
+    $created_by = $row["created_by"];
+    $creation_date = $row["creation_date"];
+    $Handled_by = $row["Handled_by"];
+    $Last_update_date = $row["Last_update_date"];
+  }
+
 ///////////////////////////////////////////////////////////////
 /// End of ---> getting developer details 
 ///////////////////////////////////////////////////////////////
 
+
+///////////////////////////////////////////////////////////////
+/// start of ---> Submitting form data 
+///////////////////////////////////////////////////////////////
+
+
 ?>
+
 <!-- Container fluid  -->
 <!-- ============================================================== -->
 <div class="container-fluid">
@@ -30,10 +68,10 @@ $developer= $database->query($sql);
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-6 col-8 align-self-center">
-            <h3 class="text-themecolor m-b-0 m-t-0">Developers</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0">Unit Ticket Request </h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
-                <li class="breadcrumb-item active">Developer Details</li>
+                <li class="breadcrumb-item active">Edite Ticket Request Data</li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
@@ -46,11 +84,9 @@ $developer= $database->query($sql);
     <!-- ============================================================== -->
     <!-- Start Page Content -->
     <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
     <div class="row">
         <div class="col-3">
-            <button onclick="location.href='index?module=Developers'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
+            <button onclick="location.href='index?module=Service.Request'" class="btn pull-left hidden-sm-down btn-success"><i class="mdi mdi-arrow-left-bold"></i> Back</button>
         </div>
     </div>
     <br />
@@ -59,67 +95,128 @@ $developer= $database->query($sql);
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">Developer Data</h4>
+                    <h4 class="m-b-0 text-white">Edite Ticket Request</h4>
                 </div>
                 <div class="card-block">
-                    <div class="form-body">
-                        <h3 class="card-title">Developre Info</h3>
-
-                        <div class="row p-t-20">
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">Developer Name</label>
-                                    <input type="text" id="DeveloperName" disabled="disabled" name="DeveloperName" class="form-control" placeholder="<?php echo htmlentities($DevName);?>" />
-                                    <small class="form-control-feedback">Dev Name.... </small>
+                <form action="index?module=Service.Request&create=true" method="post">
+                        <div class="form-body">
+                            <h3 class="card-title">Unit Info</h3>
+                            <div class="row p-t-20">
+                                <div id="" class="col-md-1 col-xs-6">
+                                    <img src="assets/images/units/1.png" width="120">
+                                </div>
+                                <div id="" class="col-md-3 col-xs-6">
+                                    <strong>Unit ID </strong>
+                                    <div class="form-group">
+                                    <input type="text" id="" name="unit_id_new" value="<?php echo htmlentities($unit_ID);?>" placeholder="<?php echo htmlentities($unit_ID);?>"  class="form-control" disabled/>
+                                    </div>
+                                </div>
+                                <div id="" class="col-md-1 col-xs-6">
+                                    <img src="assets/images/units/activity.jpg" width="90">
+                                </div>
+                                <div id="" class="col-md-3 col-xs-6">
+                                    <strong>Activity ID </strong>
+                                    <div class="form-group">
+                                    <input type="text" id="" name="activity_id_new" value="<?php echo htmlentities($activity_ID);?>" placeholder="<?php echo htmlentities($activity_ID);?>" class="form-control" disabled/>
+                                    </div>
                                 </div>
                             </div>
-                            <!--/span-->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">Developer Representative</label>
-                                    <input type="text" id="DeveloperRepresentative" disabled="disabled" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities($Rep);?>" />
-                                    <small class="form-control-feedback">Rep Name....</small>
+                            <hr>
+                            <h3 class="card-title">Ticket Info</h3>
+                            <div class="row p-t-20">
+                                <div  class="col-md-3 col-xs-6">
+                                    <strong>Ticket ID</strong>
+                                    <div class="form-group">
+                                    <input type="text" value="<?php echo htmlentities($ID);?>" placeholder="<?php echo htmlentities($ID);?>" class="form-control" disabled/>
+                                    </div>
                                 </div>
                             </div>
-                            <!--/span-->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>1st Mobile Number</label>
-                                    <input type="text" disabled="disabled" placeholder="<?php echo htmlentities($Mobile1);?>" class="form-control" />
+                            <div class="row p-t-20">
+                                    <div class="col-md-3 col-xs-6">
+                                        <strong>Requested Unit Status</strong>
+                                        <div class="form-group">
+                                        <input type="text" value="<?php echo htmlentities($unit_status_name);?>" placeholder="<?php echo htmlentities($unit_status_name);?>" class="form-control" disabled/>
+                                        </div>
+                                   </div>
+                                   <div  class="col-md-9 col-xs-6">
+                                        <strong>Requested Status Reason</strong>
+                                        <div class="form-group">
+                                        <input type="text"   value="<?php echo htmlentities($unit_status_reason);?>" placeholder="<?php echo htmlentities($unit_status_reason);?>" class="form-control" disabled/>
+                                        </div>
+                                    </div>
+                                    <div  class="col-md-3 col-xs-6 ">
+                                        <strong>Hold Can Work On </strong>
+                                        <div class="form-group">
+                                        <input type="text" value="<?php echo htmlentities($Hold_Can_Work_On_name);?>" placeholder="<?php echo htmlentities($Hold_Can_Work_On_name);?>" class="form-control" disabled/>
+                                        </div>
+                                    </div>
+                                    <div  class="col-md-9 col-xs-6">
+                                        <strong>Held For</strong>
+                                        <div class="form-group">
+                                        <input type="text" value="<?php echo htmlentities($Held_For); ?>" placeholder="<?php echo htmlentities($Held_For); ?>" class="form-control" disabled/>
+                                        </div>
+                                    </div>
+                                    <div id="Approval-status" class="col-md-3 col-xs-6 ">
+                                        <strong>Ticket Status </strong>
+                                        <div class="form-group">
+                                            <input type="text" value="<?php echo htmlentities($ticket_status_name); ?>" placeholder="<?php echo htmlentities($ticket_status_name); ?>" class="form-control" disabled/>
+                                        </div>
+                                    </div>
+                                    <div id="Approval-feedback" class="col-md-9 col-xs-6 ">
+                                        <strong>Ticket Feedback</strong>
+                                        <div class="form-group">
+                                        <input type="text" value="<?php echo htmlentities($ticket_feedback);?>" placeholder="<?php echo htmlentities($ticket_feedback);?>" class="form-control" disabled/>
+                                        </div>
+                                    </div>
+                            </div>                                   
+                            <hr />    
+                            <div class="row p-t-20">
+                                <!--/span-->
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Creation Date</label>
+                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities($creation_date);?>" disabled="disapled"/>
+                                    </div>
+                                </div>
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Created BY</label>
+                                        <input type="text" class="form-control" placeholder="<?php echo htmlentities($created_by);?>" disabled="disapled" />
+                                    </div>
+                                </div>
+                                                                <!--/span-->
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">last Update Date</label>
+                                        <input type="text" id="" name="" class="form-control" placeholder="<?php echo htmlentities($Last_update_date);?>" disabled="disapled"/>
+                                    </div>
                                 </div>
                             </div>
-                            <!--/span-->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>2nd Mobile Number</label>
-                                    <input type="text" disabled="disabled" placeholder="<?php echo htmlentities($Mobile2);?>" class="form-control" />
+                            <div class="row p-t-20">
+                                <!--/span-->
+                                <div id="" class="col-md-.5 col-xs-6">
+                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
                                 </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Last Update BY</label>
+                                        <input type="text" i name="" class="form-control" placeholder="<?php echo htmlentities($Handled_by);?>" disabled="disapled" />
+                                    </div>
+                                </div>
+                                <!--/span-->
                             </div>
+                            <!--/row-->
                         </div>
-                        <!--/row-->
-
-                        <!--/row-->
-                        <h3 class="box-title m-t-40">Creation Info</h3>
-
-                        <div class="row">
-                            <!--/span-->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">Creation Date</label>
-                                    <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities($Insertion_date);?>" disabled="disapled"/>
-                                </div>
-                            </div>
-                            <!--/span-->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">Created BY</label>
-                                    <input type="text" id="DeveloperRepresentative" name="DeveloperRepresentative" class="form-control" placeholder="<?php echo htmlentities($Added_By);?>" disabled="disapled" />
-                                </div>
-                            </div>
-                            <!--/span-->
-                        </div>
-                        <!--/row-->
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -129,7 +226,6 @@ $developer= $database->query($sql);
     <!-- ============================================================== -->
     <!-- End PAge Content -->
     <!-- ============================================================== -->
-    <!-- End PAge Content -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- Right sidebar -->
