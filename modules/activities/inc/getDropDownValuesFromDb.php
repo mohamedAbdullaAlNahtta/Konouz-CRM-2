@@ -81,7 +81,7 @@ $sale_type_data_Count = $sale_type_data_all_get->num_rows;
      $ID[] = $row["ID"];
      $Name[] = $row["Name"];
    }
- $emp_data= array("ID"=>$ID, "Name"=>$Name );
+ $sale_type_data= array("ID"=>$ID, "Name"=>$Name );
 
  //////////////////////////////////////////////////////////////
 // End of ------ getting all Users names and ids 

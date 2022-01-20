@@ -177,7 +177,7 @@ for ($i=0; $i < $emp_data_Count ; $i++) {
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $sale_type_data_Count ; $i++) { 
-    echo "<option value='".$emp_data["ID"][$i]."' >".$emp_data["Name"][$i]."</option>";
+    echo "<option value='".$sale_type_data["ID"][$i]."' >".$sale_type_data["Name"][$i]."</option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
