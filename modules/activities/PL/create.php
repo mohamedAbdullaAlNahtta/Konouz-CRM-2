@@ -391,48 +391,42 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                         </div> 
                                         <hr>
                                         <div class="row">     
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label class="control-label">Annual Payment Amount</label>
+                                                    <label class="control-label">Annual Payment </label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">For Example : 300 LE.... </small>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label class="control-label">Down Payment Amount</label>
+                                                    <label class="control-label">Down Payment</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3000 LE for Example.... </small>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label class="control-label">Receiving Payment Amount</label>
+                                                    <label class="control-label">Receiving Payment</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                         </div> 
-                                        <hr>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual Payment %</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 Mean %.... </small>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment %</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 mean 3%.... </small>
                                                 </div>
                                             </div> 
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment %</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>s
                                                 </div>
                                             </div>
                                         </div> 
