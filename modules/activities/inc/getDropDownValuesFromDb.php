@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////
 // Start of ------getting  Unit
 /////////////////////////////////////////////////////////////
-$sql_get_unit_data= "SELECT `Build_No`, `Unit_Area`, `Basic_Meter_Price`, `Unit_Basic_Price`, `usufruct_meter_price` FROM `units`";
+$sql_get_unit_data= "SELECT `Build_No`, `Unit_Area`, `Basic_Meter_Price`, `Unit_Basic_Price`, `usufruct_meter_price``Roof_Area`, `Garden_Area`, `Open_terrace_Area` FROM `units`";
 $unit_data_all_get= $database->query($sql_get_unit_data);
 
 $unit_data_Count = $unit_data_all_get->num_rows;

@@ -60,37 +60,37 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Building No</label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="11" placeholder="11" disabled/>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Build_No);?>" placeholder="<?php echo htmlentities($Unit_Build_No);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Unit Area </label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="110" placeholder="110" disabled/>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Unit_Area);?>" placeholder="<?php echo htmlentities($Unit_Unit_Area);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Basic Meter Price </label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="1030" placeholder="110" disabled/>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" placeholder="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Unit Basic Price </label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="90010" placeholder="110" disabled/>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" placeholder="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">  Usufruct Meter Price </label>
-                                                        <input type="number" id="" name="unit_id" class="form-control" value="10010" placeholder="110" disabled/>
+                                                        <input type="number" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_usufruct_meter_price);?>" placeholder="<?php echo htmlentities($Unit_usufruct_meter_price);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Usufruct Area </label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="10010" placeholder="110" required/>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="10010" placeholder="110" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -113,7 +113,7 @@
                                                         <small class="form-control-feedback">Seller Name.... </small>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-3" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Direct Manager</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
@@ -138,7 +138,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-3" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller Assistant Direct Manager</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" >
@@ -151,7 +151,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-3" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Section Head</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>

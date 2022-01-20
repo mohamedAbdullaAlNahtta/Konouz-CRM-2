@@ -206,7 +206,7 @@ if (isset($_POST['submit'])) {
         // $sql_update =  "UPDATE `units`  {$setcolumn}   WHERE `Unit_ID`='".$EditeunitId."'";
         // $unit_dml= $database->query($sql_update); 
 
-        $sql_update= "call Update_Units(".$Unit_ID.",
+        $sql_update= "call Update_Units('',
         ".$floor_id_edite.", 
         ".$Raw_ID_edite.", 
         ".$Pos_ID_edite.", 
@@ -249,7 +249,7 @@ if (isset($_POST['submit'])) {
         <div class="col-md-6 col-8 align-self-center">
             <h3 class="text-themecolor m-b-0 m-t-0">Inventory</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index?module=Unites">Units</a></li>
+                <li class="breadcrumb-item"><a href="index?module=Unites">Units <?php var_dump($sql_update); ?> </a></li>
                 <li class="breadcrumb-item active">Unit ID <?php echo htmlentities($EditeunitId); ?> </li>
             </ol>
         </div>
