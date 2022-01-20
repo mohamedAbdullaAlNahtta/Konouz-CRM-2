@@ -106,8 +106,7 @@ if (isset($_POST['submit'])) {
 
     $upFile = new Upload_image_file();
 
-   
-
+   if ($update_unit_data===true) {
     $Layout_With_dimensions = $_FILES["Layout_With_dimensions"];
     $Layout_Without_dimensions = $_FILES["Layout_Without_dimensions"];
     $Model = $_FILES["Model"];
@@ -140,6 +139,9 @@ if (isset($_POST['submit'])) {
 
     $update_atta_data= $database->multi_query($sql_attachment); 
 
+   }
+
+   
     // checking errors 
     $check_er = new errors_info();
     $actions_in_array_for_check=array($Layout_With_dimensions, $Layout_Without_dimensions,  $Model,$update_sql_prepar_attachment_table, $update_unit_data);
