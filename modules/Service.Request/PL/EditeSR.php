@@ -140,7 +140,7 @@ if (isset($_POST['submit'])) {
                     <h4 class="m-b-0 text-white">Edite Ticket Request</h4>
                 </div>
                 <div class="card-block">
-                <form action="index?module=Service.Request&create=true" method="post">
+                <form action="index?module=Service.Request&create=true&EditeSRId=<?php echo htmlentities($ID)?>" method="post">
                         <div class="form-body">
                             <h3 class="card-title">Unit Info</h3>
                             <div class="row p-t-20">
