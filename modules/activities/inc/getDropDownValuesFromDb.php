@@ -15,6 +15,10 @@ $unit_data_Count = $unit_data_all_get->num_rows;
      $Unit_Basic_Meter_Price = $row["Basic_Meter_Price"];
      $Unit_Unit_Basic_Price = $row["Unit_Basic_Price"];
      $Unit_usufruct_meter_price = $row["usufruct_meter_price"];
+     $Unit_Roof_Area = $row["Roof_Area"];
+     $Unit_Garden_Area = $row["Garden_Area"];
+     $Unit_Open_terrace_Area = $row["Open_terrace_Area"];
+     
    }
  //////////////////////////////////////////////////////////////
 // End of ------ getting Unit

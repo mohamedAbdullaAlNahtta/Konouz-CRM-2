@@ -207,21 +207,21 @@ if (isset($_POST['submit'])) {
         // $unit_dml= $database->query($sql_update); 
 
         $sql_update= "call Update_Units('',
-        ".$floor_id_edite.", 
-        ".$Raw_ID_edite.", 
-        ".$Pos_ID_edite.", 
-        ".$Unit_Area_edite.", 
-        ".$Basic_Meter_Price_id_edite.",
-        ".$Roof_Area_edite.", 
-        ".$Garden_Area_edite.", 
-        ".$Open_terrace_Area_edite.", 
-        ".$Usufruct_type_edite.", 
-        ".$usufruct_meter_price_id_edite.", 
-        ".$Net_Area_edite.", 
-        ".$Load_Ratio_edite.", 
-        ".$status_id_edite.", 
-        ".$finishing_level_id_edite.", 
-        ".$Rooms_and_Desc_id_edite.")";
+        '".$floor_id_edite."', 
+        '".$Raw_ID_edite."', 
+        '".$Pos_ID_edite."', 
+        '".$Unit_Area_edite."', 
+        '".$Basic_Meter_Price_id_edite."',
+        '".$Roof_Area_edite."', 
+        '".$Garden_Area_edite."', 
+        '".$Open_terrace_Area_edite."', 
+        '".$Usufruct_type_edite."', 
+        '".$usufruct_meter_price_id_edite."', 
+        '".$Net_Area_edite."', 
+        '".$Load_Ratio_edite."', 
+        '".$status_id_edite."', 
+        '".$finishing_level_id_edite."', 
+        '".$Rooms_and_Desc_id_edite."')";
         $unit_dml= $database->query($sql_update); 
 
 
