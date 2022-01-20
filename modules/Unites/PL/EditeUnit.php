@@ -63,7 +63,7 @@ $EditeunitId = $_GET['EditeunitId'];
  on u.finishing_level = fi.ID
  LEFT JOIN rooms ro
  on u.Rooms_Desc = ro.ID
- WHERE u.Unit_ID='1111-1111-35'";
+ WHERE u.Unit_ID='".$EditeunitId."'";
 
  $units_all= $database->query($sql_get_units);
 
@@ -122,7 +122,92 @@ $EditeunitId = $_GET['EditeunitId'];
 ///////////////////////////////////////////////////////////////
 if (isset($_POST['submit'])) {
 
+    $floor_id_edite = $_POST['floor_id_edite'];
+    $status_id_edite = $_POST['status_id_edite'];
+    $Raw_ID_edite = $_POST['Raw_ID_edite'];
+    $Pos_ID_edite = $_POST['Pos_ID_edite'];
+    $Unit_Area_edite = $_POST['Unit_Area_edite'];
+    $Basic_Meter_Price_id_edite = $_POST['Basic_Meter_Price_id_edite'];
+
+    if (isset($_POST['Roof_Area_edite'])) {
+        $Roof_Area_edite = $_POST['Roof_Area_edite'];
+        $Garden_Area_edite = '';
+        $Open_terrace_Area_edite = '';
+    } elseif (isset($_POST['Garden_Area_edite'])) {
+        $Roof_Area_edite = '';
+        $Garden_Area_edite = $_POST['Garden_Area_edite'];
+        $Open_terrace_Area_edite = '';
+    } elseif (isset($_POST['Open_terrace_Area_edite']))  {
+        $Roof_Area_edite = '';
+        $Garden_Area_edite = '';
+        $Open_terrace_Area_edite = $_POST['Open_terrace_Area_edite'];    
+    } elseif (isset($_POST['Garden_Area_edite']) && isset($_POST['Open_terrace_Area_edite']))  {
+        $Roof_Area_edite = '';
+        $Garden_Area_edite = $_POST['Garden_Area_edite'];
+        $Open_terrace_Area_edite = $_POST['Open_terrace_Area_edite'];    
+    }
+
+
+    $Rooms_and_Desc_id_edite = $_POST['Rooms_and_Desc_id_edite'];
+    $finishing_level_id_edite = $_POST['finishing_level_id_edite'];
+    $Usufruct_type_edite = $_POST['Usufruct_type_edite'];
+    $usufruct_meter_price_id_edite = $_POST['usufruct_meter_price_id_edite'];
+    $Net_Area_edite = $_POST['Net_Area_edite'];
+    $Load_Ratio_edite = $_POST['Load_Ratio_edite'];
+
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+       //php Creating a dynamic  query with PHP and MySQL
+       $setcolumn = array();
+       if ($floor_id_edite != "") 
+       $setcolumn[] = "`floor_id`='{$floor_id_edite}' ";
+       if ($status_id_edite != "") 
+       $setcolumn[] = "`Status_ID`='{$status_id_edite}' ";
+       if ($Raw_ID_edite != "") 
+       $setcolumn[] = "`Raw_ID`='{$Raw_ID_edite}' ";
+       if ($Pos_ID_edite != "") 
+       $setcolumn[] = "`Pos_ID`='{$Pos_ID_edite}' ";
+
+       if ($Unit_Area_edite != "") 
+       $setcolumn[] = "`Unit_Area`='{$Unit_Area_edite}' ";
+       if ($Basic_Meter_Price_edite != "") 
+       $setcolumn[] = "`Basic_Meter_Price`='{$Basic_Meter_Price_edite}' ";
+       if ($Roof_Area_edite != "") 
+       $setcolumn[] = "`Roof_Area`='{$Roof_Area_edite}' ";
+       if ($Garden_Area_edite != "") 
+       $setcolumn[] = "`Garden_Area`='{$Garden_Area_edite}' ";
+       if ($Open_terrace_Area_edite != "") 
+       $setcolumn[] = "`Open_terrace_Area`='{$Open_terrace_Area_edite}' ";
+       if ($Usufruct_type_edite != "") 
+       $setcolumn[] = "`Usufruct_type`='{$Usufruct_type_edite}' ";
+       if ($usufruct_meter_price_edite != "") 
+       $setcolumn[] = "`usufruct_meter_price`='{$usufruct_meter_price_edite}' ";
+       if ($Net_Area_edite != "") 
+       $setcolumn[] = "`Net_Area`='{$Net_Area_edite}' ";
+       if ($Load_Ratio_edite != "") 
+       $setcolumn[] = "`Load_Ratio`='{$Load_Ratio_edite}' ";
+       if ($finishing_level_new_edite != "") 
+       $setcolumn[] = "`finishing_level`='{$finishing_level_new_edite}' ";
+       if ($Rooms_Desc_edite != "") 
+       $setcolumn[] = "`Rooms_Desc`='{$Rooms_Desc_edite}' ";
+       
+       ////////////////////////////////////////////////////
+       if ($setcolumn == null) {
+           $setcolumn = "";
+       } else {
+           $setcolumn = "SET " . implode(",", $setcolumn);
+       }
+       ////////////////////////////////////////////////////
    
+        $sql_update =  "UPDATE `units`  {$setcolumn}   WHERE `Unit_ID`='".$EditeunitId."'";
+        $unit_dml= $database->query($sql_update); 
+
+    // $sql_update= "call Update_Units(".$Unit_No_edite.", ".$Build_No_edite.", ".$Project_ID_edite.", ".$floor_id_edite.", ".$Raw_ID_edite.", ".$Pos_ID_edite.", ".$Unit_Area_edite.", ".$Basic_Meter_Price_edite.", ".$Roof_Area_edite.", ".$Garden_Area_edite.", ".$Open_terrace_Area_edite.", ".$Usufruct_type_edite.", ".$usufruct_meter_price_edite.", ".$Net_Area_edite.", NULL, ".$Status_ID_edite.", ".$finishing_level_new_edite.", ".$Rooms_Desc_edite.")";
+    // $unit_dml= $database->query($sql_update); 
+
+
+
 
 } 
 ///////////////////////////////////////////////////////////////
@@ -402,7 +487,7 @@ for ($i=0; $i < $unitPositionNameCount ; $i++) {
                                             <strong><span class="label label-info">Basic Meter Price</span></strong>
                                         </h3>
                                         <div class="form-group">
-                                        <select id="myselect" name="Basic_Meter_Price_edite" class="form-control form-control-line" >
+                                        <select id="myselect" name="Basic_Meter_Price_id_edite" class="form-control form-control-line" >
                                                 <option value="<?php echo htmlentities($Basic_Meter_Price_id); ?>"><?php echo htmlentities($Basic_Meter_Price); ?></option>
 <?php
 ///////////////////////////////////////////////////////////////
@@ -465,8 +550,8 @@ for ($i=0; $i < $basicpricesNameCount ; $i++) {
                                             <strong><span class="label label-primary">Rooms Description</span></strong>
                                         </h3>
                                         <div class="form-group">
-                                            <select id="myselect" name="Rooms_Desc_edite" class="form-control form-control-line" required>
-                                                <option value="<?php echo htmlentities($Rooms_and_Desc_id); ?>"><?php echo htmlentities($Rooms_Count); ?>Room, <?php echo htmlentities($Rooms_Description); ?></option>
+                                            <select id="myselect" name="Rooms_and_Desc_id_edite" class="form-control form-control-line" required>
+                                                <option value="<?php echo htmlentities($Rooms_and_Desc_id); ?>"> <?php echo htmlentities($Rooms_Count); ?> Room, <?php echo htmlentities($Rooms_Description); ?></option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -486,7 +571,7 @@ for ($i=0; $i < $roomsNameCount ; $i++) {
                                             <strong><span class="label label-primary">finishing level</span></strong>
                                         </h3>
                                         <div class="form-group">
-                                            <select id="myselect" name="finishing_level_new_edite" class="form-control form-control-line" >
+                                            <select id="myselect" name="finishing_level_id_edite" class="form-control form-control-line" >
                                                 <option value="<?php echo htmlentities($finishing_level_id); ?>"><?php echo htmlentities($finishing_level_name); ?></option>
                                                 <?php
 ///////////////////////////////////////////////////////////////
@@ -544,7 +629,7 @@ for ($i=0; $i < $usufructtypeNameCount ; $i++) {
                                     <div class="col-md-3 col-xs-6 b-r">
                                         <strong><span class="label label-primary"> Usufruct Meter Price</span></strong>
                                         <div class="form-group">
-                                            <select id="myselect" name="usufruct_meter_price_edite" class="form-control form-control-line" required>
+                                            <select id="myselect" name="usufruct_meter_price_id_edite" class="form-control form-control-line" required>
                                                 <option value='<?php echo htmlentities($Usufruct_Meter_Price_id);?>'> <?php echo htmlentities($Usufruct_Meter_Price);?></option>
 <?php
 ///////////////////////////////////////////////////////////////
@@ -582,13 +667,13 @@ for ($i=0; $i < $usufructpricesNameCount ; $i++) {
                                     <div class="col-md-2 col-xs-6 b-r">
                                         <strong><span class="label label-primary"> Net_Area</span></strong>
                                         <div class="form-group">
-                                            <input type="number" name="Net_Area_edite" class="form-control" placeholder="<?php echo htmlentities($Net_Area); ?>"/>
+                                            <input type="number" name="Net_Area_edite" placeholder="<?php echo htmlentities($Net_Area); ?>" value="<?php echo htmlentities($Net_Area); ?>"class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-2 col-xs-6 b-r">
                                         <strong><span class="label label-primary"> Net_Area</span></strong>
                                         <div class="form-group">
-                                            <input type="number" name="Load_Ratio_edite" class="form-control" placeholder="<?php echo htmlentities($Load_Ratio); ?>"/>
+                                            <input type="number" name="Load_Ratio_edite" placeholder="<?php echo htmlentities($Load_Ratio); ?>" value="<?php echo htmlentities($Load_Ratio); ?>"class="form-control" />
                                         </div>
                                     </div>
                                 </div>
