@@ -54,7 +54,7 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Unit ID</label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($unitId);?>" placeholder="<?php echo htmlentities($unitId);?>" disabled/>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($unit_ID);?>" placeholder="<?php echo htmlentities($unit_ID);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -90,13 +90,13 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Usufruct Area </label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="10010" placeholder="110" disabled/>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Usufruct_Area);?>" placeholder="<?php echo htmlentities($Usufruct_Area);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Garage Price</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="5000" disabled/>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -241,6 +241,9 @@
                                             </div>
                                             <hr>
                                             <div class="row">
+                                            <div id="" class="col-md-.5 col-xs-6">
+                                                <img src="assets/images/icons/Circle-icons-calendar.svg.png" style=" margin-top: 20px;" width="50">
+                                            </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                         <label class="control-label">Creation Date</label>

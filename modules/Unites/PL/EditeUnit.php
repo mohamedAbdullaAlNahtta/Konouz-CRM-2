@@ -206,7 +206,7 @@ if (isset($_POST['submit'])) {
         // $sql_update =  "UPDATE `units`  {$setcolumn}   WHERE `Unit_ID`='".$EditeunitId."'";
         // $unit_dml= $database->query($sql_update); 
 
-        $sql_update= "call Update_Units('',
+        $sql_update= "call Update_Units('".$Unit_ID."',
         '".$floor_id_edite."', 
         '".$Raw_ID_edite."', 
         '".$Pos_ID_edite."', 
