@@ -247,13 +247,16 @@
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="01/18/2022" disabled/>
                                                     </div>
                                                 </div>
+                                                <div id="" class="col-md-.5 col-xs-6">
+                                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                                                </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">created_by</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" value="root@localhost" placeholder="root@localhost" disabled/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-3" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Creator Manager</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" Disabled/>
