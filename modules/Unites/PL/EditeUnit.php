@@ -491,52 +491,7 @@ for ($i=0; $i < $StatusNameCount ; $i++) {
 ?> 
                                             </select>
                                         </div>
-                                   </div>
-                                   <div id="Status-Reason" class="col-md-9 col-xs-6 dependent-form ">
-                                        <strong>Status Reason</strong>
-                                        <div class="form-group">
-                                        <input type="text" id="" name="status_reason" class="form-control" />
-                                        </div>
-                                    </div>
-                                    <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
-                                        <strong>Hold Can Work On </strong>
-                                        <div class="form-group">
-                                            <select id="" name="Hold_can_work_on" class="form-control form-control-line " >
-                                                <option value="1">Yes</option>
-                                                <option value="2">No</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div id="Held-For" class="col-md-9 col-xs-6 dependent-form">
-                                        <strong>Held For</strong>
-                                        <div class="form-group">
-                                        <input type="text" id="" name="Held_for" class="form-control d" />
-                                        </div>
-                                    </div>
-                                    <div id="Approval-status" class="col-md-3 col-xs-6 dependent-form">
-                                        <strong>Approval Status </strong>
-                                        <div class="form-group">
-                                            <select id="Approval-status-op" name="approval_status" class="form-control form-control-line" >
-<?php
-///////////////////////////////////////////////////////////////
-/// Start of ------> 
-///////////////////////////////////////////////////////////////
-for ($i=0; $i < $approvalStatusGetCount ; $i++) { 
-    echo "<option value='".$Approval_Status_Data["Approval_ID"][$i]."' >".$Approval_Status_Data["Approval_Status"][$i]."</option>";
-}
-///////////////////////////////////////////////////////////////
-/// End of of ------> 
-///////////////////////////////////////////////////////////////
-?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
-                                        <strong>Approval Feedback</strong>
-                                        <div class="form-group">
-                                        <input type="text" id="" name="approval_feed_back" class="form-control " />
-                                        </div>
-                                    </div>
+                                   </div>                            
                                     <div class="col-md-2 col-xs-6">
                                      <strong>Current Status</strong>
                                       <br />
@@ -749,7 +704,7 @@ for ($i=0; $i < $usufructtypeNameCount ; $i++) {
                                         <strong><span class="label label-primary"> Usufruct Meter Price</span></strong>
                                         <div class="form-group">
                                             <select id="myselect" name="usufruct_meter_price_edite" class="form-control form-control-line" required>
-                                                <option<?php echo htmlentities($UsuID); ?>><?php echo htmlentities($Usufruct_Meter_Price); ?></option>
+                                                <option value='<?php echo htmlentities($UsuID);?>'> <?php echo htmlentities($Usufruct_Meter_Price);?></option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
