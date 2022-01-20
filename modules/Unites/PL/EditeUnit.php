@@ -23,7 +23,8 @@ $EditeunitId = $_GET['EditeunitId'];
  `u`.`Garden_Area`,
  `u`.`Open_terrace_Area`,
  `u`.`Usufruct_type`,
- `usup`.`Usufruct Meter Price`as`Usufruct_Meter_Price`,
+ `u`.`usufruct_meter_price` as `Usufruct_Meter_Price_id`,
+ `usup`.`Usufruct Meter Price`as `Usufruct_Meter_Price`,
  `Usufruct_Price`,
  `Net_Area`,
  `Load_Ratio`,
@@ -87,7 +88,7 @@ $EditeunitId = $_GET['EditeunitId'];
         $Garden_Area= $row["Garden_Area"];
         $Open_terrace_Area= $row["Open_terrace_Area"];
         $Usufruct_type = $row["Usufruct_type"];
-        $UsuID = $row["UsuID"];
+        $UsuID = $row["Usufruct_Meter_Price_id"];
         $Usufruct_Meter_Price= $row["Usufruct_Meter_Price"];
         $Usufruct_Price= $row["Usufruct_Price"];
         $Net_Area= $row["Net_Area"];
@@ -236,49 +237,51 @@ if (isset($_POST['submit'])) {
     $Rooms_Desc_edite = $database->escape_string($Rooms_Desc_edite);
 
     //php Creating a dynamic  query with PHP and MySQL
-    $setcolumn = array();
+    // $setcolumn = array();
     // if ($Unit_No_edite != "") 
     // $setcolumn[] = "`Unit_No`='{$Unit_No_edite}' ";
     // if ($Build_No_edite != "") 
     // $setcolumn[] = "`Build_No`='{$Build_No_edite}' ";
     // if ($Project_ID_edite != "") 
     // $setcolumn[] = "`Project_ID`='{$Project_ID_edite}' ";
-    if ($floor_id_edite != "") 
-    $setcolumn[] = "`floor_id`='{$floor_id_edite}' ";
-    if ($Raw_ID_edite != "") 
-    $setcolumn[] = "`Raw_ID`='{$Raw_ID_edite}' ";
-    if ($Pos_ID_edite != "") 
-    $setcolumn[] = "`Pos_ID`='{$Pos_ID_edite}' ";
-    if ($Unit_Area_edite != "") 
-    $setcolumn[] = "`Unit_Area`='{$Unit_Area_edite}' ";
-    if ($Basic_Meter_Price_edite != "") 
-    $setcolumn[] = "`Basic_Meter_Price`='{$Basic_Meter_Price_edite}' ";
-    if ($Roof_Area_edite != "") 
-    $setcolumn[] = "`Roof_Area`='{$Roof_Area_edite}' ";
-    if ($Garden_Area_edite != "") 
-    $setcolumn[] = "`Garden_Area`='{$Garden_Area_edite}' ";
-    if ($Open_terrace_Area_edite != "") 
-    $setcolumn[] = "`Open_terrace_Area`='{$Open_terrace_Area_edite}' ";
-    if ($Usufruct_type_edite != "") 
-    $setcolumn[] = "`Usufruct_type`='{$Usufruct_type_edite}' ";
-    if ($usufruct_meter_price_edite != "") 
-    $setcolumn[] = "`usufruct_meter_price`='{$usufruct_meter_price_edite}' ";
-    if ($Net_Area_edite != "") 
-    $setcolumn[] = "`Net_Area`='{$Net_Area_edite}' ";
-    if ($Load_Ratio_edite != "") 
-    $setcolumn[] = "`Load_Ratio`='{$Load_Ratio_edite}' ";
-    if ($finishing_level_new_edite != "") 
-    $setcolumn[] = "`finishing_level`='{$finishing_level_new_edite}' ";
-    if ($Rooms_Desc_edite != "") 
-    $setcolumn[] = "`Rooms_Desc`='{$Rooms_Desc_edite}' ";
+    // if ($floor_id_edite != "") 
+    // $setcolumn[] = "`floor_id`='{$floor_id_edite}' ";
+    // if ($Raw_ID_edite != "") 
+    // $setcolumn[] = "`Raw_ID`='{$Raw_ID_edite}' ";
+    // if ($Pos_ID_edite != "") 
+    // $setcolumn[] = "`Pos_ID`='{$Pos_ID_edite}' ";
+    // if ($Unit_Area_edite != "") 
+    // $setcolumn[] = "`Unit_Area`='{$Unit_Area_edite}' ";
+    // if ($Basic_Meter_Price_edite != "") 
+    // $setcolumn[] = "`Basic_Meter_Price`='{$Basic_Meter_Price_edite}' ";
+    // if ($Roof_Area_edite != "") 
+    // $setcolumn[] = "`Roof_Area`='{$Roof_Area_edite}' ";
+    // if ($Garden_Area_edite != "") 
+    // $setcolumn[] = "`Garden_Area`='{$Garden_Area_edite}' ";
+    // if ($Open_terrace_Area_edite != "") 
+    // $setcolumn[] = "`Open_terrace_Area`='{$Open_terrace_Area_edite}' ";
+    // if ($Usufruct_type_edite != "") 
+    // $setcolumn[] = "`Usufruct_type`='{$Usufruct_type_edite}' ";
+    // if ($usufruct_meter_price_edite != "") 
+    // $setcolumn[] = "`usufruct_meter_price`='{$usufruct_meter_price_edite}' ";
+    // if ($Net_Area_edite != "") 
+    // $setcolumn[] = "`Net_Area`='{$Net_Area_edite}' ";
+    // if ($Load_Ratio_edite != "") 
+    // $setcolumn[] = "`Load_Ratio`='{$Load_Ratio_edite}' ";
+    // if ($finishing_level_new_edite != "") 
+    // $setcolumn[] = "`finishing_level`='{$finishing_level_new_edite}' ";
+    // if ($Rooms_Desc_edite != "") 
+    // $setcolumn[] = "`Rooms_Desc`='{$Rooms_Desc_edite}' ";
     
-    if ($setcolumn == null) {
-        $setcolumn = "";
-    } else {
-        $setcolumn = "SET " . implode(",", $setcolumn);
-    }
+    // if ($setcolumn == null) {
+    //     $setcolumn = "";
+    // } else {
+    //     $setcolumn = "SET " . implode(",", $setcolumn);
+    // }
 
-     $sql_update =  "UPDATE `units`  {$setcolumn}   WHERE `Unit_ID`='".$EditeunitId."'";
+    //  $sql_update =  "UPDATE `units`  {$setcolumn}   WHERE `Unit_ID`='".$EditeunitId."'";
+
+     
      $unit_dml= $database->query($sql_update); 
 
     // $sql_update= "call Update_Units(".$Unit_No_edite.", ".$Build_No_edite.", ".$Project_ID_edite.", ".$floor_id_edite.", ".$Raw_ID_edite.", ".$Pos_ID_edite.", ".$Unit_Area_edite.", ".$Basic_Meter_Price_edite.", ".$Roof_Area_edite.", ".$Garden_Area_edite.", ".$Open_terrace_Area_edite.", ".$Usufruct_type_edite.", ".$usufruct_meter_price_edite.", ".$Net_Area_edite.", NULL, ".$Status_ID_edite.", ".$finishing_level_new_edite.", ".$Rooms_Desc_edite.")";
