@@ -70,7 +70,7 @@ $emp_data_Count = $emp_data_all_get->num_rows;
 ///////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-// Start of ------getting all Users names and ids 
+// Start of ------getting all sale type data
 /////////////////////////////////////////////////////////////
 $sql_get_sale_type_data= "SELECT `ID`, `Name` FROM `sale type`";
 $sale_type_data_all_get= $database->query($sql_get_sale_type_data);
@@ -84,7 +84,25 @@ $sale_type_data_Count = $sale_type_data_all_get->num_rows;
  $sale_type_data= array("ID"=>$ID, "Name"=>$Name );
 
  //////////////////////////////////////////////////////////////
-// End of ------ getting all Users names and ids 
+// End of ------ ggetting all sale type data
+///////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////
+// Start of ------getting all brokers data
+/////////////////////////////////////////////////////////////
+$sql_get_brokers_data= "SELECT `ID`, `Name` FROM `brokers`";
+$brokers_data_all_get= $database->query($sql_get_brokers_data);
+
+$brokers_data_Count = $brokers_data_all_get->num_rows;
+   // output data of each row
+   while($row = $brokers_data_all_get->fetch_assoc()) {
+     $ID[] = $row["ID"];
+     $Name[] = $row["Name"];
+   }
+ $brokers_data= array("ID"=>$ID, "Name"=>$Name );
+
+ //////////////////////////////////////////////////////////////
+// Start of ------getting all brokers data
 ///////////////////////////////////////////////////////////////
 
 

@@ -190,8 +190,17 @@ for ($i=0; $i < $sale_type_data_Count ; $i++) {
                                                     <div class="form-group">
                                                         <label class="control-label">Broker</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
-                                                            <option value="2">Ahmed Mahmoud</option>
-                                                            <option value="1">Adel Ali</option>                                                            
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $brokers_data_Count ; $i++) { 
+    echo "<option value='".$brokers_data["ID"][$i]."' >".$brokers_data["Name"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                         
                                                         </select>
                                                     </div>
                                                 </div>                                                                                                                                
