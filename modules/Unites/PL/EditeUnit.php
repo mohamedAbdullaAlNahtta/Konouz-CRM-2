@@ -146,7 +146,7 @@ if (isset($_POST['submit'])) {
         <div class="col-md-6 col-8 align-self-center">
             <h3 class="text-themecolor m-b-0 m-t-0">Inventory</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index?module=Unites">Units <?php var_dump($sql_update); ?></a></li>
+                <li class="breadcrumb-item"><a href="index?module=Unites">Units</a></li>
                 <li class="breadcrumb-item active">Unit ID <?php echo htmlentities($EditeunitId); ?> </li>
             </ol>
         </div>
@@ -191,7 +191,7 @@ if (isset($_POST['submit'])) {
                 <div class="card-block">
                     <h4><?php echo htmlentities($Unit_ID); ?></h4>
                     <small class="text-muted">Project</small>
-                    <p><?php echo htmlentities($ProName); ?></p>
+                    <p><?php echo htmlentities($project_name); ?></p>
                     <div class="row">
                         <div class="col-6">
                             <small class="text-muted">Build No</small>
@@ -205,7 +205,7 @@ if (isset($_POST['submit'])) {
                     <div class="row">
                         <div class="col-6">
                             <small class="text-muted">Floor No</small>
-                            <p><?php echo htmlentities($Floor_Name); ?></p>
+                            <p><?php echo htmlentities($floor_name); ?></p>
                         </div>
                         <div class="col-6">
                             <small class="text-muted">Current Status</small>
