@@ -90,7 +90,7 @@ $sale_type_data_Count = $sale_type_data_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting all brokers data
 /////////////////////////////////////////////////////////////
-$sql_get_brokers_data= "SELECT `ID`, `Name` FROM `brokers`";
+$sql_get_brokers_data= "SELECT `ID` , `Name` FROM `brokers`";
 $brokers_data_all_get= $database->query($sql_get_brokers_data);
 
 $brokers_data_Count = $brokers_data_all_get->num_rows;

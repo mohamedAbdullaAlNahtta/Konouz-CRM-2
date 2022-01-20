@@ -189,7 +189,7 @@ for ($i=0; $i < $sale_type_data_Count ; $i++) {
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Broker</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                        <select id="" name="" class="form-control form-control-line" >
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
