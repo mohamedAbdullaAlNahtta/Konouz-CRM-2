@@ -184,11 +184,10 @@ if (isset($_POST['submit'])) {
        $setcolumn[] = "`Rooms_Desc`='{$Rooms_and_Desc_id_edite}' ";
        if ($finishing_level_id_edite != "") 
        $setcolumn[] = "`Finishing_Level`='{$finishing_level_id_edite}' ";
-
        if ($Usufruct_type_edite != "") 
        $setcolumn[] = "`Usufruct_type`='{$Usufruct_type_edite}' ";
-       if ($usufruct_meter_price_edite != "") 
-       $setcolumn[] = "`usufruct_meter_price`='{$usufruct_meter_price_edite}' ";
+       if ($usufruct_meter_price_id_edite != "") 
+       $setcolumn[] = "`usufruct_meter_price`='{$usufruct_meter_price_id_edite}' ";
        if ($Net_Area_edite != "") 
        $setcolumn[] = "`Net_Area`='{$Net_Area_edite}' ";
        if ($Load_Ratio_edite != "") 
@@ -204,11 +203,26 @@ if (isset($_POST['submit'])) {
        }
        ////////////////////////////////////////////////////
    
-        $sql_update =  "UPDATE `units`  {$setcolumn}   WHERE `Unit_ID`='".$EditeunitId."'";
-        $unit_dml= $database->query($sql_update); 
+        // $sql_update =  "UPDATE `units`  {$setcolumn}   WHERE `Unit_ID`='".$EditeunitId."'";
+        // $unit_dml= $database->query($sql_update); 
 
-    // $sql_update= "call Update_Units(".$Unit_No_edite.", ".$Build_No_edite.", ".$Project_ID_edite.", ".$floor_id_edite.", ".$Raw_ID_edite.", ".$Pos_ID_edite.", ".$Unit_Area_edite.", ".$Basic_Meter_Price_edite.", ".$Roof_Area_edite.", ".$Garden_Area_edite.", ".$Open_terrace_Area_edite.", ".$Usufruct_type_edite.", ".$usufruct_meter_price_edite.", ".$Net_Area_edite.", NULL, ".$Status_ID_edite.", ".$finishing_level_new_edite.", ".$Rooms_Desc_edite.")";
-    // $unit_dml= $database->query($sql_update); 
+        $sql_update= "call Update_Units(".$Unit_ID.",
+        ".$floor_id_edite.", 
+        ".$Raw_ID_edite.", 
+        ".$Pos_ID_edite.", 
+        ".$Unit_Area_edite.", 
+        ".$Basic_Meter_Price_id_edite.",
+        ".$Roof_Area_edite.", 
+        ".$Garden_Area_edite.", 
+        ".$Open_terrace_Area_edite.", 
+        ".$Usufruct_type_edite.", 
+        ".$usufruct_meter_price_id_edite.", 
+        ".$Net_Area_edite.", 
+        ".$Load_Ratio_edite.", 
+        ".$status_id_edite.", 
+        ".$finishing_level_id_edite.", 
+        ".$Rooms_and_Desc_id_edite.")";
+        $unit_dml= $database->query($sql_update); 
 
 
 
