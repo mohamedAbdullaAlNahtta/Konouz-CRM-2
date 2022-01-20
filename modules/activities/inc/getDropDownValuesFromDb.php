@@ -81,7 +81,11 @@ $sale_type_data_Count = $sale_type_data_all_get->num_rows;
      $ID[] = $row["ID"];
      $Name[] = $row["Name"];
    }
+
  $sale_type_data= array("ID"=>$ID, "Name"=>$Name );
+
+ $ID=array();
+ $Name=array();
 
  //////////////////////////////////////////////////////////////
 // End of ------ ggetting all sale type data
@@ -101,8 +105,54 @@ $brokers_data_Count = $brokers_data_all_get->num_rows;
    }
  $brokers_data= array("ID"=>$ID, "Name"=>$Name );
 
+ $ID=array();
+ $Name=array();
+
  //////////////////////////////////////////////////////////////
-// Start of ------getting all brokers data
+// end of ------getting all brokers data
+///////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////
+// Start of ------getting all payment type data
+/////////////////////////////////////////////////////////////
+$sql_get_payment_type_data= "SELECT `ID` , `Type` FROM `payment type`";
+$payment_type_data_all_get= $database->query($sql_get_payment_type_data);
+
+$payment_type_data_Count = $payment_type_data_all_get->num_rows;
+   // output data of each row
+   while($row = $payment_type_data_all_get->fetch_assoc()) {
+     $ID[] = $row["ID"];
+     $Type[] = $row["Type"];
+   }
+ $payment_type_data= array("ID"=>$ID, "Type"=>$Type );
+
+ $ID=array();
+ $Type=array();
+
+ //////////////////////////////////////////////////////////////
+// end of ------getting all payment type data
+///////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////
+// Start of ------getting all payment type data
+/////////////////////////////////////////////////////////////
+$sql_get_activity_status_data= "SELECT * FROM `activity status`";
+$activity_status_data_all_get= $database->query($sql_get_activity_status_data);
+
+$activity_status_data_Count = $activity_status_data_all_get->num_rows;
+   // output data of each row
+   while($row = $activity_status_data_all_get->fetch_assoc()) {
+     $ID[] = $row["ID"];
+     $Name[] = $row["Name"];
+   }
+ $activity_status_data= array("ID"=>$ID, "Name"=>$Name );
+
+ $ID=array();
+ $Name=array();
+
+ //////////////////////////////////////////////////////////////
+// end of ------getting all payment type data
 ///////////////////////////////////////////////////////////////
 
 

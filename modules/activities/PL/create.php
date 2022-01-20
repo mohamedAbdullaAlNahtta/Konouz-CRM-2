@@ -189,7 +189,8 @@ for ($i=0; $i < $sale_type_data_Count ; $i++) {
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Broker</label>
-                                                        <select id="" name="" class="form-control form-control-line" >
+                                                        <select id="" name="" class="form-control form-control-line" required>
+                                                            <option>Select Broker</option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -216,12 +217,39 @@ for ($i=0; $i < $brokers_data_Count ; $i++) {
                                                 <div class="ribbon ribbon-bookmark ribbon-info">Activity input</div>
                                             </div>
                                             <div class="row">
+                                            <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Activity Status</label>
+                                                        <select id="" name="" class="form-control form-control-line" required>
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $activity_status_data_Count ; $i++) { 
+    echo "<option value='".$activity_status_data["ID"][$i]."' >".$activity_status_data["Name"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                  
+                                                        </select>
+                                                    </div>
+                                                </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
-                                                            <option value="1">Installment</option>
-                                                            <option value="2">Cash</option>                                                            
+                                                        <select id="" name="" class="form-control form-control-line" required>
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $payment_type_data_Count ; $i++) { 
+    echo "<option value='".$payment_type_data["ID"][$i]."' >".$payment_type_data["Type"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                  
                                                         </select>
                                                     </div>
                                                 </div>
@@ -270,7 +298,7 @@ for ($i=0; $i < $brokers_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                         <label class="control-label">Creation Date</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="01/18/2022" disabled/>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div id="" class="col-md-.5 col-xs-6">
@@ -279,7 +307,7 @@ for ($i=0; $i < $brokers_data_Count ; $i++) {
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">created_by</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" value="root@localhost" placeholder="root@localhost" disabled/>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" value="<?php echo $user_name; ?>" placeholder="root@localhost" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3" style="display: none;">
