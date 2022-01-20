@@ -168,17 +168,23 @@ if (isset($_POST['submit'])) {
        $setcolumn[] = "`Raw_ID`='{$Raw_ID_edite}' ";
        if ($Pos_ID_edite != "") 
        $setcolumn[] = "`Pos_ID`='{$Pos_ID_edite}' ";
-
        if ($Unit_Area_edite != "") 
        $setcolumn[] = "`Unit_Area`='{$Unit_Area_edite}' ";
-       if ($Basic_Meter_Price_edite != "") 
-       $setcolumn[] = "`Basic_Meter_Price`='{$Basic_Meter_Price_edite}' ";
+       if ($Basic_Meter_Price_id_edite != "") 
+       $setcolumn[] = "`Basic_Meter_Price`='{$Basic_Meter_Price_id_edite}' ";
+
        if ($Roof_Area_edite != "") 
        $setcolumn[] = "`Roof_Area`='{$Roof_Area_edite}' ";
        if ($Garden_Area_edite != "") 
        $setcolumn[] = "`Garden_Area`='{$Garden_Area_edite}' ";
        if ($Open_terrace_Area_edite != "") 
        $setcolumn[] = "`Open_terrace_Area`='{$Open_terrace_Area_edite}' ";
+
+       if ($Rooms_and_Desc_id_edite != "") 
+       $setcolumn[] = "`Rooms_Desc`='{$Rooms_and_Desc_id_edite}' ";
+       if ($finishing_level_id_edite != "") 
+       $setcolumn[] = "`Finishing_Level`='{$finishing_level_id_edite}' ";
+
        if ($Usufruct_type_edite != "") 
        $setcolumn[] = "`Usufruct_type`='{$Usufruct_type_edite}' ";
        if ($usufruct_meter_price_edite != "") 
@@ -187,10 +193,8 @@ if (isset($_POST['submit'])) {
        $setcolumn[] = "`Net_Area`='{$Net_Area_edite}' ";
        if ($Load_Ratio_edite != "") 
        $setcolumn[] = "`Load_Ratio`='{$Load_Ratio_edite}' ";
-       if ($finishing_level_new_edite != "") 
-       $setcolumn[] = "`finishing_level`='{$finishing_level_new_edite}' ";
-       if ($Rooms_Desc_edite != "") 
-       $setcolumn[] = "`Rooms_Desc`='{$Rooms_Desc_edite}' ";
+       
+       
        
        ////////////////////////////////////////////////////
        if ($setcolumn == null) {
