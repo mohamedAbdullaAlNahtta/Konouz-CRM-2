@@ -16,6 +16,7 @@ if (strlen($_SESSION['username']) == 0 && strlen($_SESSION['password']) == 0) {
 
 
     $database = new DB('10.144.120.27', $user_name, $user_pass, 'inventory');
+    $database_hr = new DB('10.144.120.27', $user_name, $user_pass, 'hr');
 
     if ($database->open_db_connection() !== true) {
         $_SESSION['errormsg'] = "Invalid User Name and Password";

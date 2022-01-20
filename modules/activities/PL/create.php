@@ -128,13 +128,18 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller Assistant </label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" >
-                                                            <option value="">Select One if available</option>
-                                                            <option value="1">Ahmed mahmoud</option>
-                                                            <option value="2">root</option>   
-                                                            <option value="3">Admin</option>      
-                                                            <option value="4">Muhammad Soliman</option>  
-                                                            <option value="4">Essam</option>                                                         
+                                                        <select id="" name="" class="form-control form-control-line" >
+ <?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $emp_data_Count ; $i++) { 
+    echo "<option value='".$emp_data["EMP_ID"][$i]."' >".$emp_data["User_Account"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                    
                                                         </select>
                                                     </div>
                                                 </div>
@@ -167,8 +172,17 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Sale Type</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
-                                                            <option value="1">Direct</option>
-                                                            <option value="2">Indirect</option>                                                            
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $sale_type_data_Count ; $i++) { 
+    echo "<option value='".$emp_data["ID"][$i]."' >".$emp_data["Name"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                        
                                                         </select>
                                                     </div>
                                                 </div>

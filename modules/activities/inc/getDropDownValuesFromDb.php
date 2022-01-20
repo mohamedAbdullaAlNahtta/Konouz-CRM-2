@@ -35,10 +35,10 @@ $unit_data_Count = $unit_data_all_get->num_rows;
      $Unit_Build_No = $row["Build_No"];
      $Unit_Unit_Area = $row["Unit_Area"];
      $Unit_Basic_Meter_Price_id = $row["Basic_Meter_Price_Id"];
-     $Unit_Basic_Meter_Price = $row["Basic_Meter_Price"];
+     $Unit_Basic_Meter_Price = $row["Basic Meter Price"];
      $Unit_Unit_Basic_Price = $row["Unit_Basic_Price"];
      $Unit_usufruct_meter_price_id = $row["usufruct_meter_price_id"];
-     $Unit_usufruct_meter_price = $row["usufruct_meter_price"];
+     $Unit_usufruct_meter_price = $row["Usufruct Meter Price"];
      $Unit_Roof_Area = $row["Roof_Area"];
      $Unit_Garden_Area = $row["Garden_Area"];
      $Unit_Open_terrace_Area = $row["Open_terrace_Area"];
@@ -52,21 +52,39 @@ $unit_data_Count = $unit_data_all_get->num_rows;
 ///////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-// Start of ------getting all developers names and ids 
+// Start of ------getting all Users names and ids 
 /////////////////////////////////////////////////////////////
-// $sql_get_unit_data= "SELECT Build_No,  FROM `units`";
-// $unit_data_all_get= $database->query($sql_get_unit_data);
+$sql_get_emp_data= "SELECT `EMP_ID`, `User_Account` FROM `employees`";
+$emp_data_all_get= $database_hr->query($sql_get_emp_data);
 
-// $unit_data_Count = $unit_data_all_get->num_rows;
-//    // output data of each row
-//    while($row = $unit_data_all_get->fetch_assoc()) {
-//      $ProID[] = $row["ID"];
-//      $ProName[] = $row["Name"];
-//    }
-//  $unit_data= array("ProID"=>$ProID, "ProName"=>$ProName );
+$emp_data_Count = $emp_data_all_get->num_rows;
+   // output data of each row
+   while($row = $emp_data_all_get->fetch_assoc()) {
+     $EMP_ID[] = $row["EMP_ID"];
+     $User_Account[] = $row["User_Account"];
+   }
+ $emp_data= array("EMP_ID"=>$EMP_ID, "User_Account"=>$User_Account );
 
  //////////////////////////////////////////////////////////////
-// End of ------ getting all developers names and ids 
+// End of ------ getting all Users names and ids 
+///////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////
+// Start of ------getting all Users names and ids 
+/////////////////////////////////////////////////////////////
+$sql_get_sale_type_data= "SELECT `ID`, `Name` FROM `sale type`";
+$sale_type_data_all_get= $database->query($sql_get_sale_type_data);
+
+$sale_type_data_Count = $sale_type_data_all_get->num_rows;
+   // output data of each row
+   while($row = $sale_type_data_all_get->fetch_assoc()) {
+     $ID[] = $row["ID"];
+     $Name[] = $row["Name"];
+   }
+ $emp_data= array("ID"=>$ID, "Name"=>$Name );
+
+ //////////////////////////////////////////////////////////////
+// End of ------ getting all Users names and ids 
 ///////////////////////////////////////////////////////////////
 
 

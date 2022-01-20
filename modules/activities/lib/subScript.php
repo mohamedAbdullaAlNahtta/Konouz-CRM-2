@@ -85,36 +85,17 @@
 <!-- Drop-down list dependent form -->
 <script>
     $(document).ready($(function() {
-    $(".formN").hide();
-    $("#myselect").change(function() {
+    $(".dependent-form").hide();
+    $("#Approval-status-op").change(function() {
         switch($(this).val()){ 
-            case "Model 1":
-                $(".formN").hide().parent().find("#Form1").show();
+            case "1":
+                $("#Approval-feedback").hide();
                 break;
-            case "Model 2":
-                $(".formN").hide().parent().find("#Form2").hide();
+            case "2":
+                $("#Approval-feedback").show();
                 break;
-            case "Model 3":
-                $(".formN").parent().find("#Form2").show();
-                $(".formN").parent().find("#Form1").show();
-                break;
-            case "Model 4":
-                $(".formN").hide().parent().find("#Form2").show();
-                break;
-            case "Model 5":
-                $(".formN").hide().parent().find("#Form2").show();
-                break;
-            case "Model 6":
-                $(".formN").hide().parent().find("#Form2").show();
-                break;
-            case "Model 7":
-                $(".formN").hide().parent().find("#Form2").show();
-                break;
-            case "Model 8":
-                $(".formN").hide().parent().find("#Form2").show();
-                break;
-            case "Model 9":
-                $(".formN").hide().parent().find("#Form2").show();
+            case "3":
+                $("#Approval-feedback").hide();
                 break;
         }
     });
