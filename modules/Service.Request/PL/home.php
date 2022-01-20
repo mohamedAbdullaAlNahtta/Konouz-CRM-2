@@ -124,13 +124,22 @@
 for ($i=0; $i < $service_requestCount ; $i++) { 
     # code.
     echo " <tr><th>".$service_request["ID"][$i]."</th>";
-    echo "<td>".$service_request["unit_ID"][$i]."</td>";
+    echo "<td> <a href='index?module=Unites&unitId=".$service_request["unit_ID"][$i]."'>".$service_request["unit_ID"][$i]."</a></td>";
     echo "<td>".$service_request["unit_status_name"][$i]."</td>";
     echo "<td>".$service_request["activity_ID"][$i]."</td>";
     echo "<td>".$service_request["created_by"][$i]."</td>";
     echo "<td>".$service_request["Handled_by"][$i]."</td>";
     echo "<td>".$service_request["creation_date"][$i]."</td>";
-    echo "<td>".$service_request["ticket_status_name"][$i]."</td>";
+    if ($service_request["ticket_status_name"][$i]==="Approved") {
+        echo "<td><span class='label label-success'>".$service_request["ticket_status_name"][$i]."</span></td>";
+    } elseif ($service_request["ticket_status_name"][$i]==="Pending Approval") {
+        echo "<td><span class='label label-warning'>".$service_request["ticket_status_name"][$i]."</span></td>";
+    }elseif ($service_request["ticket_status_name"][$i]==="Rejected") {
+        echo "<td><span class='badge badge-danger'>".$service_request["ticket_status_name"][$i]."</span></td>";
+    }elseif ($service_request["ticket_status_name"][$i]==="Cancelled") {
+        echo "<td><span class='label label-info' style='background-color:gray;'>".$service_request["ticket_status_name"][$i]."</span></td>";
+    }
+    
     echo "<td>
     <a href='index?module=Service.Request&EditeSRId=".$service_request["ID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
     <a href='index?module=Service.Request&SRId=".$service_request["ID"][$i]."' data-toggle='tooltip' data-original-title='View'> <i class='mdi mdi-eye'></i> </a></td> </tr>";

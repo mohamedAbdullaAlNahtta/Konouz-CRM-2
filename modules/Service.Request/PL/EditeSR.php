@@ -112,7 +112,7 @@ if (isset($_POST['submit'])) {
         <div class="col-md-6 col-8 align-self-center">
             <h3 class="text-themecolor m-b-0 m-t-0">Unit Ticket Request </h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory <?php echo htmlentities($sql_zxc); ?></a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
                 <li class="breadcrumb-item active">Edite Ticket Request Data</li>
             </ol>
         </div>
@@ -140,7 +140,7 @@ if (isset($_POST['submit'])) {
                     <h4 class="m-b-0 text-white">Edite Ticket Request</h4>
                 </div>
                 <div class="card-block">
-                <form action="index?module=Service.Request&create=true&EditeSRId=<?php echo htmlentities($ID)?>" method="post">
+                <form action="index?module=Service.Request&EditeSRId=<?php echo htmlentities($ID)?>" method="post">
                         <div class="form-body">
                             <h3 class="card-title">Unit Info</h3>
                             <div class="row p-t-20">
@@ -285,7 +285,7 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                             <!--/row-->
                         </div>
                         <div class="form-actions">
-                            <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
+                            <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Save</button>
                             <button type="button" onclick="location.href='index?module=Service.Request'" class="btn btn-inverse">Cancel</button>
                         </div>
                     </form>
