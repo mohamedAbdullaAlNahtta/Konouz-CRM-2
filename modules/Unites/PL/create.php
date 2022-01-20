@@ -92,14 +92,13 @@ if (isset($_POST['submit'])) {
       `usufruct_meter_price`, `Usufruct_Price`, `Net_Area`, `Load_Ratio`,
         `added_by`, `Creation_Date`, `last_update_on`,
         `maintenance_pct`, `finishing_level`, `Rooms_Desc`, `has_activity`,
-         `activity_id`,`Status_ID`, `Status_Reason`, `Held_For`, `Hold_can_Workon`, `Approval_status`, `Approval_feedback`, `Approval_Requested`) 
+         `activity_id`,`Status_ID`) 
    VALUES ('', '".$Unit_No."', '".$Build_No."', '".$Project_ID."', '".$floor_id."',
     '".$Raw_ID."', '".$Pos_ID."', '".$Unit_Area."', '".$Basic_Meter_Price."', '',
      '".$Roof_Area."', '".$Garden_Area."', '".$Open_terrace_Area."', '".$Usufruct_type."',
       ".$usufruct_meter_price.", '', '".$Net_Area."', '$Load_Ratio_new',
         '', current_timestamp(), current_timestamp(),
-        '', '".$finishing_level_new."', '".$Rooms_Desc."', '', NULL, '".$status_id."', '".$status_reason."', '".$Held_for."',
-         '".$Hold_can_work_on."', '".$approval_status."', '".$approval_feed_back."', '1')";
+        '', '".$finishing_level_new."', '".$Rooms_Desc."', '', NULL, '".$status_id."')";
 
     $update_unit_data= $database->query($sql_in); 
 
@@ -111,20 +110,16 @@ if (isset($_POST['submit'])) {
 
     $Layout_With_dimensions = $_FILES["Layout_With_dimensions"];
     $Layout_Without_dimensions = $_FILES["Layout_Without_dimensions"];
-    $Parking = $_FILES["Parking"];
     $Model = $_FILES["Model"];
 
     $Layout_With_dimensions = $upFile->do_upload($Layout_With_dimensions, "units/");
     $Layout_Without_dimensions = $upFile->do_upload($Layout_Without_dimensions, "units/");
-    $Parking = $upFile->do_upload($Parking, "units/");
     $Model= $upFile->do_upload($Model, "units/");
 
     $sql_prepar_attachment_table ="INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
     VALUES (NULL, '".$uId."', 'Layout With dimensions', '".$Layout_With_dimensions[1]."');
     INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
     VALUES (NULL, '".$uId."', 'Layout Without dimensions', '".$Layout_Without_dimensions[1]."');
-    INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
-    VALUES (NULL, '".$uId."', 'Parking', '".$Parking[1]."');
     INSERT INTO `attachements` (`ID`, `Unit ID`, `File Name`, `File Location`) 
     VALUES (NULL, '".$uId."', 'Model', '".$Model[1]."');";
     $update_sql_prepar_attachment_table= $database->multi_query($sql_prepar_attachment_table); 
@@ -147,7 +142,7 @@ if (isset($_POST['submit'])) {
 
     // checking errors 
     $check_er = new errors_info();
-    $actions_in_array_for_check=array($Layout_With_dimensions, $Layout_Without_dimensions, $Parking, $Model,$update_sql_prepar_attachment_table, $update_unit_data);
+    $actions_in_array_for_check=array($Layout_With_dimensions, $Layout_Without_dimensions,  $Model,$update_sql_prepar_attachment_table, $update_unit_data);
     $check_er->multi_check_if_there_error($actions_in_array_for_check);
     
     if ($check_er->error_list["Error_count"]>0) {
@@ -591,10 +586,6 @@ for ($i=0; $i < $usufructpricesNameCount ; $i++) {
                                     <div class="col-md-6">
                                         <input type="file" name="Layout_Without_dimensions" id="input-file-now" class="dropify" required/>
                                         <h3 class="m-t-10">Layout Without dimensions</h3>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="file" name="Parking" id="input-file-now" class="dropify" required/>
-                                        <h3 class="m-t-10">Parking</h3>
                                     </div>
                                     <div class="col-md-6">
                                         <input type="file" name="Model" id="input-file-now" class="dropify" required/>
