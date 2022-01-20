@@ -34,7 +34,7 @@
                 <div class="card-block"> 
                     <form action="index?module=activities&create=true" method="post">
                         <div class="form-body">
-                            <h4 class="card-title"> New Activity <small> For Unit ID <code>11-11-20</code></small></h4>
+                            <h4 class="card-title"> New Activity <small> For Unit ID <code> <?php echo htmlentities($unit_ID);?></code></small></h4>
                             <!-- Nav tabs -->
                             <div class="vtabs col-md-12">
                                 <ul class="nav nav-tabs tabs-vertical" role="tablist">
@@ -54,52 +54,67 @@
                                                 <div id="" class="col-md-1 col-xs-6">
                                                     <img src="assets/images/units/1.png" width="120">
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-3 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Unit ID</label>
                                                         <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($unit_ID);?>" placeholder="<?php echo htmlentities($unit_ID);?>" disabled/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Building No</label>
                                                         <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Build_No);?>" placeholder="<?php echo htmlentities($Unit_Build_No);?>" disabled/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Unit Area </label>
                                                         <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Unit_Area);?>" placeholder="<?php echo htmlentities($Unit_Unit_Area);?>" disabled/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Basic Meter Price </label>
                                                         <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" placeholder="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" disabled/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Unit Basic Price </label>
                                                         <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" placeholder="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" disabled/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">  Usufruct Meter Price </label>
                                                         <input type="number" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_usufruct_meter_price);?>" placeholder="<?php echo htmlentities($Unit_usufruct_meter_price);?>" disabled/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label"> Usufruct Area </label>
                                                         <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Usufruct_Area);?>" placeholder="<?php echo htmlentities($Usufruct_Area);?>" disabled/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Maintenance Fees %</label>
+                                                        <input type="number" id="" name="" placeholder="<?php echo htmlentities($Maintenance_Fees_data['Maintenance_pct'][0]*100); ?>%" value="<?php echo htmlentities($Maintenance_Fees_data['Maintenance_pct'][0]); ?>" class="form-control"  disabled/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Garage Price</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Garage Requested</label>                                                    
+                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                            <option value="0">No</option>
+                                                            <option value="1">Yes</option>                                                            
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -109,7 +124,10 @@
                                                 <!-- <p class="ribbon-content">check out the unit data</p> -->
                                             </div>
                                             <div class="row"> 
-                                                <div class="col-md-3">
+                                                <div id="" class="col-md-.5 col-xs-1">
+                                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                                                </div>
+                                                <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller</label>
                                                         <input type="text" id="ProjectName" name="ProjectName" class="form-control" value="root@localhost" placeholder="root@localhost" disabled/>
@@ -124,10 +142,14 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div id="" class="col-md-.5 col-xs-1" style="display: none;">
+                                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                                                </div>
+                                                <div class="col-md-3 col-xs-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller Assistant </label>
                                                         <select id="" name="" class="form-control form-control-line" >
+                                                            <option>select seller</option>
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -167,10 +189,10 @@ for ($i=0; $i < $emp_data_Count ; $i++) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Sale Type</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                        <select id="sale-typ-option" name="Location" class="form-control form-control-line" required>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -185,7 +207,10 @@ for ($i=0; $i < $sale_type_data_Count ; $i++) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div id="" class="col-md-.5 col-xs-1 dependent-form-image" id="broker-form-image">
+                                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                                                </div>
+                                                <div class="col-md-3 dependent-form" id="broker-form-value">
                                                     <div class="form-group">
                                                         <label class="control-label">Broker</label>
                                                         <select id="" name="" class="form-control form-control-line" required>
@@ -216,13 +241,13 @@ for ($i=0; $i < $brokers_data_Count ; $i++) {
                                                 <div class="ribbon ribbon-bookmark ribbon-info">Activity input</div>
                                             </div>
                                         <div class="row">
-                                            <div id="" class="col-md-1 col-xs-6">
+                                            <div id="" class="col-md-0.5 col-xs-6">
                                                 <img src="assets/images/units/activity.jpg" width="90">
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Activity Status</label>
-                                                        <select id="" name="" class="form-control form-control-line" required>
+                                                        <select id="activity-status-option" name="" class="form-control form-control-line" required>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -261,7 +286,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                 <div id="" class="col-md-0.5 col-xs-6">
                                                     <img src="assets/images/contract_sign.JPG" width="80">
                                                 </div>
-                                                <div class="col-md-2">
+                                                <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Signed Contract</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
@@ -270,7 +295,10 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2">
+                                                <div id="" class="col-md-0.5 col-xs-6">
+                                                    <img src="assets/images/Cheque_Submitted.JPG" width="80">
+                                                </div>
+                                                <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Cheque Submitted</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
@@ -279,7 +307,10 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2">
+                                         </div>
+                                         <br>
+                                         <div class="row" >    
+                                                <div class="col-md-2 dependent-status-form" id="Refunded-broker-form-value">
                                                     <div class="form-group">
                                                         <label class="control-label">Refunded</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
@@ -288,7 +319,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-3 dependent-status-form" id="Filled-Claim-form-value">
                                                     <div class="form-group">
                                                         <label class="control-label">Filled Claim</label>
                                                         <select id="Location" name="Location" class="form-control form-control-line" required>
@@ -331,30 +362,11 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Maintenance Feest %</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
-                                                    <small class="form-control-feedback">3 mean 3%.... </small>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
                                                     <label class="control-label">Interest %</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                     <small class="form-control-feedback">3 mean 3%.... </small>
                                                 </div>
-                                            </div>
-                                        </div> 
-                                        <hr>
-                                        <div class="row">   
-                                            <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Garage Requested</label>                                                    
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
-                                                            <option value="0">No</option>
-                                                            <option value="1">Yes</option>                                                            
-                                                        </select>
-                                                    </div>
-                                            </div>
+                                            </div>   
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Discount %</label>

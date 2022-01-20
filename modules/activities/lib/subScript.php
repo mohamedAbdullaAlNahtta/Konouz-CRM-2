@@ -82,20 +82,45 @@
 <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 
 
-<!-- Drop-down list dependent form -->
+<!-- Drop-down list dependent form for sale type and broker -->
 <script>
     $(document).ready($(function() {
     $(".dependent-form").hide();
-    $("#Approval-status-op").change(function() {
+    $(".dependent-form-image").hide();
+    $("#sale-typ-option").change(function() {
         switch($(this).val()){ 
             case "1":
-                $("#Approval-feedback").hide();
+                $("#broker-form-value").hide();
+                $("#broker-form-image").hide();
+                $(".dependent-form-image").hide();
                 break;
             case "2":
-                $("#Approval-feedback").show();
+                $("#broker-form-value").show();
+                $("#broker-form-image").show();
+                $(".dependent-form-image").show();
+                break;
+        }
+    });
+}));
+</script>
+
+<!-- Drop-down list dependent form for activty status and claim and refunded -->
+<script>
+    $(document).ready($(function() {
+    $(".dependent-status-form").hide();
+    $("#activity-status-option").change(function() {
+        switch($(this).val()){ 
+            case "1":
+                $(".dependent-status-form").parent().find("#Refunded-broker-form-value").hide();
+                $(".dependent-status-form").parent().find("#Filled-Claim-form-value").hide();
+                break;
+            case "2":
+                $(".dependent-status-form").parent().find("#Refunded-broker-form-value").show();
+                $(".dependent-status-form").parent().find("#Filled-Claim-form-value").show();
                 break;
             case "3":
-                $("#Approval-feedback").hide();
+                $(".dependent-status-form").parent().find("#Refunded-broker-form-value").show();
+                $(".dependent-status-form").parent().find("#Filled-Claim-form-value").show();
                 break;
         }
     });
