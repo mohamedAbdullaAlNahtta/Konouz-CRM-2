@@ -59,12 +59,12 @@ while($row = $service_request_all->fetch_assoc()) {
 if (isset($_POST['submit'])) {
     
     // getting for data
-    $unit_status_id = $_POST['unit_status_id'];
-    $unit_status_reason = $_POST['unit_status_reason'];
-    $Hold_Can_Work_On_id = $_POST['Hold_Can_Work_On_id'];
-    $Held_For = $_POST['Held_For'];
-    $ticket_status_id = $_POST['ticket_status_id'];
-    $ticket_feedback = $_POST['ticket_feedback'];
+    $unit_status_id = $_POST['unit_status_id_new'];
+    $unit_status_reason = $_POST['unit_status_reason_new'];
+    $Hold_Can_Work_On_id = $_POST['Hold_Can_Work_On_id_new'];
+    $Held_For = $_POST['Held_For_new'];
+    $ticket_status_id = $_POST['ticket_status_id_new'];
+    $ticket_feedback = $_POST['ticket_feedback_new'];
    
     
     // escaping variables
@@ -92,8 +92,8 @@ if (isset($_POST['submit'])) {
 
     // $sql_z =  "UPDATE `developers`  {$setcolumn}  WHERE DevID=".$devId."";
 
-     $sql_zxc =  "call UPDATE_dev ('".$devId."','".$DeveloperName."','".$DeveloperRepresentative."','".$mobile1."','".$mobile2."')";
-    $service_request_edite= $database->query($sql_zxc); 
+    //  $sql_zxc =  "call UPDATE_dev ('".$devId."','".$DeveloperName."','".$DeveloperRepresentative."','".$mobile1."','".$mobile2."')";
+    // $service_request_edite= $database->query($sql_zxc); 
 
 } 
 ///////////////////////////////////////////////////////////////
@@ -112,7 +112,7 @@ if (isset($_POST['submit'])) {
         <div class="col-md-6 col-8 align-self-center">
             <h3 class="text-themecolor m-b-0 m-t-0">Unit Ticket Request </h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Inventory <?php echo htmlentities($sql_zxc); ?></a></li>
                 <li class="breadcrumb-item active">Edite Ticket Request Data</li>
             </ol>
         </div>
@@ -177,7 +177,7 @@ if (isset($_POST['submit'])) {
                                     <div class="col-md-3 col-xs-6">
                                         <strong>Requested Unit Status</strong>
                                         <div class="form-group">
-                                            <select id="unitStatusform" name="status_id_new" class="form-control form-control-line" >
+                                            <select id="unitStatusform" name="unit_status_id_new" class="form-control form-control-line" >
                                                 <option value="<?php echo htmlentities($unit_status_id)?>"><?php echo htmlentities($unit_status_name) ?></option>
                                                 <option value="2">Available</option>
                                                 <option value="2">Available</option>
@@ -192,13 +192,13 @@ if (isset($_POST['submit'])) {
                                    <div id="Status-Reason" class="col-md-9 col-xs-6">
                                         <strong>Requested Status Reason</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="requested_status_reason_new" value="<?php echo htmlentities($unit_status_reason);?>" placeholder="<?php echo htmlentities($unit_status_reason);?>" class="form-control" />
+                                        <input type="text" id="" name="unit_status_reason_new" value="<?php echo htmlentities($unit_status_reason);?>" placeholder="<?php echo htmlentities($unit_status_reason);?>" class="form-control" />
                                         </div>
                                     </div>
                                     <div id="Hold-Can-Work-On" class="col-md-3 col-xs-6 dependent-form">
                                         <strong>Hold Can Work On </strong>
                                         <div class="form-group">
-                                            <select id="" name="Hold_can_work_on_new" class="form-control form-control-line " >
+                                            <select id="" name="Hold_Can_Work_On_id_new" class="form-control form-control-line " >
                                                 <option value="<?php echo htmlentities($Hold_Can_Work_On_id); ?>"><?php echo htmlentities($Hold_Can_Work_On_name); ?></option>
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
@@ -208,13 +208,13 @@ if (isset($_POST['submit'])) {
                                     <div id="Held-For" class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Held For</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="Held_for_new" value="<?php echo htmlentities($Held_For); ?>" placeholder="<?php echo htmlentities($Held_For); ?>" class="form-control d" />
+                                        <input type="text" id="" name="Held_For_new" value="<?php echo htmlentities($Held_For); ?>" placeholder="<?php echo htmlentities($Held_For); ?>" class="form-control d" />
                                         </div>
                                     </div>
                                     <div id="Approval-status" class="col-md-3 col-xs-6 ">
                                         <strong>Ticket Status </strong>
                                         <div class="form-group">
-                                            <select id="Approval-status-op" name="ticket_status_new" class="form-control form-control-line" >
+                                            <select id="Approval-status-op" name="ticket_status_id_new" class="form-control form-control-line" >
                                                 <option value="<?php echo htmlentities($ticket_status_id);?>"><?php echo htmlentities($ticket_status_name);?></option>
 <?php
 ///////////////////////////////////////////////////////////////
@@ -233,7 +233,7 @@ for ($i=0; $i < $approvalStatusGetCount ; $i++) {
                                     <div id="Approval-feedback" class="col-md-9 col-xs-6 dependent-form">
                                         <strong>Ticket Feedback</strong>
                                         <div class="form-group">
-                                        <input type="text" id="" name="ticket_feed_back_new" value="<?php echo htmlentities($ticket_feedback);?>" placeholder="<?php echo htmlentities($ticket_feedback);?>" class="form-control " />
+                                        <input type="text" id="" name="ticket_feedback_new" value="<?php echo htmlentities($ticket_feedback);?>" placeholder="<?php echo htmlentities($ticket_feedback);?>" class="form-control " />
                                         </div>
                                     </div>
                             </div>                                   
