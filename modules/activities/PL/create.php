@@ -360,11 +360,13 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                     <div class="tab-pane p-20" id="profile4" role="tabpanel" aria-expanded="true">
                                         <h3>Installment Info </h3>
                                         <div class="row">
+                                            <div id="" class="col-md-0.5 col-xs-6">
+                                                    <img src="assets/images/payment.JPG" width="50">
+                                                </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Interest %</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
-                                                    <small class="form-control-feedback">3 mean 3%.... </small>
                                                 </div>
                                             </div>   
                                             <div class="col-md-3">
@@ -403,7 +405,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
@@ -413,20 +415,20 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                         <div class="row">
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label class="control-label">Annual Payment %</label>
+                                                    <label class="control-label">Annual Paymen %</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label class="control-label">Down Payment %</label>
+                                                    <label class="control-label">Down Payment%</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div> 
-                                            <div class="col-md-2">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment %</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>s
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                         </div> 
@@ -497,8 +499,8 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                             </div>
                                             <hr>
                                             <div class="form-actions">
-                                                <button name="submit" class="btn btn-success"><i class="mdi mdi-calculator"></i> Calculate</button>
-                                                <button type="button" onclick="location.href='index?module=Activities'" class="btn btn-inverse">Cancel</button>
+                                                <button style="font-size: 27px;" name="submit" class="btn btn-success"><i class="mdi mdi-calculator"></i> Calculate</button>
+                                                <button style="font-size: 27px;" type="button" onclick="location.href='index?module=Activities'" class="btn btn-inverse">Cancel</button>
                                             </div>
                                     
                                         </div>
@@ -509,7 +511,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                         </div>
                         <div class="form-actions">
                             <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
-                            <button type="button" onclick="location.href='index?module=Activities'" class="btn btn-inverse">Cancel</button>
+                            <button type="button" onclick="" class="btn btn-inverse">Cancel</button>
                         </div>
                     </form>
                 </div>
