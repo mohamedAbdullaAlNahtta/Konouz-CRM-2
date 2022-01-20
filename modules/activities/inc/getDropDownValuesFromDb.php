@@ -155,5 +155,26 @@ $activity_status_data_Count = $activity_status_data_all_get->num_rows;
 // end of ------getting all payment type data
 ///////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////
+// Start of ------getting all payment type data
+/////////////////////////////////////////////////////////////
+$sql_get_Maintenance_Fees_data= "SELECT * FROM `activity status`";
+$Maintenance_Fees_data_all_get= $database->query($sql_get_Maintenance_Fees_data);
+
+$Maintenance_Fees_data_Count = $Maintenance_Fees_data_all_get->num_rows;
+   // output data of each row
+   while($row = $Maintenance_Fees_data_all_get->fetch_assoc()) {
+     $ID[] = $row["ID"];
+     $Name[] = $row["Name"];
+   }
+ $Maintenance_Fees_data= array("ID"=>$ID, "Name"=>$Name );
+
+ $ID=array();
+ $Name=array();
+
+ //////////////////////////////////////////////////////////////
+// end of ------getting all payment type data
+///////////////////////////////////////////////////////////////
+
 
 ?>
