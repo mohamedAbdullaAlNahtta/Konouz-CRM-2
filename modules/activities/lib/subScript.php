@@ -155,13 +155,17 @@ window.onload = function () {
 
 <!-- Drop-down list dependent form for activty installment plan years, discount and intrest-->
 <script>
+// var receivingPaymentPcCalc= receivingPaymentVal/unitBasicPriceVal;
+// receivingPaymentPcCalc = Math.ceil(receivingPaymentPcCalc);
+// receivingPaymentPcCalc = receivingPaymentPcCalc.toFixed(0);
+// window.alert(receivingPaymentPcCalc);
+
 
 // getting receivingPaymentPcVal
 function getreceivingPaymentPc(){
 
     var receivingPaymentVal = document.getElementById("receivingPayment").value;
     var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
-    // document.getElementById("receivingPaymentPc").placeholder = receivingPaymentVal/unitBasicPriceVal;
     document.getElementById("receivingPaymentPc").value = receivingPaymentVal/unitBasicPriceVal;
 
 }
@@ -171,15 +175,21 @@ function getreceivingPayment(){
 
     var receivingPaymenPcVal = document.getElementById("receivingPaymentPc").value;
     var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
-    // document.getElementById("receivingPayment").placeholder = receivingPaymenPcVal*unitBasicPriceVal;
     document.getElementById("receivingPayment").value = receivingPaymenPcVal*unitBasicPriceVal;
 
 
 }
-    // var receivingPaymentPcCalc= receivingPaymentVal/unitBasicPriceVal;
-        // receivingPaymentPcCalc = Math.ceil(receivingPaymentPcCalc);
-        // receivingPaymentPcCalc = receivingPaymentPcCalc.toFixed(0);
-        // window.alert(receivingPaymentPcCalc);
+
+// getting annVal
+function getannualWithRate(){
+
+var installmentYearsVal = document.getElementById("installmentYears").value;
+var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
+document.getElementById("annualWithRate").value = receivingPaymenPcVal*unitBasicPriceVal;
+
+
+}
+    
         
 
     
