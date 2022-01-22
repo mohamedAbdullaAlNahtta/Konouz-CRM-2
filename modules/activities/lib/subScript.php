@@ -155,10 +155,12 @@ window.onload = function () {
 
 <!-- Drop-down list dependent form for activty installment plan years, discount and intrest-->
 <script>
-    function myFunction() {
-        var x = document.getElementById("myText").value;
-        document.getElementById("demo").innerHTML = x;
-        document.getElementById("myText").value = "Johnny Bravo";
-        document.getElementById("myText").placeholder = "Johnny Bravo";
+    function myFunctionCalc() {
+        var annualPaymentPcVal = document.getElementById("annualPaymentPc").value;
+        var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
+        document.getElementById("receivingPayment").value = annualPaymentPcVal/unitBasicPriceVal;
+        document.getElementById("receivingPayment").placeholder = annualPaymentPcVal/unitBasicPriceVal;
+
+        
     }
 </script>
