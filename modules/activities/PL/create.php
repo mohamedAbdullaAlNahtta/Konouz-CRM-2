@@ -366,8 +366,19 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Years</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 years for example </small>
+                                                    <select id="" name="" class="form-control form-control-line" >
+ <?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $installment_plans_data_Count ; $i++) { 
+    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data_PC=$installment_plans_data["Years"][$i]." </option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                    
+                                                        </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -379,7 +390,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $installment_plans_data_Count ; $i++) { 
-    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data["interest"][$i]." % </option>";
+    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data_PC=$installment_plans_data["interest"][$i] *(100)." % </option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
@@ -391,8 +402,19 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Discount %</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 mean 3%.... </small>
+                                                    <select id="" name="" class="form-control form-control-line" >
+ <?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $installment_plans_data_Count ; $i++) { 
+    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data_PC=$installment_plans_data["discount"][$i] *(100)." % </option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                    
+                                                        </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
