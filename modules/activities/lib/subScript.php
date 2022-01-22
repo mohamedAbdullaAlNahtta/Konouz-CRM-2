@@ -129,23 +129,28 @@
 
 <!-- Drop-down list dependent form for activty installment plan years, discount and intrest-->
 <script>
-//     $(document).ready($(function() {
-//     $(".dependent-status-form").hide();
-//     $("#activity-status-option").change(function() {
-//         switch($(this).val()){ 
-//             case "1":
-//                 $(".dependent-status-form").parent().find("#Refunded-broker-form-value").hide();
-//                 $(".dependent-status-form").parent().find("#Filled-Claim-form-value").hide();
-//                 break;
-//             case "2":
-//                 $(".dependent-status-form").parent().find("#Refunded-broker-form-value").show();
-//                 $(".dependent-status-form").parent().find("#Filled-Claim-form-value").show();
-//                 break;
-//             case "3":
-//                 $(".dependent-status-form").parent().find("#Refunded-broker-form-value").show();
-//                 $(".dependent-status-form").parent().find("#Filled-Claim-form-value").show();
-//                 break;
-//         }
-//     });
-// }));
+
+window.onload = function () {
+    var installmentYearsSel = document.getElementById("installmentYears");
+    var installmentInterestPcSel  = document.getElementById("installmentInterestPc");
+    var installmentDiscountSel = document.getElementById("installmentDiscount");
+
+    installmentYearsSel.onchange = function () {
+        document.getElementById("installmentInterestPc").selectedIndex = document.getElementById("installmentYears").selectedIndex;
+        document.getElementById("installmentDiscount").selectedIndex = document.getElementById("installmentYears").selectedIndex;
+    };
+
+    installmentInterestPcSel.onchange = function () {
+        document.getElementById("installmentDiscount").selectedIndex = document.getElementById("installmentInterestPc").selectedIndex;
+        document.getElementById("installmentYears").selectedIndex = document.getElementById("installmentInterestPc").selectedIndex;
+    };
+
+    installmentDiscountSel.onchange = function () {
+        document.getElementById("installmentYears").selectedIndex = document.getElementById("installmentDiscount").selectedIndex;
+        document.getElementById("installmentInterestPc").selectedIndex = document.getElementById("installmentDiscount").selectedIndex;
+    };
+};
+
+
+
 </script>

@@ -21,3 +21,81 @@ function myFunction() {
 
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+
+window.onload = function() {
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+  var chapterSel = document.getElementById("chapter");
+    
+  subjectSel.onchange = function() {
+  document.getElementById("topic").selectedIndex =
+  document.getElementById("subject").selectedIndex;
+  document.getElementById("chapter").selectedIndex =
+  document.getElementById("subject").selectedIndex;
+  }
+  
+  topicSel.onchange = function() {
+  document.getElementById("subject").selectedIndex =
+  document.getElementById("topic").selectedIndex;
+  document.getElementById("chapter").selectedIndex =
+  document.getElementById("topic").selectedIndex;
+  }
+  
+  chapterSel.onchange = function() {
+  document.getElementById("subject").selectedIndex =
+  document.getElementById("chapter").selectedIndex;
+  document.getElementById("topic").selectedIndex =
+  document.getElementById("chapter").selectedIndex;
+  }
+  
+  
+}
+</script>
+</head>   
+<body>
+
+<h1>Cascading Dropdown Example</h1>
+
+<form name="form1" id="form1" action="/action_page.php">
+Subjects: <select name="subject" id="subject">
+    <option value="1" selected="selected">1...</option>
+    <option value="2" selected="selected">2...</option>
+    <option value="3" selected="selected">3...</option>
+    <option value="4" selected="selected">4...</option>
+    <option value="5" selected="selected">5...</option>
+    <option value="6" selected="selected">6...</option>
+    <option value="7" selected="selected">7...</option>
+  </select>
+  <br><br>
+Topics: <select name="topic" id="topic">
+    <option value="1" selected="selected">1...</option>
+    <option value="2" selected="selected">2...</option>
+    <option value="3" selected="selected">3...</option>
+    <option value="4" selected="selected">4...</option>
+    <option value="5" selected="selected">5...</option>
+    <option value="6" selected="selected">6...</option>
+    <option value="7" selected="selected">7...</option>
+  </select>
+  <br><br>
+Chapters: <select name="chapter" id="chapter">
+    <option value="1" selected="selected">1...</option>
+    <option value="2" selected="selected">2...</option>
+    <option value="3" selected="selected">3...</option>
+    <option value="4" selected="selected">4...</option>
+    <option value="5" selected="selected">5...</option>
+    <option value="6" selected="selected">6...</option>
+    <option value="7" selected="selected">7...</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">  
+</form>
+
+</body>
+</html>

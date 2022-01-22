@@ -137,7 +137,7 @@ $payment_type_data_Count = $payment_type_data_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting activity_status data
 /////////////////////////////////////////////////////////////
-$sql_get_activity_status_data= "SELECT * FROM `activity status`";
+$sql_get_activity_status_data= "SELECT * FROM `activity status` where id not in (2,6)";
 $activity_status_data_all_get= $database->query($sql_get_activity_status_data);
 
 $activity_status_data_Count = $activity_status_data_all_get->num_rows;
@@ -206,6 +206,27 @@ $installment_plans_data_Count = $installment_plans_data_all_get->num_rows;
 
  //////////////////////////////////////////////////////////////
 // end of ------getting all installment plans
+///////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////
+// Start of ------getting requested_garage_type
+/////////////////////////////////////////////////////////////
+$sql_get_requested_garage_type_data= "SELECT * FROM `garage_type`";
+$requested_garage_type_data_all_get= $database->query($sql_get_requested_garage_type_data);
+
+$requested_garage_type_data_Count = $requested_garage_type_data_all_get->num_rows;
+   // output data of each row
+   while($row = $requested_garage_type_data_all_get->fetch_assoc()) {
+     $ID[] = $row["ID"];
+     $Type_Name[] = $row["Type Name"];
+   }
+ $requested_garage_type_data= array("ID"=>$ID, "Type_Name"=>$Type_Name  );
+
+ $ID=array();
+ $Type_Name=array();
+
+ //////////////////////////////////////////////////////////////
+// end of ------getting requested_garage_type
 ///////////////////////////////////////////////////////////////
 
 

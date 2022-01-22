@@ -111,9 +111,18 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Garage Requested</label>                                                    
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
-                                                            <option value="0">No</option>
-                                                            <option value="1">Yes</option>                                                            
+                                                        <select id="" name="" class="form-control form-control-line" >
+ <?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $requested_garage_type_data_Count ; $i++) { 
+    echo "<option value='".$requested_garage_type_data["ID"][$i]."' >".$requested_garage_type_data["Type_Name"][$i]." </option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                    
                                                         </select>
                                                     </div>
                                                 </div>
@@ -366,7 +375,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Years</label>
-                                                    <select id="" name="" class="form-control form-control-line" >
+                                                    <select id="installmentYears" name="" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -384,7 +393,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Interest %</label>
-                                                    <select id="" name="" class="form-control form-control-line" >
+                                                    <select id="installmentInterestPc" name="" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -402,7 +411,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Discount %</label>
-                                                    <select id="" name="" class="form-control form-control-line" >
+                                                    <select id="installmentDiscount" name="" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
