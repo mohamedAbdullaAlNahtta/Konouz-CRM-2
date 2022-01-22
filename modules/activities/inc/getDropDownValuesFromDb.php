@@ -199,8 +199,10 @@ $installment_plans_data_Count = $installment_plans_data_all_get->num_rows;
    }
  $installment_plans_data= array("ID"=>$ID, "Years"=>$Years, "interest"=>$interest, "discount"=>$discount  );
 
- $Pro_ID=array();
- $Maintenance_pct=array();
+ $ID=array();
+ $Years=array();
+ $interest=array();
+ $discount=array();
 
  //////////////////////////////////////////////////////////////
 // end of ------getting all installment plans
