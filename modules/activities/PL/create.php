@@ -366,7 +366,20 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Interest %</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <select id="" name="" class="form-control form-control-line" >
+                                                            <option>select seller</option>
+ <?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $installment_plans_data_Count ; $i++) { 
+    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data["interest"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                    
+                                                        </select>
                                                 </div>
                                             </div>   
                                             <div class="col-md-3">
