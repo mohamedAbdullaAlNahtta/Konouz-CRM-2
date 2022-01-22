@@ -179,5 +179,32 @@ $Maintenance_Fees_data_Count = $Maintenance_Fees_data_all_get->num_rows;
 // end of ------getting Maintenance_Fees data
 ///////////////////////////////////////////////////////////////
 
+ //////////////////////////////////////////////////////////////
+// end of ------getting activity_status data
+///////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////
+// Start of ------getting all installment plans
+/////////////////////////////////////////////////////////////
+$sql_get_installment_plans_data= "SELECT `ID`, `Years`, `interest`, `discount` FROM `installments plan` ";
+$installment_plans_data_all_get= $database->query($sql_get_installment_plans_data);
+
+$installment_plans_data_Count = $installment_plans_data_all_get->num_rows;
+   // output data of each row
+   while($row = $installment_plans_data_all_get->fetch_assoc()) {
+     $ID[] = $row["ID"];
+     $Years[] = $row["Years"];
+     $interest[] = $row["interest"];
+     $discount[] = $row["discount"];
+   }
+ $installment_plans_data= array("ID"=>$ID, "Years"=>$Years, "interest"=>$interest, "discount"=>$discount  );
+
+ $Pro_ID=array();
+ $Maintenance_pct=array();
+
+ //////////////////////////////////////////////////////////////
+// end of ------getting all installment plans
+///////////////////////////////////////////////////////////////
+
 
 ?>
