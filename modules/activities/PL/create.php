@@ -379,7 +379,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $installment_plans_data_Count ; $i++) { 
-    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data["interest"][$i]."</option>";
+    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data["interest"][$i]." % </option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
