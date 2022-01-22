@@ -161,7 +161,7 @@ function getreceivingPaymentPc(){
 
     var receivingPaymentVal = document.getElementById("receivingPayment").value;
     var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
-    document.getElementById("receivingPaymentPc").placeholder = receivingPaymentVal/unitBasicPriceVal;
+    // document.getElementById("receivingPaymentPc").placeholder = receivingPaymentVal/unitBasicPriceVal;
     document.getElementById("receivingPaymentPc").value = receivingPaymentVal/unitBasicPriceVal;
 
 }
@@ -171,7 +171,7 @@ function getreceivingPayment(){
 
     var receivingPaymenPcVal = document.getElementById("receivingPaymentPc").value;
     var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
-    document.getElementById("receivingPayment").placeholder = receivingPaymenPcVal*unitBasicPriceVal;
+    // document.getElementById("receivingPayment").placeholder = receivingPaymenPcVal*unitBasicPriceVal;
     document.getElementById("receivingPayment").value = receivingPaymenPcVal*unitBasicPriceVal;
 
 
