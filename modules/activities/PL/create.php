@@ -439,19 +439,19 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual Payment </label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="annualPayment" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="downPayment" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="receivingPayment" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                         </div> 
@@ -459,19 +459,19 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual Paymen %</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="annualPaymentPc" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment%</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="downPaymentPc" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div> 
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment %</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="receivingPaymentPc" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                         </div> 
@@ -480,64 +480,61 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual With Rate</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">For Example : 30000 LE.... </small>
+                                                    <input type="number" id="annualWithRate" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment After Interest</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3000 LE for Example.... </small>
+                                                    <input type="number" id="downPaymentAfterInterest" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Amount</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="installmentAmount" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Intrest Amount</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">2000 LE for Example.... </small>
+                                                    <input type="number" id="intrestAmount" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Meter Price After Interest </label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <label class="control-label">Meter Price After Interest</label>
+                                                    <input type="number" id="meterPriceAfterInterest" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Meter Price With Discount </label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="meterPriceWithDiscount" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment Amount After Interest</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="receivingPaymentAmountAfterInterest" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Remaining Amount</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="remainingAmount" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Total Discout Amount</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="totalDiscoutAmount" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Total Price After Interest</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="totalPriceAfterInterest" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <hr>
