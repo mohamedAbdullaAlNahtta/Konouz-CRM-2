@@ -156,11 +156,34 @@ window.onload = function () {
 <!-- Drop-down list dependent form for activty installment plan years, discount and intrest-->
 <script>
     function myFunctionCalc() {
-        var annualPaymentPcVal = document.getElementById("annualPaymentPc").value;
-        var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
-        document.getElementById("receivingPayment").value = annualPaymentPcVal/unitBasicPriceVal;
-        document.getElementById("receivingPayment").placeholder = annualPaymentPcVal/unitBasicPriceVal;
+        // getting receivingPaymentPcVal
+        if (document.getElementById("receivingPayment").value!== 0) {
+
+            var receivingPaymentVal = document.getElementById("receivingPayment").value;
+            var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
+            document.getElementById("receivingPaymentPc").placeholder = receivingPaymentVal/unitBasicPriceVal;
+            document.getElementById("receivingPaymentPc").value = receivingPaymentVal/unitBasicPriceVal;
+
+            window.alert(1);
+
+        }else if(document.getElementById("receivingPaymentPc").value !== 0){
+            // getting receivingPaymentVal
+            var receivingPaymenPcVal = document.getElementById("receivingPaymentPc").value;
+            var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
+            document.getElementById("receivingPayment").placeholder = receivingPaymenPcVal*unitBasicPriceVal;
+            document.getElementById("receivingPayment").value = receivingPaymenPcVal*unitBasicPriceVal;
+            
+            window.alert(2);
+
+        }
+        
+
+        // var receivingPaymentPcCalc= receivingPaymentVal/unitBasicPriceVal;
+        // receivingPaymentPcCalc = Math.ceil(receivingPaymentPcCalc);
+        // receivingPaymentPcCalc = receivingPaymentPcCalc.toFixed(0);
+        // window.alert(receivingPaymentPcCalc);
 
         
+
     }
 </script>

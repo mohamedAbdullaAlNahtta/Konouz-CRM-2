@@ -538,10 +538,6 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                 </div>
                                             </div>
                                             <hr>
-                                            <div class="form-actions">
-                                                <button style="font-size: 27px;" onclick="myFunctionCalc()" class="btn btn-success"><i class="mdi mdi-calculator"></i> Calculate</button>
-                                            </div>
-                                    
                                         </div>
                                     </div>
                                     <!-- <div class="tab-pane p-20" id="messages4" role="tabpanel" aria-expanded="false">3</div> -->
@@ -553,6 +549,16 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                             <button type="button" onclick="" class="btn btn-inverse">Cancel</button>
                         </div>
                     </form>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6 col-8 align-self-center">
+                        </div>    
+                        <div class="col-md-6 col-8 align-self-center">
+                            <div class="form-actions">
+                                    <button style="font-size: 27px;" onclick="myFunctionCalc()" class="btn btn-success pull-right m-l-10"><i class="mdi mdi-calculator"></i> Calculate</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
