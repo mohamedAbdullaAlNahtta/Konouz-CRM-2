@@ -362,12 +362,18 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                         <div class="row">
                                             <div id="" class="col-md-0.5 col-xs-6">
                                                     <img src="assets/images/payment.JPG" width="50">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Installment Years</label>
+                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">3 years for example </small>
                                                 </div>
+                                            </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Interest %</label>
                                                     <select id="" name="" class="form-control form-control-line" >
-                                                            <option>select seller</option>
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -387,13 +393,6 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                     <label class="control-label">Installment Discount %</label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
                                                     <small class="form-control-feedback">3 mean 3%.... </small>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="control-label">Installment Years</label>
-                                                    <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 years for example </small>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
