@@ -155,9 +155,22 @@ window.onload = function () {
 
 <!-- Drop-down list dependent form for activty installment plan years, discount and intrest-->
 <script>
+
+function getreceivingPaymentPc(){
+
+    var receivingPaymentVal = document.getElementById("receivingPayment").value;
+    var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
+    document.getElementById("receivingPaymentPc").placeholder = receivingPaymentVal/unitBasicPriceVal;
+    document.getElementById("receivingPaymentPc").value = receivingPaymentVal/unitBasicPriceVal;
+
+    
+}
+
+
+
     function myFunctionCalc() {
         // getting receivingPaymentPcVal
-        if (document.getElementById("receivingPayment").value!== 0) {
+        if (document.getElementById("receivingPayment").value!= '0') {
 
             var receivingPaymentVal = document.getElementById("receivingPayment").value;
             var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
@@ -166,7 +179,7 @@ window.onload = function () {
 
             window.alert(1);
 
-        }else if(document.getElementById("receivingPaymentPc").value !== 0){
+        }else if(document.getElementById("receivingPaymentPc").value != '0'){
             // getting receivingPaymentVal
             var receivingPaymenPcVal = document.getElementById("receivingPaymentPc").value;
             var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
