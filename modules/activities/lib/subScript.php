@@ -151,6 +151,14 @@ window.onload = function () {
     };
 };
 
+</script>
 
-
+<!-- Drop-down list dependent form for activty installment plan years, discount and intrest-->
+<script>
+    function myFunction() {
+        var x = document.getElementById("myText").value;
+        document.getElementById("demo").innerHTML = x;
+        document.getElementById("myText").value = "Johnny Bravo";
+        document.getElementById("myText").placeholder = "Johnny Bravo";
+    }
 </script>

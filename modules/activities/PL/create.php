@@ -81,7 +81,7 @@
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Unit Basic Price </label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" placeholder="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" disabled/>
+                                                        <input type="text" id="unitBasicPrice" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" placeholder="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2">
@@ -426,7 +426,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                         </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Other Discount % </label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
@@ -539,8 +539,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             </div>
                                             <hr>
                                             <div class="form-actions">
-                                                <button style="font-size: 27px;" name="submit" class="btn btn-success"><i class="mdi mdi-calculator"></i> Calculate</button>
-                                                <button style="font-size: 27px;" type="button" onclick="location.href='index?module=Activities'" class="btn btn-inverse">Cancel</button>
+                                                <button style="font-size: 27px;" onclick="myFunctionCalc()" class="btn btn-success"><i class="mdi mdi-calculator"></i> Calculate</button>
                                             </div>
                                     
                                         </div>
