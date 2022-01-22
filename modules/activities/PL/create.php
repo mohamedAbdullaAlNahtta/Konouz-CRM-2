@@ -75,7 +75,7 @@
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Basic Meter Price </label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" placeholder="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" disabled/>
+                                                        <input type="text" id="basicMeterPrice" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" placeholder="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 col-xs-3">
@@ -375,7 +375,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Years</label>
-                                                    <select id="installmentYears" name="" class="form-control form-control-line" >
+                                                    <select onchange="getannualWithRate()" id="installmentYears" name="" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -393,7 +393,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Interest %</label>
-                                                    <select id="installmentInterestPc" name="" class="form-control form-control-line" >
+                                                    <select onchange="getannualWithRate()" id="installmentInterestPc" name="" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -411,7 +411,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Discount %</label>
-                                                    <select id="installmentDiscount" name="" class="form-control form-control-line" >
+                                                    <select onchange="getannualWithRate()" id="installmentDiscount" name="" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 

@@ -184,8 +184,8 @@ function getreceivingPayment(){
 function getannualWithRate(){
 
 var installmentYearsVal = document.getElementById("installmentYears").value;
-var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
-document.getElementById("annualWithRate").value = receivingPaymenPcVal*unitBasicPriceVal;
+var basicMeterPriceVal = document.getElementById("basicMeterPrice").value;
+document.getElementById("annualWithRate").value = (basicMeterPriceVal/installmentYearsVal)*5;
 
 
 }
