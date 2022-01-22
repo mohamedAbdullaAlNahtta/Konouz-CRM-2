@@ -126,3 +126,26 @@
     });
 }));
 </script>
+
+<!-- Drop-down list dependent form for activty installment plan years, discount and intrest-->
+<script>
+//     $(document).ready($(function() {
+//     $(".dependent-status-form").hide();
+//     $("#activity-status-option").change(function() {
+//         switch($(this).val()){ 
+//             case "1":
+//                 $(".dependent-status-form").parent().find("#Refunded-broker-form-value").hide();
+//                 $(".dependent-status-form").parent().find("#Filled-Claim-form-value").hide();
+//                 break;
+//             case "2":
+//                 $(".dependent-status-form").parent().find("#Refunded-broker-form-value").show();
+//                 $(".dependent-status-form").parent().find("#Filled-Claim-form-value").show();
+//                 break;
+//             case "3":
+//                 $(".dependent-status-form").parent().find("#Refunded-broker-form-value").show();
+//                 $(".dependent-status-form").parent().find("#Filled-Claim-form-value").show();
+//                 break;
+//         }
+//     });
+// }));
+</script>
