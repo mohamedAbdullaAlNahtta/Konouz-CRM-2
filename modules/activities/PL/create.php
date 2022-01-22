@@ -372,7 +372,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $installment_plans_data_Count ; $i++) { 
-    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data_PC=$installment_plans_data["Years"][$i]." </option>";
+    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data["Years"][$i]." </option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
@@ -408,7 +408,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $installment_plans_data_Count ; $i++) { 
-    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data_PC=$installment_plans_data["discount"][$i] *(100)." % </option>";
+    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data_discount_PC=$installment_plans_data["discount"][$i] *(100)." % </option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
