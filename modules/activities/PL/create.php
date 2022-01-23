@@ -439,19 +439,19 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual Payment </label>
-                                                    <input type="number" id="annualPayment" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="annualPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment</label>
-                                                    <input type="number" id="downPayment" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="downPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment</label>
-                                                    <input type="number" onchange="getreceivingPaymentPc()" id="receivingPayment" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" onchange="getreceivingPaymentPc()" id="receivingPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                         </div> 
