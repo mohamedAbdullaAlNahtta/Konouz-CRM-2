@@ -1,3 +1,13 @@
+Unit BAsic Price with usfuract Basic Price with discount (tot basic price)
+
+Down_Payment_Amount_Basic 1
+
+
+
+annual With Rate 1
+interest amount 2
+
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -53,8 +63,7 @@ window.onload = function() {
   document.getElementById("chapter").selectedIndex;
   document.getElementById("topic").selectedIndex =
   document.getElementById("chapter").selectedIndex;
-  }
-  
+  } 
   
 }
 </script>
