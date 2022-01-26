@@ -131,6 +131,7 @@
 <script>
 
 window.onload = function () {
+
     var installmentYearsSel = document.getElementById("installmentYears");
     var installmentInterestPcSel  = document.getElementById("installmentInterestPc");
     var installmentDiscountSel = document.getElementById("installmentDiscount");
@@ -151,48 +152,23 @@ window.onload = function () {
     };
 };
 
-</script>
+function myFunctionCalculateAll(){
+        var unitAreaVal = document.getElementById("unitArea").value;
+        var unitBasicMeterPriceVal = document.getElementById("unitBasicMeterPrice").value;
+        var unitUsufructAreaVal = document.getElementById("unitUsufructArea").value;
+        var unitUsufructMeterPriceVal = document.getElementById("unitUsufructMeterPrice").value;
+        //window.alert(unitAreaVal+'....'+unitBasicMeterPriceVal+'....'+unitUsufructAreaVal+'....'+unitUsufructMeterPriceVal);
 
-<!-- Drop-down list dependent form for activty installment plan years, discount and intrest-->
-<script>
-// var receivingPaymentPcCalc= receivingPaymentVal/unitBasicPriceVal;
-// receivingPaymentPcCalc = Math.ceil(receivingPaymentPcCalc);
-// receivingPaymentPcCalc = receivingPaymentPcCalc.toFixed(0);
-// window.alert(receivingPaymentPcCalc);
+        var unitOtherDiscountVal = document.getElementById("unitOtherDiscount").value;
+        var totalUnitBasicPriceVal = ((unitBasicMeterPriceVal*(1-unitOtherDiscountVal))*unitAreaVal)+(unitUsufructAreaVal*unitUsufructMeterPriceVal);
+        document.getElementById("totalUnitBasicPrice").innerHTML = totalUnitBasicPriceVal;
+        window.alert(totalUnitBasicPriceVal);
 
-
-//// getting receivingPaymentPcVal
-// function getreceivingPaymentPc(){
-
-//     var receivingPaymentVal = document.getElementById("receivingPayment").value;
-//     var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
-//     document.getElementById("receivingPaymentPc").value = receivingPaymentVal/unitBasicPriceVal;
-
-// }
-
-// // getting receivingPaymentVal
-// function getreceivingPayment(){
-
-//     var receivingPaymenPcVal = document.getElementById("receivingPaymentPc").value;
-//     var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
-//     document.getElementById("receivingPayment").value = receivingPaymenPcVal*unitBasicPriceVal;
-
-
-// }
-
-// // getting annVal
-// function getannualWithRate(){
-
-// var installmentYearsVal = document.getElementById("installmentYears").value;
-// var basicMeterPriceVal = document.getElementById("basicMeterPrice").value;
-// document.getElementById("annualWithRate").value = (basicMeterPriceVal/installmentYearsVal)*5;
-
-
-// }
-    
-        
-
+    }
     
 
-        
 </script>
+
+
+
+
