@@ -447,18 +447,21 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                 <div class="form-group">
                                                     <label class="control-label">Annual Paymen %</label>
                                                     <input type="number" id="annualPaymentPc" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">0.03 mean 3%.... </small>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment%</label>
                                                     <input type="number" id="downPaymentPc" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">0.03 mean 3%.... </small>
                                                 </div>
                                             </div> 
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment %</label>
                                                     <input type="number" id="receivingPaymentPc" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <small class="form-control-feedback">0.03 mean 3%.... </small>
                                                 </div>
                                             </div>
                                         </div> 

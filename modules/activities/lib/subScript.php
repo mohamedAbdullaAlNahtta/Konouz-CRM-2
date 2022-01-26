@@ -162,7 +162,14 @@ function myFunctionCalculateAll(){
         var unitOtherDiscountVal = document.getElementById("unitOtherDiscount").value;
         var totalUnitBasicPriceVal = ((unitBasicMeterPriceVal*(1-unitOtherDiscountVal))*unitAreaVal)+(unitUsufructAreaVal*unitUsufructMeterPriceVal);
         document.getElementById("totalUnitBasicPrice").innerHTML = totalUnitBasicPriceVal;
-        window.alert(totalUnitBasicPriceVal);
+        // window.alert(totalUnitBasicPriceVal);
+
+        var annualPaymentPcVal = document.getElementById("annualPaymentPc").value;
+        var downPaymentPcVal = document.getElementById("downPaymentPc").value;
+        var receivingPaymentPcVal = document.getElementById("receivingPaymentPc").value;
+
+        var downPaymentAmountBasicVal = totalUnitBasicPriceVal*downPaymentPcVal;
+        var receivingPaymentAmountBasicVal = totalUnitBasicPriceVal*receivingPaymentPcVal;
 
     }
     
