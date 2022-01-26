@@ -372,7 +372,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                             <div id="" class="col-md-0.5 col-xs-6">
                                                     <img src="assets/images/payment.JPG" width="50">
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Years</label>
                                                     <select onchange="getannualWithRate()" id="installmentYears" name="" class="form-control form-control-line" >
@@ -390,7 +390,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                         </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Interest %</label>
                                                     <select onchange="getannualWithRate()" id="installmentInterestPc" name="" class="form-control form-control-line" >
@@ -408,9 +408,9 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                         </select>
                                                 </div>
                                             </div>   
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label class="control-label">Installment Discount %</label>
+                                                    <label class="control-label">Installment Discount</label>
                                                     <select onchange="getannualWithRate()" id="installmentDiscount" name="" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
@@ -430,31 +430,17 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                 <div class="form-group">
                                                     <label class="control-label">Other Discount % </label>
                                                     <input type="number" id="ProjectName" name="ProjectName" class="form-control" placeholder="" required/>
-                                                    <small class="form-control-feedback">3 mean 3%.... </small>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <hr>
-                                        <div class="row">     
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label class="control-label">Annual Payment </label>
-                                                    <input type="number" id="annualPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label class="control-label">Down Payment</label>
-                                                    <input type="number" id="downPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <small class="form-control-feedback">0.03 mean 3%.... </small>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Receiving Payment</label>
-                                                    <input type="number" onchange="getreceivingPaymentPc()" id="receivingPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <label class="control-label">Total Discout Amount</label>
+                                                    <input type="number" id="totalDiscoutAmount" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                         </div> 
+                                        <hr>
                                         <div class="row">
                                             <div class="col-md-2">
                                                 <div class="form-group">
@@ -475,18 +461,58 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                 </div>
                                             </div>
                                         </div> 
-                                        <hr>
-                                        <div class="row">       
-                                            <div class="col-md-3">
+                                        <div class="row">     
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label class="control-label">Annual With Rate</label>
-                                                    <input type="number" id="annualWithRate" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <label class="control-label">Annual Payment </label>
+                                                    <input type="number" id="annualPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="control-label">Down Payment</label>
+                                                    <input type="number" id="downPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment After Interest</label>
-                                                    <input type="number" id="downPaymentAfterInterest" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="downPaymentAfterInterest" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="control-label">Receiving Payment</label>
+                                                    <input type="number" onchange="getreceivingPaymentPc()" id="receivingPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Receiving Payment After Interest</label>
+                                                    <input type="number" id="receivingPaymentAmountAfterInterest" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Meter Price After Interest</label>
+                                                    <input type="number" id="meterPriceAfterInterest" name="ProjectName" class="form-control" placeholder="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Meter Price With Discount </label>
+                                                    <input type="number" id="meterPriceWithDiscount" name="ProjectName" class="form-control" placeholder="" required/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">       
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Annual With Rate</label>
+                                                    <input type="number" id="annualWithRate" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -503,32 +529,8 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Meter Price After Interest</label>
-                                                    <input type="number" id="meterPriceAfterInterest" name="ProjectName" class="form-control" placeholder="" required/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="control-label">Meter Price With Discount </label>
-                                                    <input type="number" id="meterPriceWithDiscount" name="ProjectName" class="form-control" placeholder="" required/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="control-label">Receiving Payment Amount After Interest</label>
-                                                    <input type="number" id="receivingPaymentAmountAfterInterest" name="ProjectName" class="form-control" placeholder="" required/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
                                                     <label class="control-label">Remaining Amount</label>
                                                     <input type="number" id="remainingAmount" name="ProjectName" class="form-control" placeholder="" required/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="control-label">Total Discout Amount</label>
-                                                    <input type="number" id="totalDiscoutAmount" name="ProjectName" class="form-control" placeholder="" required/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">

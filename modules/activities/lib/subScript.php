@@ -161,34 +161,34 @@ window.onload = function () {
 // window.alert(receivingPaymentPcCalc);
 
 
-// getting receivingPaymentPcVal
-function getreceivingPaymentPc(){
+//// getting receivingPaymentPcVal
+// function getreceivingPaymentPc(){
 
-    var receivingPaymentVal = document.getElementById("receivingPayment").value;
-    var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
-    document.getElementById("receivingPaymentPc").value = receivingPaymentVal/unitBasicPriceVal;
+//     var receivingPaymentVal = document.getElementById("receivingPayment").value;
+//     var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
+//     document.getElementById("receivingPaymentPc").value = receivingPaymentVal/unitBasicPriceVal;
 
-}
+// }
 
-// getting receivingPaymentVal
-function getreceivingPayment(){
+// // getting receivingPaymentVal
+// function getreceivingPayment(){
 
-    var receivingPaymenPcVal = document.getElementById("receivingPaymentPc").value;
-    var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
-    document.getElementById("receivingPayment").value = receivingPaymenPcVal*unitBasicPriceVal;
-
-
-}
-
-// getting annVal
-function getannualWithRate(){
-
-var installmentYearsVal = document.getElementById("installmentYears").value;
-var basicMeterPriceVal = document.getElementById("basicMeterPrice").value;
-document.getElementById("annualWithRate").value = (basicMeterPriceVal/installmentYearsVal)*5;
+//     var receivingPaymenPcVal = document.getElementById("receivingPaymentPc").value;
+//     var unitBasicPriceVal = document.getElementById("unitBasicPrice").value;
+//     document.getElementById("receivingPayment").value = receivingPaymenPcVal*unitBasicPriceVal;
 
 
-}
+// }
+
+// // getting annVal
+// function getannualWithRate(){
+
+// var installmentYearsVal = document.getElementById("installmentYears").value;
+// var basicMeterPriceVal = document.getElementById("basicMeterPrice").value;
+// document.getElementById("annualWithRate").value = (basicMeterPriceVal/installmentYearsVal)*5;
+
+
+// }
     
         
 
