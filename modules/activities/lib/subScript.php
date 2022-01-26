@@ -171,8 +171,8 @@ function myFunctionCalculateAll(){
 
         var downPaymentAmountBasicVal = totalUnitBasicPriceVal*downPaymentPcVal;
         var receivingPaymentAmountBasicVal = totalUnitBasicPriceVal*receivingPaymentPcVal;
-        document.getElementById("downPayment").value = downPaymentAmountBasicVal;
-        document.getElementById("receivingPayment").value = receivingPaymentAmountBasicVal;
+        document.getElementById("downPayment").innerHTML = downPaymentAmountBasicVal;
+        document.getElementById("receivingPayment").innerHTML = receivingPaymentAmountBasicVal;
 
         var remainingAmountVal = totalUnitBasicPriceVal-(downPaymentAmountBasicVal+receivingPaymentAmountBasicVal);
         document.getElementById("remainingAmount").value = remainingAmountVal;
@@ -191,6 +191,25 @@ function myFunctionCalculateAll(){
 
         var totalPriceAfterInterestOrDiscountVal = downPaymentAmountBasicVal+receivingPaymentAmountBasicVal+remainingAmountVal+intrestAmountVal-(installmentDiscountVal*remainingAmountVal);
         document.getElementById("totalPriceAfterInterestOrDiscount").value = totalPriceAfterInterestOrDiscountVal;
+
+
+        var annualPaymentPcVal = document.getElementById("annualPaymentPc").value;
+        var annualPaymentAmountVal = totalPriceAfterInterestOrDiscountVal*annualPaymentPcVal;
+        document.getElementById("annualPaymentAmount").value = annualPaymentAmountVal;
+
+        var downPaymentAmountAfterInterestVal = totalPriceAfterInterestOrDiscountVal*downPaymentPcVal;
+        var receivingPaymentAmountAfterInterestVal = totalPriceAfterInterestOrDiscountVal*receivingPaymentPcVal;
+
+        document.getElementById("downPaymentAmountAfterInterest").value = downPaymentAmountAfterInterestVal;
+        document.getElementById("receivingPaymentAmountAfterInterest").value = receivingPaymentAmountAfterInterestVal;
+
+
+        var totalUnitDiscoutAmountVal = totalPriceAfterInterestOrDiscountVal*(parseFloat(unitOtherDiscountVal)+parseFloat(installmentDiscountVal));
+        document.getElementById("totalUnitDiscoutAmount").value = totalUnitDiscoutAmountVal;
+
+
+        var installmentAmountVal = (totalUnitDiscoutAmountVal-(downPaymentAmountBasicVal+receivingPaymentPcVal)-(annualPaymentPcVal*installmentYearsVal))/(installmentYearsVal*4)
+        document.getElementById("installmentAmount").value= installmentAmountVal;
 
     }
     

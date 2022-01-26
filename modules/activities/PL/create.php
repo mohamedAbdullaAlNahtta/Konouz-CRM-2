@@ -445,7 +445,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                         <div class="row">
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label class="control-label">Annual Paymen %</label>
+                                                    <label class="control-label">Annual Payment %</label>
                                                     <input type="number" id="annualPaymentPc" name="ProjectName" class="form-control" placeholder="" required/>
                                                     <small class="form-control-feedback">0.03 mean 3%.... </small>
                                                 </div>
@@ -464,30 +464,31 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                     <small class="form-control-feedback">0.03 mean 3%.... </small>
                                                 </div>
                                             </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="control-label">Down Payment Basci</label>
+                                                    <small id="downPayment"></small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="control-label">Receiving Payment Basic</label>
+                                                    <small id="receivingPayment"></small>
+                                                </div>
+                                            </div>
                                         </div> 
                                         <div class="row">     
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual Payment </label>
-                                                    <input type="number" id="annualPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="annualPaymentAmount" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label class="control-label">Down Payment</label>
-                                                    <input type="number" id="downPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
-                                                </div>
-                                            </div>
+
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment After Interest</label>
-                                                    <input type="number" id="downPaymentAfterInterest" name="ProjectName" class="form-control" placeholder="" disabled/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label class="control-label">Receiving Payment</label>
-                                                    <input type="number"  id="receivingPayment" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="downPaymentAmountAfterInterest" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
