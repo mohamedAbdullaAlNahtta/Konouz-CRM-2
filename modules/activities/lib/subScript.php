@@ -165,11 +165,32 @@ function myFunctionCalculateAll(){
         // window.alert(totalUnitBasicPriceVal);
 
         var annualPaymentPcVal = document.getElementById("annualPaymentPc").value;
+
         var downPaymentPcVal = document.getElementById("downPaymentPc").value;
         var receivingPaymentPcVal = document.getElementById("receivingPaymentPc").value;
 
         var downPaymentAmountBasicVal = totalUnitBasicPriceVal*downPaymentPcVal;
         var receivingPaymentAmountBasicVal = totalUnitBasicPriceVal*receivingPaymentPcVal;
+        document.getElementById("downPayment").value = downPaymentAmountBasicVal;
+        document.getElementById("receivingPayment").value = receivingPaymentAmountBasicVal;
+
+        var remainingAmountVal = totalUnitBasicPriceVal-(downPaymentAmountBasicVal+receivingPaymentAmountBasicVal);
+        document.getElementById("remainingAmount").value = remainingAmountVal;
+
+        var installmentYearsVal = document.getElementById("installmentYears").value;
+
+        var annualWithRateVal = (remainingAmountVal/installmentYearsVal)*5;
+        document.getElementById("annualWithRate").value=annualWithRateVal;
+
+        var installmentInterestPcVal = document.getElementById("installmentInterestPc").value;
+
+        var intrestAmountVal = annualWithRateVal*installmentInterestPcVal;
+        document.getElementById("intrestAmount").value = intrestAmountVal;
+
+        var installmentDiscountVal = document.getElementById("installmentDiscount").value;
+
+        var totalPriceAfterInterestOrDiscountVal = downPaymentAmountBasicVal+receivingPaymentAmountBasicVal+remainingAmountVal+intrestAmountVal-(installmentDiscountVal*remainingAmountVal);
+        document.getElementById("totalPriceAfterInterestOrDiscount").value = totalPriceAfterInterestOrDiscountVal;
 
     }
     

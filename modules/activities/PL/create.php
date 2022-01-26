@@ -372,7 +372,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Years</label>
-                                                    <select onchange="getannualWithRate()" id="installmentYears" name="" class="form-control form-control-line" >
+                                                    <select  id="installmentYears" name="" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -390,13 +390,13 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Interest %</label>
-                                                    <select onchange="getannualWithRate()" id="installmentInterestPc" name="" class="form-control form-control-line" >
+                                                    <select  id="installmentInterestPc" name="" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $installment_plans_data_Count ; $i++) { 
-    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data_PC=$installment_plans_data["interest"][$i] *(100)." % </option>";
+    echo "<option value='".$installment_plans_data["interest"][$i]."' >".$installment_plans_data_PC=$installment_plans_data["interest"][$i] *(100)." % </option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
@@ -408,13 +408,13 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Disc</label>
-                                                    <select onchange="getannualWithRate()" id="installmentDiscount" name="" class="form-control form-control-line" >
+                                                    <select  id="installmentDiscount" name="" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $installment_plans_data_Count ; $i++) { 
-    echo "<option value='".$installment_plans_data["ID"][$i]."' >".$installment_plans_data_discount_PC=$installment_plans_data["discount"][$i] *(100)." % </option>";
+    echo "<option value='".$installment_plans_data["discount"][$i]."' >".$installment_plans_data_discount_PC=$installment_plans_data["discount"][$i] *(100)." % </option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
@@ -541,7 +541,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">Total Price After Interest or Discount</label>
-                                                    <input type="number" id="totalPriceAfterInterest" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="totalPriceAfterInterestOrDiscount" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <hr>
