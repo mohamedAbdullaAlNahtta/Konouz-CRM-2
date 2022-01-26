@@ -1,0 +1,69 @@
+1- total unit basic price = ((Basic_Meter_Price[map]*(1-Other_Discount_PCT[input]))*Area)+(Usfurct_Meter_Price*Usfurct_Area)
+
+2- Down_Payment_Amount_Basic = total unit basic price*Down_Payment_PCT_after_Interst[input]
+
+3- Receiving_Payment_Amount_Basic= total unit basic price**Receiving_Payment_PCT
+
+4- Remaining_Amount = total unit basic price-(Receiving_Payment_Amount+Down_Payment_Amount_Basic)
+
+5- Annual_With_Rate = (Remaining_Amount/Installment_Years[input])*5
+
+6- Interest_Amount= Annual_With_Rate*Interest_PCT
+
+7- Total_Price_After_Interest_or_discount = Down_Payment_Amount_Basic+Receiving_Payment_Amount+Remaining_Amount+Interest_Amount-(Installment_Discount_PCT[instalment table]
+*Remaining_Amount)
+
+8- Annual_Payment_Amount = Total_Price_After_Interest_or_discount*Annual_Payment_PCT[input]
+
+9- Down_Payment_Amount_After_Interest = Total_Price_After_Interest_or_discount*Down_Payment_PCT_after_Interst [input]
+
+10- Receiving_Payment_Amount_After_Interest = Total_Price_After_Interest_or_discount*Receiving_Payment_PCT
+
+11- Total_Discout_Amount = (Other_Discount_PCT+Installment_Discount_PCT[instalment table])*Total_Price_After_Interest_or_discount
+
+12- Installment_Amount = (Total_Discout_Amount-(Down_Payment_Amount_Basic+Receiving_Payment_Amount)-(Annual_Payment_PCT*Installment_Years))/(Installment_Years*4)
+
+13- Meter_Price_After_Interest = Total_Price_After_Interest_or_discount/Area
+
+
+
+
+
+
+
+
+
+INSERT INTO `activites` (`Activity_ID`, `Unit_ID`, `CST_NID`, `Seller_Account`,
+ `Seller_Assistant_ID`, `Direct_Manager_ID`, `Section_Head_ID`, `Sale_Type_ID`, 
+`Broker_ID`, `Signed_Contract`, `Submitted_Cheques`, `Filled_Claim`, `Requested_Garage`,
+ `Garage_Price`, `Total_Price_After_Interest`, `Refunded`, `Creation_Date`,
+ `Last_Update_on`, `created_by`, `Creator_Manager`, `Comment`, `Maintenance_Fees_PCT`,
+ `Installment_Years`, `Down_Payment_PCT`, `Receiving_Payment_PCT`, `Remaining_Amount`,
+ `Down_Payment_Amount`, `Receiving_Payment_Amount`, `Annual_Payment_PCT`, `Annual_Payment_Amount`,
+ `Annual_With_Rate`, `Installment_Discount_PCT`, `Other_Discount_PCT`, `Interest_PCT`, `Interest_Amount`,
+ `Down_Payment_Amount_After_Interest`, `Receiving_Payment_Amount_After_Interest`, `Installment_Amount`,
+ `Meter_Price_After_Interest`, `Annual_Pamyment`, `Basic_Meter_Price`, `Meter_Price_With_Discount`,
+ `Usfurct_Area`, `Usfurct_Meter_Price`, `Unit_Basic_Price`, `Main_Garage_ID`, `Ceded_Garage_ID`, 
+`Status_ID`, `Discount_Amount`, `Payment_Type_ID`, `Manager_Assistant_ID`) 
+VALUES (NULL, '1111-1111-35', '12345678905436', 'pma@localhost', '66', '', '', '2', '3', '1', '1', '2',
+ '1', '0', '', NULL, current_timestamp(), current_timestamp(), '', '', NULL, '', NULL, '0.00', '0.00', '0', '0', 
+'0', '0.00', '0', '0', '0.00', '0.00', '0.00', '0.00', '0', '0', '0', NULL, NULL, '5', '', '', '2', 
+'', NULL, NULL, NULL, NULL, '2', NULL), (NULL, '', '', '', NULL, '', '', '', NULL, '', '', '', '', '0',
+ '', NULL, current_timestamp(), current_timestamp(), '', '', NULL, '', NULL, '0.00', '0.00', '0', '0',
+ '0', '0.00', '0', '0', '0.00', '0.00', '0.00', '0.00', '0', '0', '0', NULL, NULL, '', '', '', '', 
+'', NULL, NULL, NULL, NULL, '2', NULL)
+
+
+INSERT INTO `activites` (`Activity_ID`, `Unit_ID`, `CST_NID`, `Seller_Account`, `Seller_Assistant_ID`, `Direct_Manager_ID`,
+ `Section_Head_ID`, `Sale_Type_ID`, `Broker_ID`, `Signed_Contract`, `Submitted_Cheques`, `Filled_Claim`, `Requested_Garage`,
+ `Garage_Price`, `Total_Price_After_Interest`, `Refunded`, `Creation_Date`, `Last_Update_on`, `created_by`,
+ `Creator_Manager`, `Comment`, `Maintenance_Fees_PCT`, `Installment_Years`, `Down_Payment_PCT`, `Receiving_Payment_PCT`,
+ `Remaining_Amount`, `Down_Payment_Amount`, `Receiving_Payment_Amount`, `Annual_Payment_PCT`, `Annual_Payment_Amount`,
+ `Annual_With_Rate`, `Installment_Discount_PCT`, `Other_Discount_PCT`, `Interest_PCT`, `Interest_Amount`,
+ `Down_Payment_Amount_After_Interest`, `Receiving_Payment_Amount_After_Interest`, `Installment_Amount`,
+ `Meter_Price_After_Interest`, `Annual_Pamyment`, `Basic_Meter_Price`, `Meter_Price_With_Discount`, `Usfurct_Area`,
+ `Usfurct_Meter_Price`, `Unit_Basic_Price`, `Main_Garage_ID`, `Ceded_Garage_ID`, `Status_ID`, `Discount_Amount`, 
+`Payment_Type_ID`, `Manager_Assistant_ID`) VALUES (NULL, '1-1-55', '12345678907654', '', NULL, '', '', '1', NULL, '1',
+ '1', '1', '1', '0', '', NULL, current_timestamp(), current_timestamp(), '', '', NULL, '', NULL, '0.00', '0.00', '0',
+ '0', '0', '0.00', '0', '0', '0.00', '0.00', '0.00', '0.00', '0', '0', '0', NULL, NULL, '4', '', '10001', NULL, '', NULL,
+ NULL, '1', NULL, '2', NULL);
