@@ -163,6 +163,8 @@ function myFunctionCalculateAll(){
         var totalUnitBasicPriceVal = ((unitBasicMeterPriceVal*(1-unitOtherDiscountVal))*unitAreaVal)+(unitUsufructAreaVal*unitUsufructMeterPriceVal);
         document.getElementById("totalUnitBasicPrice").innerHTML = totalUnitBasicPriceVal;
         // window.alert(totalUnitBasicPriceVal);
+        var meterPriceWithDiscountVal =unitBasicMeterPriceVal*(1-unitOtherDiscountVal);
+        document.getElementById("meterPriceWithDiscount").value = meterPriceWithDiscountVal;
 
         var annualPaymentPcVal = document.getElementById("annualPaymentPc").value;
 
@@ -208,11 +210,12 @@ function myFunctionCalculateAll(){
         document.getElementById("totalUnitDiscoutAmount").value = totalUnitDiscoutAmountVal;
 
 
-        var installmentAmountVal = (totalUnitDiscoutAmountVal-(parseFloat(downPaymentAmountBasicVal)+parseFloat(receivingPaymentPcVal))-(annualPaymentPcVal*installmentYearsVal))/(installmentYearsVal*4)
+        var installmentAmountVal = (totalUnitDiscoutAmountVal-(parseFloat(downPaymentAmountBasicVal)+parseFloat(receivingPaymentPcVal))-(parseFloat(annualPaymentPcVal)*parseFloat(installmentYearsVal)))/(parseFloat(installmentYearsVal)*4)
         document.getElementById("installmentAmount").value= installmentAmountVal;
 
         var meterPriceAfterInterestVal = totalPriceAfterInterestOrDiscountVal/ unitAreaVal;
         document.getElementById("meterPriceAfterInterest").value = meterPriceAfterInterestVal;
+        
 
     }
     
