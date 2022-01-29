@@ -1,4 +1,4 @@
-1- total unit basic price = ((Basic_Meter_Price[map]*(1-Other_Discount_PCT[input]))*Area)+(Usfurct_Meter_Price*Usfurct_Area)
+R##########1- total unit basic price =((Basic_Meter_Price[map]*(1-Other_Discount_PCT[input]))*Area)+(Usfurct_Meter_Price*Usfurct_Area)
 
 2- Down_Payment_Amount_Basic = total unit basic price*Down_Payment_PCT_after_Interst[input]
 
@@ -19,11 +19,16 @@
 
 10- Receiving_Payment_Amount_After_Interest = Total_Price_After_Interest_or_discount*Receiving_Payment_PCT
 
-11- Total_Discout_Amount = (Other_Discount_PCT+Installment_Discount_PCT[instalment table])*Total_Price_After_Interest_or_discount
+R######11-Installment_Discout_Amount =((Basic_Meter_Price[map]*Area)+(Usfurct_Meter_Price*Usfurct_Area) -
+			((Basic_Meter_Price[map]*(1-Other_Discount_PCT[input]))*Area)+(Usfurct_Meter_Price*Usfurct_Area)
 
-12- Installment_Amount = (Total_Discout_Amount-(Down_Payment_Amount_Basic+Receiving_Payment_Amount)-(Annual_Payment_PCT*Installment_Years))/(Installment_Years*4)
+***12- Installment_Amount =(Total_Price_After_Interest_or_discount -(Down_Payment_Amount_After_Interest + Receiving_Payment_Amount_After_Interest)-(Annual_Payment_Amount* Installment_Years[input]))
+/ (Installment_Years[input]*4)
+
 
 13- Meter_Price_After_Interest = Total_Price_After_Interest_or_discount/Area
+
+******14- Mainitanance_amount = total unit basic price*8%
 
 
 
