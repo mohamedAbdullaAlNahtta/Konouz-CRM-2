@@ -164,6 +164,7 @@ function myFunctionCalculateAll(){
         document.getElementById("totalUnitBasicPrice").innerHTML = totalUnitBasicPriceVal;
         // window.alert(totalUnitBasicPriceVal);
         var meterPriceWithDiscountVal =unitBasicMeterPriceVal*(1-unitOtherDiscountVal);
+        meterPriceWithDiscountVal = Math.ceil(meterPriceWithDiscountVal); 
         document.getElementById("meterPriceWithDiscount").value = meterPriceWithDiscountVal;
 
         var annualPaymentPcVal = document.getElementById("annualPaymentPc").value;
@@ -177,6 +178,7 @@ function myFunctionCalculateAll(){
         document.getElementById("receivingPayment").innerHTML = receivingPaymentAmountBasicVal;
 
         var remainingAmountVal = totalUnitBasicPriceVal-(downPaymentAmountBasicVal+receivingPaymentAmountBasicVal);
+        remainingAmountVal = Math.ceil(remainingAmountVal);
         document.getElementById("remainingAmount").value = remainingAmountVal;
 
         var installmentYearsVal = document.getElementById("installmentYears").value;
@@ -186,27 +188,36 @@ function myFunctionCalculateAll(){
 
         var installmentInterestPcVal = document.getElementById("installmentInterestPc").value;
 
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
         var intrestAmountVal = annualWithRateVal*installmentInterestPcVal;
         document.getElementById("intrestAmount").value = intrestAmountVal;
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
 
         var installmentDiscountVal = document.getElementById("installmentDiscount").value;
 
         var totalPriceAfterInterestOrDiscountVal = downPaymentAmountBasicVal+receivingPaymentAmountBasicVal+remainingAmountVal+intrestAmountVal-(installmentDiscountVal*remainingAmountVal);
+        totalPriceAfterInterestOrDiscountVal = Math.ceil(totalPriceAfterInterestOrDiscountVal);
         document.getElementById("totalPriceAfterInterestOrDiscount").value = totalPriceAfterInterestOrDiscountVal;
 
 
         var annualPaymentPcVal = document.getElementById("annualPaymentPc").value;
         var annualPaymentAmountVal = totalPriceAfterInterestOrDiscountVal*annualPaymentPcVal;
+        annualPaymentAmountVal = Math.ceil(annualPaymentAmountVal);
         document.getElementById("annualPaymentAmount").value = annualPaymentAmountVal;
 
         var downPaymentAmountAfterInterestVal = totalPriceAfterInterestOrDiscountVal*downPaymentPcVal;
+        downPaymentAmountAfterInterestVal = Math.ceil(downPaymentAmountAfterInterestVal);
         var receivingPaymentAmountAfterInterestVal = totalPriceAfterInterestOrDiscountVal*receivingPaymentPcVal;
+        receivingPaymentAmountAfterInterestVal = Math.ceil(receivingPaymentAmountAfterInterestVal); 
 
         document.getElementById("downPaymentAmountAfterInterest").value = downPaymentAmountAfterInterestVal;
         document.getElementById("receivingPaymentAmountAfterInterest").value = receivingPaymentAmountAfterInterestVal;
 
 
         var totalUnitDiscoutAmountVal = totalPriceAfterInterestOrDiscountVal*(parseFloat(unitOtherDiscountVal)+parseFloat(installmentDiscountVal));
+        totalUnitDiscoutAmountVal = Math.ceil(totalUnitDiscoutAmountVal);
         document.getElementById("totalUnitDiscoutAmount").value = totalUnitDiscoutAmountVal;
 
 
