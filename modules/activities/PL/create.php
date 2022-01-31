@@ -73,8 +73,29 @@ if (isset($_POST['submit'])) {
     $Meter_Price_With_Discount_new = $database->escape_string($Meter_Price_With_Discount_new);
     $Payment_Type_ID_new = $database->escape_string($Payment_Type_ID_new);
 
-    $sql= "INSERT INTO `developers` (`ID`, `Name`, `Rep`, `Mobile1`, `Insertion Date`, `Added By`, `Mobile2`) VALUES (NULL, '".$DeveloperName."', '".$DeveloperRepresentative."', '".$mobile1."', current_timestamp(), '', '".$mobile2."')";
-    $developer_dml= $database->query($sql); 
+    $sql= "INSERT INTO `activites` (`Activity_ID`, `Unit_ID`, `CST_NID`, `Seller_Account`,
+    `Seller_Assistant_ID`, `Direct_Manager_ID`, `Section_Head_ID`, `Sale_Type_ID`, 
+   `Broker_ID`, `Signed_Contract`, `Submitted_Cheques`, `Filled_Claim`, `Requested_Garage`,
+    `Garage_Price`, `Total_Price_After_Interest`, `Refunded`, `Creation_Date`,
+    `Last_Update_on`, `created_by`, `Creator_Manager`, `Comment`, `Maintenance_Fees_PCT`,
+    `Installment_Years`, `Down_Payment_PCT`, `Receiving_Payment_PCT`, `Remaining_Amount`,
+    `Down_Payment_Amount`, `Receiving_Payment_Amount`, `Annual_Payment_PCT`, `Annual_Payment_Amount`,
+    `Annual_With_Rate`, `Installment_Discount_PCT`, `Other_Discount_PCT`, `Interest_PCT`, `Interest_Amount`,
+    `Down_Payment_Amount_After_Interest`, `Receiving_Payment_Amount_After_Interest`, `Installment_Amount`,
+    `Meter_Price_After_Interest`, `Basic_Meter_Price`, `Meter_Price_With_Discount`,
+    `Usfurct_Area`, `Usfurct_Meter_Price`, `Unit_Basic_Price`, `Main_Garage_ID`, `Ceded_Garage_ID`, 
+   `Status_ID`, `Discount_Amount`, `Payment_Type_ID`, `Manager_Assistant_ID`) 
+   
+   VALUES (NULL, '".$unit_id_new."', '".$CST_NID_new."', '".$Seller_Account_new."', '".$Seller_Assistant_ID_new."', NULL, NULL,
+   '".$Sale_Type_ID_new."', '".$Broker_ID_new."', '".$Signed_Contract_new."', '".$Submitted_Cheques_new."', '".$Filled_Claim_new."',
+   '".$Requested_Garage_new."', '".$Garage_Price_new."', '".$Total_Price_After_Interest_new."', '".$Refunded_new."', NULL, NULL, NULL, NULL,
+   '".$Comment_new."', NULL, '".$Installment_Years_new."', '".$Down_Payment_PCT_new."', '".$Receiving_Payment_PCT_new."',
+   '".$Remaining_Amount_new."', '".$Down_Payment_Amount_new."', '".$Receiving_Payment_Amount_new."', '".$Annual_Payment_PCT_new."',
+   '".$Annual_Payment_Amount_new."', '".$Annual_With_Rate_new."', '".$Installment_Discount_PCT_new."', '".$Other_Discount_PCT_new."',
+   '".$Interest_PCT_new."', '".$Interest_Amount_new."', '".$Down_Payment_Amount_new."', '".$Receiving_Payment_Amount_new."',
+   '".$Installment_Amount_new."', '".$Meter_Price_After_Interest_new."', NULL, '".$Meter_Price_With_Discount_new."',
+   NULL, NULL, NULL, NULL, NULL, '".$Status_ID_new."', NULL, '".$Payment_Type_ID_new."', NULL )";
+    $activity_dml= $database->query($sql); 
 
 } 
 ///////////////////////////////////////////////////////////////
@@ -92,8 +113,8 @@ if (isset($_POST['submit'])) {
         <div class="col-md-6 col-8 align-self-center">
             <h3 class="text-themecolor m-b-0 m-t-0">Inventory</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Activities</a></li>
-                <li class="breadcrumb-item active">New Activity</li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Activities <?php var_dump($sql); ?></a></li>
+                <li class="breadcrumb-item active">New Activity <?php var_dump($activity_dml); ?></li>
                 <li class="breadcrumb-item active">
                     <?php
                             // echo "unit_id_new = ".$unit_id_new."<br>"
@@ -267,7 +288,7 @@ for ($i=0; $i < $requested_garage_type_data_Count ; $i++) {
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $client_data_Count ; $i++) { 
-    echo "<option value='".$requested_client_data["ID"][$i]."' >".$requested_client_data["National_ID"][$i]."</option>";
+    echo "<option value='".$requested_client_data["National_ID"][$i]."' >".$requested_client_data["National_ID"][$i]."</option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
@@ -286,7 +307,7 @@ for ($i=0; $i < $client_data_Count ; $i++) {
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $client_data_Count ; $i++) { 
-    echo "<option value='".$requested_client_data["ID"][$i]."' >".$requested_client_data["Full_Name"][$i]."</option>";
+    echo "<option value='".$requested_client_data["National_ID"][$i]."' >".$requested_client_data["Full_Name"][$i]."</option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
@@ -305,7 +326,7 @@ for ($i=0; $i < $client_data_Count ; $i++) {
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $client_data_Count ; $i++) { 
-    echo "<option value='".$requested_client_data["ID"][$i]."' >".$requested_client_data["Mobile1"][$i]."</option>";
+    echo "<option value='".$requested_client_data["National_ID"][$i]."' >".$requested_client_data["Mobile1"][$i]."</option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
@@ -411,7 +432,7 @@ for ($i=0; $i < $sale_type_data_Count ; $i++) {
                                                 <div class="col-md-3 dependent-form" id="broker-form-value">
                                                     <div class="form-group">
                                                         <label class="control-label">Broker</label>
-                                                        <select id="" name="Broker_ID_new" class="form-control form-control-line" required>
+                                                        <select id="" name="Broker_ID_new" class="form-control form-control-line">
                                                             <option></option>
 <?php
 ///////////////////////////////////////////////////////////////
@@ -430,7 +451,7 @@ for ($i=0; $i < $brokers_data_Count ; $i++) {
                                                 <div class="col-md-3">
                                                     <div class="">
                                                         <label class="control-label">Comment</label>
-                                                        <textarea style="resize: vertical;" name="Comment_new" rows="4"></textarea>
+                                                        <textarea style="resize: vertical;" name="Comment_new" rows="4" required></textarea>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -445,7 +466,7 @@ for ($i=0; $i < $brokers_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Activity Status</label>
-                                                        <select id="activity-status-option" name="" class="form-control form-control-line" required>
+                                                        <select id="activity-status-option" name="Status_ID_new" class="form-control form-control-line" required>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
