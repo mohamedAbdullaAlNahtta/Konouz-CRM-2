@@ -95,39 +95,41 @@ if (isset($_POST['submit'])) {
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Activities</a></li>
                 <li class="breadcrumb-item active">New Activity</li>
                 <li class="breadcrumb-item active">
-                    <?php echo "unit_id_new = ".$unit_id_new."<br>"
-                            ."CST_NID_new".$CST_NID_new."<br>"
-                            ."Seller_Account_new".$Seller_Account_new."<br>"
-                            ."Seller_Assistant_ID_new".$Seller_Assistant_ID_new."<br>"
-                            ."Sale_Type_ID_new".$Sale_Type_ID_new."<br>"
-                            ."Broker_ID_new".$Broker_ID_new."<br>"
-                            ."Signed_Contract_new".$Signed_Contract_new."<br>"
-                            ."Submitted_Cheques_new".$Submitted_Cheques_new."<br>"
-                            ."Filled_Claim_new".$Filled_Claim_new."<br>"
-                            ."Requested_Garage_new".$Requested_Garage_new."<br>"
-                            ."Garage_Price_new".$Garage_Price_new."<br>"
-                            ."Total_Price_After_Interest_new".$Total_Price_After_Interest_new."<br>"
-                            ."Refunded_new".$Refunded_new."<br>"
-                            ."Comment_new".$Comment_new."<br>"
-                            ."Installment_Years_new".$Installment_Years_new."<br>"
-                            ."Down_Payment_PCT_new".$Down_Payment_PCT_new."<br>"
-                            ."Receiving_Payment_PCT_new".$Receiving_Payment_PCT_new."<br>"
-                            ."Remaining_Amount_new".$Remaining_Amount_new."<br>"
-                            ."Down_Payment_Amount_new".$Down_Payment_Amount_new."<br>"
-                            ."Receiving_Payment_Amount_new".$Receiving_Payment_Amount_new."<br>"
-                            ."Annual_Payment_PCT_new".$Annual_Payment_PCT_new."<br>"
-                            ."Annual_Payment_Amount_new".$Annual_Payment_Amount_new."<br>"
-                            ."Annual_With_Rate_new".$Annual_With_Rate_new."<br>"
-                            ."Installment_Discount_PCT_new".$Installment_Discount_PCT_new."<br>"
-                            ."Other_Discount_PCT_new".$Other_Discount_PCT_new."<br>"
-                            ."Interest_PCT_new".$Interest_PCT_new."<br>"
-                            ."Interest_Amount_new".$Interest_Amount_new."<br>"
-                            ."Down_Payment_Amount_new".$Down_Payment_Amount_new."<br>"
-                            ."Receiving_Payment_Amount_new".$Receiving_Payment_Amount_new."<br>"
-                            ."Installment_Amount_new".$Installment_Amount_new."<br>"
-                            ."Meter_Price_After_Interest_new".$Meter_Price_After_Interest_new."<br>"
-                            ."Meter_Price_With_Discount_new".$Meter_Price_With_Discount_new."<br>"
-                            ."Payment_Type_ID_new".$Payment_Type_ID_new."<br>"; ?>
+                    <?php
+                            // echo "unit_id_new = ".$unit_id_new."<br>"
+                            // ."CST_NID_new".$CST_NID_new."<br>"
+                            // ."Seller_Account_new".$Seller_Account_new."<br>"
+                            // ."Seller_Assistant_ID_new".$Seller_Assistant_ID_new."<br>"
+                            // ."Sale_Type_ID_new".$Sale_Type_ID_new."<br>"
+                            // ."Broker_ID_new".$Broker_ID_new."<br>"
+                            // ."Signed_Contract_new".$Signed_Contract_new."<br>"
+                            // ."Submitted_Cheques_new".$Submitted_Cheques_new."<br>"
+                            // ."Filled_Claim_new".$Filled_Claim_new."<br>"
+                            // ."Requested_Garage_new".$Requested_Garage_new."<br>"
+                            // ."Garage_Price_new".$Garage_Price_new."<br>"
+                            // ."Total_Price_After_Interest_new".$Total_Price_After_Interest_new."<br>"
+                            // ."Refunded_new".$Refunded_new."<br>"
+                            // ."Comment_new".$Comment_new."<br>"
+                            // ."Installment_Years_new".$Installment_Years_new."<br>"
+                            // ."Down_Payment_PCT_new".$Down_Payment_PCT_new."<br>"
+                            // ."Receiving_Payment_PCT_new".$Receiving_Payment_PCT_new."<br>"
+                            // ."Remaining_Amount_new".$Remaining_Amount_new."<br>"
+                            // ."Down_Payment_Amount_new".$Down_Payment_Amount_new."<br>"
+                            // ."Receiving_Payment_Amount_new".$Receiving_Payment_Amount_new."<br>"
+                            // ."Annual_Payment_PCT_new".$Annual_Payment_PCT_new."<br>"
+                            // ."Annual_Payment_Amount_new".$Annual_Payment_Amount_new."<br>"
+                            // ."Annual_With_Rate_new".$Annual_With_Rate_new."<br>"
+                            // ."Installment_Discount_PCT_new".$Installment_Discount_PCT_new."<br>"
+                            // ."Other_Discount_PCT_new".$Other_Discount_PCT_new."<br>"
+                            // ."Interest_PCT_new".$Interest_PCT_new."<br>"
+                            // ."Interest_Amount_new".$Interest_Amount_new."<br>"
+                            // ."Down_Payment_Amount_new".$Down_Payment_Amount_new."<br>"
+                            // ."Receiving_Payment_Amount_new".$Receiving_Payment_Amount_new."<br>"
+                            // ."Installment_Amount_new".$Installment_Amount_new."<br>"
+                            // ."Meter_Price_After_Interest_new".$Meter_Price_After_Interest_new."<br>"
+                            // ."Meter_Price_With_Discount_new".$Meter_Price_With_Discount_new."<br>"
+                            // ."Payment_Type_ID_new".$Payment_Type_ID_new."<br>"; 
+                            ?>
                 </li>
             </ol>
         </div>
@@ -151,7 +153,7 @@ if (isset($_POST['submit'])) {
         <div class="col-12">
             <div class="card">
                 <div class="card-block"> 
-                    <form action="index?module=Activities&create=true" method="post">
+                    <form action="index?module=Activities&create=true&unitId=<?php echo htmlentities($unit_ID);?>" method="post">
                         <div class="form-body">
                             <h4 class="card-title"> New Activity <small> For Unit ID <code> <?php echo htmlentities($unit_ID);?></code></small></h4>
                             <!-- Nav tabs -->
@@ -176,55 +178,55 @@ if (isset($_POST['submit'])) {
                                                 <div class="col-md-3 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Unit ID</label>
-                                                        <input type="text" id="" name="unit_id_new" class="form-control" value="<?php echo htmlentities($unit_ID);?>" placeholder="<?php echo htmlentities($unit_ID);?>" disabled/>
+                                                        <input type="text" id="" name="unit_id_new" class="form-control" value="<?php echo htmlentities($unit_ID);?>" placeholder="<?php echo htmlentities($unit_ID);?>" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Building No</label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Build_No);?>" placeholder="<?php echo htmlentities($Unit_Build_No);?>" disabled/>
+                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Build_No);?>" placeholder="<?php echo htmlentities($Unit_Build_No);?>" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Unit Area </label>
-                                                        <input type="text" id="unitArea" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Unit_Area);?>" placeholder="<?php echo htmlentities($Unit_Unit_Area);?>" disabled/>
+                                                        <input type="text" id="unitArea" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Unit_Area);?>" placeholder="<?php echo htmlentities($Unit_Unit_Area);?>" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Basic Meter Price </label>
-                                                        <input type="text" id="unitBasicMeterPrice" name="Basic_Meter_Price" class="form-control" value="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" placeholder="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" disabled/>
+                                                        <input type="text" id="unitBasicMeterPrice" name="Basic_Meter_Price" class="form-control" value="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" placeholder="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Unit Basic Price </label>
-                                                        <input type="text" id="unitBasicPrice" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" placeholder="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" disabled/>
+                                                        <input type="text" id="unitBasicPrice" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" placeholder="<?php echo htmlentities($Unit_Unit_Basic_Price);?>" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">  Usufruct Meter Price </label>
-                                                        <input type="number" id="unitUsufructMeterPrice" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_usufruct_meter_price);?>" placeholder="<?php echo htmlentities($Unit_usufruct_meter_price);?>" disabled/>
+                                                        <input type="number" id="unitUsufructMeterPrice" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_usufruct_meter_price);?>" placeholder="<?php echo htmlentities($Unit_usufruct_meter_price);?>" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label"> Usufruct Area </label>
-                                                        <input type="text" id="unitUsufructArea" name="unit_id" class="form-control" value="<?php echo htmlentities($Usufruct_Area);?>" placeholder="<?php echo htmlentities($Usufruct_Area);?>" disabled/>
+                                                        <input type="text" id="unitUsufructArea" name="unit_id" class="form-control" value="<?php echo htmlentities($Usufruct_Area);?>" placeholder="<?php echo htmlentities($Usufruct_Area);?>" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Maintenance Fees %</label>
-                                                        <input type="number" id="" name="" placeholder="<?php echo htmlentities($Maintenance_Fees_data['Maintenance_pct'][0]*100); ?>%" value="<?php echo htmlentities($Maintenance_Fees_data['Maintenance_pct'][0]); ?>" class="form-control"  disabled/>
+                                                        <input type="number" id="" name="" placeholder="<?php echo htmlentities($Maintenance_Fees_data['Maintenance_pct'][0]*100); ?>%" value="<?php echo htmlentities($Maintenance_Fees_data['Maintenance_pct'][0]); ?>" class="form-control"  readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Garage Price</label>
-                                                        <input type="text" id="ProjectName" name="Garage_Price_new" class="form-control" placeholder="" disabled/>
+                                                        <input type="text" id="ProjectName" name="Garage_Price_new" class="form-control" placeholder="" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -326,7 +328,7 @@ for ($i=0; $i < $client_data_Count ; $i++) {
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller</label>
-                                                        <input type="text" id="ProjectName" name="Seller_Account_new" class="form-control" value="root@localhost" placeholder="root@localhost" disabled/>
+                                                        <input type="text" id="ProjectName" name="Seller_Account_new" class="form-control" value="root@localhost" placeholder="root@localhost" readonly/>
                                                         <small class="form-control-feedback">Seller Name.... </small>
                                                     </div>
                                                 </div>
@@ -410,7 +412,7 @@ for ($i=0; $i < $sale_type_data_Count ; $i++) {
                                                     <div class="form-group">
                                                         <label class="control-label">Broker</label>
                                                         <select id="" name="Broker_ID_new" class="form-control form-control-line" required>
-                                                            <option>Select Broker</option>
+                                                            <option></option>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -533,7 +535,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                         <label class="control-label">Creation Date</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" disabled/>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="<?php echo htmlentities(date("Y/m/d h:i:s"));?>" readonly/>
                                                     </div>
                                                 </div>
                                                 <div id="" class="col-md-.5 col-xs-6">
@@ -542,13 +544,13 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">created_by</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" value="<?php echo $user_name; ?>" placeholder="root@localhost" disabled/>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" value="<?php echo $user_name; ?>" placeholder="root@localhost" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Creator Manager</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" Disabled/>
+                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" readonly/>
                                                     </div>
                                                 </div>
                                             </div>                          
@@ -620,7 +622,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Total Disc</label>
-                                                    <input type="number" id="totalUnitDiscoutAmount" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="totalUnitDiscoutAmount" name="ProjectName" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                             <div class="col-md-1">
@@ -668,20 +670,20 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual Payment </label>
-                                                    <input type="number" id="annualPaymentAmount" name="Annual_Payment_Amount_new" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="annualPaymentAmount" name="Annual_Payment_Amount_new" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment After Interest</label>
-                                                    <input type="number" id="downPaymentAmountAfterInterest" name="Down_Payment_Amount_new" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="downPaymentAmountAfterInterest" name="Down_Payment_Amount_new" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment After Interest</label>
-                                                    <input type="number" id="receivingPaymentAmountAfterInterest" name="Receiving_Payment_Amount_new" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="receivingPaymentAmountAfterInterest" name="Receiving_Payment_Amount_new" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                         </div> 
@@ -690,43 +692,43 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual With Rate</label>
-                                                    <input type="number" id="annualWithRate" name="Annual_With_Rate_new" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="annualWithRate" name="Annual_With_Rate_new" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Amount</label>
-                                                    <input type="number" id="installmentAmount" name="Installment_Amount_new" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="installmentAmount" name="Installment_Amount_new" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Intrest Amount</label>
-                                                    <input type="number" id="intrestAmount" name="Interest_Amount_new" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="intrestAmount" name="Interest_Amount_new" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Remaining Amount</label>
-                                                    <input type="number" id="remainingAmount" name="Remaining_Amount_new" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="remainingAmount" name="Remaining_Amount_new" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Meter Price After Interest</label>
-                                                    <input type="number" id="meterPriceAfterInterest" name="Meter_Price_After_Interest_new" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="meterPriceAfterInterest" name="Meter_Price_After_Interest_new" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Meter Price With Discount </label>
-                                                    <input type="number" id="meterPriceWithDiscount" name="Meter_Price_With_Discount_new" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="meterPriceWithDiscount" name="Meter_Price_With_Discount_new" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Mainitanance Amount </label>
-                                                    <input type="number" id="mainitananceAmount" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="mainitananceAmount" name="ProjectName" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                             <div id="" class="col-md-0.5 col-xs-6">
@@ -735,7 +737,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Total Price After Interest or Discount</label>
-                                                    <input type="number" id="totalPriceAfterInterestOrDiscount" name="Total_Price_After_Interest_new" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="totalPriceAfterInterestOrDiscount" name="Total_Price_After_Interest_new" class="form-control" placeholder="" readonly/>
                                                 </div>
                                             </div>
                                             <hr>

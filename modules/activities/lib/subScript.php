@@ -228,5 +228,129 @@ function myFunctionCalculateAll(){
 </script>
 
 
+<?php
+if (isset($GLOBALS['developer_edite'])) {
+    $xxx = $GLOBALS['developer_edite'];
+
+$xxxx = str_replace('.', '.\n ', $xxx );
+
+if ($xxx === true) { ?>
+<script type="text/javascript">
+
+ swal("Good job!", "<?php echo htmlentities('New Data has been Saved successfully'); ?>.", "success"); 
+
+// Your application has indicated there's an error
+window.setTimeout(function () {
+    // Move to a new location or you can do something else
+    window.location.href = "index?module=Developers";
+}, 3000);
+
+//window.location.href = "index?module=Developers";
+
+</script>
+<?php
+
+} else if(is_string($GLOBALS['developer_edite'])) {?>
+<script type="text/javascript">
+ swal({   
+            title: "Opps!",   
+            text: "<?php echo 'You have an Error which is\n '.htmlentities($xxxx); ?>",   
+            type: "warning",   
+            showCancelButton: true, 
+            showConfirmButton: false,   
+            cancelButtonColor: "#DD6B55",   
+        });   
+</script>
+<?php }
+}
+
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
+if (isset($GLOBALS['activity_dml'])) {
+    $xxx = $GLOBALS['activity_dml'];
+
+$xxxx = str_replace('.', '.\n ', $xxx );
+
+if ($xxx === true) { ?>
+<script type="text/javascript">
+
+ swal("Good job!", "<?php echo htmlentities('New Data has been Saved successfully'); ?>.", "success"); 
+
+// Your application has indicated there's an error
+window.setTimeout(function () {
+    // Move to a new location or you can do something else
+    window.location.href = "index?module=Activities";
+}, 3000);
+
+//window.location.href = "index?module=Developers";
+
+</script>
+<?php
+
+} else if(is_string($GLOBALS['activity_dml'])) {?>
+<script type="text/javascript">
+ swal({   
+            title: "Opps!",   
+            text: "<?php echo 'You have an Error which is\n '.htmlentities($xxxx); ?>",   
+            type: "warning",   
+            showCancelButton: true, 
+            showConfirmButton: false,   
+            cancelButtonColor: "#DD6B55",   
+        });   
+</script>
+<?php }
+}
+ ?>
+
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<script type="text/javascript">
+            // if (window.history.replaceState) {
+            //     window.history.replaceState(null, null, window.location.href);
+            // }
+</script>
+
+<?php
+
+if (isset($GLOBALS['developer_delete'])) {
+    $xxx = $GLOBALS['developer_delete'];
+
+$xxxx = str_replace('.', '.\n ', $xxx );
+
+if ($xxx === true) { ?>
+<script type="text/javascript">
+
+ swal("Good job!", "<?php echo htmlentities('Developer has been deleted successfully'); ?>.", "success"); 
+
+// Your application has indicated there's an error
+window.setTimeout(function () {
+    // Move to a new location or you can do something else
+    window.location.href = "index?module=Developers";
+}, 3000);
+
+//window.location.href = "index?module=Developers";
+
+</script>
+<?php
+
+} else if(is_string($GLOBALS['developer_delete'])) {?>
+<script type="text/javascript">
+ swal({   
+            title: "Opps!",   
+            text: "<?php echo 'You have an Error which is\n '.htmlentities($xxxx); ?>",   
+            type: "warning",   
+            showCancelButton: true, 
+            showConfirmButton: false,   
+            cancelButtonColor: "#DD6B55",   
+        });   
+</script>
+<?php } 
+}
+?>
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+
+
 
 
