@@ -229,5 +229,34 @@ $requested_garage_type_data_Count = $requested_garage_type_data_all_get->num_row
 // end of ------getting requested_garage_type
 ///////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////
+// Start of ------getting client 
+/////////////////////////////////////////////////////////////
+$sql_client_data= "SELECT `ID`, 
+`National ID` ,
+concat(`First Name`,' ',`Middle Name`,' ' ,`Last Name`) as `Full Name`,
+`Mobile1` ,
+`Mobile 2` as `Mobile2` 
+FROM `clients`";
+$client_data_all_get= $database->query($sql_client_data);
+
+$client_data_Count = $client_data_all_get->num_rows;
+   // output data of each row
+   while($row = $client_data_all_get->fetch_assoc()) {
+     $ID[] = $row["ID"];
+     $National_ID[] = $row["National ID"];
+     $Full_Name[] = $row["Full Name"];
+     $Mobile1[] = $row["Mobile1"];
+     $Mobile2[] = $row["Mobile2"];
+   }
+ $requested_client_data= array("ID"=>$ID, "National_ID"=>$National_ID, "Full_Name"=>$Full_Name , "Mobile1"=>$Mobile1 , "Mobile2"=>$Mobile2   );
+
+ $ID=array();
+ $National_ID=array();
+
+ //////////////////////////////////////////////////////////////
+// end of ------getting client
+///////////////////////////////////////////////////////////////
+
 
 ?>

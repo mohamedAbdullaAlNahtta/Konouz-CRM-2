@@ -1,3 +1,29 @@
+<?php
+///////////////////////////////////////////////////////////////
+/// start of ---> submitting form data to the database 
+///////////////////////////////////////////////////////////////
+if (isset($_POST['submit'])) {
+
+    $DeveloperName = $_POST['DeveloperName'];
+    $DeveloperRepresentative = $_POST['DeveloperRepresentative'];
+    $mobile1 = $_POST['mobile1'];
+    $mobile2 = $_POST['mobile2'];
+    
+    // escaping variables
+    $DeveloperName = $database->escape_string($DeveloperName);
+    $DeveloperRepresentative = $database->escape_string($DeveloperRepresentative);
+    $mobile1 = $database->escape_string($mobile1);
+    $mobile2 = $database->escape_string($mobile2);
+
+    $sql= "INSERT INTO `developers` (`ID`, `Name`, `Rep`, `Mobile1`, `Insertion Date`, `Added By`, `Mobile2`) VALUES (NULL, '".$DeveloperName."', '".$DeveloperRepresentative."', '".$mobile1."', current_timestamp(), '', '".$mobile2."')";
+    $developer_dml= $database->query($sql); 
+
+} 
+///////////////////////////////////////////////////////////////
+/// End of ---> submitting form data to the database 
+///////////////////////////////////////////////////////////////
+
+?>
 <!-- Container fluid  -->
 <!-- ============================================================== -->
 <div class="container-fluid">
@@ -57,7 +83,7 @@
                                                 <div class="col-md-3 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Unit ID</label>
-                                                        <input type="text" id="" name="unit_id" class="form-control" value="<?php echo htmlentities($unit_ID);?>" placeholder="<?php echo htmlentities($unit_ID);?>" disabled/>
+                                                        <input type="text" id="" name="unit_id_new" class="form-control" value="<?php echo htmlentities($unit_ID);?>" placeholder="<?php echo htmlentities($unit_ID);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 col-xs-3">
@@ -129,6 +155,74 @@ for ($i=0; $i < $requested_garage_type_data_Count ; $i++) {
                                             </div>
                                             <hr>
                                             <div class="ribbon-wrapper">
+                                                <div class="ribbon ribbon-bookmark ribbon-info">Client Data</div>
+                                                <!-- <p class="ribbon-content">check out the unit data</p> -->
+                                            </div>
+                                            <div class="row">
+                                                <div id="" class="col-md-.5 col-xs-1">
+                                                    <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
+                                                </div>
+                                                <div class="col-md-2 col-xs-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">National ID</label>
+                                                        <select id="National_ID" name="CST_NID_new" class="form-control form-control-line" >
+                                                            <option>Select National ID</option>
+ <?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $client_data_Count ; $i++) { 
+    echo "<option value='".$requested_client_data["ID"][$i]."' >".$requested_client_data["National_ID"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                    
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 col-xs-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Full Name</label>
+                                                        <select id="Full_Name" name="" class="form-control form-control-line" >
+                                                            <option>Full Name</option>
+ <?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $client_data_Count ; $i++) { 
+    echo "<option value='".$requested_client_data["ID"][$i]."' >".$requested_client_data["Full_Name"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                    
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 col-xs-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Mobile</label>
+                                                        <select id="Mobile" name="" class="form-control form-control-line" >
+                                                            <option>Mobile</option>
+ <?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $client_data_Count ; $i++) { 
+    echo "<option value='".$requested_client_data["ID"][$i]."' >".$requested_client_data["Mobile1"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                    
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <hr>
+                                            <div class="ribbon-wrapper">
                                                 <div class="ribbon ribbon-bookmark ribbon-info">Employee Data</div>
                                                 <!-- <p class="ribbon-content">check out the unit data</p> -->
                                             </div>
@@ -139,7 +233,7 @@ for ($i=0; $i < $requested_garage_type_data_Count ; $i++) {
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" value="root@localhost" placeholder="root@localhost" disabled/>
+                                                        <input type="text" id="ProjectName" name="Seller_Account_new" class="form-control" value="root@localhost" placeholder="root@localhost" disabled/>
                                                         <small class="form-control-feedback">Seller Name.... </small>
                                                     </div>
                                                 </div>
@@ -157,7 +251,7 @@ for ($i=0; $i < $requested_garage_type_data_Count ; $i++) {
                                                 <div class="col-md-3 col-xs-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Seller Assistant </label>
-                                                        <select id="" name="" class="form-control form-control-line" >
+                                                        <select id="" name="Seller_Assistant_ID_new" class="form-control form-control-line" >
                                                             <option>select seller</option>
  <?php
 ///////////////////////////////////////////////////////////////

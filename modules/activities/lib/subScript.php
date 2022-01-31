@@ -108,6 +108,25 @@ window.onload = function () {
         document.getElementById("installmentYears").selectedIndex = document.getElementById("installmentDiscount").selectedIndex;
         document.getElementById("installmentInterestPc").selectedIndex = document.getElementById("installmentDiscount").selectedIndex;
     };
+
+    var National_ID_Sel = document.getElementById("National_ID");
+    var Full_Name_Sel  = document.getElementById("Full_Name");
+    var Mobile_Sel = document.getElementById("Mobile");
+
+    National_ID_Sel.onchange = function () {
+        document.getElementById("Full_Name").selectedIndex = document.getElementById("National_ID").selectedIndex;
+        document.getElementById("Mobile").selectedIndex = document.getElementById("National_ID").selectedIndex;
+    };
+
+    Full_Name_Sel.onchange = function () {
+        document.getElementById("Mobile").selectedIndex = document.getElementById("Full_Name").selectedIndex;
+        document.getElementById("National_ID").selectedIndex = document.getElementById("Full_Name").selectedIndex;
+    };
+
+    Mobile_Sel.onchange = function () {
+        document.getElementById("National_ID").selectedIndex = document.getElementById("Mobile").selectedIndex;
+        document.getElementById("Full_Name").selectedIndex = document.getElementById("Mobile").selectedIndex;
+    };
 };
 
 function myFunctionCalculateAll(){
