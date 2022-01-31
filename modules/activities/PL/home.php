@@ -95,7 +95,7 @@
 /////////////////////////////////////////////////////////////
 for ($i=0; $i < $activityCount; $i++) { 
     echo " <tr><th>".$activities_data["Activity_ID"][$i]."</th>";
-    echo "<th> <img href='assets/images/icons/favicon.ico'><a href='index?module=Unites&unitId=".$activities_data["Unit_ID"][$i]."'>".$activities_data["Unit_ID"][$i]."</a></th>";
+    echo "<th><i><img src='assets/images/icons/favicon.ico' style='width: 30px;'> </i> <a href='index?module=Unites&unitId=".$activities_data["Unit_ID"][$i]."'> ".$activities_data["Unit_ID"][$i]."</a></th>";
     echo "<th>".$activities_data["CST_NID"][$i]."</th>";
     echo "<th>".$activities_data["Seller_Account"][$i]."</th>";
     echo "<th>".$activities_data["Creation_Date"][$i]."</th>";

@@ -124,7 +124,7 @@
 for ($i=0; $i < $service_requestCount ; $i++) { 
     # code.
     echo " <tr><th>".$service_request["ID"][$i]."</th>";
-    echo "<td> <a href='index?module=Unites&unitId=".$service_request["unit_ID"][$i]."'>".$service_request["unit_ID"][$i]."</a></td>";
+    echo "<td><i><img src='assets/images/icons/favicon.ico' style='width: 30px;'> </i> <a href='index?module=Unites&unitId=".$service_request["unit_ID"][$i]."'> ".$service_request["unit_ID"][$i]."</a></td>";
     echo "<td>".$service_request["unit_status_name"][$i]."</td>";
     echo "<td>".$service_request["activity_ID"][$i]."</td>";
     echo "<td>".$service_request["created_by"][$i]."</td>";
