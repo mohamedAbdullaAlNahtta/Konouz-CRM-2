@@ -600,7 +600,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                             <td style="background-color: #104E8B; color:#fff; font-weight:500">&nbsp;</td>
                                                             <td> Amount</td>
                                                             <td> Maintanance </td>
-                                                            <td> ؛ercentage % </td>
+                                                            <td> Percentage % </td>
                                                             <td> Due date  </td>
                                                         </tr>
                                                         <tr>
