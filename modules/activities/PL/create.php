@@ -4,16 +4,74 @@
 ///////////////////////////////////////////////////////////////
 if (isset($_POST['submit'])) {
 
-    $DeveloperName = $_POST['DeveloperName'];
-    $DeveloperRepresentative = $_POST['DeveloperRepresentative'];
-    $mobile1 = $_POST['mobile1'];
-    $mobile2 = $_POST['mobile2'];
+    $unit_id_new = $_POST['unit_id_new'];
+    $CST_NID_new = $_POST['CST_NID_new'];
+    $Seller_Account_new = $_POST['Seller_Account_new'];
+    $Seller_Assistant_ID_new = $_POST['Seller_Assistant_ID_new'];
+    $Sale_Type_ID_new = $_POST['Sale_Type_ID_new'];
+    $Broker_ID_new = $_POST['Broker_ID_new'];
+    $Signed_Contract_new = $_POST['Signed_Contract_new'];
+    $Submitted_Cheques_new = $_POST['Submitted_Cheques_new'];
+    $Filled_Claim_new = $_POST['Filled_Claim_new'];
+    $Requested_Garage_new = $_POST['Requested_Garage_new'];
+    $Garage_Price_new = $_POST['Garage_Price_new'];
+    $Total_Price_After_Interest_new = $_POST['Total_Price_After_Interest_new'];
+    $Refunded_new = $_POST['Refunded_new'];
+    $Comment_new = $_POST['Comment_new'];
+    $Installment_Years_new = $_POST['Installment_Years_new'];
+    $Down_Payment_PCT_new = $_POST['Down_Payment_PCT_new'];
+    $Receiving_Payment_PCT_new = $_POST['Receiving_Payment_PCT_new'];
+    $Remaining_Amount_new = $_POST['Remaining_Amount_new'];
+    $Down_Payment_Amount_new = $_POST['Down_Payment_Amount_new'];
+    $Receiving_Payment_Amount_new = $_POST['Receiving_Payment_Amount_new'];
+    $Annual_Payment_PCT_new = $_POST['Annual_Payment_PCT_new'];
+    $Annual_Payment_Amount_new = $_POST['Annual_Payment_Amount_new'];
+    $Annual_With_Rate_new = $_POST['Annual_With_Rate_new'];
+    $Installment_Discount_PCT_new = $_POST['Installment_Discount_PCT_new'];
+    $Other_Discount_PCT_new = $_POST['Other_Discount_PCT_new'];
+    $Interest_PCT_new = $_POST['Interest_PCT_new'];
+    $Interest_Amount_new = $_POST['Interest_Amount_new'];
+    $Down_Payment_Amount_new = $_POST['Down_Payment_Amount_new'];
+    $Receiving_Payment_Amount_new = $_POST['Receiving_Payment_Amount_new'];
+    $Installment_Amount_new = $_POST['Installment_Amount_new'];
+    $Meter_Price_After_Interest_new = $_POST['Meter_Price_After_Interest_new'];
+    $Meter_Price_With_Discount_new = $_POST['Meter_Price_With_Discount_new'];
+    $Payment_Type_ID_new = $_POST['Payment_Type_ID_new'];
+
     
     // escaping variables
-    $DeveloperName = $database->escape_string($DeveloperName);
-    $DeveloperRepresentative = $database->escape_string($DeveloperRepresentative);
-    $mobile1 = $database->escape_string($mobile1);
-    $mobile2 = $database->escape_string($mobile2);
+    $unit_id_new = $database->escape_string($unit_id_new);
+    $CST_NID_new = $database->escape_string($CST_NID_new);
+    $Seller_Account_new = $database->escape_string($Seller_Account_new);
+    $Seller_Assistant_ID_new = $database->escape_string($Seller_Assistant_ID_new);
+    $Sale_Type_ID_new = $database->escape_string($Sale_Type_ID_new);
+    $Broker_ID_new = $database->escape_string($Broker_ID_new);
+    $Signed_Contract_new = $database->escape_string($Signed_Contract_new);
+    $Submitted_Cheques_new = $database->escape_string($Submitted_Cheques_new);
+    $Filled_Claim_new = $database->escape_string($Filled_Claim_new);
+    $Requested_Garage_new = $database->escape_string($Requested_Garage_new);
+    $Garage_Price_new = $database->escape_string($Garage_Price_new);
+    $Total_Price_After_Interest_new = $database->escape_string($Total_Price_After_Interest_new);
+    $Refunded_new = $database->escape_string($Refunded_new);
+    $Comment_new = $database->escape_string($Comment_new);
+    $Installment_Years_new = $database->escape_string($Installment_Years_new);
+    $Down_Payment_PCT_new = $database->escape_string($Down_Payment_PCT_new);
+    $Receiving_Payment_PCT_new = $database->escape_string($Receiving_Payment_PCT_new);
+    $Remaining_Amount_new = $database->escape_string($Remaining_Amount_new);
+    $Down_Payment_Amount_new = $database->escape_string($Down_Payment_Amount_new);
+    $Receiving_Payment_Amount_new = $database->escape_string($Receiving_Payment_Amount_new);
+    $Annual_Payment_PCT_new = $database->escape_string($Annual_Payment_PCT_new);
+    $Annual_Payment_Amount_new = $database->escape_string($Annual_Payment_Amount_new);
+    $Annual_With_Rate_new = $database->escape_string($Annual_With_Rate_new);
+    $Installment_Discount_PCT_new = $database->escape_string($Installment_Discount_PCT_new);
+    $Other_Discount_PCT_new = $database->escape_string($Other_Discount_PCT_new);
+    $Interest_PCT_new = $database->escape_string($Interest_PCT_new);
+    $Interest_Amount_new = $database->escape_string($Interest_Amount_new);
+    $Down_Payment_Amount_new = $database->escape_string($Down_Payment_Amount_new);
+    $Receiving_Payment_Amount_new = $database->escape_string($Receiving_Payment_Amount_new);
+    $Meter_Price_After_Interest_new = $database->escape_string($Meter_Price_After_Interest_new);
+    $Meter_Price_With_Discount_new = $database->escape_string($Meter_Price_With_Discount_new);
+    $Payment_Type_ID_new = $database->escape_string($Payment_Type_ID_new);
 
     $sql= "INSERT INTO `developers` (`ID`, `Name`, `Rep`, `Mobile1`, `Insertion Date`, `Added By`, `Mobile2`) VALUES (NULL, '".$DeveloperName."', '".$DeveloperRepresentative."', '".$mobile1."', current_timestamp(), '', '".$mobile2."')";
     $developer_dml= $database->query($sql); 
@@ -36,6 +94,41 @@ if (isset($_POST['submit'])) {
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Activities</a></li>
                 <li class="breadcrumb-item active">New Activity</li>
+                <li class="breadcrumb-item active">
+                    <?php echo "unit_id_new = ".$unit_id_new."<br>"
+                            ."CST_NID_new".$CST_NID_new."<br>"
+                            ."Seller_Account_new".$Seller_Account_new."<br>"
+                            ."Seller_Assistant_ID_new".$Seller_Assistant_ID_new."<br>"
+                            ."Sale_Type_ID_new".$Sale_Type_ID_new."<br>"
+                            ."Broker_ID_new".$Broker_ID_new."<br>"
+                            ."Signed_Contract_new".$Signed_Contract_new."<br>"
+                            ."Submitted_Cheques_new".$Submitted_Cheques_new."<br>"
+                            ."Filled_Claim_new".$Filled_Claim_new."<br>"
+                            ."Requested_Garage_new".$Requested_Garage_new."<br>"
+                            ."Garage_Price_new".$Garage_Price_new."<br>"
+                            ."Total_Price_After_Interest_new".$Total_Price_After_Interest_new."<br>"
+                            ."Refunded_new".$Refunded_new."<br>"
+                            ."Comment_new".$Comment_new."<br>"
+                            ."Installment_Years_new".$Installment_Years_new."<br>"
+                            ."Down_Payment_PCT_new".$Down_Payment_PCT_new."<br>"
+                            ."Receiving_Payment_PCT_new".$Receiving_Payment_PCT_new."<br>"
+                            ."Remaining_Amount_new".$Remaining_Amount_new."<br>"
+                            ."Down_Payment_Amount_new".$Down_Payment_Amount_new."<br>"
+                            ."Receiving_Payment_Amount_new".$Receiving_Payment_Amount_new."<br>"
+                            ."Annual_Payment_PCT_new".$Annual_Payment_PCT_new."<br>"
+                            ."Annual_Payment_Amount_new".$Annual_Payment_Amount_new."<br>"
+                            ."Annual_With_Rate_new".$Annual_With_Rate_new."<br>"
+                            ."Installment_Discount_PCT_new".$Installment_Discount_PCT_new."<br>"
+                            ."Other_Discount_PCT_new".$Other_Discount_PCT_new."<br>"
+                            ."Interest_PCT_new".$Interest_PCT_new."<br>"
+                            ."Interest_Amount_new".$Interest_Amount_new."<br>"
+                            ."Down_Payment_Amount_new".$Down_Payment_Amount_new."<br>"
+                            ."Receiving_Payment_Amount_new".$Receiving_Payment_Amount_new."<br>"
+                            ."Installment_Amount_new".$Installment_Amount_new."<br>"
+                            ."Meter_Price_After_Interest_new".$Meter_Price_After_Interest_new."<br>"
+                            ."Meter_Price_With_Discount_new".$Meter_Price_With_Discount_new."<br>"
+                            ."Payment_Type_ID_new".$Payment_Type_ID_new."<br>"; ?>
+                </li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
@@ -58,7 +151,7 @@ if (isset($_POST['submit'])) {
         <div class="col-12">
             <div class="card">
                 <div class="card-block"> 
-                    <form action="index?module=activities&create=true" method="post">
+                    <form action="index?module=Activities&create=true" method="post">
                         <div class="form-body">
                             <h4 class="card-title"> New Activity <small> For Unit ID <code> <?php echo htmlentities($unit_ID);?></code></small></h4>
                             <!-- Nav tabs -->
@@ -101,7 +194,7 @@ if (isset($_POST['submit'])) {
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label"> Basic Meter Price </label>
-                                                        <input type="text" id="unitBasicMeterPrice" name="unit_id" class="form-control" value="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" placeholder="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" disabled/>
+                                                        <input type="text" id="unitBasicMeterPrice" name="Basic_Meter_Price" class="form-control" value="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" placeholder="<?php echo htmlentities($Unit_Basic_Meter_Price);?>" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 col-xs-3">
@@ -131,13 +224,13 @@ if (isset($_POST['submit'])) {
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Garage Price</label>
-                                                        <input type="text" id="ProjectName" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                        <input type="text" id="ProjectName" name="Garage_Price_new" class="form-control" placeholder="" disabled/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Garage Requested</label>                                                    
-                                                        <select id="" name="" class="form-control form-control-line" >
+                                                        <select id="" name="Requested_Garage_new" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -240,7 +333,7 @@ for ($i=0; $i < $client_data_Count ; $i++) {
                                                 <div class="col-md-3" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Direct Manager</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" >
                                                             <option >Ahmed mahmoud</option>                                                      
                                                         </select>
                                                     </div>
@@ -283,7 +376,7 @@ for ($i=0; $i < $emp_data_Count ; $i++) {
                                                 <div class="col-md-3" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Section Head</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                        <select id="Location" name="Location" class="form-control form-control-line" >
                                                             <option value="1">Ahmed mahmoud</option>
                                                             <option value="2">root</option>   
                                                             <option value="3">Admin</option>      
@@ -295,7 +388,7 @@ for ($i=0; $i < $emp_data_Count ; $i++) {
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Sale Type</label>
-                                                        <select id="sale-typ-option" name="Location" class="form-control form-control-line" required>
+                                                        <select id="sale-typ-option" name="Sale_Type_ID_new" class="form-control form-control-line" required>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -316,7 +409,7 @@ for ($i=0; $i < $sale_type_data_Count ; $i++) {
                                                 <div class="col-md-3 dependent-form" id="broker-form-value">
                                                     <div class="form-group">
                                                         <label class="control-label">Broker</label>
-                                                        <select id="" name="" class="form-control form-control-line" required>
+                                                        <select id="" name="Broker_ID_new" class="form-control form-control-line" required>
                                                             <option>Select Broker</option>
 <?php
 ///////////////////////////////////////////////////////////////
@@ -335,7 +428,7 @@ for ($i=0; $i < $brokers_data_Count ; $i++) {
                                                 <div class="col-md-3">
                                                     <div class="">
                                                         <label class="control-label">Comment</label>
-                                                        <textarea style="resize: vertical;" name="" rows="4"></textarea>
+                                                        <textarea style="resize: vertical;" name="Comment_new" rows="4"></textarea>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -371,7 +464,7 @@ for ($i=0; $i < $activity_status_data_Count ; $i++) {
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type</label>
-                                                        <select id="" name="" class="form-control form-control-line" required>
+                                                        <select id="" name="Payment_Type_ID_new" class="form-control form-control-line" required>
 <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -392,7 +485,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Signed Contract</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                        <select id="Location" name="Signed_Contract_new" class="form-control form-control-line" required>
                                                             <option value="0">No</option>
                                                             <option value="1">Yes</option>                                                            
                                                         </select>
@@ -404,7 +497,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                 <div class="col-md-2 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Cheque Submitted</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                        <select id="Location" name="Submitted_Cheques_new" class="form-control form-control-line" required>
                                                             <option value="0">No</option>
                                                             <option value="1">Yes</option>                                                            
                                                         </select>
@@ -416,7 +509,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                 <div class="col-md-2 dependent-status-form" id="Refunded-broker-form-value">
                                                     <div class="form-group">
                                                         <label class="control-label">Refunded</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                        <select id="Location" name="Refunded_new" class="form-control form-control-line" required>
                                                             <option value="0">No</option>
                                                             <option value="1">Yes</option>                                                            
                                                         </select>
@@ -425,7 +518,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                 <div class="col-md-3 dependent-status-form" id="Filled-Claim-form-value">
                                                     <div class="form-group">
                                                         <label class="control-label">Filled Claim</label>
-                                                        <select id="Location" name="Location" class="form-control form-control-line" required>
+                                                        <select id="Location" name="Filled_Claim_new" class="form-control form-control-line" required>
                                                             <option value="0">No</option>
                                                             <option value="1">Yes</option>                                                            
                                                         </select>
@@ -466,7 +559,7 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Years</label>
-                                                    <select  id="installmentYears" name="" class="form-control form-control-line" >
+                                                    <select  id="installmentYears" name="Installment_Years_new" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -484,7 +577,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Interest %</label>
-                                                    <select  id="installmentInterestPc" name="" class="form-control form-control-line" >
+                                                    <select  id="installmentInterestPc" name="Interest_PCT_new" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -502,7 +595,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Disc</label>
-                                                    <select  id="installmentDiscount" name="" class="form-control form-control-line" >
+                                                    <select  id="installmentDiscount" name="Installment_Discount_PCT_new" class="form-control form-control-line" >
  <?php
 ///////////////////////////////////////////////////////////////
 /// Start of ------> 
@@ -520,7 +613,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Other Disc %</label>
-                                                    <input type="number" id="unitOtherDiscount" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="unitOtherDiscount"  step="any" name="Other_Discount_PCT_new" class="form-control" placeholder="" />
                                                     <small class="form-control-feedback">0.03 mean 3%.... </small>
                                                 </div>
                                             </div>
@@ -540,21 +633,21 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual Payment %</label>
-                                                    <input type="number" id="annualPaymentPc" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="annualPaymentPc"  step="any" name="Annual_Payment_PCT_new" class="form-control" placeholder="" required/>
                                                     <small class="form-control-feedback">0.03 mean 3%.... </small>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment%</label>
-                                                    <input type="number" id="downPaymentPc" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="downPaymentPc"  step="any" name="Down_Payment_PCT_new" class="form-control" placeholder="" required/>
                                                     <small class="form-control-feedback">0.03 mean 3%.... </small>
                                                 </div>
                                             </div> 
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment %</label>
-                                                    <input type="number" id="receivingPaymentPc" name="ProjectName" class="form-control" placeholder="" required/>
+                                                    <input type="number" id="receivingPaymentPc"  step="any" name="Receiving_Payment_PCT_new" class="form-control" placeholder="" required/>
                                                     <small class="form-control-feedback">0.03 mean 3%.... </small>
                                                 </div>
                                             </div>
@@ -575,20 +668,20 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual Payment </label>
-                                                    <input type="number" id="annualPaymentAmount" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="annualPaymentAmount" name="Annual_Payment_Amount_new" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Down Payment After Interest</label>
-                                                    <input type="number" id="downPaymentAmountAfterInterest" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="downPaymentAmountAfterInterest" name="Down_Payment_Amount_new" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Receiving Payment After Interest</label>
-                                                    <input type="number" id="receivingPaymentAmountAfterInterest" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="receivingPaymentAmountAfterInterest" name="Receiving_Payment_Amount_new" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                         </div> 
@@ -597,37 +690,37 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Annual With Rate</label>
-                                                    <input type="number" id="annualWithRate" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="annualWithRate" name="Annual_With_Rate_new" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Installment Amount</label>
-                                                    <input type="number" id="installmentAmount" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="installmentAmount" name="Installment_Amount_new" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Intrest Amount</label>
-                                                    <input type="number" id="intrestAmount" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="intrestAmount" name="Interest_Amount_new" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Remaining Amount</label>
-                                                    <input type="number" id="remainingAmount" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="remainingAmount" name="Remaining_Amount_new" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Meter Price After Interest</label>
-                                                    <input type="number" id="meterPriceAfterInterest" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="meterPriceAfterInterest" name="Meter_Price_After_Interest_new" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Meter Price With Discount </label>
-                                                    <input type="number" id="meterPriceWithDiscount" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="meterPriceWithDiscount" name="Meter_Price_With_Discount_new" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -642,7 +735,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Total Price After Interest or Discount</label>
-                                                    <input type="number" id="totalPriceAfterInterestOrDiscount" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                    <input type="number" id="totalPriceAfterInterestOrDiscount" name="Total_Price_After_Interest_new" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
                                             <hr>
@@ -812,7 +905,7 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                         </div>
                         <div class="form-actions">
                             <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Create</button>
-                            <button type="button" onclick="" class="btn btn-inverse">Cancel</button>
+                            <button type="button" onclick="location.href='index?module=Activities'" class="btn btn-inverse">Cancel</button>
                         </div>
                     </form>
                     <hr>
