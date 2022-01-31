@@ -40,7 +40,7 @@
                                 <ul class="nav nav-tabs tabs-vertical" role="tablist">
                                     <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home4" role="tab" aria-expanded="true"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Ticket Data</span> </a> </li>
                                     <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile4" role="tab" aria-expanded="false"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Installment Plan</span></a> </li>
-                                    <!-- <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages4" role="tab" aria-expanded="false"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Messages</span></a> </li> -->
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages4" role="tab" aria-expanded="false"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Installment Overview</span></a> </li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
@@ -536,10 +536,16 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                     <input type="number" id="meterPriceWithDiscount" name="ProjectName" class="form-control" placeholder="" disabled/>
                                                 </div>
                                             </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="control-label">Mainitanance Amount </label>
+                                                    <input type="number" id="mainitananceAmount" name="ProjectName" class="form-control" placeholder="" disabled/>
+                                                </div>
+                                            </div>
                                             <div id="" class="col-md-0.5 col-xs-6">
                                                     <img src="assets/images/payment.JPG" width="50">
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Total Price After Interest or Discount</label>
                                                     <input type="number" id="totalPriceAfterInterestOrDiscount" name="ProjectName" class="form-control" placeholder="" disabled/>
@@ -548,7 +554,144 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                             <hr>
                                         </div>
                                     </div>
-                                    <!-- <div class="tab-pane p-20" id="messages4" role="tabpanel" aria-expanded="false">3</div> -->
+                                    <div class="tab-pane p-20" id="messages4" role="tabpanel" aria-expanded="false">
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <table class="display nowrap table table-hover table-striped table-bordered dataTable">
+                                                    <thead>
+                                                        <tr class="tableizer-firstrow">
+                                                            <th style="background-color: #104E8B;">دفعة التعاقد</th>
+                                                            <th>10%</th>
+                                                            <th>&nbsp;</th>
+                                                            <th>&nbsp;</th>
+                                                            <th>&nbsp;</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="background-color: #104E8B;">دفعة الاستلام</td>
+                                                            <td>0%</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: #104E8B;">دفعة سنوية</td>
+                                                            <td>0%</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: #104E8B;">سنوات القسط</td>
+                                                            <td>1</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>سعر متر الحديقة/رووف</td>
+                                                            <td>EGP -</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>بدون</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>دفعة صيانة</td>
+                                                            <td>EGP 186,428.00</td>
+                                                            <td>دفعة واحدة</td>
+                                                            <td>1900-01-00</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                            <td>القيمة الوحدة</td>
+                                                            <td>قيمة الصيانة</td>
+                                                            <td>نسبة مأوية</td>
+                                                            <td>موعد الاستحقاق</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>دفعه تعاقد</td>
+                                                            <td>EGP 233,035.00</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>11.56%</td>
+                                                            <td>2021-10-19</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>دفعة الاستلام</td>
+                                                            <td>#REF!</td>
+                                                            <td>EGP 186,428.00</td>
+                                                            <td>0.00%</td>
+                                                            <td>1900-01-00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>القسط الاول</td>
+                                                            <td>EGP 445,679.44</td>
+                                                            <td>-</td>
+                                                            <td>22.11%</td>
+                                                            <td>2022-01-19</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>القسط الثانى</td>
+                                                            <td>EGP 445,679.44</td>
+                                                            <td>-</td>
+                                                            <td>22.11%</td>
+                                                            <td>2022-04-19</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>القسط الثالث</td>
+                                                            <td>EGP 445,679.44</td>
+                                                            <td>-</td>
+                                                            <td>22.11%</td>
+                                                            <td>2022-07-19</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>القسط الرابع</td>
+                                                            <td>EGP 445,679.44</td>
+                                                            <td>-</td>
+                                                            <td>22.11%</td>
+                                                            <td>2022-10-19</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>دفعة سنوية</td>
+                                                            <td>-</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>0.00%</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>القسط الخامس</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>0.00%</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>القسط السادس</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>0.00%</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>القسط السابع</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>0.00%</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>القسط الثامن</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>0.00%</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>   
+                                        </div>    
+                                    </div>
                                 </div>
                             </div>
                         </div>

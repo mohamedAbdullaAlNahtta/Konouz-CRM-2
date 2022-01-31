@@ -210,11 +210,14 @@ function myFunctionCalculateAll(){
         document.getElementById("totalUnitDiscoutAmount").value = totalUnitDiscoutAmountVal;
 
 
-        var installmentAmountVal = (totalUnitDiscoutAmountVal-(parseFloat(downPaymentAmountBasicVal)+parseFloat(receivingPaymentPcVal))-(parseFloat(annualPaymentPcVal)*parseFloat(installmentYearsVal)))/(parseFloat(installmentYearsVal)*4)
+        var installmentAmountVal = (totalPriceAfterInterestOrDiscountVal -(downPaymentAmountAfterInterestVal + receivingPaymentAmountAfterInterestVal)-(annualPaymentAmountVal* installmentYearsVal))/ (installmentYearsVal*4);
         document.getElementById("installmentAmount").value= installmentAmountVal;
 
         var meterPriceAfterInterestVal = totalPriceAfterInterestOrDiscountVal/ unitAreaVal;
         document.getElementById("meterPriceAfterInterest").value = meterPriceAfterInterestVal;
+
+        var mainitananceAmountVal = totalPriceAfterInterestOrDiscountVal *8/100;
+        document.getElementById("mainitananceAmount").value = mainitananceAmountVal;
         
 
     }
