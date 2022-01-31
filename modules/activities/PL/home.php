@@ -1,39 +1,34 @@
 <?php
+
+
 ///////////////////////////////////////////////////////////////
-/// start of ---> delete developer if requested 
+/// start of ---> getting Activity details 
 ///////////////////////////////////////////////////////////////
-// if (isset($_GET['deleteDeveloperId'])) {
+ $sql= "SELECT `a`.`Activity_ID`, `a`.`Unit_ID`, `a`.`CST_NID`, `a`.`Seller_Account`, `a`.`Creation_Date`, `a`.`created_by`, `a`.`Status_ID`,
+ `as`.`Name` as `Activity_status`
+ FROM `activites` `a`
+ LEFT JOIN `activity status` `as`
+ on `a`.`Status_ID` = `as`.`ID`";
+ $activities_all= $database->query($sql);
 
-//     $deleteactivityid = $_GET['deleteactivityid'];
-//     $sql_delete_act= "DELETE  FROM `activites` WHERE `Activity_ID`='".$deleteactivityid."'";
-//     $activity_delete= $database->query($sql_delete_dev); 
+ $activityCount = $activities_all->num_rows;
 
-// } 
-// ///////////////////////////////////////////////////////////////
-// /// End of ---> delete developer if requested 
-// ///////////////////////////////////////////////////////////////
-
-// ///////////////////////////////////////////////////////////////
-// /// start of ---> getting developer details 
-// ///////////////////////////////////////////////////////////////
-//  $sql= "SELECT `Activity_ID`, `Unit_ID`, `Seller_Account`, `CST_NID` FROM `activites` ORDER BY `ID` DESC";
-//  $activities_all= $database->query($sql);
-
-//  $activityCount = $activities_all->num_rows;
-
-//     // output data of each row
-//     while($row = $activities_all->fetch_assoc()) {
-//       $Activity_ID[] = $row["Activity_ID"];
-//       $Unit_ID[] = $row["Unit_ID"];
-//       $Seller_Account[] = $row["Seller_Account"];
-//       $CST_NID[] = $row["CST_NID"];
-//     }
+    // output data of each row
+    while($row = $activities_all->fetch_assoc()) {
+      $Activity_ID[] = $row["Activity_ID"];
+      $Unit_ID[] = $row["Unit_ID"];
+      $CST_NID[] = $row["CST_NID"];
+      $Seller_Account[] = $row["Seller_Account"];
+      $Creation_Date[] = $row["Creation_Date"];
+      $created_by[] = $row["created_by"];
+      $Activity_status[] = $row["Activity_status"];
+    }
 
 
-//   $activities= array("Activity_ID"=>$Activity_ID, "Activity_ID"=>$Activity_ID, "Seller_Account"=>$Seller_Account,
-//    "CST_NID"=>$CST_NID);
+  $activities_data= array("Activity_ID"=>$Activity_ID, "Unit_ID"=>$Unit_ID, "CST_NID"=>$CST_NID,
+   "Seller_Account"=>$Seller_Account,"Creation_Date"=>$Creation_Date, "created_by"=>$created_by, "Activity_status"=>$Activity_status );
 ///////////////////////////////////////////////////////////////
-/// End of ---> getting developer details 
+/// start of ---> getting Activity details 
 ///////////////////////////////////////////////////////////////
 
 ?>
@@ -88,20 +83,36 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Kalama</td>
-                                    <td>Elnasr</td>
-                                    <td>2011/04/25</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>nader</td>
-                                    <td>3amr group</td>
-                                    <td>2011/04/25</td>
-                                    <td></td>
-                                </tr>
+<?php
+/////////////////////////////////////////////////////////////
+// Start of ------> Get All Projects  in html table
+/////////////////////////////////////////////////////////////
+for ($i=0; $i < $activityCount; $i++) { 
+    echo " <tr><th>".$activities_data["Activity_ID"][$i]."</th>";
+    echo "<td><a href='index?module=Projects&ProjectId=".$activities_data["Project_ID"][$i]."'>".$activities_data["ProName"][$i]."</a></td>";
+    echo "<td>".$activities_data["Build_No"][$i]."</td>";
+    echo "<td>".$activities_data["Unit_No"][$i]."</td>";
+    echo "<td>".$activities_data["Floor_Name"][$i]."</td>";
+    if ($activities_data["status_Name"][$i]=="On Sale") {
+        echo "<td class='On Sale' style='background-color: rgb(".$activities_data["colour"][$i].");'><i class='fa fa-spin fa-spinner'></i>".$activities_data["status_Name"][$i]."</td>";
+    } elseif($activities_data["status_Name"][$i]=="Hold") {
+        echo "<td style='background-color: rgb(".$activities_data["colour"][$i].");'>".$activities_data["status_Name"][$i]."<div class='progress'>
+        <div class='progress-bar bg-success' role='progressbar' style='width: 80%; height: 6px;' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
+    </div></td>";
+    } elseif($activities_data["status_Name"][$i]=="Closed") {
+        echo "<td style='background-color: rgb(".$activities_data["colour"][$i]."); color: #FFF;'>".$activities_data["status_Name"][$i]."</td>";
+    } elseif($activities_data["status_Name"][$i]!="On_Sale") {
+        echo "<td style='background-color: rgb(".$activities_data["colour"][$i].");'>".$activities_data["status_Name"][$i]."</td>";
+    }
+    echo "<td>
+    <a href='index?module=Unites&EditeunitId=".$activities_data["Activity_ID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
+    <a href='index?module=Unites&unitId=".$activities_data["Activity_ID"][$i]."' data-toggle='tooltip' data-original-title='View'> <i class='mdi mdi-eye'></i> </a>
+    <a href='index?module=Unites&deleteUnitId=".$activities_data["Activity_ID"][$i]."' data-toggle='tooltip' data-original-title='delete'> <i class='fa fa-trash'></i></a></td> </tr>";
+}
+/////////////////////////////////////////////////////////////
+// End of ------> Get All Projects  in html table
+/////////////////////////////////////////////////////////////
+?>
                             </tbody>
                         </table>
                     </div>
