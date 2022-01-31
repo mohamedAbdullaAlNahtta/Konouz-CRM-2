@@ -211,12 +211,15 @@ function myFunctionCalculateAll(){
 
 
         var installmentAmountVal = (totalPriceAfterInterestOrDiscountVal -(downPaymentAmountAfterInterestVal + receivingPaymentAmountAfterInterestVal)-(annualPaymentAmountVal* installmentYearsVal))/ (installmentYearsVal*4);
+        installmentAmountVal= Math.ceil(installmentAmountVal);
         document.getElementById("installmentAmount").value= installmentAmountVal;
 
         var meterPriceAfterInterestVal = totalPriceAfterInterestOrDiscountVal/ unitAreaVal;
+        meterPriceAfterInterestVal= Math.ceil(meterPriceAfterInterestVal);
         document.getElementById("meterPriceAfterInterest").value = meterPriceAfterInterestVal;
 
         var mainitananceAmountVal = totalPriceAfterInterestOrDiscountVal *8/100;
+        mainitananceAmountVal= Math.ceil(mainitananceAmountVal);
         document.getElementById("mainitananceAmount").value = mainitananceAmountVal;
         document.getElementById("mainitananceAmount2").innerHTML = "EGP "+mainitananceAmountVal;
 
