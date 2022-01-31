@@ -561,155 +561,148 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                     <thead>
                                                         <tr class="tableizer-firstrow">
                                                             <th style="background-color: #104E8B; color:#fff;">Down Payment</th>
-                                                            <th style="background-color: yellow;">10%</th>
                                                             <th style="background-color: yellow; color:#fff;">&nbsp;</th>
+                                                            <th id="downPaymentPc2" style="background-color: yellow;"></th>
                                                             <th style="background-color: yellow; color:#fff;">&nbsp;</th>
                                                             <th style="background-color: yellow; color:#fff;">&nbsp;</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Receiving Payment</td>
-                                                            <td style="background-color: yellow; ">0%</td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Receiving Payment</td>
                                                             <th style="background-color: yellow; color:#fff;">&nbsp;</th>
-                                                            <th style="background-color: yellow; color:#fff;">&nbsp;</th>
-                                                            <th style="background-color: yellow; color:#fff;">&nbsp;</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Annual Payment</td>
-                                                            <td style="background-color: yellow;">0%</td>
-                                                            <th style="background-color: yellow; color:#fff;">&nbsp;</th>
+                                                            <td id="receivingPaymentPc2" style="background-color: yellow; "></td>
                                                             <th style="background-color: yellow; color:#fff;">&nbsp;</th>
                                                             <th style="background-color: yellow; color:#fff;">&nbsp;</th>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment Years</td>
-                                                            <td style="background-color: yellow; ">1</td>
+                                                        <td style="background-color: #104E8B; color:#fff; font-weight:500">Annual Payment</td>
                                                             <th style="background-color: yellow; color:#fff;">&nbsp;</th>
+                                                            <td id="annualPaymentPc2" style="background-color: yellow;"></td>
                                                             <th style="background-color: yellow; color:#fff;">&nbsp;</th>
                                                             <th style="background-color: yellow; color:#fff;">&nbsp;</th>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">سعر متر الحديقة/رووف</td>
-                                                            <td >EGP -</td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment Years</td>
+                                                            <th style="background-color: yellow; color:#fff;">&nbsp;</th>
+                                                            <td id="installmentYears2" style="background-color: yellow; "></td>
+                                                            <th style="background-color: yellow; color:#fff;">&nbsp;</th>
+                                                            <th style="background-color: yellow; color:#fff;">&nbsp;</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Maintanance Payment</td>
                                                             <td>&nbsp;</td>
-                                                            <td>&nbsp;</td>
-                                                            <td>بدون</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Maintanance Payment</td>
-                                                            <td>EGP 186,428.00</td>
+                                                            <td id="mainitananceAmount2"></td>
                                                             <td>دفعة واحدة</td>
-                                                            <td>1900-01-00</td>
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">&nbsp;</td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">&nbsp;</td>
                                                             <td>القيمة الوحدة</td>
                                                             <td>قيمة الصيانة</td>
                                                             <td>نسبة مأوية</td>
                                                             <td>موعد الاستحقاق</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;"> Down Payment </td>
-                                                            <td>EGP 233,035.00</td>
-                                                            <td>&nbsp;</td>
-                                                            <td>11.56%</td>
-                                                            <td>2021-10-19</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Receiving Payment</td>
-                                                            <td>#REF!</td>
-                                                            <td>EGP 186,428.00</td>
-                                                            <td>0.00%</td>
-                                                            <td>1900-01-00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 1</td>
-                                                            <td>EGP 445,679.44</td>
-                                                            <td>-</td>
-                                                            <td>22.11%</td>
-                                                            <td>2022-01-19</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 2</td>
-                                                            <td>EGP 445,679.44</td>
-                                                            <td>-</td>
-                                                            <td>22.11%</td>
-                                                            <td>2022-04-19</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 3 </td>
-                                                            <td>EGP 445,679.44</td>
-                                                            <td>-</td>
-                                                            <td>22.11%</td>
-                                                            <td>2022-07-19</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 4 </td>
-                                                            <td>EGP 445,679.44</td>
-                                                            <td>-</td>
-                                                            <td>22.11%</td>
-                                                            <td>2022-10-19</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">دفعة سنوية</td>
-                                                            <td>-</td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500"> Down Payment </td>
+                                                            <td id="downPaymentAmountAfterInterest2"></td>
                                                             <td>&nbsp;</td>
                                                             <td>0.00%</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Receiving Payment</td>
+                                                            <td id="receivingPaymentAmountAfterInterest2"></td>
+                                                            <td>&nbsp;</td>
+                                                            <td>0.00%</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 1</td>
+                                                            <td id="installmentAmount2"></td>
+                                                            <td>&nbsp;</td>
+                                                            <td>0.00%</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 2</td>
+                                                            <td>EGP 445,679.44</td>
+                                                            <td>-</td>
+                                                            <td>0.00%</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 3 </td>
+                                                            <td>EGP 445,679.44</td>
+                                                            <td>-</td>
+                                                            <td>0.00%</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 4 </td>
+                                                            <td>EGP 445,679.44</td>
+                                                            <td>-</td>
+                                                            <td>22.11%</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">دفعة سنوية</td>
+                                                            <td>-</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>0.00%</td>
                                                             <td>-</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 5 </td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 5 </td>
                                                             <td>-</td>
                                                             <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>-</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 6 </td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 6 </td>
                                                             <td>-</td>
                                                             <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>-</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 7 </td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 7 </td>
                                                             <td>-</td>
                                                             <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>-</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 8 </td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 8 </td>
                                                             <td>-</td>
                                                             <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>-</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 9 </td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 9 </td>
                                                             <td>-</td>
                                                             <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>-</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 10 </td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 10 </td>
                                                             <td>-</td>
                                                             <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>-</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 11 </td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 11 </td>
                                                             <td>-</td>
                                                             <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>-</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff;">Installment No 12 </td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 12 </td>
                                                             <td>-</td>
                                                             <td>-</td>
                                                             <td>0.00%</td>

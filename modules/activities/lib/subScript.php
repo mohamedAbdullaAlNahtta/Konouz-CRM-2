@@ -218,6 +218,16 @@ function myFunctionCalculateAll(){
 
         var mainitananceAmountVal = totalPriceAfterInterestOrDiscountVal *8/100;
         document.getElementById("mainitananceAmount").value = mainitananceAmountVal;
+        document.getElementById("mainitananceAmount2").innerHTML = "EGP "+mainitananceAmountVal;
+
+        document.getElementById("installmentYears2").innerHTML= installmentYearsVal+" Year";
+        document.getElementById("annualPaymentPc2").innerHTML= annualPaymentPcVal*100+" %";
+        document.getElementById("downPaymentPc2").innerHTML= downPaymentPcVal*100+" %";
+        document.getElementById("receivingPaymentPc2").innerHTML= receivingPaymentPcVal*100+" %";
+
+        document.getElementById("downPaymentAmountAfterInterest2").innerHTML = "EGP "+downPaymentAmountAfterInterestVal;
+        document.getElementById("receivingPaymentAmountAfterInterest2").innerHTML = "EGP "+receivingPaymentAmountAfterInterestVal;
+        document.getElementById("installmentAmount2").innerHTML = "EGP "+installmentAmountVal;
         
 
     }
