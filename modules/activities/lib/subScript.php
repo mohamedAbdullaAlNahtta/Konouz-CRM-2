@@ -228,6 +228,7 @@ function myFunctionCalculateAll(){
         document.getElementById("downPaymentAmountAfterInterest2").innerHTML = "EGP "+downPaymentAmountAfterInterestVal;
         document.getElementById("receivingPaymentAmountAfterInterest2").innerHTML = "EGP "+receivingPaymentAmountAfterInterestVal;
         document.getElementById("installmentAmount2").innerHTML = "EGP "+installmentAmountVal;
+        document.getElementById("annualPaymentAmount2").innerHTML = "EGP "+annualPaymentAmountVal;
         
 
     }

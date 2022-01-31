@@ -593,61 +593,61 @@ for ($i=0; $i < $installment_plans_data_Count ; $i++) {
                                                             <td style="background-color: #104E8B; color:#fff; font-weight:500">Maintanance Payment</td>
                                                             <td>&nbsp;</td>
                                                             <td id="mainitananceAmount2"></td>
-                                                            <td>دفعة واحدة</td>
+                                                            <td> One Time Payment</td>
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: #104E8B; color:#fff; font-weight:500">&nbsp;</td>
-                                                            <td>القيمة الوحدة</td>
-                                                            <td>قيمة الصيانة</td>
-                                                            <td>نسبة مأوية</td>
-                                                            <td>موعد الاستحقاق</td>
+                                                            <td> Amount</td>
+                                                            <td> Maintanance </td>
+                                                            <td> ؛ercentage % </td>
+                                                            <td> Due date  </td>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: #104E8B; color:#fff; font-weight:500"> Down Payment </td>
                                                             <td id="downPaymentAmountAfterInterest2"></td>
-                                                            <td>&nbsp;</td>
+                                                            <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: #104E8B; color:#fff; font-weight:500">Receiving Payment</td>
                                                             <td id="receivingPaymentAmountAfterInterest2"></td>
-                                                            <td>&nbsp;</td>
+                                                            <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
                                                         <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 1</td>
                                                             <td id="installmentAmount2"></td>
-                                                            <td>&nbsp;</td>
+                                                            <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 2</td>
-                                                            <td>EGP 445,679.44</td>
+                                                            <td>-</td>
                                                             <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 3 </td>
-                                                            <td>EGP 445,679.44</td>
+                                                            <td>-</td>
                                                             <td>-</td>
                                                             <td>0.00%</td>
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: #104E8B; color:#fff; font-weight:500">Installment No 4 </td>
-                                                            <td>EGP 445,679.44</td>
                                                             <td>-</td>
-                                                            <td>22.11%</td>
+                                                            <td>-</td>
+                                                            <td>0.00%</td>
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">دفعة سنوية</td>
-                                                            <td>-</td>
+                                                            <td style="background-color: #104E8B; color:#fff; font-weight:500">Annual Payment Amount</td>
+                                                            <td id="annualPaymentAmount2"></td>
                                                             <td>&nbsp;</td>
                                                             <td>0.00%</td>
                                                             <td>-</td>
