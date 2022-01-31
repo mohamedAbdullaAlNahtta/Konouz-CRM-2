@@ -66,19 +66,25 @@
                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Project Name</th>
-                                    <th>Developer Name</th>
-                                    <th>Start date</th>
+                                    <th>Activity ID</th>
+                                    <th>Unit ID</th>
+                                    <th>Customer NID</th>
+                                    <th>Seller Account</th>
+                                    <th>Creation Date</th>
+                                    <th>Created By</th>
+                                    <th>Activity Status</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Project Name</th>
-                                    <th>Developer Name</th>
-                                    <th>Start date</th>
+                                    <th>Activity ID</th>
+                                    <th>Unit ID</th>
+                                    <th>Customer NID</th>
+                                    <th>Seller Account</th>
+                                    <th>Creation Date</th>
+                                    <th>Created By</th>
+                                    <th>Activity Status</th>
                                     <th></th>
                                 </tr>
                             </tfoot>
@@ -89,25 +95,20 @@
 /////////////////////////////////////////////////////////////
 for ($i=0; $i < $activityCount; $i++) { 
     echo " <tr><th>".$activities_data["Activity_ID"][$i]."</th>";
-    echo "<td><a href='index?module=Projects&ProjectId=".$activities_data["Project_ID"][$i]."'>".$activities_data["ProName"][$i]."</a></td>";
-    echo "<td>".$activities_data["Build_No"][$i]."</td>";
-    echo "<td>".$activities_data["Unit_No"][$i]."</td>";
-    echo "<td>".$activities_data["Floor_Name"][$i]."</td>";
-    if ($activities_data["status_Name"][$i]=="On Sale") {
-        echo "<td class='On Sale' style='background-color: rgb(".$activities_data["colour"][$i].");'><i class='fa fa-spin fa-spinner'></i>".$activities_data["status_Name"][$i]."</td>";
-    } elseif($activities_data["status_Name"][$i]=="Hold") {
-        echo "<td style='background-color: rgb(".$activities_data["colour"][$i].");'>".$activities_data["status_Name"][$i]."<div class='progress'>
-        <div class='progress-bar bg-success' role='progressbar' style='width: 80%; height: 6px;' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
-    </div></td>";
+    echo "<th> <img href='assets/images/icons/favicon.ico'><a href='index?module=Unites&unitId=".$activities_data["Unit_ID"][$i]."'>".$activities_data["Unit_ID"][$i]."</a></th>";
+    echo "<th>".$activities_data["CST_NID"][$i]."</th>";
+    echo "<th>".$activities_data["Seller_Account"][$i]."</th>";
+    echo "<th>".$activities_data["Creation_Date"][$i]."</th>";
+    echo "<th>".$activities_data["created_by"][$i]."</th>";
+    if ($activities_data["Activity_status"][$i]=="On Sale") {
+        echo "<th class='On Sale' ><i class='fa fa-spin fa-spinner'></i>".$activities_data["Activity_status"][$i]."</th>";
     } elseif($activities_data["status_Name"][$i]=="Closed") {
-        echo "<td style='background-color: rgb(".$activities_data["colour"][$i]."); color: #FFF;'>".$activities_data["status_Name"][$i]."</td>";
-    } elseif($activities_data["status_Name"][$i]!="On_Sale") {
-        echo "<td style='background-color: rgb(".$activities_data["colour"][$i].");'>".$activities_data["status_Name"][$i]."</td>";
+        echo "<th style='color: #FFF;'>".$activities_data["Activity_status"][$i]."</th>";
+    } else{
+        echo "<th>".$activities_data["Activity_status"][$i]."</th>";
     }
-    echo "<td>
-    <a href='index?module=Unites&EditeunitId=".$activities_data["Activity_ID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a>
-    <a href='index?module=Unites&unitId=".$activities_data["Activity_ID"][$i]."' data-toggle='tooltip' data-original-title='View'> <i class='mdi mdi-eye'></i> </a>
-    <a href='index?module=Unites&deleteUnitId=".$activities_data["Activity_ID"][$i]."' data-toggle='tooltip' data-original-title='delete'> <i class='fa fa-trash'></i></a></td> </tr>";
+    echo "<th><a href='index?module=Activities&ActivityEditeId=".$activities_data["Activity_ID"][$i]."' data-toggle='tooltip' data-original-title='Edit'> <i class='fa fa-pencil text-inverse m-r-10'></i></a></th> </tr>";
+    
 }
 /////////////////////////////////////////////////////////////
 // End of ------> Get All Projects  in html table
