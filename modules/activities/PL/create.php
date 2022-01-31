@@ -509,8 +509,17 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                     <div class="form-group">
                                                         <label class="control-label">Signed Contract</label>
                                                         <select id="Location" name="Signed_Contract_new" class="form-control form-control-line" required>
-                                                            <option value="0">No</option>
-                                                            <option value="1">Yes</option>                                                            
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $req_data_Count ; $i++) { 
+    echo "<option value='".$requested_req_data["ID"][$i]."' >".$requested_req_data["Type"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                           
                                                         </select>
                                                     </div>
                                                 </div>
@@ -521,8 +530,18 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                     <div class="form-group">
                                                         <label class="control-label">Cheque Submitted</label>
                                                         <select id="Location" name="Submitted_Cheques_new" class="form-control form-control-line" required>
-                                                            <option value="0">No</option>
-                                                            <option value="1">Yes</option>                                                            
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $req_data_Count ; $i++) { 
+    echo "<option value='".$requested_req_data["ID"][$i]."' >".$requested_req_data["Type"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                           
+                                                            
                                                         </select>
                                                     </div>
                                                 </div>
@@ -533,17 +552,37 @@ for ($i=0; $i < $payment_type_data_Count ; $i++) {
                                                     <div class="form-group">
                                                         <label class="control-label">Refunded</label>
                                                         <select id="Location" name="Refunded_new" class="form-control form-control-line" required>
-                                                            <option value="0">No</option>
-                                                            <option value="1">Yes</option>                                                            
+                                                        <?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $req_data_Count ; $i++) { 
+    echo "<option value='".$requested_req_data["ID"][$i]."' >".$requested_req_data["Type"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                           
+                                                                 
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3 dependent-status-form" id="Filled-Claim-form-value">
+                                                <div class="col-md-3 " id="Filled-Claim-form-value">
                                                     <div class="form-group">
                                                         <label class="control-label">Filled Claim</label>
                                                         <select id="Location" name="Filled_Claim_new" class="form-control form-control-line" required>
-                                                            <option value="0">No</option>
-                                                            <option value="1">Yes</option>                                                            
+<?php
+///////////////////////////////////////////////////////////////
+/// Start of ------> 
+///////////////////////////////////////////////////////////////
+for ($i=0; $i < $req_data_Count ; $i++) { 
+    echo "<option value='".$requested_req_data["ID"][$i]."' >".$requested_req_data["Type"][$i]."</option>";
+}
+///////////////////////////////////////////////////////////////
+/// End of of ------> 
+///////////////////////////////////////////////////////////////
+?>                                                           
+                                                              
                                                         </select>
                                                     </div>
                                                 </div>

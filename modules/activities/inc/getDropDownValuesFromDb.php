@@ -258,5 +258,26 @@ $client_data_Count = $client_data_all_get->num_rows;
 // end of ------getting client
 ///////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////
+// Start of ------getting client 
+/////////////////////////////////////////////////////////////
+$sql_req_data= "SELECT * FROM `requested` ";
+$req_data_all_get= $database->query($sql_req_data);
+
+$req_data_Count = $req_data_all_get->num_rows;
+   // output data of each row
+   while($row = $req_data_all_get->fetch_assoc()) {
+     $ID[] = $row["ID"];
+     $Type[] = $row["Type"];
+   }
+ $requested_req_data= array("ID"=>$ID, "Type"=>$Type);
+
+ $ID=array();
+ $Type=array();
+
+ //////////////////////////////////////////////////////////////
+// end of ------getting client
+///////////////////////////////////////////////////////////////
+
 
 ?>
