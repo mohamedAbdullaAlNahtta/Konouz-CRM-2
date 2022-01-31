@@ -261,7 +261,7 @@ $client_data_Count = $client_data_all_get->num_rows;
 /////////////////////////////////////////////////////////////
 // Start of ------getting client 
 /////////////////////////////////////////////////////////////
-$sql_req_data= "SELECT * FROM `requested` ";
+$sql_req_data= "SELECT * FROM `requested`  ORDER BY `ID` DESC ";
 $req_data_all_get= $database->query($sql_req_data);
 
 $req_data_Count = $req_data_all_get->num_rows;
