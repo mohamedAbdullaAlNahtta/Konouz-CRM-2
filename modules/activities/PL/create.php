@@ -37,6 +37,7 @@ if (isset($_POST['submit'])) {
     $Meter_Price_After_Interest_new = $_POST['Meter_Price_After_Interest_new'];
     $Meter_Price_With_Discount_new = $_POST['Meter_Price_With_Discount_new'];
     $Payment_Type_ID_new = $_POST['Payment_Type_ID_new'];
+    $Status_ID_new = $_POST['Status_ID_new'];
 
     
     // escaping variables
@@ -72,6 +73,7 @@ if (isset($_POST['submit'])) {
     $Meter_Price_After_Interest_new = $database->escape_string($Meter_Price_After_Interest_new);
     $Meter_Price_With_Discount_new = $database->escape_string($Meter_Price_With_Discount_new);
     $Payment_Type_ID_new = $database->escape_string($Payment_Type_ID_new);
+    $Status_ID_new = $database->escape_string($Status_ID_new);
 
     $sql= "INSERT INTO `activites` (`Activity_ID`, `Unit_ID`, `CST_NID`, `Seller_Account`,
     `Seller_Assistant_ID`, `Direct_Manager_ID`, `Section_Head_ID`, `Sale_Type_ID`, 

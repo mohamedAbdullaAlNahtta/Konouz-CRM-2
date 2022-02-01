@@ -249,14 +249,14 @@ if (isset($_POST['submit'])) {
         <div class="col-md-6 col-8 align-self-center">
             <h3 class="text-themecolor m-b-0 m-t-0">Inventory</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index?module=Unites">Units <?php var_dump($sql_update); ?> </a></li>
+                <li class="breadcrumb-item"><a href="index?module=Unites">Units</a></li>
                 <li class="breadcrumb-item active">Unit ID <?php echo htmlentities($EditeunitId); ?> </li>
             </ol>
         </div>
         <div class="col-md-6 col-4 align-self-center">
             <button class="right-side-toggle waves-effect waves-light btn-info btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
             <button onclick="location.href='index?module=Activities&create=true&unitId=<?php echo htmlentities($EditeunitId) ?>'" class="btn pull-right hidden-sm-down btn-success"><i class="mdi mdi-plus-circle"></i> New Activity </button>
-            <button onclick="location.href='index?module=Service.Request&create=true&unitid=<?php echo htmlentities($EditeunitId) ?>'" class="btn pull-right hidden-sm-down btn-success"> <i class="mdi mdi-plus-circle"> </i> New Request </button>
+            <button style="margin-right: 5px;" onclick="location.href='index?module=Service.Request&create=true&unitid=<?php echo htmlentities($EditeunitId) ?>'" class="btn pull-right hidden-sm-down btn-success"> <i class="mdi mdi-plus-circle"> </i> New Request </button>
         </div>
     </div>
     <!-- ============================================================== -->
