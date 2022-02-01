@@ -267,7 +267,7 @@ if (isset($_POST['submit'])) {
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $projectsNameCount ; $i++) { 
-    echo "<option value='".$project_name["ProID"][$i]."' >".$project_name["ProName"][$i]."</option>";
+    echo "<option value='".$project_all["ProID"][$i]."' >".$project_all["ProName"][$i]."</option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> s
@@ -298,7 +298,7 @@ for ($i=0; $i < $projectsNameCount ; $i++) {
 /// Start of ------> 
 ///////////////////////////////////////////////////////////////
 for ($i=0; $i < $FloorNameCount ; $i++) { 
-    echo "<option value='".$floor_name["Floor_Id"][$i]."' >".$floor_name["Floor_Name"][$i]."</option>";
+    echo "<option value='".$floor_all["Floor_Id"][$i]."' >".$floor_all["Floor_Name"][$i]."</option>";
 }
 ///////////////////////////////////////////////////////////////
 /// End of of ------> 
