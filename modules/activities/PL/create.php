@@ -280,7 +280,7 @@ for ($i=0; $i < $requested_garage_type_data_Count ; $i++) {
                                                 <div id="" class="col-md-.5 col-xs-1">
                                                     <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
                                                 </div>
-                                                <div class="col-md-2 col-xs-3">
+                                                <div class="col-md-4 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">National ID</label>
                                                         <select id="National_ID" name="CST_NID_new" class="form-control form-control-line" >
@@ -299,10 +299,10 @@ for ($i=0; $i < $client_data_Count ; $i++) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2 col-xs-3">
+                                                <div class="col-md-4 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Full Name</label>
-                                                        <select id="Full_Name" name="" class="form-control form-control-line" >
+                                                        <select id="Full_Name" name="" class="form-control form-control-line" readonly>
                                                             <option>Full Name</option>
  <?php
 ///////////////////////////////////////////////////////////////
@@ -318,7 +318,7 @@ for ($i=0; $i < $client_data_Count ; $i++) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2 col-xs-3">
+                                                <div class="col-md-3 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Mobile</label>
                                                         <select id="Mobile" name="" class="form-control form-control-line" >
