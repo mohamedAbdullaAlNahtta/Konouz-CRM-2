@@ -24,6 +24,28 @@
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
 <!-- end - This is for export functionality only -->
+
+ <!-- This page plugins -->
+<!-- ============================================================== -->
+<script src="assets/plugins/switchery/dist/switchery.min.js"></script>
+<script src="assets/plugins/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+<script src="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="assets/plugins/multiselect/js/jquery.multi-select.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        // Switchery
+        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+        $('.js-switch').each(function() {
+            new Switchery($(this)[0], $(this).data());
+        });
+        // For select 2
+        $(".select2").select2();
+        // For select 2
+        $(".select3").select2();
+    });
+    </script>
 <script>
     $(document).ready(function () {
         $("#example23").DataTable({

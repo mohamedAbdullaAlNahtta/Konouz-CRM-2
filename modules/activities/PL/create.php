@@ -281,9 +281,10 @@ for ($i=0; $i < $requested_garage_type_data_Count ; $i++) {
                                                     <img src="assets/images/users/User-01.png" style="border-radius: 50%;border: 1px solid; margin-top: 20px;" width="50">
                                                 </div>
                                                 <div class="col-md-4 col-xs-3">
-                                                    <div class="form-group">
-                                                        <label class="control-label">National ID</label>
-                                                        <select id="National_ID" name="CST_NID_new" class="form-control form-control-line" >
+                                                    <label class="control-label">National ID</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                                        <select id="National_ID" name="CST_NID_new" class="form-control form-control-line select2" >
                                                             <option>Select National ID</option>
  <?php
 ///////////////////////////////////////////////////////////////
@@ -302,7 +303,7 @@ for ($i=0; $i < $client_data_Count ; $i++) {
                                                 <div class="col-md-4 col-xs-3">
                                                     <div class="form-group">
                                                         <label class="control-label">Full Name</label>
-                                                        <select id="Full_Name" name="" class="form-control form-control-line" readonly>
+                                                        <select id="Full_Name" name="" class="form-control form-control-line" disabled>
                                                             <option>Full Name</option>
  <?php
 ///////////////////////////////////////////////////////////////
@@ -319,9 +320,10 @@ for ($i=0; $i < $client_data_Count ; $i++) {
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 col-xs-3">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Mobile</label>
-                                                        <select id="Mobile" name="" class="form-control form-control-line" >
+                                                <label class="control-label">Mobile</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                                        <select id="Mobile" name="" class="form-control form-control-line select3" >
                                                             <option>Mobile</option>
  <?php
 ///////////////////////////////////////////////////////////////

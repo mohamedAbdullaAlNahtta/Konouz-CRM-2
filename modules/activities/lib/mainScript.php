@@ -36,3 +36,13 @@
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+-->
+
+<!-- page CSS -->
+<link href="assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/plugins/switchery/dist/switchery.min.css" rel="stylesheet" />
+<link href="assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+<link href="assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
+<link href="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+<link href="assets/plugins/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
