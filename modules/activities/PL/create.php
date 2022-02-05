@@ -323,7 +323,7 @@ for ($i=0; $i < $client_data_Count ; $i++) {
                                                 <label class="control-label">Mobile</label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                                                        <select id="Mobile" name="" class="form-control form-control-line select3" >
+                                                        <select id="Mobile" name="" class="form-control form-control-line select3" disabled>
                                                             <option>Mobile</option>
  <?php
 ///////////////////////////////////////////////////////////////
